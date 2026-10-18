@@ -1,0 +1,18 @@
+Refine the navigation instruction to distinguish the selected target from other objects of the same category visible in the initial observation.
+
+Inputs:
+- Initial egocentric observation.
+- Initial instruction: {instruction}
+- Selected target: {selected_target}
+- Spatial and semantic information for the relevant objects:
+  {object_annotations}
+
+Preserve the selected target and intended destination. When the category name alone is ambiguous, add a concise description of the target's visible attributes or relative position, such as "the red chair on the right". Interpret directional descriptions from the initial observation.
+
+Use the scene annotations to associate the selected target with the image. Include only attributes and spatial relations supported by the initial observation. Do not change the target, invent distinguishing features, or introduce additional navigation requirements.
+
+If the original instruction already identifies the intended target unambiguously, retain it.
+
+Return JSON with:
+- "instruction": the refined instruction, or null if the target cannot be distinguished using the supplied information.
+- "reason": a brief explanation of the distinguishing visual evidence.

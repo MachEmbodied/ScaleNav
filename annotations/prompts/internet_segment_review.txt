@@ -1,0 +1,16 @@
+Review the candidate navigation segment and its instruction.
+
+Inputs:
+- Instruction: {instruction}
+- Target description: {target_description}
+- Segment boundaries: {start_frame}, {end_frame}
+- Chronologically ordered frames covering the segment.
+- Separately labeled source frames around the candidate endpoint.
+
+Assess the following four criteria:
+1. Target-instruction consistency: Verify that the initial and final frames depict the same target and that its category and visible attributes match the instruction. Check that any stated spatial relations are supported by the initial observation, using that view as the reference for left/right and ordinal descriptions. When multiple plausible targets are visible, verify that the instruction uniquely identifies the intended target. Mark this criterion as "fail" if the wording is ambiguous, or "uncertain" if the visual evidence is insufficient to decide.
+2. Motion plausibility: Check that the segment primarily shows camera movement toward the target, rather than prolonged in-place rotation, stationary observation, or back-and-forth motion that does not advance toward it.
+3. Arrival accuracy: Examine the frames around the candidate endpoint to determine whether the camera has reached the target's vicinity.
+4. Temporal continuity: Check for scene cuts or abrupt temporal jumps within the selected segment.
+
+Return JSON with the keys "target_instruction_consistency", "motion_plausibility", "arrival_accuracy", and "temporal_continuity". For each criterion, provide a "decision" ("pass", "fail", or "uncertain") and a brief "reason" grounded in the supplied frames. Include "keep", set to true only when all four criteria pass.

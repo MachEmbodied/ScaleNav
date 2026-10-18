@@ -1,0 +1,9 @@
+Apply the segment-review criteria to the supplied simulated clip. For arrival accuracy, use the final observation and nearby frames from the rendered sequence.
+
+Additional inputs:
+- Scene semantic annotations: {scene_annotations}
+- A target-marked reference image identifying the intended target.
+
+When assessing target-instruction consistency, combine these inputs with the unmarked observations to verify that the instruction refers to the selected target. Check that its category, distinguishing attributes, and stated spatial relations are supported by the initial observation. The reference marker identifies the intended target and is not a property of the object or part of the navigation instruction.
+
+Use the same four assessment keys and output format as the segment-review template. Include the additional evidence in the reason for "target_instruction_consistency".

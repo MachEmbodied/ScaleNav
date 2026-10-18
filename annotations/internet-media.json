@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "repo_id": "Yangyihui/ScaleNav-Data",
+  "annotations_sha256": "60b2881e6bc34a803befb765c554cd8963ddcccf14b091f7f6351d19e6fa3560",
+  "license": "CC-BY-NC-SA-4.0",
+  "upstream": {
+    "repo_id": "FelixYuan-YF/SpatialVID-HQ",
+    "revision": "97e22f97447c012ef7460e5989b83a674643a880"
+  },
+  "index": {
+    "path": "internet/videos.jsonl.gz",
+    "bytes": 1072212,
+    "sha256": "0736b72d24ed4d8a3ee84e6259f4f7940b811ef59665360f2780bce7e5c3d46c"
+  },
+  "files": [
+    {
+      "path": "internet/train-0000.tar",
+      "bytes": 2151495680,
+      "sha256": "bfe572b2d419c682a057488db9d76aaa3d23799b33644295d2c6f37c85577142",
+      "clips": 3401,
+      "segments": 4524,
+      "split": "train"
+    },
+    {
+      "path": "internet/train-0001.tar",
+      "bytes": 2151536640,
+      "sha256": "111c971452e2d35ad2f07505638c9b170f88dc3532679dae710bcea7dcd4b52b",
+      "clips": 3401,
+      "segments": 4593,
+      "split": "train"
+    },
+    {
+      "path": "internet/train-0002.tar",
+      "bytes": 2151526400,
+      "sha256": "331e499fc3db2bb3f90f8b6be45b131c62ae9ebce8be85864c48e8674aaf4206",
+      "clips": 3401,
+      "segments": 4561,
+      "split": "train"
+    },
+    {
+      "path": "internet/train-0003.tar",
+      "bytes": 2151577600,
+      "sha256": "a0b488fa9add2c409f92f6753d5c7cb7e513bf2f1cd902d1172a789124fcaba0",
+      "clips": 3402,
+      "segments": 4506,
+      "split": "train"
+    },
+    {
+      "path": "internet/val.tar",
+      "bytes": 36556800,
+      "sha256": "eb59a303b439fb2777882a7bc87edfa994a1ccaed888380aa9407333b2fddb65",
+      "clips": 42,
+      "segments": 65,
+      "split": "val"
+    },
+    {
+      "path": "internet/train-smoke.tar",
+      "bytes": 10588160,
+      "sha256": "4d0c9655bb5cc058d1c6dd9d9850abd4e0acd0284420b9ee5472622df8e4bd0f",
+      "clips": 14,
+      "segments": 17,
+      "split": "train"
+    }
+  ],
+  "smoke_file": "internet/train-smoke.tar",
+  "revision": "53f288600357c2a8f2cd35f2e19d43838339ff20"
+}

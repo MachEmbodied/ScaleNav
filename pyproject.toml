@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "awm-navigation"
+version = "0.1.0"
+description = "ScaleNav: Scalable Internet Video Pretraining for Language-Conditioned Local Navigation"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = "Apache-2.0"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+
+[project.urls]
+Repository = "https://github.com/MachEmbodied/ScaleNav"
+Issues = "https://github.com/MachEmbodied/ScaleNav/issues"
+
+[project.optional-dependencies]
+inference = [
+  "torch==2.6.0", "torchvision==0.21.0", "accelerate>=0.25,<2",
+  "diffusers==0.31.0", "transformers==4.49.0", "safetensors>=0.4,<1",
+  "sentencepiece", "ftfy", "timm>=1,<2", "einops>=0.7,<1",
+  "numpy>=2.0,<2.3", "scipy>=1.10,<2", "opencv-python-headless>=4.8,<5",
+  "pillow>=10", "imageio[ffmpeg]>=2.31",
+  "omegaconf>=2.3,<2.4", "pyyaml>=6",
+  "tqdm>=4.66", "huggingface_hub>=0.26,<1",
+  "matplotlib>=3.8", "numpy-quaternion>=2023.0"
+]
+eval = ["h5py", "av", "protobuf"]
+training = ["awm-navigation[inference]", "accelerate==1.15.0"]
+distributed = ["deepspeed==0.19.7"]
+dev = ["pytest>=8,<10", "build>=1.2", "twine>=6"]
+
+[project.scripts]
+awm = "awm.cli:main"
+scalenav = "awm.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["awm*"]
+
+[tool.setuptools.package-data]
+awm = ["configs/*.yaml", "configs/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

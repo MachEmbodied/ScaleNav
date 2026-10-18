@@ -1,0 +1,33 @@
+ScaleNav Internet Navigation Videos
+
+Source: SpatialVID-HQ, Jiahao Wang, Yufeng Yuan and collaborators, CVPR 2026.
+Paper: https://arxiv.org/abs/2509.09676
+Project: https://github.com/NJU-3DV/SpatialVID
+Dataset: https://huggingface.co/datasets/FelixYuan-YF/SpatialVID-HQ
+Source revision: 97e22f97447c012ef7460e5989b83a674643a880
+
+The SpatialVID-derived videos and ScaleNav annotations are distributed under
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International.
+License: https://creativecommons.org/licenses/by-nc-sa/4.0/
+The complete license, including its disclaimer of warranties, is in LICENSE.
+Retain attribution and license notices, identify further changes, use the data
+noncommercially, and distribute adaptations under the same license.
+
+ScaleNav selected clips and navigation intervals, resampled video to 4 Hz and
+512 x 288 pixels, and added navigation instructions, paraphrases,
+and fixed training/validation splits. This release preserves the prepared
+training MP4 files without another video encoding pass. Frame intervals are
+zero-based and end-exclusive on the prepared 4 Hz timeline. Each archive's
+annotations.jsonl retains upstream clip IDs, archive paths and source-video
+paths. The release index additionally records video hashes and frame counts.
+
+Copyright 2026 ScaleNav Authors applies to our original contributions, not to
+the underlying footage. Original rights remain with their respective holders.
+The license grants only rights that the licensors have authority to grant;
+it does not confer additional privacy, publicity or other third-party rights.
+This is an independently prepared subset, not an official SpatialVID release
+or an endorsement by its authors. No InteriorGS or HM3D scene data is included.
+
+For attribution corrections or removal requests, identify the affected clip IDs
+at https://huggingface.co/datasets/Yangyihui/ScaleNav-Data/discussions or
+https://github.com/MachEmbodied/ScaleNav/issues .

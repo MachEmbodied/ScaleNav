@@ -1,0 +1,9 @@
+Identify navigation segments from the supplied egocentric video keyframes. The keyframes are sampled at uniform intervals, presented in temporal order, and labeled with source-frame indices.
+
+For each segment:
+1. Identify a frame in which the camera has arrived near a clearly describable object or region. Treat this frame as a candidate endpoint and the corresponding object or region as the navigation target.
+2. Search backward through the supplied keyframes and identify the earliest keyframe in which the same target is visible. Use this as the starting frame. The start must precede the endpoint.
+3. Generate a concise navigation instruction in the form "Go to ...", describing the target by its category, attributes, or spatial relations. Ground the description in the initial observation.
+
+Return JSON only, with a "candidates" list. Each entry must contain:
+"target_description", "start_frame", "end_frame", and "instruction". Use only the supplied frame indices. Return {"candidates": []} if no valid segment is identified.

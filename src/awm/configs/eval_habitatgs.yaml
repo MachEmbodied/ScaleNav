@@ -1,0 +1,61 @@
+# Template: supply your licensed dataset, split, and simulator scene paths.
+dataset:
+  data_root: null
+  split_file: null
+  text_level: l3
+gs_dataset_root: null
+simulator:
+  gpu_device_id: 0
+  allow_sliding: true
+sensor:
+  height: 288
+  width: 512
+  hfov: 69.62
+action:
+  forward_step_size: 0.25
+  turn_angle: 30.0
+max_steps: 200
+success_distance: 1.25
+model_path: null
+pretrained_model_path: null
+config_path: configs/inference.yaml
+policy_mode: causal_observed_replan
+predict_mode: ti2va
+num_inference_steps: 4
+num_video_frames: 9
+chunk_overlap_frames: 0
+use_causal_chunk_ar: true
+ar_num_past_chunks: 3
+max_attn_chunks: 4
+use_continuous_history: true
+use_kv_cache: true
+trim_chunk_overshoot: false
+num_episodes: null
+scale_xy: 1.0
+scale_yaw: 1.0
+stop_threshold: 0.02
+disable_stop: false
+goal_distance_auto_stop: false
+require_model_stop_for_success: true
+semantic_success_require_facing: false
+auto_stop_on_near_zero: true
+use_motion_stop_detector: false
+motion_stop_n_frames: 9
+motion_stop_ignore_prefix_frames: 0
+motion_stop_xy_threshold_m: 0.015
+motion_stop_yaw_threshold_rad: 0.015
+min_steps_before_stop: 18
+continuous_actions: true
+guidance_scale: 5.0
+traj_guidance_scale: 1.0
+dtype: bf16
+gpu_memory_mode: model_cpu_offload
+save_rollout_video: false
+output_dir: outputs/eval_habitat_gs/val
+action_shift: 1.0
+use_gt_past: true
+use_cfg_parallel: true
+use_cuda_graph: true
+decode_predicted_video: false
+eval_seed: 42
+eval_seed_mode: episode

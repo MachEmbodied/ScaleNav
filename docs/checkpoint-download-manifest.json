@@ -1,0 +1,34 @@
+{
+  "format_version": 2,
+  "files": [
+    {
+      "path": "ar_model.pt",
+      "size": 868,
+      "sha256": "7e8d953987c3d6c24eb90da5b576e7fd8cc014ebb61819d980ffbd75524d057f"
+    },
+    {
+      "path": "train_meta.pt",
+      "size": 1324,
+      "sha256": "35528281fb59deaa6ede1b18ab6c7b30aa7751e515337f14a77a7871931ffaf0"
+    },
+    {
+      "path": "transformer/config.json",
+      "size": 781,
+      "sha256": "c8061133ae831595a98104f7f4fb1d4c85d83f2745842301eca34b89967b45c6"
+    },
+    {
+      "path": "transformer/diffusion_pytorch_model.safetensors",
+      "size": 10024484062,
+      "sha256": "d66cc8e698ac201646d832e190dac65deaa616bd1a8d3f1c844248aef155035d"
+    },
+    {
+      "path": "SHA256SUMS.json",
+      "size": 393,
+      "sha256": "5e6172ef7b506aca50db8678613eecf935449a317322e8ab217c8d80e33a38b6"
+    }
+  ],
+  "huggingface": {
+    "repository": "Yangyihui/ScaleNav",
+    "revision": "8808b3589142b52e3bf0719aa0ecff8f86715a4a"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "ar_model.pt": "7e8d953987c3d6c24eb90da5b576e7fd8cc014ebb61819d980ffbd75524d057f",
+  "train_meta.pt": "e235c4db6e9be62ed7439da91cd660d944775c4742fee76ddd3a623cb96da630",
+  "transformer/config.json": "c8061133ae831595a98104f7f4fb1d4c85d83f2745842301eca34b89967b45c6",
+  "transformer/diffusion_pytorch_model.safetensors": "d66cc8e698ac201646d832e190dac65deaa616bd1a8d3f1c844248aef155035d"
+}

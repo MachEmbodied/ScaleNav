@@ -1,0 +1,5 @@
+base_config: eval_habitatgs.yaml
+benchmark: short_horizon_ovon
+episode_manifest: null
+scene_dataset_config: null
+output_dir: outputs/eval_short_horizon_ovon

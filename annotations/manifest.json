@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-4.0",
+  "files": {
+    "simulation.jsonl.gz": {
+      "sha256": "0d24f57453c0e1a707a7ecea23ab86624b477762740ff1c1035820c02330c3fc",
+      "bytes": 146439
+    },
+    "internet.jsonl.gz": {
+      "sha256": "60b2881e6bc34a803befb765c554cd8963ddcccf14b091f7f6351d19e6fa3560",
+      "bytes": 968623
+    },
+    "simulation.npz": {
+      "sha256": "4720d7f80d0c944f3bfc2adce3faf02f4bef4072b2fbc6a46865ccc3186607d1",
+      "bytes": 3277946
+    }
+  },
+  "internet": {
+    "segments": 18249,
+    "clips": 13647,
+    "train": 18184,
+    "val": 65,
+    "repo_id": "FelixYuan-YF/SpatialVID-HQ",
+    "revision": "97e22f97447c012ef7460e5989b83a674643a880"
+  },
+  "simulation": {
+    "episodes": 2600,
+    "scenes": 650,
+    "train": 2460,
+    "val": 140,
+    "repo_id": "spatialverse/InteriorGS",
+    "revision": "334dfeea4e0241033b4e5de97c01bc7c9c080530"
+  },
+  "subsets": {
+    "smoke": {
+      "internet": [
+        "5b2a878dc8155857f3fe",
+        "92e5cd65083c265b6015",
+        "caa76252e32ac06ad1b4",
+        "f6f9b4dea4a727198f69",
+        "80ce0270752e9444fdc1",
+        "d1d63e7a555de3c8bb3d",
+        "570c2816c79d33c8f76c",
+        "d66ca79182487eec0f60",
+        "04d4838d69e059a7a0ba",
+        "d43d90897097f12765cb",
+        "84684d8800c4e2f61045",
+        "c6249da548edd537d351",
+        "b8671bcc4141606c51f9",
+        "d52bc36d9e060a8afe63",
+        "38259988dc83163cef2e",
+        "97f6f5295df9e07e87a7",
+        "d144f4e8acb1118c197a"
+      ],
+      "simulation": [
+        "far_v070/0003_839989/seg_00000",
+        "legacy_rerender/base_mixed_v4/0003_839989/seg_00001",
+        "legacy_rerender/object_scale_v3/v04_gpu0/0003_839989/seg_00001",
+        "midfar/0003_839989/seg_00001"
+      ]
+    }
+  }
+}

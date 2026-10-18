@@ -1,0 +1,58 @@
+common:
+  height: 288
+  width: 512
+  fps: 4
+  frames: 9
+  action_dim: 3
+  symlog_c: 0.01
+  past_chunks: 3
+  max_attn_chunks: 4
+  video_shift: 5.0
+  action_shift: 5.0
+  noise_timesteps: 1000
+  text_dropout: 0.1
+  adam_betas: [0.9, 0.999]
+  weight_decay: 0.01
+  adam_epsilon: 1.0e-8
+  max_grad_norm: 1.0
+  precision: bf16
+  traj_head_type: deep
+  traj_head_hidden_dim: 768
+stages:
+  p0:
+    updates: 2000
+    global_batch: 64
+    learning_rate: 1.0e-5
+    warmup_updates: 200
+    replay_probability: 1.0
+    past_chunks: 0
+    max_attn_chunks: 1
+    phase: video_pretrain
+    initialize_from: wan
+  p1:
+    updates: 8000
+    global_batch: 64
+    learning_rate: 1.0e-5
+    warmup_updates: 0
+    replay_probability: 1.0
+    phase: video_pretrain
+    initialize_from: p0
+  align:
+    updates: 2500
+    global_batch: 64
+    learning_rate: 1.0e-5
+    warmup_updates: 0
+    replay_probability: 0.1
+    phase: action_alignment
+    initialize_from: p1
+  joint:
+    updates: 6500
+    global_batch: 32
+    learning_rate: 5.0e-6
+    warmup_updates: 500
+    decay_start: 4000
+    decay_end: 5500
+    min_lr: 5.0e-7
+    replay_probability: 0.2
+    phase: joint_finetune
+    initialize_from: align

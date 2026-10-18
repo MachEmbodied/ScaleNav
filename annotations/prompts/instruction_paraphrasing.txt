@@ -1,0 +1,7 @@
+Paraphrase the accepted navigation instruction to increase language diversity while preserving its meaning.
+
+Original instruction: {instruction}
+
+Preserve the intended target, destination, distinguishing attributes, and spatial relations. Preserve the directional references in the original instruction. Do not introduce new navigation requirements or remove information needed to identify the intended target.
+
+Return JSON only, with the paraphrased instruction under "instruction".

@@ -1,0 +1,5231 @@
+{
+  "benchmark": "habitatgs_ln",
+  "start_position_reference": "floor",
+  "upstream": {
+    "scenes": {
+      "repo_id": "RukawaY/gs_scenes",
+      "revision": "ea6453855938dd3d4395c4c449fedefb7e6603b7",
+      "paths": {
+        "0022_840117": "train/interior_0022_840117",
+        "0088_839961": "train/interior_0088_839961",
+        "0141_840177": "train/interior_0141_840177",
+        "0184_840116": "train/interior_0184_840116",
+        "0402_840115": "train/interior_0402_840115",
+        "0420_840007": "train/interior_0420_840007"
+      }
+    },
+    "labels": {
+      "repo_id": "spatialverse/InteriorGS",
+      "revision": "334dfeea4e0241033b4e5de97c01bc7c9c080530"
+    },
+    "navmeshes": {
+      "repo_id": "Yangyihui/ScaleNav-Data",
+      "revision": "05fc1914f23b2f75055917acb8d4f987b15eac75",
+      "prefix": "evaluation/habitatgs_ln/navmeshes"
+    }
+  },
+  "assets": {
+    "0022_840117": {
+      "gs.ply": {
+        "bytes": 182005259,
+        "sha256": "cd9566da7436fe595dad818f8c5ae390cb26492877217d2e76c515e4fb078a89"
+      },
+      "navmesh": {
+        "bytes": 21872,
+        "sha256": "36f594a6e92e20e392be34b957d2a19ed0e01718c8d3e735aba24de7ed37935e"
+      },
+      "labels.json": {
+        "bytes": 325085,
+        "sha256": "e2764cdaf627b0d121724a9310941b79f0027ab9b2d41f65b4a80202cf275901"
+      }
+    },
+    "0025_840019": {
+      "gs.ply": {
+        "bytes": 339440620,
+        "sha256": "10fd7f05dc72487180b6ded885321c739683554ccabb1e4ccff815b609a7238d"
+      },
+      "navmesh": {
+        "bytes": 9052,
+        "sha256": "105bdc84bc97d1bc9c33429a2c9be43bc94d3be3d3bc18eef4f918100038349b"
+      },
+      "labels.json": {
+        "bytes": 711003,
+        "sha256": "94282c3e8b6e32c8aed393b2e1ddaee089b9d3a0dca8069006a4414c8ce34177"
+      }
+    },
+    "0058_839911": {
+      "gs.ply": {
+        "bytes": 203481067,
+        "sha256": "60948c0a4821a929866b512b16d45891696e1e1d330d652bdbff75a0528b2d31"
+      },
+      "navmesh": {
+        "bytes": 13212,
+        "sha256": "a66735bc297476a0c22d6ac238ba20d2a0aed6c0259d75af6bc64729e35e4afc"
+      },
+      "labels.json": {
+        "bytes": 463387,
+        "sha256": "e9eca94ab0df3d1e88019c0b1c1c32eb3b11f52da4736d5eeaf7a591ac0c4736"
+      }
+    },
+    "0075_839936": {
+      "gs.ply": {
+        "bytes": 202480139,
+        "sha256": "e2e10759a0e83ff64000f268e6e99cad96b1e52dcb59e91fbfd323b2e714de0e"
+      },
+      "navmesh": {
+        "bytes": 31412,
+        "sha256": "ef2a713fc260f05af0b2866b9c079bb3acade787e72feeacfba28f58ddec44f3"
+      },
+      "labels.json": {
+        "bytes": 86744,
+        "sha256": "fc0dc63e546e09ce01d12f733827c68c7ae552ee97c9bea0bbaf7d051ae55659"
+      }
+    },
+    "0085_839946": {
+      "gs.ply": {
+        "bytes": 412255156,
+        "sha256": "44077f82cd13d6539140d8f848a30dba3259be3d4934a1272c31dad6306fe0cf"
+      },
+      "navmesh": {
+        "bytes": 15500,
+        "sha256": "4c2d691dd61ccd614054ec4e9397fb6b0c9ab2472a3327d2a8e51d872dfcbf5c"
+      },
+      "labels.json": {
+        "bytes": 91266,
+        "sha256": "0f3259f1a2a1c535e4436abc9eb3662971af1197f74335de7806ab1747b415e9"
+      }
+    },
+    "0088_839961": {
+      "gs.ply": {
+        "bytes": 160521019,
+        "sha256": "618f939ddc719d548c23c61029c2ee38611a38c6e5b72c23180bab5e6b3e69d5"
+      },
+      "navmesh": {
+        "bytes": 24052,
+        "sha256": "a8dda2e5494e30a485ac338be3abde0c09cca8eebcb8fdcc3e3135f82ea6b5bf"
+      },
+      "labels.json": {
+        "bytes": 138311,
+        "sha256": "ff5c002ca5bdb5e1274d51663dfd1878fa146e4947a6159a94364e53d8148082"
+      }
+    },
+    "0097_839963": {
+      "gs.ply": {
+        "bytes": 248536964,
+        "sha256": "e976d68673091f78de71eeb769fb44ea74535e95f849393836f6f257af15f7ad"
+      },
+      "navmesh": {
+        "bytes": 12588,
+        "sha256": "94c7bfd89e87c26ef8cbb476b71fc149550795c0b36cf9c9e76e7d247adad153"
+      },
+      "labels.json": {
+        "bytes": 44551,
+        "sha256": "cf0c2eda55be72a5035e31e36bf5679512c2e85155d403722e3a68426b858757"
+      }
+    },
+    "0118_840009": {
+      "gs.ply": {
+        "bytes": 246126899,
+        "sha256": "fa929081ca14f512087981c23fc137a36a80eef5172e9ca5b3e94a965f5996cc"
+      },
+      "navmesh": {
+        "bytes": 21912,
+        "sha256": "b334c9d42fa32e0191aa1bdfb87e554be1317ca4afad728e9bcda14fbdaa5ca2"
+      },
+      "labels.json": {
+        "bytes": 162234,
+        "sha256": "0e527cedbfb8ee37a38cac98bfa492b476d5029c61efb7da23216bef01535ce7"
+      }
+    },
+    "0141_840177": {
+      "gs.ply": {
+        "bytes": 234771475,
+        "sha256": "ed8464b307f6dca0582626bfd23fbf81703b62f3d4172958eef8c15d9c416cef"
+      },
+      "navmesh": {
+        "bytes": 38056,
+        "sha256": "e68002a6f8f1c9128e357f81888bc3296ca9b89798f959705b183a0e824235f8"
+      },
+      "labels.json": {
+        "bytes": 11377320,
+        "sha256": "95896f2b73fb2adbb7c93451b3bfdd8486279b75943475103a55814d5c97a3fa"
+      }
+    },
+    "0153_840064": {
+      "gs.ply": {
+        "bytes": 567160668,
+        "sha256": "1ed3d1ff61c41b51ba33e8dd305cb6856b305191490821ced04041fe85d8925a"
+      },
+      "navmesh": {
+        "bytes": 8748,
+        "sha256": "b07d83e2ff03f6b373a7d9a3bf48c61458dacd3d660d8cc56b097f9a0e62ace5"
+      },
+      "labels.json": {
+        "bytes": 206837,
+        "sha256": "7ab09f1876c708a0b1ab62aa8140a38b4831c9ea60bb6337f902a7c1fca9fa30"
+      }
+    },
+    "0159_840083": {
+      "gs.ply": {
+        "bytes": 170944211,
+        "sha256": "697cde6dc59c4feaf9684ee37dfdc553630861759e80525952884c81fb6e93f9"
+      },
+      "navmesh": {
+        "bytes": 27144,
+        "sha256": "6a57f80f8878f63eb0ba80f1cdba5db6efaf6b3fed4ab67d1a72b7cadc6ed86e"
+      },
+      "labels.json": {
+        "bytes": 439517,
+        "sha256": "1e9fcffd852b05e92347d5cb448d05851a4e0aeaab86e7007ffa7c523ce09415"
+      }
+    },
+    "0164_840080": {
+      "gs.ply": {
+        "bytes": 114861491,
+        "sha256": "30e5c3434a94fc8a28aba70ab02569791b37c4bed9c67e5810d04fa5581e7552"
+      },
+      "navmesh": {
+        "bytes": 11472,
+        "sha256": "e8088f031b1458cce1a2be1a5d6c941a1249f48a110e384c305fcfa645f38874"
+      },
+      "labels.json": {
+        "bytes": 68725,
+        "sha256": "669706ff22a4fd1e88090e2885a6a821161a18045af1e6e223b65f867eba7a01"
+      }
+    },
+    "0166_840088": {
+      "gs.ply": {
+        "bytes": 216542979,
+        "sha256": "b9d5b2e23b513ecfd04455514b7d86c653bcd2a8f7e9e0e21a015576ff0ec193"
+      },
+      "navmesh": {
+        "bytes": 7276,
+        "sha256": "3ff1583ebf587eb752f63b5281904715154b5a1d65cee135011559cde5484117"
+      },
+      "labels.json": {
+        "bytes": 84555,
+        "sha256": "317d9a6359abdcdf493b539ec665da3730309bbd23f9d230a4c2fd9a23c6c230"
+      }
+    },
+    "0171_840092": {
+      "gs.ply": {
+        "bytes": 286737148,
+        "sha256": "74f86cac2753e94b0bed0a5a909b32de4e08fbc7cb21baa71b224d7b07edf384"
+      },
+      "navmesh": {
+        "bytes": 17600,
+        "sha256": "297c424eee3a44e1e9dc1c2799de58c9576addbe792f991891963af53fa6b93d"
+      },
+      "labels.json": {
+        "bytes": 318425,
+        "sha256": "94ae969b5378489b9e8002d8d24ec940cf8a1d49c926723d628681f17330e4d8"
+      }
+    },
+    "0172_840091": {
+      "gs.ply": {
+        "bytes": 143009739,
+        "sha256": "1d7676ce8aa97bc6f2ae8340634049c8dea5281f16320356c3fc9f688d91afd0"
+      },
+      "navmesh": {
+        "bytes": 16664,
+        "sha256": "824eb67a0a99c6bbfba89674b9400a3fdc2caf0272a68516d86ea3e064945555"
+      },
+      "labels.json": {
+        "bytes": 162836,
+        "sha256": "67763f9e68a86242b4d97eb483c039850e1c9cfad3a710931f8d55658a4348c7"
+      }
+    },
+    "0184_840116": {
+      "gs.ply": {
+        "bytes": 106968643,
+        "sha256": "87329d35a48c3b474a3814e0c88dce72396398945d642bac75dce7b2b7d2f03e"
+      },
+      "navmesh": {
+        "bytes": 54832,
+        "sha256": "ee34d9d7cb02430d963c7b0163d2baba0899d75e4f94f43390399373d7c4ce24"
+      },
+      "labels.json": {
+        "bytes": 1070148,
+        "sha256": "980563fea41b3ca0f9d0fa0ff5a4a097e02442edcd86dea5cfc7c96c3775e82f"
+      }
+    },
+    "0202_840156": {
+      "gs.ply": {
+        "bytes": 154864387,
+        "sha256": "342039b39880b8b19cb7ccf96dde43a473cbe3b765ef5138e7a8f0d2683e7843"
+      },
+      "navmesh": {
+        "bytes": 14672,
+        "sha256": "0fb88145d665eb8353e0fb50d60dcd6a41de2c7604f71a889d46a102ec6729a8"
+      },
+      "labels.json": {
+        "bytes": 258945,
+        "sha256": "1806766a8acd24282b65abdc23f7bde60ed39d5f7df598b7de493ccfd53065fa"
+      }
+    },
+    "0203_840160": {
+      "gs.ply": {
+        "bytes": 127820979,
+        "sha256": "f750de80bcdb3966642be620782108d871febfce7f5967b14f50fccf063627ad"
+      },
+      "navmesh": {
+        "bytes": 11956,
+        "sha256": "0b4f0fb73d2527fedffe9e0e5cb5af8545c0d69f448f53a089e73448ca6217ee"
+      },
+      "labels.json": {
+        "bytes": 2012481,
+        "sha256": "e065c7a5019895099f534a475a522f4f455ab695299780386a32c5e32dec65f3"
+      }
+    },
+    "0208_840166": {
+      "gs.ply": {
+        "bytes": 99175243,
+        "sha256": "2d38c284589aee4106db38508bf602ff104ca533c31218539374bee0df0e6eb8"
+      },
+      "navmesh": {
+        "bytes": 49980,
+        "sha256": "052526726bb2d769083f3a4b7df974c9b39afa31688ace71b281bd13dd4ad628"
+      },
+      "labels.json": {
+        "bytes": 77293,
+        "sha256": "4787f9dcf07ab4b9aaa13122cd374309437eeba84dbbfa1eba0dd149c5920300"
+      }
+    },
+    "0221_840242": {
+      "gs.ply": {
+        "bytes": 134660323,
+        "sha256": "52cd36371bff692f2facef64e21c87f6c27c5be5a6eb27cf8637c9eebbddf7c5"
+      },
+      "navmesh": {
+        "bytes": 16720,
+        "sha256": "e55b85c42d7a771603f842a86b452fa824b1e8dce2bcc0716b3e85dffb459c9d"
+      },
+      "labels.json": {
+        "bytes": 146706,
+        "sha256": "57f22e00178b8af74f38c27d366ee5cc4f6bd9c5abb490b29de11578d1b67ca9"
+      }
+    },
+    "0273_840788": {
+      "gs.ply": {
+        "bytes": 202834531,
+        "sha256": "71daac536103d899de215df56a139e5fcd55d38eed9aeed65ba2e03bcf807c93"
+      },
+      "navmesh": {
+        "bytes": 11024,
+        "sha256": "fb410a51680ffb600f9ed9e3b041a2f343272dc4662f16c0b902330f58fa4b27"
+      },
+      "labels.json": {
+        "bytes": 208570,
+        "sha256": "0ac1ee911bc74218629d210acca8e71400dc62c39247348ff7fcf388993a53f0"
+      }
+    },
+    "0365_840302": {
+      "gs.ply": {
+        "bytes": 122103587,
+        "sha256": "1cc27c9b3cc77bef7870057b49c04673608f5778a99585006b495f6c44951ede"
+      },
+      "navmesh": {
+        "bytes": 19828,
+        "sha256": "115c8cf5118fddd9e498e29d6e1ba82ba250bdc6f5814c0b2a35eeaba82adcca"
+      },
+      "labels.json": {
+        "bytes": 207873,
+        "sha256": "e54f3e144ab3f5f031c358c1e58b91805aa1960c853857fdbe08efb376f7918d"
+      }
+    },
+    "0369_840232": {
+      "gs.ply": {
+        "bytes": 127740131,
+        "sha256": "77ab7aa16148c2810081691e6629bff37f497fcc06989b1df564c4fcd9f92b87"
+      },
+      "navmesh": {
+        "bytes": 14368,
+        "sha256": "1be9a8474966563ed0ab21e02127597cb5a7d40f0d9a0f5a3b59073a5bda28b4"
+      },
+      "labels.json": {
+        "bytes": 144581,
+        "sha256": "e98c4901769b86e8137c20507143706831c4f09289dca6abec047947b1cc30c0"
+      }
+    },
+    "0383_840202": {
+      "gs.ply": {
+        "bytes": 113537667,
+        "sha256": "290859a9d26c408fb286944a249244901c1f524241ded16f4fc486bb65752367"
+      },
+      "navmesh": {
+        "bytes": 22496,
+        "sha256": "4f0e9e5eee768d3bb2d407ad61ccfbc8c2febfb9683474bf56f4603949e9bb38"
+      },
+      "labels.json": {
+        "bytes": 266598,
+        "sha256": "70995aa991c2e524d03bf844dd7b19a36a3849762677acdc05d25eaa18c3f30b"
+      }
+    },
+    "0402_840115": {
+      "gs.ply": {
+        "bytes": 211497667,
+        "sha256": "5bae3a5f8166f1ab4041721ba8a0ad340b1e76850ed61253c0dd763a90b5ab4b"
+      },
+      "navmesh": {
+        "bytes": 50468,
+        "sha256": "e3cc38986542b7798bab75e4d6f1f81f1b3d068aff9daadac2db42573ddc4a92"
+      },
+      "labels.json": {
+        "bytes": 371271,
+        "sha256": "7f17c00ff19c824f069be7e662bb48fc71c82d70111133f7cc49f6f3acd0721e"
+      }
+    },
+    "0420_840007": {
+      "gs.ply": {
+        "bytes": 476487652,
+        "sha256": "b558b9b0bf1feca145923c8a78c179c52a6426d3a3480cdc6e602059ea19c7d6"
+      },
+      "navmesh": {
+        "bytes": 44752,
+        "sha256": "1fff35a90d10c6424306292a48f90ea4c8be8d00e722ac3358a83195a76a9f02"
+      },
+      "labels.json": {
+        "bytes": 258453,
+        "sha256": "fb3824e93e7189a4cff806dd0b77765f25f2fb4113ed7eadc1ffde0373515a5c"
+      }
+    },
+    "0478_840944": {
+      "gs.ply": {
+        "bytes": 158195027,
+        "sha256": "ff5727c1d0a923debf028872eb8ba5caecc09b11093b001c0bc9b4928814cf3d"
+      },
+      "navmesh": {
+        "bytes": 8300,
+        "sha256": "6b0971ef30334a9d8aa1b76d00060f5a8e82b828a82436e59b49620a0d991549"
+      },
+      "labels.json": {
+        "bytes": 140998,
+        "sha256": "aefcf737b62c543a5b8c317384bea5404c8c492d618176e6264b3473589ad52b"
+      }
+    },
+    "0494_840902": {
+      "gs.ply": {
+        "bytes": 165823755,
+        "sha256": "683f6f1384b315e5959587e79189312c05c347af2eecdbe23570bf2641a4dbef"
+      },
+      "navmesh": {
+        "bytes": 10228,
+        "sha256": "919e7c974bfc00e8f33a66e63e2e823aa430cf5b1731339af12c832aeb62a6a6"
+      },
+      "labels.json": {
+        "bytes": 201431,
+        "sha256": "4fe5f39d06f137063169d84a63ab5c7013737974209527a9fd0d8ab0360e7f3e"
+      }
+    },
+    "0520_839896": {
+      "gs.ply": {
+        "bytes": 231080243,
+        "sha256": "71840c638a7f31ee5168249c605c79a205e9a8a4b93ac49c366995716b0c8152"
+      },
+      "navmesh": {
+        "bytes": 101308,
+        "sha256": "9ec2da182d1c90c89c00e4fa1d444ea837b8587d79d46a5bea63e3ff47a9877c"
+      },
+      "labels.json": {
+        "bytes": 170505,
+        "sha256": "abd6f8c361bc52cb90be9e87dab99a41fd082be3ab7954daef8fa921fd8a1c56"
+      }
+    },
+    "0584_840987": {
+      "gs.ply": {
+        "bytes": 137641531,
+        "sha256": "5a7a528f0cd0ec85388c3ee37cc42edb158824c1ffdd3d28f49b52529a2acf18"
+      },
+      "navmesh": {
+        "bytes": 18408,
+        "sha256": "1cbe7375280ad7d041854d794f9196cc5cf3c61e7c720dfd239c3d2657d6fff2"
+      },
+      "labels.json": {
+        "bytes": 207728,
+        "sha256": "6687e2fe326472acc5f51a22bf51af77cd257bcfcb2d739a2e71750413bc3de5"
+      }
+    },
+    "0590_841150": {
+      "gs.ply": {
+        "bytes": 68393731,
+        "sha256": "894373e8812e634ef7ed511092450dfb43951788b9a8ef183e3f374af723d65e"
+      },
+      "navmesh": {
+        "bytes": 25744,
+        "sha256": "d9fba7d69f73ae3610dcd7a0ae6090a9346c064bdb84bb59ea936e1ffc792dc5"
+      },
+      "labels.json": {
+        "bytes": 408246,
+        "sha256": "068a14bc75d18a1b1ad5119b1e18cc19d2ed723f83e6195e9f767ce89e972ebf"
+      }
+    },
+    "0591_841148": {
+      "gs.ply": {
+        "bytes": 121432003,
+        "sha256": "c56b3f61d3a83cf74b84ff290bd76e97f7013d74d72e03e963519466a0d5d4ac"
+      },
+      "navmesh": {
+        "bytes": 17992,
+        "sha256": "a570b55658e83222980d0c75379b165c3c332b117cdde54065b598b783b28ab0"
+      },
+      "labels.json": {
+        "bytes": 372099,
+        "sha256": "94ceb72f5fc1c680b9572ae0f07e5e94eba83d6551f7503b6760b88d81555a71"
+      }
+    },
+    "0606_841171": {
+      "gs.ply": {
+        "bytes": 128791155,
+        "sha256": "b4840c01883efaf4f0f2e7154783c6474e9893ac7e1cd8bca24bdeef71d05cbe"
+      },
+      "navmesh": {
+        "bytes": 18280,
+        "sha256": "d19cd93328bc9702b6d5226ed31bed0b61d884eaec98b2e140cc1fd04f755be6"
+      },
+      "labels.json": {
+        "bytes": 315215,
+        "sha256": "ae52b72205d801ca19f46118938abef942c155b4a583f23575e4186876417cfd"
+      }
+    },
+    "0620_841197": {
+      "gs.ply": {
+        "bytes": 151860363,
+        "sha256": "3612408a9f53743cfea320f6e4e46921d2bf90054052502aadbf91c7270fe2d6"
+      },
+      "navmesh": {
+        "bytes": 23960,
+        "sha256": "87d9f3f6eee5d06c470829f5a8c90e34b68d19cee0b5029e5535939a0d1a673e"
+      },
+      "labels.json": {
+        "bytes": 234488,
+        "sha256": "07ad33ddd1d5da09dccf757ab3245b77ba057561ed879083b45d90ffbc736843"
+      }
+    },
+    "0641_841451": {
+      "gs.ply": {
+        "bytes": 177490915,
+        "sha256": "369b0961881031284dba7a8cd020dab625d46731c6e3752a4ed1818f60204e2c"
+      },
+      "navmesh": {
+        "bytes": 19008,
+        "sha256": "ddcc38ca1dcbb430d7ff15a51abedbc8b395e222694a528fe0208a05fcd4d0da"
+      },
+      "labels.json": {
+        "bytes": 131431,
+        "sha256": "8d853ee38941e78d37c6abe257886e5f2862759bd8e9e9b7df3d8f5281879dec"
+      }
+    },
+    "0676_841500": {
+      "gs.ply": {
+        "bytes": 163720219,
+        "sha256": "52d35d17b6bcc2a84f733d498b6247de20a0db1291e58d36012fa73b1d04e530"
+      },
+      "navmesh": {
+        "bytes": 22152,
+        "sha256": "ef928e234ee0990db8e8871562896da6ea6931c03110d17e9aba2c65234aea10"
+      },
+      "labels.json": {
+        "bytes": 184944,
+        "sha256": "8aa170b16ff1129adfc37812fb36f38075a12175189cde47c068c8ad9406feb4"
+      }
+    },
+    "0682_841506": {
+      "gs.ply": {
+        "bytes": 114349619,
+        "sha256": "0653ff1a0360d03dc8dbf0fcf294f44c1cb741d49e390dd0a0409e261d406589"
+      },
+      "navmesh": {
+        "bytes": 17628,
+        "sha256": "b52cc87e04d56eae7b3d295156d3ad2e6c29872cd30bba056fcbd7125fb7bad0"
+      },
+      "labels.json": {
+        "bytes": 280458,
+        "sha256": "30332affa1e62557db06a64d9ca7c093ce97cfe87c73fc40cec708fce3d36010"
+      }
+    },
+    "0710_841546": {
+      "gs.ply": {
+        "bytes": 136078883,
+        "sha256": "7e1431ea9f4aad5afd1bbbfe145002c12d7e7cd6905b35059182e65c0f9ea2d4"
+      },
+      "navmesh": {
+        "bytes": 17636,
+        "sha256": "97360697daf6724c6cb113e56b545d28624216664bec0efa38afa0713fdfa981"
+      },
+      "labels.json": {
+        "bytes": 230375,
+        "sha256": "074979a10670b0761c8b45edf22e237b66b4d93117e2d3c2274ef3ef36b70312"
+      }
+    },
+    "0788_841245": {
+      "gs.ply": {
+        "bytes": 178963043,
+        "sha256": "09e4fdec59ece888969313820cd1c3a658ae4baf786e094b979baaf5704c153c"
+      },
+      "navmesh": {
+        "bytes": 17540,
+        "sha256": "d81922a596caadb2eb52036653a5bf5c30c27ea81142ef0d25df9ba48656cba6"
+      },
+      "labels.json": {
+        "bytes": 222135,
+        "sha256": "e1515c7b79a10897d16ebe1e9011d131df80f79c1d84ab2dccbf3027a78a89e9"
+      }
+    },
+    "0800_839940": {
+      "gs.ply": {
+        "bytes": 160881363,
+        "sha256": "391c6a3bea848a6fcc0b5b23b1bb75116f38549a52291e2e05afb2def662f694"
+      },
+      "navmesh": {
+        "bytes": 11088,
+        "sha256": "317c73506bd60ddbd49eb9973fffc8d6200748fc68e1044e0fd272e89d566e0e"
+      },
+      "labels.json": {
+        "bytes": 50174,
+        "sha256": "d8332a1b17b38af3e02948d3ba148f55d110516b69feda4ce11f54b8cda7ffad"
+      }
+    },
+    "0837_841153": {
+      "gs.ply": {
+        "bytes": 134784323,
+        "sha256": "ddec6cfcae87afc4e44784899b2338220c97e48abb1cafefa6dcc356f32f822d"
+      },
+      "navmesh": {
+        "bytes": 15348,
+        "sha256": "52549a17f2ead37b691a98c38a07988140808d2e017251de253a2d5986681e2f"
+      },
+      "labels.json": {
+        "bytes": 561349,
+        "sha256": "9299f451d62aead7cd1d1dc9ebdb791d54fb26abdda33cc29b8e196494d81343"
+      }
+    },
+    "0877_841804": {
+      "gs.ply": {
+        "bytes": 212089395,
+        "sha256": "d98712050670fde2e0e7e2e550af4e09c7de5cf29ddbf2010ce813b18d701dcf"
+      },
+      "navmesh": {
+        "bytes": 14004,
+        "sha256": "d1e8ac4a66a8ac946e5814259656de9847df45b0168398366285a729b2c995af"
+      },
+      "labels.json": {
+        "bytes": 85767,
+        "sha256": "16dc47129a9e0b0a194d6f8b894826f242763d2594c1dddb54f810b207b9884e"
+      }
+    },
+    "0898_841277": {
+      "gs.ply": {
+        "bytes": 123691779,
+        "sha256": "53dce41ef29e5837a76daae96304ae94ff20442319c93d4c055d927d870a29b3"
+      },
+      "navmesh": {
+        "bytes": 11516,
+        "sha256": "6d14fa0d144aeaa075b2d246a3922f82d787c1cf16a56b99476093848f1bdbd2"
+      },
+      "labels.json": {
+        "bytes": 275978,
+        "sha256": "25c2ce986e4083b7ad870fcbc981f6ba8627121aed553891981a1853f635a8c1"
+      }
+    },
+    "0909_841639": {
+      "gs.ply": {
+        "bytes": 126044803,
+        "sha256": "d9f1436f26b34d84aeafac304763d561a48e76c0bf596b5a5b82047377c1c5c4"
+      },
+      "navmesh": {
+        "bytes": 19604,
+        "sha256": "45b00897e425716ff01c4b1e737c46c031903429ce0587bc1975f7cf51ceee54"
+      },
+      "labels.json": {
+        "bytes": 252059,
+        "sha256": "19e83435ff75e72b6906a6c29f4e5cc1f132236f9e44f4715c96e458b1719d5f"
+      }
+    },
+    "0979_841920": {
+      "gs.ply": {
+        "bytes": 262099588,
+        "sha256": "66b2b6cd5ac517dcfb6ff5864f44d78ef48abba43bebf73b42825965a2af81ab"
+      },
+      "navmesh": {
+        "bytes": 3520,
+        "sha256": "03b295d0959c45c62c7ec7d06c8463ac5eb3a462e7f73dee7b549f38a2db75e0"
+      },
+      "labels.json": {
+        "bytes": 59806,
+        "sha256": "bb321005038d5c4cc3f6ac32f3a5aebd9082a029462dc7a1cf63d302bf350130"
+      }
+    }
+  },
+  "subsets": {
+    "test_subset": [
+      "0022_840117/base_mixed_v4__seg_10000",
+      "0022_840117/object_dense_v4__v03_gpu0__seg_00004",
+      "0184_840116/near_dense_v3__v02_gpu0__seg_00000",
+      "0184_840116/object_scale_v3__v02_gpu0__seg_00001",
+      "0402_840115/object_dense_v5__v02_gpu1__seg_00004",
+      "0184_840116/base_mixed_v4__seg_10000",
+      "0118_840009/object_dense_v4__v04_gpu0__seg_00002",
+      "0025_840019/object_scale_v3__v04_gpu0__seg_00002",
+      "0365_840302/object_scale_v3__v03_gpu1__seg_00003",
+      "0641_841451/near_dense_v3__v02_gpu0__seg_00000",
+      "0788_841245/near_dense_v3__v03_gpu0__seg_00000",
+      "0494_840902/base_mixed_v4__seg_00003",
+      "0164_840080/object_scale_v3__v04_gpu0__seg_00000",
+      "0478_840944/base_mixed_v4__seg_00002",
+      "0979_841920/object_dense_v4__v03_gpu0__seg_00000",
+      "0058_839911/base_mixed_v4__seg_00001"
+    ]
+  },
+  "episodes": [
+    {
+      "scene_id": "0022_840117",
+      "start_xyz": [
+        3.6436572074890137,
+        0.20000000298023224,
+        -1.5469183921813965
+      ],
+      "start_quat_wxyz": [
+        0.0562029704451561,
+        -0.0005228490917943418,
+        0.9983760118484497,
+        -0.009287765249609947
+      ],
+      "goal_xyz": [
+        2.177581548690796,
+        0.20000000298023224,
+        1.1511470079421997
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_10000",
+      "instruction": "Please head to the cabinet on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "80",
+      "target_label": "cabinet"
+    },
+    {
+      "scene_id": "0025_840019",
+      "start_xyz": [
+        -2.407954454421997,
+        0.20000000298023224,
+        3.2257378101348877
+      ],
+      "start_quat_wxyz": [
+        0.6310388445854187,
+        -0.005870474502444267,
+        0.7756954431533813,
+        -0.0072161965072155
+      ],
+      "goal_xyz": [
+        -6.976781368255615,
+        0.20000000298023224,
+        2.858909845352173
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Walk to the area near the printer visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "726",
+      "target_label": "printer"
+    },
+    {
+      "scene_id": "0025_840019",
+      "start_xyz": [
+        -2.392893075942993,
+        0.20000000298023224,
+        0.1558142900466919
+      ],
+      "start_quat_wxyz": [
+        0.688816249370575,
+        -0.00640797009691596,
+        0.7248762845993042,
+        -0.006743432022631168
+      ],
+      "goal_xyz": [
+        -7.0763044357299805,
+        0.20000000298023224,
+        0.38022658228874207
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "base_mixed_v4__seg_00003",
+      "instruction": "Please move to the area near the door visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "17",
+      "target_label": "door"
+    },
+    {
+      "scene_id": "0058_839911",
+      "start_xyz": [
+        -0.6272222399711609,
+        0.20000000298023224,
+        1.9932774305343628
+      ],
+      "start_quat_wxyz": [
+        0.23298023641109467,
+        -0.0021673855371773243,
+        0.9724369645118713,
+        -0.009046457707881927
+      ],
+      "goal_xyz": [
+        -1.1461777687072754,
+        0.20000000298023224,
+        4.655086517333984
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "base_mixed_v4__seg_00001",
+      "instruction": "Take me to the area near the door visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "18",
+      "target_label": "door"
+    },
+    {
+      "scene_id": "0058_839911",
+      "start_xyz": [
+        2.3948276042938232,
+        0.20000000298023224,
+        3.968815803527832
+      ],
+      "start_quat_wxyz": [
+        0.6211725473403931,
+        -0.005778689403086901,
+        -0.7836186289787292,
+        0.00728990463539958
+      ],
+      "goal_xyz": [
+        4.094231128692627,
+        0.20000000298023224,
+        5.193171501159668
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00003",
+      "instruction": "Please go to the climbing frame ahead visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "51",
+      "target_label": "climbing frame"
+    },
+    {
+      "scene_id": "0075_839936",
+      "start_xyz": [
+        -2.156996250152588,
+        0.5,
+        2.881551504135132
+      ],
+      "start_quat_wxyz": [
+        0.9995825886726379,
+        -0.009298990480601788,
+        -0.02735135145485401,
+        0.0002544461458455771
+      ],
+      "goal_xyz": [
+        -1.615401029586792,
+        0.5,
+        -1.7625274658203125
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Proceed to the acoustic equipment visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "108",
+      "target_label": "acoustic equipment"
+    },
+    {
+      "scene_id": "0075_839936",
+      "start_xyz": [
+        1.471402645111084,
+        0.5,
+        8.739656448364258
+      ],
+      "start_quat_wxyz": [
+        0.6129936575889587,
+        -0.005702602211385965,
+        -0.7900330424308777,
+        0.0073495772667229176
+      ],
+      "goal_xyz": [
+        3.9242184162139893,
+        0.5,
+        9.368683815002441
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00001",
+      "instruction": "Please head to the multi person sofa on your front-right visible in your initial view",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "105",
+      "target_label": "multi person sofa"
+    },
+    {
+      "scene_id": "0075_839936",
+      "start_xyz": [
+        1.471402645111084,
+        0.5,
+        8.739656448364258
+      ],
+      "start_quat_wxyz": [
+        0.7070761919021606,
+        -0.0065778400748968124,
+        -0.7070761919021606,
+        0.0065778400748968124
+      ],
+      "goal_xyz": [
+        5.918693542480469,
+        0.5,
+        10.159256935119629
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00002",
+      "instruction": "Head to the trash can visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "121",
+      "target_label": "trash_can"
+    },
+    {
+      "scene_id": "0085_839946",
+      "start_xyz": [
+        1.458215594291687,
+        0.20000000298023224,
+        2.1734282970428467
+      ],
+      "start_quat_wxyz": [
+        0.8994653224945068,
+        -0.008367612026631832,
+        -0.4368930757045746,
+        0.004064361099153757
+      ],
+      "goal_xyz": [
+        2.7622628211975098,
+        0.20000000298023224,
+        -0.1682058572769165
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_10000",
+      "instruction": "please move to the microphone on your front-left visible in your initial view",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "114",
+      "target_label": "microphone"
+    },
+    {
+      "scene_id": "0088_839961",
+      "start_xyz": [
+        -13.184046745300293,
+        0.20000000298023224,
+        -6.373449325561523
+      ],
+      "start_quat_wxyz": [
+        0.2799625098705292,
+        -0.0026044556871056557,
+        0.9599658846855164,
+        -0.008930440992116928
+      ],
+      "goal_xyz": [
+        -15.057912826538086,
+        0.20000000298023224,
+        -3.7377896308898926
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Go ahead and head over to the plant visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "189",
+      "target_label": "plant"
+    },
+    {
+      "scene_id": "0088_839961",
+      "start_xyz": [
+        -21.742151260375977,
+        0.20000000298023224,
+        -3.492424964904785
+      ],
+      "start_quat_wxyz": [
+        0.6767122149467468,
+        -0.006295368075370789,
+        0.7361888885498047,
+        -0.006848671939224005
+      ],
+      "goal_xyz": [
+        -26.582744598388672,
+        0.20000000298023224,
+        -2.2374989986419678
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "doorway",
+      "episode_id": "base_mixed_v4__seg_00001",
+      "instruction": "Go ahead and walk to the doorway ahead visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_label": "doorway"
+    },
+    {
+      "scene_id": "0097_839963",
+      "start_xyz": [
+        0.8446972370147705,
+        0.20000000298023224,
+        -1.597800612449646
+      ],
+      "start_quat_wxyz": [
+        0.08946797996759415,
+        -0.0008323093061335385,
+        -0.9959462285041809,
+        0.00926516205072403
+      ],
+      "goal_xyz": [
+        0.6515513062477112,
+        0.20000000298023224,
+        2.547189474105835
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "base_mixed_v4__seg_00002",
+      "instruction": "Go ahead and head over to the area near the door visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "14",
+      "target_label": "door"
+    },
+    {
+      "scene_id": "0097_839963",
+      "start_xyz": [
+        0.5942658185958862,
+        0.20000000298023224,
+        -1.8736332654953003
+      ],
+      "start_quat_wxyz": [
+        0.6911911368370056,
+        -0.006430063396692276,
+        0.7226121425628662,
+        -0.006722369231283665
+      ],
+      "goal_xyz": [
+        -2.2379872798919678,
+        0.20000000298023224,
+        -1.7476805448532104
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "base_mixed_v4__seg_00003",
+      "instruction": "Take me to the area near the functional bed visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "31",
+      "target_label": "functional bed"
+    },
+    {
+      "scene_id": "0153_840064",
+      "start_xyz": [
+        -0.4599737226963043,
+        0.20000000298023224,
+        4.458940505981445
+      ],
+      "start_quat_wxyz": [
+        0.9718824028968811,
+        -0.009041299112141132,
+        0.23528297245502472,
+        -0.002188807586207986
+      ],
+      "goal_xyz": [
+        -1.4526183605194092,
+        0.20000000298023224,
+        0.16265176236629486
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Go ahead and head to the area near the door visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "24",
+      "target_label": "door"
+    },
+    {
+      "scene_id": "0153_840064",
+      "start_xyz": [
+        1.8905574083328247,
+        0.20000000298023224,
+        3.6957972049713135
+      ],
+      "start_quat_wxyz": [
+        0.8256033658981323,
+        -0.007680483162403107,
+        0.564174234867096,
+        -0.005248441360890865
+      ],
+      "goal_xyz": [
+        -1.6153489351272583,
+        0.20000000298023224,
+        3.769158363342285
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00001",
+      "instruction": "Walk up to the multi person sofa on your front-left visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "34",
+      "target_label": "multi person sofa"
+    },
+    {
+      "scene_id": "0153_840064",
+      "start_xyz": [
+        -0.6732712984085083,
+        0.20000000298023224,
+        0.06757306307554245
+      ],
+      "start_quat_wxyz": [
+        0.8976218700408936,
+        -0.008350462652742863,
+        -0.44066813588142395,
+        0.004099479876458645
+      ],
+      "goal_xyz": [
+        1.5560768842697144,
+        0.20000000298023224,
+        -0.29546013474464417
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00002",
+      "instruction": "Walk to the refrigerator visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "53",
+      "target_label": "refrigerator"
+    },
+    {
+      "scene_id": "0159_840083",
+      "start_xyz": [
+        -3.504828453063965,
+        0.20000000298023224,
+        11.541933059692383
+      ],
+      "start_quat_wxyz": [
+        0.9948855638504028,
+        -0.009255294688045979,
+        -0.10057903081178665,
+        0.0009356740047223866
+      ],
+      "goal_xyz": [
+        -3.034467935562134,
+        0.20000000298023224,
+        9.239404678344727
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Walk up to the toy on your front-left visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "468",
+      "target_label": "toy"
+    },
+    {
+      "scene_id": "0159_840083",
+      "start_xyz": [
+        -2.8992068767547607,
+        0.20000000298023224,
+        13.814874649047852
+      ],
+      "start_quat_wxyz": [
+        0.9994667768478394,
+        -0.009297912940382957,
+        0.03129839152097702,
+        -0.00029116496443748474
+      ],
+      "goal_xyz": [
+        -3.028228759765625,
+        0.20000000298023224,
+        11.756834030151367
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00002",
+      "instruction": "Go ahead and head over to the display cabinet on your front-left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "282",
+      "target_label": "display cabinet"
+    },
+    {
+      "scene_id": "0166_840088",
+      "start_xyz": [
+        -1.9917240142822266,
+        0.20000000298023224,
+        0.221177339553833
+      ],
+      "start_quat_wxyz": [
+        0.9999567270278931,
+        -0.009302470833063126,
+        -9.069249063031748e-05,
+        8.437007181782974e-07
+      ],
+      "goal_xyz": [
+        -1.9912378787994385,
+        0.20000000298023224,
+        -2.4584012031555176
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00001",
+      "instruction": "Please move to the floor lamp visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "40",
+      "target_label": "floor lamp"
+    },
+    {
+      "scene_id": "0166_840088",
+      "start_xyz": [
+        -2.334434986114502,
+        0.20000000298023224,
+        -0.23291519284248352
+      ],
+      "start_quat_wxyz": [
+        0.5431373119354248,
+        -0.0050527374260127544,
+        -0.8395923972129822,
+        0.007810621522367001
+      ],
+      "goal_xyz": [
+        -0.7819387912750244,
+        0.20000000298023224,
+        1.1463463306427002
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_10000",
+      "instruction": "Please head to the tea table combination on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "34",
+      "target_label": "tea table combination"
+    },
+    {
+      "scene_id": "0172_840091",
+      "start_xyz": [
+        -2.8717892169952393,
+        0.20000000298023224,
+        -1.9348362684249878
+      ],
+      "start_quat_wxyz": [
+        0.051198821514844894,
+        -0.0004762961470987648,
+        -0.9986451268196106,
+        0.009290269576013088
+      ],
+      "goal_xyz": [
+        -4.127061367034912,
+        0.20000000298023224,
+        0.8379637598991394
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Walk to the pet cage on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "136",
+      "target_label": "pet cage"
+    },
+    {
+      "scene_id": "0172_840091",
+      "start_xyz": [
+        -3.1336188316345215,
+        0.20000000298023224,
+        -1.3257818222045898
+      ],
+      "start_quat_wxyz": [
+        0.6504711508750916,
+        -0.006051250733435154,
+        0.759473979473114,
+        -0.007065290119498968
+      ],
+      "goal_xyz": [
+        -8.577622413635254,
+        0.20000000298023224,
+        -1.1502113342285156
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "doorway",
+      "episode_id": "base_mixed_v4__seg_00002",
+      "instruction": "Take me to the doorway ahead visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_label": "doorway"
+    },
+    {
+      "scene_id": "0184_840116",
+      "start_xyz": [
+        -6.454706192016602,
+        0.20000000298023224,
+        11.001917839050293
+      ],
+      "start_quat_wxyz": [
+        0.8393604159355164,
+        -0.007808463182300329,
+        0.5434957146644592,
+        -0.005056071560829878
+      ],
+      "goal_xyz": [
+        -11.055254936218262,
+        0.20000000298023224,
+        10.236334800720215
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_10000",
+      "instruction": "Please move to the table visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "268",
+      "target_label": "table"
+    },
+    {
+      "scene_id": "0202_840156",
+      "start_xyz": [
+        -0.1877020001411438,
+        0.20000000298023224,
+        6.885180473327637
+      ],
+      "start_quat_wxyz": [
+        0.7243629693984985,
+        -0.006738657131791115,
+        -0.6893560290336609,
+        0.006412991788238287
+      ],
+      "goal_xyz": [
+        3.2348039150238037,
+        0.20000000298023224,
+        7.831798553466797
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00001",
+      "instruction": "Navigate to the storage cabinet on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "261",
+      "target_label": "storage cabinet"
+    },
+    {
+      "scene_id": "0203_840160",
+      "start_xyz": [
+        -5.135890007019043,
+        0.20000000298023224,
+        0.13597320020198822
+      ],
+      "start_quat_wxyz": [
+        0.0802483931183815,
+        -0.0007465406670235097,
+        0.9967314600944519,
+        -0.009272466413676739
+      ],
+      "goal_xyz": [
+        -6.250629425048828,
+        0.20000000298023224,
+        3.624800443649292
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Navigate to the balance visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "2785",
+      "target_label": "balance"
+    },
+    {
+      "scene_id": "0208_840166",
+      "start_xyz": [
+        -11.998350143432617,
+        0.20000000298023224,
+        -1.057068943977356
+      ],
+      "start_quat_wxyz": [
+        0.2502584159374237,
+        -0.002328122267499566,
+        -0.9681344032287598,
+        0.009006431326270103
+      ],
+      "goal_xyz": [
+        -10.330123901367188,
+        0.20000000298023224,
+        0.16301186382770538
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Take me to the iron fence on your front-left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "103",
+      "target_label": "iron fence"
+    },
+    {
+      "scene_id": "0221_840242",
+      "start_xyz": [
+        0.7759653329849243,
+        0.20000000298023224,
+        1.4673373699188232
+      ],
+      "start_quat_wxyz": [
+        0.8881195187568665,
+        -0.00826206337660551,
+        0.4595183730125427,
+        -0.004274841398000717
+      ],
+      "goal_xyz": [
+        -0.43907085061073303,
+        0.20000000298023224,
+        -1.3837995529174805
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00002",
+      "instruction": "Go ahead and head over to the air purifier visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "254",
+      "target_label": "air purifier"
+    },
+    {
+      "scene_id": "0273_840788",
+      "start_xyz": [
+        0.48524120450019836,
+        0.20000000298023224,
+        2.551126480102539
+      ],
+      "start_quat_wxyz": [
+        0.5924718976020813,
+        -0.005511691328138113,
+        -0.8055374026298523,
+        0.007493812125176191
+      ],
+      "goal_xyz": [
+        2.6615052223205566,
+        0.20000000298023224,
+        2.3901333808898926
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00001",
+      "instruction": "Please walk to the shower room partition on your front-left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "212",
+      "target_label": "shower room partition"
+    },
+    {
+      "scene_id": "0273_840788",
+      "start_xyz": [
+        0.48524120450019836,
+        0.20000000298023224,
+        2.551126480102539
+      ],
+      "start_quat_wxyz": [
+        0.9896469116210938,
+        -0.009206559509038925,
+        0.14322184026241302,
+        -0.001332374638877809
+      ],
+      "goal_xyz": [
+        -1.028530240058899,
+        0.20000000298023224,
+        0.8320657014846802
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00002",
+      "instruction": "Navigate to the stool on your front-left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "117",
+      "target_label": "stool"
+    },
+    {
+      "scene_id": "0365_840302",
+      "start_xyz": [
+        0.6527345776557922,
+        0.20000000298023224,
+        -0.8573203086853027
+      ],
+      "start_quat_wxyz": [
+        0.304827481508255,
+        -0.0028357715345919132,
+        0.9523621797561646,
+        -0.008859704248607159
+      ],
+      "goal_xyz": [
+        -0.8591172099113464,
+        0.20000000298023224,
+        1.2624403238296509
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "base_mixed_v4__seg_00002",
+      "instruction": "Navigate to the area near the tv cabinet visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "142",
+      "target_label": "tv cabinet"
+    },
+    {
+      "scene_id": "0365_840302",
+      "start_xyz": [
+        0.6527345776557922,
+        0.20000000298023224,
+        -0.8573203086853027
+      ],
+      "start_quat_wxyz": [
+        0.07728129625320435,
+        -0.0007189381285570562,
+        0.9969659447669983,
+        -0.009274647571146488
+      ],
+      "goal_xyz": [
+        -0.7137849926948547,
+        0.20000000298023224,
+        2.546299934387207
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00004",
+      "instruction": "Head to the massage chair ahead visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "233",
+      "target_label": "massage chair"
+    },
+    {
+      "scene_id": "0369_840232",
+      "start_xyz": [
+        -0.6471890807151794,
+        0.20000000298023224,
+        1.6191120147705078
+      ],
+      "start_quat_wxyz": [
+        0.9994272589683533,
+        -0.009297545067965984,
+        0.03253605216741562,
+        -0.0003026787599083036
+      ],
+      "goal_xyz": [
+        -0.8223377466201782,
+        0.20000000298023224,
+        -1.068106770515442
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00001",
+      "instruction": "Walk up to the dining table visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "209",
+      "target_label": "dining table"
+    },
+    {
+      "scene_id": "0369_840232",
+      "start_xyz": [
+        -0.9265384674072266,
+        0.20000000298023224,
+        -2.2795193195343018
+      ],
+      "start_quat_wxyz": [
+        0.05515174940228462,
+        -0.000513069739099592,
+        -0.9984346628189087,
+        0.009288311004638672
+      ],
+      "goal_xyz": [
+        0.10205396264791489,
+        0.20000000298023224,
+        0.8395822048187256
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00002",
+      "instruction": "Head to the side table on your front-left visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "196",
+      "target_label": "side table"
+    },
+    {
+      "scene_id": "0383_840202",
+      "start_xyz": [
+        0.05875229835510254,
+        0.20000000298023224,
+        0.7369142770767212
+      ],
+      "start_quat_wxyz": [
+        0.7941207885742188,
+        -0.007387605030089617,
+        -0.6076887845993042,
+        0.005653251428157091
+      ],
+      "goal_xyz": [
+        4.207041263580322,
+        0.20000000298023224,
+        -1.3064106702804565
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00002",
+      "instruction": "Take me to the side table ahead visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "391",
+      "target_label": "side table"
+    },
+    {
+      "scene_id": "0383_840202",
+      "start_xyz": [
+        0.05875229835510254,
+        0.20000000298023224,
+        0.7369142770767212
+      ],
+      "start_quat_wxyz": [
+        0.8851369619369507,
+        -0.008234317414462566,
+        -0.4652375876903534,
+        0.0043280464597046375
+      ],
+      "goal_xyz": [
+        2.0438528060913086,
+        0.20000000298023224,
+        -0.6297653317451477
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00004",
+      "instruction": "Walk to the table combination on your front-left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "226",
+      "target_label": "table combination"
+    },
+    {
+      "scene_id": "0420_840007",
+      "start_xyz": [
+        0.9792256951332092,
+        0.20000000298023224,
+        7.806870460510254
+      ],
+      "start_quat_wxyz": [
+        0.911835789680481,
+        -0.008482692763209343,
+        0.410449743270874,
+        -0.0038183617871254683
+      ],
+      "goal_xyz": [
+        -1.7198373079299927,
+        0.20000000298023224,
+        5.416286945343018
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00002",
+      "instruction": "Head to the gas tank visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "302",
+      "target_label": "gas tank"
+    },
+    {
+      "scene_id": "0478_840944",
+      "start_xyz": [
+        0.6301515698432922,
+        0.20000000298023224,
+        -2.0795555114746094
+      ],
+      "start_quat_wxyz": [
+        0.7098904252052307,
+        -0.0066040209494531155,
+        0.704250693321228,
+        -0.0065515548922121525
+      ],
+      "goal_xyz": [
+        -1.1459532976150513,
+        0.20000000298023224,
+        -1.1259710788726807
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00001",
+      "instruction": "Take me to the sofa visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "142",
+      "target_label": "sofa"
+    },
+    {
+      "scene_id": "0478_840944",
+      "start_xyz": [
+        -0.2684725522994995,
+        0.20000000298023224,
+        -2.0313284397125244
+      ],
+      "start_quat_wxyz": [
+        0.4585249125957489,
+        -0.004265598952770233,
+        0.8886328935623169,
+        -0.008266839198768139
+      ],
+      "goal_xyz": [
+        -1.2975932359695435,
+        0.20000000298023224,
+        -0.24146398901939392
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "base_mixed_v4__seg_00002",
+      "instruction": "Head to the area near the sideboards visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "144",
+      "target_label": "sideboards"
+    },
+    {
+      "scene_id": "0478_840944",
+      "start_xyz": [
+        -0.2684725522994995,
+        0.20000000298023224,
+        -2.0313284397125244
+      ],
+      "start_quat_wxyz": [
+        0.4585249125957489,
+        -0.004265598952770233,
+        0.8886328935623169,
+        -0.008266839198768139
+      ],
+      "goal_xyz": [
+        -1.2975932359695435,
+        0.20000000298023224,
+        -0.24146398901939392
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00004",
+      "instruction": "Approach the sideboards visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "144",
+      "target_label": "sideboards"
+    },
+    {
+      "scene_id": "0494_840902",
+      "start_xyz": [
+        -0.6000410318374634,
+        0.20000000298023224,
+        0.03904714062809944
+      ],
+      "start_quat_wxyz": [
+        0.7070761919021606,
+        -0.0065778400748968124,
+        -0.7070761919021606,
+        0.0065778400748968124
+      ],
+      "goal_xyz": [
+        3.450356960296631,
+        0.20000000298023224,
+        -0.017981374636292458
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00003",
+      "instruction": "Go to the decoration combination visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "190",
+      "target_label": "decoration combination"
+    },
+    {
+      "scene_id": "0520_839896",
+      "start_xyz": [
+        -12.995397567749023,
+        0.20000000298023224,
+        -10.535835266113281
+      ],
+      "start_quat_wxyz": [
+        0.10929810255765915,
+        -0.0010167863219976425,
+        0.9939655065536499,
+        -0.009246734902262688
+      ],
+      "goal_xyz": [
+        -12.785051345825195,
+        0.20000000298023224,
+        -6.694444179534912
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Walk up to the road signs visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "150",
+      "target_label": "road signs"
+    },
+    {
+      "scene_id": "0584_840987",
+      "start_xyz": [
+        -1.0085967779159546,
+        0.20000000298023224,
+        0.2287019044160843
+      ],
+      "start_quat_wxyz": [
+        0.2885195314884186,
+        -0.0026840607170015574,
+        -0.9574288129806519,
+        0.008906839415431023
+      ],
+      "goal_xyz": [
+        -0.3492414653301239,
+        0.20000000298023224,
+        4.918235778808594
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00001",
+      "instruction": "Walk up to the dining table visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "330",
+      "target_label": "dining table"
+    },
+    {
+      "scene_id": "0584_840987",
+      "start_xyz": [
+        -1.0085967779159546,
+        0.20000000298023224,
+        0.2287019044160843
+      ],
+      "start_quat_wxyz": [
+        0.2765510380268097,
+        -0.0025727194733917713,
+        -0.9609541893005371,
+        0.008939635008573532
+      ],
+      "goal_xyz": [
+        0.24637338519096375,
+        0.20000000298023224,
+        2.228492259979248
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00002",
+      "instruction": "Proceed to the musical instrument visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "364",
+      "target_label": "musical instrument"
+    },
+    {
+      "scene_id": "0590_841150",
+      "start_xyz": [
+        0.24301446974277496,
+        0.20000000298023224,
+        -7.69309663772583
+      ],
+      "start_quat_wxyz": [
+        0.9850035905838013,
+        -0.009163363836705685,
+        0.17228294909000397,
+        -0.001602726522833109
+      ],
+      "goal_xyz": [
+        -1.2951703071594238,
+        0.20000000298023224,
+        -9.75459098815918
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Walk to the toy motorcycle visible in your initial view",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "260",
+      "target_label": "toy_motorcycle"
+    },
+    {
+      "scene_id": "0590_841150",
+      "start_xyz": [
+        0.24301446974277496,
+        0.20000000298023224,
+        -7.69309663772583
+      ],
+      "start_quat_wxyz": [
+        0.7496233582496643,
+        -0.006973650772124529,
+        0.6617993116378784,
+        -0.006156635005027056
+      ],
+      "goal_xyz": [
+        -2.3249592781066895,
+        0.20000000298023224,
+        -9.18210506439209
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_10000",
+      "instruction": "Proceed to the cleaner visible in your initial view",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "284",
+      "target_label": "cleaner"
+    },
+    {
+      "scene_id": "0591_841148",
+      "start_xyz": [
+        0.7100813388824463,
+        0.20000000298023224,
+        0.8666019439697266
+      ],
+      "start_quat_wxyz": [
+        0.048266682773828506,
+        -0.00044901881483383477,
+        0.9987911581993103,
+        -0.009291627444326878
+      ],
+      "goal_xyz": [
+        0.33656051754951477,
+        0.20000000298023224,
+        4.456430912017822
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Walk to the pet nest visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "270",
+      "target_label": "pet nest"
+    },
+    {
+      "scene_id": "0591_841148",
+      "start_xyz": [
+        0.7100813388824463,
+        0.20000000298023224,
+        0.8666019439697266
+      ],
+      "start_quat_wxyz": [
+        0.11437708139419556,
+        -0.001064035459421575,
+        0.9933938384056091,
+        -0.009241417050361633
+      ],
+      "goal_xyz": [
+        0.43506303429603577,
+        0.20000000298023224,
+        3.5125467777252197
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00001",
+      "instruction": "take me to the chair ahead visible in your initial view",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "233",
+      "target_label": "chair"
+    },
+    {
+      "scene_id": "0606_841171",
+      "start_xyz": [
+        -2.7262039184570312,
+        0.20000000298023224,
+        0.6881893277168274
+      ],
+      "start_quat_wxyz": [
+        0.9049445986747742,
+        -0.008418585173785686,
+        -0.42542770504951477,
+        0.0039576999843120575
+      ],
+      "goal_xyz": [
+        -1.7142001390457153,
+        0.20000000298023224,
+        -1.480332612991333
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_10000",
+      "instruction": "Walk up to the fridge visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "171",
+      "target_label": "fridge"
+    },
+    {
+      "scene_id": "0620_841197",
+      "start_xyz": [
+        -0.4280887842178345,
+        0.20000000298023224,
+        -4.285574913024902
+      ],
+      "start_quat_wxyz": [
+        0.7002032995223999,
+        -0.006513902451843023,
+        -0.7138829231262207,
+        0.006641162093728781
+      ],
+      "goal_xyz": [
+        2.8063788414001465,
+        0.20000000298023224,
+        -3.8435325622558594
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00003",
+      "instruction": "Go ahead and head over to the washing machine visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "292",
+      "target_label": "washing machine"
+    },
+    {
+      "scene_id": "0641_841451",
+      "start_xyz": [
+        -4.818788528442383,
+        0.20000000298023224,
+        1.7208008766174316
+      ],
+      "start_quat_wxyz": [
+        0.6118812561035156,
+        -0.005692253354936838,
+        -0.7908949255943298,
+        0.0073575954884290695
+      ],
+      "goal_xyz": [
+        -2.046020030975342,
+        0.20000000298023224,
+        2.44020414352417
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00001",
+      "instruction": "Go to the sculpture visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "182",
+      "target_label": "sculpture"
+    },
+    {
+      "scene_id": "0676_841500",
+      "start_xyz": [
+        0.6602058410644531,
+        0.20000000298023224,
+        -1.369074821472168
+      ],
+      "start_quat_wxyz": [
+        0.18860572576522827,
+        -0.0017545751761645079,
+        0.9820088148117065,
+        -0.009135503321886063
+      ],
+      "goal_xyz": [
+        -0.7094123959541321,
+        0.20000000298023224,
+        1.830211877822876
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Reach the background wall combination visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "208",
+      "target_label": "background wall combination"
+    },
+    {
+      "scene_id": "0682_841506",
+      "start_xyz": [
+        -1.2982866764068604,
+        0.20000000298023224,
+        2.3578240871429443
+      ],
+      "start_quat_wxyz": [
+        0.7736145853996277,
+        -0.0071968380361795425,
+        0.6335881948471069,
+        -0.00589419063180685
+      ],
+      "goal_xyz": [
+        -4.614485740661621,
+        0.20000000298023224,
+        1.8298847675323486
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00001",
+      "instruction": "Walk to the side table ahead visible in your initial view",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "179",
+      "target_label": "side table"
+    },
+    {
+      "scene_id": "0682_841506",
+      "start_xyz": [
+        2.332519054412842,
+        0.20000000298023224,
+        1.189725399017334
+      ],
+      "start_quat_wxyz": [
+        0.7088583111763,
+        -0.00659441901370883,
+        0.7052895426750183,
+        -0.006561219226568937
+      ],
+      "goal_xyz": [
+        -1.7009141445159912,
+        0.20000000298023224,
+        2.2059953212738037
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00002",
+      "instruction": "Walk up to the flowers on your front-left visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "478",
+      "target_label": "flowers"
+    },
+    {
+      "scene_id": "0710_841546",
+      "start_xyz": [
+        -4.715061187744141,
+        0.20000000298023224,
+        7.013335227966309
+      ],
+      "start_quat_wxyz": [
+        0.9471806883811951,
+        -0.008811501786112785,
+        0.32056552171707153,
+        -0.002982180565595627
+      ],
+      "goal_xyz": [
+        -5.754998683929443,
+        0.20000000298023224,
+        4.962728977203369
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00004",
+      "instruction": "Please walk to the stool visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "360",
+      "target_label": "stool"
+    },
+    {
+      "scene_id": "0788_841245",
+      "start_xyz": [
+        2.2428722381591797,
+        0.20000000298023224,
+        -0.18881338834762573
+      ],
+      "start_quat_wxyz": [
+        0.761747419834137,
+        -0.007086439989507198,
+        0.6478073000907898,
+        -0.006026469171047211
+      ],
+      "goal_xyz": [
+        -0.08037525415420532,
+        0.20000000298023224,
+        -0.5668790936470032
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Please head to the bar counter visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "262",
+      "target_label": "bar counter"
+    },
+    {
+      "scene_id": "0788_841245",
+      "start_xyz": [
+        3.3716325759887695,
+        0.20000000298023224,
+        -0.04890620708465576
+      ],
+      "start_quat_wxyz": [
+        0.5864225625991821,
+        -0.005455414764583111,
+        0.809951901435852,
+        -0.0075348797254264355
+      ],
+      "goal_xyz": [
+        0.5788244605064392,
+        0.20000000298023224,
+        0.14639714360237122
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_10000",
+      "instruction": "Approach the trash can visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "372",
+      "target_label": "trash can"
+    },
+    {
+      "scene_id": "0800_839940",
+      "start_xyz": [
+        0.5130400657653809,
+        0.20000000298023224,
+        4.311065673828125
+      ],
+      "start_quat_wxyz": [
+        0.48723867535591125,
+        -0.004532719496637583,
+        -0.8732193112373352,
+        0.008123448118567467
+      ],
+      "goal_xyz": [
+        2.814349412918091,
+        0.20000000298023224,
+        5.731203556060791
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00004",
+      "instruction": "Take me to the wedding dress visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "49",
+      "target_label": "wedding dress"
+    },
+    {
+      "scene_id": "0837_841153",
+      "start_xyz": [
+        1.1636841297149658,
+        0.20000000298023224,
+        0.6906405091285706
+      ],
+      "start_quat_wxyz": [
+        0.9442716836929321,
+        -0.008784440346062183,
+        0.32903558015823364,
+        -0.0030609762761741877
+      ],
+      "goal_xyz": [
+        0.7140425443649292,
+        0.20000000298023224,
+        -1.6325350999832153
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Walk to the table on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "520",
+      "target_label": "table"
+    },
+    {
+      "scene_id": "0877_841804",
+      "start_xyz": [
+        -0.02864953875541687,
+        0.20000000298023224,
+        1.3386679887771606
+      ],
+      "start_quat_wxyz": [
+        0.9656444191932678,
+        -0.008983267471194267,
+        -0.2597004771232605,
+        0.002415960654616356
+      ],
+      "goal_xyz": [
+        1.690900444984436,
+        0.20000000298023224,
+        0.3613569140434265
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_10000",
+      "instruction": "Head to the side table on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "104",
+      "target_label": "side table"
+    },
+    {
+      "scene_id": "0898_841277",
+      "start_xyz": [
+        -1.626309871673584,
+        0.20000000298023224,
+        -0.33223456144332886
+      ],
+      "start_quat_wxyz": [
+        0.0009722068789415061,
+        -9.044317266670987e-06,
+        -0.9999562501907349,
+        0.009302466176450253
+      ],
+      "goal_xyz": [
+        -1.2251882553100586,
+        0.20000000298023224,
+        1.8336894512176514
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "doorway",
+      "episode_id": "base_mixed_v4__seg_00003",
+      "instruction": "Head to the doorway on your left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_label": "doorway"
+    },
+    {
+      "scene_id": "0909_841639",
+      "start_xyz": [
+        -0.426322340965271,
+        0.20000000298023224,
+        4.633475303649902
+      ],
+      "start_quat_wxyz": [
+        0.9868124127388,
+        -0.009180190972983837,
+        -0.16160067915916443,
+        0.001503350562416017
+      ],
+      "goal_xyz": [
+        -0.30333465337753296,
+        0.20000000298023224,
+        0.6511838436126709
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00000",
+      "instruction": "Head to the chair on your front-left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "339",
+      "target_label": "chair"
+    },
+    {
+      "scene_id": "0909_841639",
+      "start_xyz": [
+        -0.5924184322357178,
+        0.20000000298023224,
+        0.7076426148414612
+      ],
+      "start_quat_wxyz": [
+        0.02941744215786457,
+        -0.0002736667520366609,
+        0.999523937702179,
+        -0.009298444725573063
+      ],
+      "goal_xyz": [
+        -0.7841501832008362,
+        0.20000000298023224,
+        3.9620816707611084
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_00003",
+      "instruction": "Walk up to the vertical air conditioning visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "462",
+      "target_label": "vertical air conditioning"
+    },
+    {
+      "scene_id": "0909_841639",
+      "start_xyz": [
+        0.45235297083854675,
+        0.20000000298023224,
+        5.496795654296875
+      ],
+      "start_quat_wxyz": [
+        0.9882135987281799,
+        -0.009193225763738155,
+        0.15279826521873474,
+        -0.0014214629773050547
+      ],
+      "goal_xyz": [
+        -0.7907078862190247,
+        0.20000000298023224,
+        3.8617210388183594
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "base_mixed_v4__seg_10000",
+      "instruction": "Please move to the television visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "264",
+      "target_label": "television"
+    },
+    {
+      "scene_id": "0153_840064",
+      "start_xyz": [
+        -1.4942445755004883,
+        0.20000000298023224,
+        0.195835143327713
+      ],
+      "start_quat_wxyz": [
+        0.848953902721405,
+        -0.007897710427641869,
+        -0.5283849835395813,
+        0.004915498662739992
+      ],
+      "goal_xyz": [
+        1.4361652135849,
+        0.20000000298023224,
+        -0.2774462401866913
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v01_gpu0__seg_00000",
+      "instruction": "Please proceed to the area near the refrigerator visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "53",
+      "target_label": "refrigerator"
+    },
+    {
+      "scene_id": "0153_840064",
+      "start_xyz": [
+        1.42582106590271,
+        0.20000000298023224,
+        0.15297341346740723
+      ],
+      "start_quat_wxyz": [
+        0.7446861863136292,
+        -0.006927721202373505,
+        0.6673499345779419,
+        -0.006208272185176611
+      ],
+      "goal_xyz": [
+        -2.637049436569214,
+        0.20000000298023224,
+        -0.46126237511634827
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v01_gpu0__seg_00002",
+      "instruction": "Head to the area near the vertical air conditioning visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "32",
+      "target_label": "vertical air conditioning"
+    },
+    {
+      "scene_id": "0202_840156",
+      "start_xyz": [
+        0.6136541962623596,
+        0.20000000298023224,
+        9.171850204467773
+      ],
+      "start_quat_wxyz": [
+        0.6291700005531311,
+        -0.0058530885726213455,
+        -0.7772120833396912,
+        0.007230305578559637
+      ],
+      "goal_xyz": [
+        3.2555742263793945,
+        0.20000000298023224,
+        10.42510986328125
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v01_gpu0__seg_00001",
+      "instruction": "Go ahead and head over to the area near the water dispenser visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "42",
+      "target_label": "water dispenser"
+    },
+    {
+      "scene_id": "0606_841171",
+      "start_xyz": [
+        -3.108110189437866,
+        0.20000000298023224,
+        0.8036385774612427
+      ],
+      "start_quat_wxyz": [
+        0.9330011606216431,
+        -0.008679592050611973,
+        -0.3597530722618103,
+        0.003346737241372466
+      ],
+      "goal_xyz": [
+        -1.7791564464569092,
+        0.20000000298023224,
+        -1.5689892768859863
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v01_gpu0__seg_00000",
+      "instruction": "Navigate to the area near the fridge visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "171",
+      "target_label": "fridge"
+    },
+    {
+      "scene_id": "0606_841171",
+      "start_xyz": [
+        0.9913118481636047,
+        0.20000000298023224,
+        -0.634210467338562
+      ],
+      "start_quat_wxyz": [
+        0.17223703861236572,
+        -0.0016022993950173259,
+        0.9850115776062012,
+        -0.009163438342511654
+      ],
+      "goal_xyz": [
+        -0.4237167537212372,
+        0.20000000298023224,
+        1.2513136863708496
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v01_gpu0__seg_00002",
+      "instruction": "Walk to the area near the multi person sofa visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "452",
+      "target_label": "multi person sofa"
+    },
+    {
+      "scene_id": "0710_841546",
+      "start_xyz": [
+        5.293351650238037,
+        0.20000000298023224,
+        0.13283990323543549
+      ],
+      "start_quat_wxyz": [
+        0.13006410002708435,
+        -0.0012099698651582003,
+        0.9914619326591492,
+        -0.009223444387316704
+      ],
+      "goal_xyz": [
+        3.738509178161621,
+        0.20000000298023224,
+        2.2984554767608643
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v01_gpu0__seg_00001",
+      "instruction": "Head to the area near the teatable visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "173",
+      "target_label": "teatable"
+    },
+    {
+      "scene_id": "0979_841920",
+      "start_xyz": [
+        -0.006902813911437988,
+        0.20000000298023224,
+        -1.0558886528015137
+      ],
+      "start_quat_wxyz": [
+        0.1522485911846161,
+        -0.0014163493178784847,
+        -0.9882984757423401,
+        0.00919401552528143
+      ],
+      "goal_xyz": [
+        0.7364799380302429,
+        0.20000000298023224,
+        0.9347163438796997
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v01_gpu0__seg_00000",
+      "instruction": "Walk to the area near the teatable visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "87",
+      "target_label": "teatable"
+    },
+    {
+      "scene_id": "0979_841920",
+      "start_xyz": [
+        0.3157329559326172,
+        0.20000000298023224,
+        1.8251070976257324
+      ],
+      "start_quat_wxyz": [
+        0.9225841760635376,
+        -0.008582684211432934,
+        -0.3856836259365082,
+        0.003587965853512287
+      ],
+      "goal_xyz": [
+        1.3106372356414795,
+        0.20000000298023224,
+        0.025351978838443756
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v01_gpu0__seg_00001",
+      "instruction": "Please move to the area near the bed visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "84",
+      "target_label": "bed"
+    },
+    {
+      "scene_id": "0184_840116",
+      "start_xyz": [
+        -1.7586394548416138,
+        0.20000000298023224,
+        1.3960392475128174
+      ],
+      "start_quat_wxyz": [
+        0.5919876098632812,
+        -0.005507185589522123,
+        0.8058934211730957,
+        -0.007497124373912811
+      ],
+      "goal_xyz": [
+        -5.3169450759887695,
+        0.20000000298023224,
+        4.34843635559082
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v02_gpu0__seg_00000",
+      "instruction": "Walk to the area near the reception visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "198",
+      "target_label": "reception"
+    },
+    {
+      "scene_id": "0641_841451",
+      "start_xyz": [
+        -5.544179916381836,
+        0.20000000298023224,
+        1.2258856296539307
+      ],
+      "start_quat_wxyz": [
+        0.36507469415664673,
+        -0.0033962437883019447,
+        -0.9309317469596863,
+        0.008660339750349522
+      ],
+      "goal_xyz": [
+        -2.5343494415283203,
+        0.20000000298023224,
+        2.8024344444274902
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v02_gpu0__seg_00000",
+      "instruction": "Go ahead and walk over to the area near the sculpture visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "182",
+      "target_label": "sculpture"
+    },
+    {
+      "scene_id": "0208_840166",
+      "start_xyz": [
+        -10.366357803344727,
+        0.20000000298023224,
+        2.8310117721557617
+      ],
+      "start_quat_wxyz": [
+        0.00013698740804102272,
+        -1.2743764727929374e-06,
+        0.9999567270278931,
+        -0.009302470833063126
+      ],
+      "goal_xyz": [
+        -11.350324630737305,
+        0.20000000298023224,
+        7.27766752243042
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v03_gpu0__seg_00000",
+      "instruction": "Please head to the area near the reception visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "117",
+      "target_label": "reception"
+    },
+    {
+      "scene_id": "0273_840788",
+      "start_xyz": [
+        -2.010167360305786,
+        0.20000000298023224,
+        1.6279215812683105
+      ],
+      "start_quat_wxyz": [
+        0.7644928693771362,
+        -0.007111980114132166,
+        -0.6445650458335876,
+        0.0059963068924844265
+      ],
+      "goal_xyz": [
+        2.9057655334472656,
+        0.20000000298023224,
+        2.126901388168335
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v03_gpu0__seg_00000",
+      "instruction": "Walk to the area near the shower room partition visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "212",
+      "target_label": "shower room partition"
+    },
+    {
+      "scene_id": "0369_840232",
+      "start_xyz": [
+        0.7707052230834961,
+        0.20000000298023224,
+        6.1043901443481445
+      ],
+      "start_quat_wxyz": [
+        0.81967693567276,
+        -0.007625350262969732,
+        -0.5727505683898926,
+        0.005328225903213024
+      ],
+      "goal_xyz": [
+        3.261871337890625,
+        0.20000000298023224,
+        5.933696746826172
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v03_gpu0__seg_00000",
+      "instruction": "Head to the area near the laundry cabinets visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "258",
+      "target_label": "laundry cabinets"
+    },
+    {
+      "scene_id": "0682_841506",
+      "start_xyz": [
+        2.5776190757751465,
+        0.20000000298023224,
+        1.937829852104187
+      ],
+      "start_quat_wxyz": [
+        0.9195511937141418,
+        -0.008554468862712383,
+        0.3928600549697876,
+        -0.0036547272466123104
+      ],
+      "goal_xyz": [
+        1.5675067901611328,
+        0.20000000298023224,
+        0.20239132642745972
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v03_gpu0__seg_00000",
+      "instruction": "Walk to the area near the piano visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "201",
+      "target_label": "piano"
+    },
+    {
+      "scene_id": "0788_841245",
+      "start_xyz": [
+        0.545253336429596,
+        0.20000000298023224,
+        0.029166951775550842
+      ],
+      "start_quat_wxyz": [
+        0.12651191651821136,
+        -0.0011769243283197284,
+        0.9919214844703674,
+        -0.009227720089256763
+      ],
+      "goal_xyz": [
+        -0.8494407534599304,
+        0.20000000298023224,
+        2.582512378692627
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v03_gpu0__seg_00000",
+      "instruction": "Go ahead and walk over to the area near the shoe cabinet visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "265",
+      "target_label": "shoe cabinet"
+    },
+    {
+      "scene_id": "0788_841245",
+      "start_xyz": [
+        0.5861090421676636,
+        0.20000000298023224,
+        0.13337258994579315
+      ],
+      "start_quat_wxyz": [
+        0.9992754459381104,
+        -0.009296132251620293,
+        0.03690647333860397,
+        -0.0003433362580835819
+      ],
+      "goal_xyz": [
+        -0.16546687483787537,
+        0.20000000298023224,
+        -1.7524763345718384
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v03_gpu0__seg_00002",
+      "instruction": "Move to the area near the basin cabinet visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "141",
+      "target_label": "basin cabinet"
+    },
+    {
+      "scene_id": "0788_841245",
+      "start_xyz": [
+        -0.2838326394557953,
+        0.20000000298023224,
+        -1.7164217233657837
+      ],
+      "start_quat_wxyz": [
+        0.3714275360107422,
+        -0.0034553431905806065,
+        -0.9284153580665588,
+        0.008636930026113987
+      ],
+      "goal_xyz": [
+        0.7873473167419434,
+        0.20000000298023224,
+        0.5915682315826416
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v03_gpu0__seg_00003",
+      "instruction": "Head to the area near the massage chair visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "78",
+      "target_label": "massage chair"
+    },
+    {
+      "scene_id": "0620_841197",
+      "start_xyz": [
+        2.030061721801758,
+        0.20000000298023224,
+        1.1049537658691406
+      ],
+      "start_quat_wxyz": [
+        0.9999109506607056,
+        -0.009302045218646526,
+        -0.009567930363118649,
+        8.900924876797944e-05
+      ],
+      "goal_xyz": [
+        1.1168241500854492,
+        0.20000000298023224,
+        -1.7162894010543823
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v03_gpu1__seg_00000",
+      "instruction": "Walk to the area near the vertical air conditioning visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "153",
+      "target_label": "vertical air conditioning"
+    },
+    {
+      "scene_id": "0800_839940",
+      "start_xyz": [
+        0.7412755489349365,
+        0.20000000298023224,
+        3.8014211654663086
+      ],
+      "start_quat_wxyz": [
+        0.14857107400894165,
+        -0.001382137881591916,
+        0.9888579845428467,
+        -0.009199220687150955
+      ],
+      "goal_xyz": [
+        0.7074142098426819,
+        0.20000000298023224,
+        6.552988052368164
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v04_gpu0__seg_00002",
+      "instruction": "Please go to the area near the reception visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "51",
+      "target_label": "reception"
+    },
+    {
+      "scene_id": "0118_840009",
+      "start_xyz": [
+        -0.2754586338996887,
+        0.20000000298023224,
+        -1.0908222198486328
+      ],
+      "start_quat_wxyz": [
+        0.08064880967140198,
+        -0.0007502656662836671,
+        0.9966991543769836,
+        -0.009272165596485138
+      ],
+      "goal_xyz": [
+        -1.3528105020523071,
+        0.20000000298023224,
+        0.9177728295326233
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v04_gpu1__seg_00002",
+      "instruction": "Navigate to the area near the bed combination visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "84",
+      "target_label": "bed combination"
+    },
+    {
+      "scene_id": "0171_840092",
+      "start_xyz": [
+        4.3488874435424805,
+        0.20000000298023224,
+        0.794304370880127
+      ],
+      "start_quat_wxyz": [
+        0.9966410398483276,
+        -0.009271625429391861,
+        -0.08136419951915741,
+        0.0007569208391942084
+      ],
+      "goal_xyz": [
+        4.168688774108887,
+        0.20000000298023224,
+        -1.8464654684066772
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v04_gpu1__seg_00001",
+      "instruction": "Take me to the area near the pet cage combination visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "184",
+      "target_label": "pet cage combination"
+    },
+    {
+      "scene_id": "0590_841150",
+      "start_xyz": [
+        1.5367547273635864,
+        0.20000000298023224,
+        3.262073278427124
+      ],
+      "start_quat_wxyz": [
+        0.4683639407157898,
+        -0.004357130266726017,
+        -0.8834866285324097,
+        0.00821896456182003
+      ],
+      "goal_xyz": [
+        4.233395099639893,
+        0.20000000298023224,
+        4.194557189941406
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "near",
+      "episode_id": "near_dense_v3__v04_gpu1__seg_00001",
+      "instruction": "Move to the area near the dishwasher visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "448",
+      "target_label": "dishwasher"
+    },
+    {
+      "scene_id": "0369_840232",
+      "start_xyz": [
+        3.257085084915161,
+        0.20000000298023224,
+        5.1551833152771
+      ],
+      "start_quat_wxyz": [
+        0.6016119122505188,
+        -0.005596719216555357,
+        0.7987343668937683,
+        -0.007430524565279484
+      ],
+      "goal_xyz": [
+        1.005713701248169,
+        0.20000000298023224,
+        5.903314113616943
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v01_gpu0__seg_00000",
+      "instruction": "Walk up to the plant visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "253",
+      "target_label": "plant"
+    },
+    {
+      "scene_id": "0710_841546",
+      "start_xyz": [
+        -3.5646629333496094,
+        0.20000000298023224,
+        5.106484889984131
+      ],
+      "start_quat_wxyz": [
+        0.34641990065574646,
+        -0.003222700208425522,
+        0.9380334615707397,
+        -0.008726405911147594
+      ],
+      "goal_xyz": [
+        -4.398507118225098,
+        0.20000000298023224,
+        7.3869524002075195
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v01_gpu0__seg_00001",
+      "instruction": "Walk up to the armchair visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "198",
+      "target_label": "armchair"
+    },
+    {
+      "scene_id": "0202_840156",
+      "start_xyz": [
+        0.18212133646011353,
+        0.20000000298023224,
+        6.579071044921875
+      ],
+      "start_quat_wxyz": [
+        0.9342330694198608,
+        -0.008691051974892616,
+        0.35654184222221375,
+        -0.003316863439977169
+      ],
+      "goal_xyz": [
+        -0.5410095453262329,
+        0.20000000298023224,
+        4.1648149490356445
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v01_gpu1__seg_00000",
+      "instruction": "Head to the stool on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "259",
+      "target_label": "stool"
+    },
+    {
+      "scene_id": "0208_840166",
+      "start_xyz": [
+        -4.213602066040039,
+        0.20000000298023224,
+        4.434640407562256
+      ],
+      "start_quat_wxyz": [
+        0.20789875090122223,
+        -0.0019340558210387826,
+        0.9781061410903931,
+        -0.009099197573959827
+      ],
+      "goal_xyz": [
+        -5.4089531898498535,
+        0.20000000298023224,
+        6.692218780517578
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v01_gpu1__seg_00000",
+      "instruction": "Reach the kart visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "63",
+      "target_label": "kart"
+    },
+    {
+      "scene_id": "0208_840166",
+      "start_xyz": [
+        -3.903700590133667,
+        0.20000000298023224,
+        4.115174770355225
+      ],
+      "start_quat_wxyz": [
+        0.6349658966064453,
+        -0.005907007027417421,
+        0.7724841833114624,
+        -0.007186322472989559
+      ],
+      "goal_xyz": [
+        -6.156489372253418,
+        0.20000000298023224,
+        4.404262542724609
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v01_gpu1__seg_00003",
+      "instruction": "Head to the kart on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "65",
+      "target_label": "kart"
+    },
+    {
+      "scene_id": "0520_839896",
+      "start_xyz": [
+        0.1023939847946167,
+        0.20000000298023224,
+        -4.6678266525268555
+      ],
+      "start_quat_wxyz": [
+        0.977450966835022,
+        -0.009093102067708969,
+        0.2109575867652893,
+        -0.0019625118002295494
+      ],
+      "goal_xyz": [
+        -0.054602231830358505,
+        0.20000000298023224,
+        -11.779901504516602
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v01_gpu1__seg_00001",
+      "instruction": "Reach the road signs on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "148",
+      "target_label": "road signs"
+    },
+    {
+      "scene_id": "0022_840117",
+      "start_xyz": [
+        3.683361530303955,
+        0.20000000298023224,
+        -1.5797737836837769
+      ],
+      "start_quat_wxyz": [
+        0.5225228667259216,
+        -0.004860964138060808,
+        0.8525745272636414,
+        -0.007931392639875412
+      ],
+      "goal_xyz": [
+        -0.3726186156272888,
+        0.20000000298023224,
+        -1.398721694946289
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v03_gpu0__seg_00004",
+      "instruction": "Please walk to the stool on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "142",
+      "target_label": "stool"
+    },
+    {
+      "scene_id": "0022_840117",
+      "start_xyz": [
+        6.522090911865234,
+        0.20000000298023224,
+        -1.38279390335083
+      ],
+      "start_quat_wxyz": [
+        0.46140027046203613,
+        -0.004292348399758339,
+        0.8871433138847351,
+        -0.008252982050180435
+      ],
+      "goal_xyz": [
+        1.8397738933563232,
+        0.20000000298023224,
+        0.7512834668159485
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v03_gpu0__seg_00005",
+      "instruction": "Head to the beverage machine on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "253",
+      "target_label": "beverage machine"
+    },
+    {
+      "scene_id": "0979_841920",
+      "start_xyz": [
+        0.3838532865047455,
+        0.20000000298023224,
+        -2.2774105072021484
+      ],
+      "start_quat_wxyz": [
+        0.2620767652988434,
+        -0.002438066992908716,
+        0.965002179145813,
+        -0.008977293036878109
+      ],
+      "goal_xyz": [
+        0.4166976511478424,
+        0.20000000298023224,
+        1.9347047805786133
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v03_gpu0__seg_00000",
+      "instruction": "Head to the clothes hanger visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "70",
+      "target_label": "clothes hanger"
+    },
+    {
+      "scene_id": "0171_840092",
+      "start_xyz": [
+        5.247038841247559,
+        0.20000000298023224,
+        0.24638867378234863
+      ],
+      "start_quat_wxyz": [
+        0.6092250943183899,
+        -0.005667543970048428,
+        0.7929427623748779,
+        -0.0073766461573541164
+      ],
+      "goal_xyz": [
+        3.3122730255126953,
+        0.20000000298023224,
+        1.3705077171325684
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v03_gpu1__seg_00005",
+      "instruction": "Walk to the armchair ahead visible in your initial view",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "436",
+      "target_label": "armchair"
+    },
+    {
+      "scene_id": "0171_840092",
+      "start_xyz": [
+        -3.5766594409942627,
+        0.20000000298023224,
+        2.2143120765686035
+      ],
+      "start_quat_wxyz": [
+        0.8942872881889343,
+        -0.008319441229104996,
+        -0.4473966062068939,
+        0.004162074066698551
+      ],
+      "goal_xyz": [
+        -1.3723335266113281,
+        0.20000000298023224,
+        -1.204671859741211
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v03_gpu1__seg_00007",
+      "instruction": "Go ahead and go to the reception on your front-left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "355",
+      "target_label": "reception"
+    },
+    {
+      "scene_id": "0676_841500",
+      "start_xyz": [
+        0.7814867496490479,
+        0.20000000298023224,
+        -1.7968220710754395
+      ],
+      "start_quat_wxyz": [
+        0.03211210295557976,
+        -0.00029873481253162026,
+        -0.9994409680366516,
+        0.009297672659158707
+      ],
+      "goal_xyz": [
+        1.2197892665863037,
+        0.20000000298023224,
+        1.4085553884506226
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v03_gpu1__seg_00000",
+      "instruction": "Move to the table lamp ahead visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "191",
+      "target_label": "table lamp"
+    },
+    {
+      "scene_id": "0118_840009",
+      "start_xyz": [
+        -1.136249303817749,
+        0.20000000298023224,
+        -1.5145199298858643
+      ],
+      "start_quat_wxyz": [
+        0.1864478588104248,
+        -0.0017345007508993149,
+        -0.982420802116394,
+        0.00913933664560318
+      ],
+      "goal_xyz": [
+        -0.5465278625488281,
+        0.20000000298023224,
+        3.189972162246704
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v04_gpu0__seg_00000",
+      "instruction": "Please move to the bedside table visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "245",
+      "target_label": "bedside table"
+    },
+    {
+      "scene_id": "0118_840009",
+      "start_xyz": [
+        -9.356706619262695,
+        0.20000000298023224,
+        2.0653693675994873
+      ],
+      "start_quat_wxyz": [
+        0.9234896302223206,
+        -0.008591107092797756,
+        0.38351064920425415,
+        -0.003567751031368971
+      ],
+      "goal_xyz": [
+        -11.93472671508789,
+        0.20000000298023224,
+        0.6567378640174866
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v04_gpu0__seg_00002",
+      "instruction": "Proceed to the plant on your front-left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "99",
+      "target_label": "plant"
+    },
+    {
+      "scene_id": "0159_840083",
+      "start_xyz": [
+        -2.931104898452759,
+        0.20000000298023224,
+        11.113166809082031
+      ],
+      "start_quat_wxyz": [
+        0.4918396770954132,
+        -0.0045755221508443356,
+        -0.8706361055374146,
+        0.008099417202174664
+      ],
+      "goal_xyz": [
+        -0.4320325553417206,
+        0.20000000298023224,
+        13.996459007263184
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v04_gpu0__seg_00002",
+      "instruction": "Proceed to the storage rack on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "401",
+      "target_label": "storage rack"
+    },
+    {
+      "scene_id": "0184_840116",
+      "start_xyz": [
+        3.19930362701416,
+        0.20000000298023224,
+        7.19530725479126
+      ],
+      "start_quat_wxyz": [
+        0.07852350920438766,
+        -0.0007304942118935287,
+        -0.9968688488006592,
+        0.009273745119571686
+      ],
+      "goal_xyz": [
+        4.987046718597412,
+        0.20000000298023224,
+        10.820683479309082
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v04_gpu0__seg_00005",
+      "instruction": "Proceed to the sofa combination on your front-left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "216",
+      "target_label": "sofa combination"
+    },
+    {
+      "scene_id": "0800_839940",
+      "start_xyz": [
+        0.49566650390625,
+        0.20000000298023224,
+        5.116104602813721
+      ],
+      "start_quat_wxyz": [
+        0.9781862497329712,
+        -0.00909994263201952,
+        -0.20752131938934326,
+        0.0019305446185171604
+      ],
+      "goal_xyz": [
+        2.0982906818389893,
+        0.20000000298023224,
+        3.8236827850341797
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v04_gpu0__seg_00003",
+      "instruction": "Proceed to the chair on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "52",
+      "target_label": "chair"
+    },
+    {
+      "scene_id": "0088_839961",
+      "start_xyz": [
+        -18.6379451751709,
+        0.20000000298023224,
+        -4.909416675567627
+      ],
+      "start_quat_wxyz": [
+        0.9975561499595642,
+        -0.009280138649046421,
+        -0.06924693286418915,
+        0.0006441954174079001
+      ],
+      "goal_xyz": [
+        -17.580041885375977,
+        0.20000000298023224,
+        -7.666411399841309
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v04_gpu1__seg_00003",
+      "instruction": "Reach the stool ahead visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "150",
+      "target_label": "stool"
+    },
+    {
+      "scene_id": "0620_841197",
+      "start_xyz": [
+        1.9725278615951538,
+        0.20000000298023224,
+        -2.486377477645874
+      ],
+      "start_quat_wxyz": [
+        0.33642908930778503,
+        -0.0031297572422772646,
+        0.9416628479957581,
+        -0.008760170079767704
+      ],
+      "goal_xyz": [
+        1.2521533966064453,
+        0.20000000298023224,
+        -0.009095516987144947
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v04_gpu1__seg_00000",
+      "instruction": "Move to the person visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "376",
+      "target_label": "person"
+    },
+    {
+      "scene_id": "0641_841451",
+      "start_xyz": [
+        -5.213006973266602,
+        0.20000000298023224,
+        2.253856658935547
+      ],
+      "start_quat_wxyz": [
+        0.028390631079673767,
+        -0.00026411443832330406,
+        0.9995536208152771,
+        -0.009298720397055149
+      ],
+      "goal_xyz": [
+        -3.6736650466918945,
+        0.20000000298023224,
+        5.392186164855957
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v04_gpu1__seg_00002",
+      "instruction": "Please move to the teatable visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "132",
+      "target_label": "teatable"
+    },
+    {
+      "scene_id": "0641_841451",
+      "start_xyz": [
+        -5.093830108642578,
+        0.20000000298023224,
+        3.396580934524536
+      ],
+      "start_quat_wxyz": [
+        0.2750335931777954,
+        -0.0025586027186363935,
+        -0.9613896012306213,
+        0.008943685330450535
+      ],
+      "goal_xyz": [
+        -3.6866767406463623,
+        0.20000000298023224,
+        4.871089458465576
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v4__v04_gpu1__seg_00009",
+      "instruction": "take me to the side table on your front-left visible in your initial view",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "139",
+      "target_label": "side table"
+    },
+    {
+      "scene_id": "0590_841150",
+      "start_xyz": [
+        -2.8778204917907715,
+        0.20000000298023224,
+        1.2951593399047852
+      ],
+      "start_quat_wxyz": [
+        0.6654594540596008,
+        -0.006190685089677572,
+        -0.7463760375976562,
+        0.006943441461771727
+      ],
+      "goal_xyz": [
+        -0.8180596232414246,
+        0.20000000298023224,
+        2.709510326385498
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v5__v02_gpu0__seg_00000",
+      "instruction": "Navigate to the pet visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "665",
+      "target_label": "pet"
+    },
+    {
+      "scene_id": "0590_841150",
+      "start_xyz": [
+        0.779293417930603,
+        0.20000000298023224,
+        -5.5559587478637695
+      ],
+      "start_quat_wxyz": [
+        0.1969977617263794,
+        -0.0018326452700421214,
+        0.9803597927093506,
+        -0.009120162576436996
+      ],
+      "goal_xyz": [
+        -1.281212568283081,
+        0.20000000298023224,
+        -4.754190444946289
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v5__v02_gpu0__seg_00002",
+      "instruction": "Walk up to the washing machine visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "269",
+      "target_label": "washing machine"
+    },
+    {
+      "scene_id": "0606_841171",
+      "start_xyz": [
+        0.9577381610870361,
+        0.20000000298023224,
+        0.33028504252433777
+      ],
+      "start_quat_wxyz": [
+        0.9950380325317383,
+        -0.009256712161004543,
+        -0.09905965626239777,
+        0.0009215394384227693
+      ],
+      "goal_xyz": [
+        0.7992672324180603,
+        0.20000000298023224,
+        -1.825590968132019
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v5__v02_gpu0__seg_00002",
+      "instruction": "Go ahead and head over to the chair visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "183",
+      "target_label": "chair"
+    },
+    {
+      "scene_id": "0153_840064",
+      "start_xyz": [
+        1.019853115081787,
+        0.20000000298023224,
+        4.066082000732422
+      ],
+      "start_quat_wxyz": [
+        0.6043318510055542,
+        -0.005622022785246372,
+        0.796678364276886,
+        -0.007411397993564606
+      ],
+      "goal_xyz": [
+        -1.166426420211792,
+        0.20000000298023224,
+        5.448776721954346
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v5__v02_gpu1__seg_00000",
+      "instruction": "Head to the table on your front-left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "36",
+      "target_label": "table"
+    },
+    {
+      "scene_id": "0402_840115",
+      "start_xyz": [
+        12.778947830200195,
+        0.20000000298023224,
+        7.352193832397461
+      ],
+      "start_quat_wxyz": [
+        0.5295535922050476,
+        -0.004926369991153479,
+        -0.848225474357605,
+        0.007890934124588966
+      ],
+      "goal_xyz": [
+        17.015703201293945,
+        0.20000000298023224,
+        8.434250831604004
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v5__v02_gpu1__seg_00004",
+      "instruction": "Navigate to the sofa combination on your front-left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "203",
+      "target_label": "sofa combination"
+    },
+    {
+      "scene_id": "0402_840115",
+      "start_xyz": [
+        12.778947830200195,
+        0.20000000298023224,
+        7.352193832397461
+      ],
+      "start_quat_wxyz": [
+        0.9977591037750244,
+        -0.009282026439905167,
+        0.0662584975361824,
+        -0.0006163944490253925
+      ],
+      "goal_xyz": [
+        13.572315216064453,
+        0.20000000298023224,
+        4.1906914710998535
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v5__v02_gpu1__seg_00005",
+      "instruction": "Take me to the sofa combination visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "198",
+      "target_label": "sofa combination"
+    },
+    {
+      "scene_id": "0085_839946",
+      "start_xyz": [
+        2.0609915256500244,
+        0.20000000298023224,
+        5.1364569664001465
+      ],
+      "start_quat_wxyz": [
+        0.48720210790634155,
+        -0.004532379563897848,
+        0.8732396960258484,
+        -0.008123638108372688
+      ],
+      "goal_xyz": [
+        0.4106162190437317,
+        0.20000000298023224,
+        6.3371052742004395
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v5__v03_gpu0__seg_00000",
+      "instruction": "Head to the shelf on your front-left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "22",
+      "target_label": "shelf"
+    },
+    {
+      "scene_id": "0584_840987",
+      "start_xyz": [
+        1.1329357624053955,
+        0.20000000298023224,
+        3.9969823360443115
+      ],
+      "start_quat_wxyz": [
+        0.9997273683547974,
+        -0.009300337173044682,
+        -0.021414853632450104,
+        0.0001992196630453691
+      ],
+      "goal_xyz": [
+        1.4530439376831055,
+        0.20000000298023224,
+        -2.1154441833496094
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v5__v03_gpu0__seg_00000",
+      "instruction": "Please walk to the sofa visible in your initial view",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "179",
+      "target_label": "sofa"
+    },
+    {
+      "scene_id": "0088_839961",
+      "start_xyz": [
+        -14.498092651367188,
+        0.20000000298023224,
+        -11.518998146057129
+      ],
+      "start_quat_wxyz": [
+        0.17093832790851593,
+        -0.001590217580087483,
+        -0.9852378368377686,
+        0.00916554220020771
+      ],
+      "goal_xyz": [
+        -11.81205940246582,
+        0.20000000298023224,
+        -9.80350399017334
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v5__v04_gpu1__seg_00004",
+      "instruction": "Head to the billboard visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "196",
+      "target_label": "billboard"
+    },
+    {
+      "scene_id": "0877_841804",
+      "start_xyz": [
+        1.1268771886825562,
+        0.20000000298023224,
+        1.1896439790725708
+      ],
+      "start_quat_wxyz": [
+        0.5351806282997131,
+        -0.004978717304766178,
+        0.8446864485740662,
+        -0.007858010940253735
+      ],
+      "goal_xyz": [
+        -1.1386349201202393,
+        0.20000000298023224,
+        0.6601775288581848
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v5__v04_gpu1__seg_00000",
+      "instruction": "Head to the wardrobe on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "53",
+      "target_label": "wardrobe"
+    },
+    {
+      "scene_id": "0909_841639",
+      "start_xyz": [
+        -2.5081536769866943,
+        0.20000000298023224,
+        0.4830051362514496
+      ],
+      "start_quat_wxyz": [
+        0.5712886452674866,
+        -0.005314625799655914,
+        -0.8206964731216431,
+        0.007634835317730904
+      ],
+      "goal_xyz": [
+        -0.23516269028186798,
+        0.20000000298023224,
+        0.8119240999221802
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v5__v04_gpu1__seg_00000",
+      "instruction": "Take me to the fan visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "465",
+      "target_label": "fan"
+    },
+    {
+      "scene_id": "0620_841197",
+      "start_xyz": [
+        1.0717202425003052,
+        0.20000000298023224,
+        -0.6486971378326416
+      ],
+      "start_quat_wxyz": [
+        0.975164532661438,
+        -0.0090718325227499,
+        -0.22128617763519287,
+        0.002058597281575203
+      ],
+      "goal_xyz": [
+        2.436344623565674,
+        0.20000000298023224,
+        -2.561683177947998
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_dense_v5__v07_gpu0__seg_00000",
+      "instruction": "Navigate to the massage chair visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "306",
+      "target_label": "massage chair"
+    },
+    {
+      "scene_id": "0058_839911",
+      "start_xyz": [
+        0.8339524269104004,
+        0.20000000298023224,
+        -0.6690559387207031
+      ],
+      "start_quat_wxyz": [
+        0.13201677799224854,
+        -0.001228135428391397,
+        0.9912038445472717,
+        -0.009221043437719345
+      ],
+      "goal_xyz": [
+        -2.2490947246551514,
+        0.20000000298023224,
+        3.8273046016693115
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00000",
+      "instruction": "Proceed to the display stand on your front-right visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "49",
+      "target_label": "display stand"
+    },
+    {
+      "scene_id": "0075_839936",
+      "start_xyz": [
+        2.1065566539764404,
+        0.5,
+        8.741601943969727
+      ],
+      "start_quat_wxyz": [
+        0.19061562418937683,
+        -0.0017732729902490973,
+        0.9816206693649292,
+        -0.009131892584264278
+      ],
+      "goal_xyz": [
+        0.01872376538813114,
+        0.5,
+        9.789468765258789
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00000",
+      "instruction": "Move to the multi person sofa visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "104",
+      "target_label": "multi person sofa"
+    },
+    {
+      "scene_id": "0085_839946",
+      "start_xyz": [
+        1.7381763458251953,
+        0.20000000298023224,
+        4.816735744476318
+      ],
+      "start_quat_wxyz": [
+        0.1866673082113266,
+        -0.001736542209982872,
+        0.982379138469696,
+        -0.009138948284089565
+      ],
+      "goal_xyz": [
+        -0.1508200615644455,
+        0.20000000298023224,
+        6.463202953338623
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00003",
+      "instruction": "Please head to the shelf on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "57",
+      "target_label": "shelf"
+    },
+    {
+      "scene_id": "0097_839963",
+      "start_xyz": [
+        0.9354897141456604,
+        0.20000000298023224,
+        -1.655111312866211
+      ],
+      "start_quat_wxyz": [
+        0.6158424019813538,
+        -0.005729103926569223,
+        0.7878144383430481,
+        -0.007328937761485577
+      ],
+      "goal_xyz": [
+        -2.5509033203125,
+        0.20000000298023224,
+        -1.6764787435531616
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00002",
+      "instruction": "Head to the functional bed visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "31",
+      "target_label": "functional bed"
+    },
+    {
+      "scene_id": "0159_840083",
+      "start_xyz": [
+        1.4440582990646362,
+        0.20000000298023224,
+        3.358997344970703
+      ],
+      "start_quat_wxyz": [
+        0.4602412283420563,
+        -0.004281566012650728,
+        0.8877451419830322,
+        -0.008258581161499023
+      ],
+      "goal_xyz": [
+        -0.6598328948020935,
+        0.20000000298023224,
+        3.8508217334747314
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00001",
+      "instruction": "Proceed to the reception visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "293",
+      "target_label": "reception"
+    },
+    {
+      "scene_id": "0184_840116",
+      "start_xyz": [
+        -1.2199552059173584,
+        0.20000000298023224,
+        -7.12662410736084
+      ],
+      "start_quat_wxyz": [
+        0.3171541392803192,
+        -0.00295044481754303,
+        -0.9483283758163452,
+        0.008822178468108177
+      ],
+      "goal_xyz": [
+        0.006719593890011311,
+        0.20000000298023224,
+        -3.6986641883850098
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00001",
+      "instruction": "Take me to the sand table combination on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "228",
+      "target_label": "sand table combination"
+    },
+    {
+      "scene_id": "0202_840156",
+      "start_xyz": [
+        0.590583086013794,
+        0.20000000298023224,
+        7.90545129776001
+      ],
+      "start_quat_wxyz": [
+        0.17046310007572174,
+        -0.0015857965918257833,
+        0.9853201508522034,
+        -0.009166308678686619
+      ],
+      "goal_xyz": [
+        -0.3215257525444031,
+        0.20000000298023224,
+        10.346378326416016
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00001",
+      "instruction": "Walk to the chair ahead visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "257",
+      "target_label": "chair"
+    },
+    {
+      "scene_id": "0208_840166",
+      "start_xyz": [
+        -10.42105770111084,
+        0.20000000298023224,
+        0.9531171321868896
+      ],
+      "start_quat_wxyz": [
+        0.2414761781692505,
+        -0.002246422227472067,
+        0.9703621864318848,
+        -0.009027156047523022
+      ],
+      "goal_xyz": [
+        -11.424627304077148,
+        0.20000000298023224,
+        7.2686848640441895
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00000",
+      "instruction": "Take me to the reception visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "117",
+      "target_label": "reception"
+    },
+    {
+      "scene_id": "0273_840788",
+      "start_xyz": [
+        0.6344677209854126,
+        0.20000000298023224,
+        4.131588935852051
+      ],
+      "start_quat_wxyz": [
+        0.9635001420974731,
+        -0.008963319472968578,
+        0.26754623651504517,
+        -0.0024889486376196146
+      ],
+      "goal_xyz": [
+        0.3622860312461853,
+        0.20000000298023224,
+        2.012068271636963
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00001",
+      "instruction": "Take me to the electric kettle visible in your initial view",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "193",
+      "target_label": "electric kettle"
+    },
+    {
+      "scene_id": "0383_840202",
+      "start_xyz": [
+        0.05545458197593689,
+        0.20000000298023224,
+        3.9208626747131348
+      ],
+      "start_quat_wxyz": [
+        0.5812591910362244,
+        -0.005407380405813456,
+        -0.8136653304100037,
+        0.007569425273686647
+      ],
+      "goal_xyz": [
+        4.391805171966553,
+        0.20000000298023224,
+        4.21687650680542
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00000",
+      "instruction": "Walk up to the plant visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "423",
+      "target_label": "plant"
+    },
+    {
+      "scene_id": "0383_840202",
+      "start_xyz": [
+        0.08532124757766724,
+        0.20000000298023224,
+        0.7013002038002014
+      ],
+      "start_quat_wxyz": [
+        0.905195951461792,
+        -0.008420923724770546,
+        -0.4248926043510437,
+        0.003952722065150738
+      ],
+      "goal_xyz": [
+        2.039259910583496,
+        0.20000000298023224,
+        -0.5523648858070374
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00002",
+      "instruction": "Walk to the chair combination on your front-left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "233",
+      "target_label": "chair combination"
+    },
+    {
+      "scene_id": "0383_840202",
+      "start_xyz": [
+        -0.07426925003528595,
+        0.20000000298023224,
+        1.1252999305725098
+      ],
+      "start_quat_wxyz": [
+        0.9351145625114441,
+        -0.008699252270162106,
+        -0.354223370552063,
+        0.003295294940471649
+      ],
+      "goal_xyz": [
+        2.3677897453308105,
+        0.20000000298023224,
+        -0.44180700182914734
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00003",
+      "instruction": "Move to the stool visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "374",
+      "target_label": "stool"
+    },
+    {
+      "scene_id": "0788_841245",
+      "start_xyz": [
+        3.1093783378601074,
+        0.20000000298023224,
+        0.22044481337070465
+      ],
+      "start_quat_wxyz": [
+        0.9345108270645142,
+        -0.0086936354637146,
+        0.3558131456375122,
+        -0.0033100845757871866
+      ],
+      "goal_xyz": [
+        1.141806960105896,
+        0.20000000298023224,
+        -0.28660157322883606
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00001",
+      "instruction": "Reach the water dispenser visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "107",
+      "target_label": "water dispenser"
+    },
+    {
+      "scene_id": "0800_839940",
+      "start_xyz": [
+        -0.10407577455043793,
+        0.20000000298023224,
+        4.832642078399658
+      ],
+      "start_quat_wxyz": [
+        0.19887210428714752,
+        -0.0018500819569453597,
+        -0.9799813032150269,
+        0.00911664217710495
+      ],
+      "goal_xyz": [
+        0.6604415774345398,
+        0.20000000298023224,
+        6.7940874099731445
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00000",
+      "instruction": "Head to the high chair visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "70",
+      "target_label": "high chair"
+    },
+    {
+      "scene_id": "0800_839940",
+      "start_xyz": [
+        1.5847969055175781,
+        0.20000000298023224,
+        2.9944262504577637
+      ],
+      "start_quat_wxyz": [
+        0.4663393795490265,
+        -0.004338296130299568,
+        0.8845569491386414,
+        -0.008228921331465244
+      ],
+      "goal_xyz": [
+        -1.8159246444702148,
+        0.20000000298023224,
+        7.173951625823975
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00003",
+      "instruction": "Walk over to the wedding dress on your front-left visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "69",
+      "target_label": "wedding dress"
+    },
+    {
+      "scene_id": "0837_841153",
+      "start_xyz": [
+        -1.405996322631836,
+        0.20000000298023224,
+        3.5856034755706787
+      ],
+      "start_quat_wxyz": [
+        0.638219952583313,
+        -0.0059372796677052975,
+        -0.7697978615760803,
+        0.007161331828683615
+      ],
+      "goal_xyz": [
+        0.6295594573020935,
+        0.20000000298023224,
+        5.621392726898193
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v02_gpu0__seg_00000",
+      "instruction": "Navigate to the cat tower visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "172",
+      "target_label": "cat tower"
+    },
+    {
+      "scene_id": "0141_840177",
+      "start_xyz": [
+        -0.09572356939315796,
+        0.20000000298023224,
+        7.623699188232422
+      ],
+      "start_quat_wxyz": [
+        0.3556130528450012,
+        -0.0033082233276218176,
+        0.9345870018005371,
+        -0.008694344200193882
+      ],
+      "goal_xyz": [
+        -1.0414080619812012,
+        0.20000000298023224,
+        10.116828918457031
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v03_gpu1__seg_00002",
+      "instruction": "Approach the shopping cart visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "13390",
+      "target_label": "shopping_cart"
+    },
+    {
+      "scene_id": "0203_840160",
+      "start_xyz": [
+        -0.9913659691810608,
+        0.20000000298023224,
+        0.10297263413667679
+      ],
+      "start_quat_wxyz": [
+        0.7373617887496948,
+        -0.006859582848846912,
+        0.6754339933395386,
+        -0.006283476948738098
+      ],
+      "goal_xyz": [
+        -3.3867287635803223,
+        0.20000000298023224,
+        0.499722957611084
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v03_gpu1__seg_00000",
+      "instruction": "Head to the goods shelves on your front-left visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "42",
+      "target_label": "goods shelves"
+    },
+    {
+      "scene_id": "0365_840302",
+      "start_xyz": [
+        0.6205487251281738,
+        0.20000000298023224,
+        -0.8181264400482178
+      ],
+      "start_quat_wxyz": [
+        0.4660020172595978,
+        -0.004335157573223114,
+        0.8847347497940063,
+        -0.008230575360357761
+      ],
+      "goal_xyz": [
+        -1.1228851079940796,
+        0.20000000298023224,
+        2.2839536666870117
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v03_gpu1__seg_00001",
+      "instruction": "Approach the tv visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "229",
+      "target_label": "tv"
+    },
+    {
+      "scene_id": "0365_840302",
+      "start_xyz": [
+        0.6108324527740479,
+        0.20000000298023224,
+        -1.0527235269546509
+      ],
+      "start_quat_wxyz": [
+        0.0712239071726799,
+        -0.0006625870009884238,
+        0.9974169731140137,
+        -0.009278844110667706
+      ],
+      "goal_xyz": [
+        -1.1239800453186035,
+        0.20000000298023224,
+        2.4226372241973877
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v03_gpu1__seg_00003",
+      "instruction": "navigate to the tv cabinet visible in your initial view",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "142",
+      "target_label": "tv cabinet"
+    },
+    {
+      "scene_id": "0365_840302",
+      "start_xyz": [
+        0.8596795201301575,
+        0.20000000298023224,
+        -0.6080977916717529
+      ],
+      "start_quat_wxyz": [
+        0.6453244090080261,
+        -0.006003370974212885,
+        0.7638520002365112,
+        -0.007106018252670765
+      ],
+      "goal_xyz": [
+        -1.304048776626587,
+        0.20000000298023224,
+        -0.8408219814300537
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v03_gpu1__seg_00004",
+      "instruction": "Go ahead and walk over to the door on your front-right visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "114",
+      "target_label": "door"
+    },
+    {
+      "scene_id": "0402_840115",
+      "start_xyz": [
+        15.430818557739258,
+        0.20000000298023224,
+        7.886045455932617
+      ],
+      "start_quat_wxyz": [
+        0.6482656598091125,
+        -0.006030733231455088,
+        0.7613573670387268,
+        -0.007082811091095209
+      ],
+      "goal_xyz": [
+        12.910512924194336,
+        0.20000000298023224,
+        7.519659519195557
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v03_gpu1__seg_00002",
+      "instruction": "Move to the table and chair combination on your front-right visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "238",
+      "target_label": "table and chair combination"
+    },
+    {
+      "scene_id": "0584_840987",
+      "start_xyz": [
+        0.5025568008422852,
+        0.20000000298023224,
+        0.30561232566833496
+      ],
+      "start_quat_wxyz": [
+        0.911578893661499,
+        -0.00848030298948288,
+        0.411019891500473,
+        -0.003823665902018547
+      ],
+      "goal_xyz": [
+        -0.540261447429657,
+        0.20000000298023224,
+        -1.4606094360351562
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v03_gpu1__seg_00001",
+      "instruction": "Proceed to the side table ahead visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "184",
+      "target_label": "side table"
+    },
+    {
+      "scene_id": "0584_840987",
+      "start_xyz": [
+        -0.8025006651878357,
+        0.20000000298023224,
+        1.1876264810562134
+      ],
+      "start_quat_wxyz": [
+        0.9905264377593994,
+        -0.009214742109179497,
+        -0.13700656592845917,
+        0.0012745547574013472
+      ],
+      "goal_xyz": [
+        1.5625579357147217,
+        0.20000000298023224,
+        -3.416633129119873
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v03_gpu1__seg_00002",
+      "instruction": "Navigate to the tv cabinet visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "206",
+      "target_label": "tv cabinet"
+    },
+    {
+      "scene_id": "0979_841920",
+      "start_xyz": [
+        0.49847376346588135,
+        0.20000000298023224,
+        0.31440672278404236
+      ],
+      "start_quat_wxyz": [
+        0.44403454661369324,
+        -0.004130796995013952,
+        0.8959614038467407,
+        -0.008335014805197716
+      ],
+      "goal_xyz": [
+        -0.7070269584655762,
+        0.20000000298023224,
+        1.9224210977554321
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v03_gpu1__seg_00000",
+      "instruction": "Go to the refrigerator visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "59",
+      "target_label": "refrigerator"
+    },
+    {
+      "scene_id": "0022_840117",
+      "start_xyz": [
+        7.4590301513671875,
+        0.20000000298023224,
+        4.929143905639648
+      ],
+      "start_quat_wxyz": [
+        0.7228051424026489,
+        -0.006724164821207523,
+        -0.6909892559051514,
+        0.006428185850381851
+      ],
+      "goal_xyz": [
+        10.109748840332031,
+        0.20000000298023224,
+        3.5382332801818848
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v04_gpu0__seg_00000",
+      "instruction": "Move to the cabinet on your front-left visible in your initial view now.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "76",
+      "target_label": "cabinet"
+    },
+    {
+      "scene_id": "0022_840117",
+      "start_xyz": [
+        7.4590301513671875,
+        0.20000000298023224,
+        4.929143905639648
+      ],
+      "start_quat_wxyz": [
+        0.5781009793281555,
+        -0.005378000438213348,
+        0.8159121870994568,
+        -0.00759032741189003
+      ],
+      "goal_xyz": [
+        3.6417603492736816,
+        0.20000000298023224,
+        5.162410259246826
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v04_gpu0__seg_00001",
+      "instruction": "Walk up to the ornament visible in your initial view and stop there.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "399",
+      "target_label": "ornament"
+    },
+    {
+      "scene_id": "0022_840117",
+      "start_xyz": [
+        8.203615188598633,
+        0.20000000298023224,
+        4.8057942390441895
+      ],
+      "start_quat_wxyz": [
+        0.8549940586090088,
+        -0.007953901775181293,
+        -0.5185543298721313,
+        0.004824045114219189
+      ],
+      "goal_xyz": [
+        11.085851669311523,
+        0.20000000298023224,
+        0.6881137490272522
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v04_gpu0__seg_00003",
+      "instruction": "navigate to the beverage machine visible in your initial view",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "256",
+      "target_label": "beverage machine"
+    },
+    {
+      "scene_id": "0025_840019",
+      "start_xyz": [
+        -5.3805389404296875,
+        0.20000000298023224,
+        -1.0677573680877686
+      ],
+      "start_quat_wxyz": [
+        0.5098677277565002,
+        -0.004743234720081091,
+        0.8602024912834167,
+        -0.008002354763448238
+      ],
+      "goal_xyz": [
+        -7.1482672691345215,
+        0.20000000298023224,
+        2.4523963928222656
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v04_gpu0__seg_00002",
+      "instruction": "Navigate to the printer visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "726",
+      "target_label": "printer"
+    },
+    {
+      "scene_id": "0164_840080",
+      "start_xyz": [
+        0.8771361708641052,
+        0.20000000298023224,
+        4.160892963409424
+      ],
+      "start_quat_wxyz": [
+        0.6687290668487549,
+        -0.0062211016193032265,
+        0.74344801902771,
+        -0.00691620260477066
+      ],
+      "goal_xyz": [
+        -1.5655364990234375,
+        0.20000000298023224,
+        4.558374881744385
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v04_gpu0__seg_00000",
+      "instruction": "Approach the storage rack combination ahead visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "30",
+      "target_label": "storage rack combination"
+    },
+    {
+      "scene_id": "0369_840232",
+      "start_xyz": [
+        1.182278037071228,
+        0.20000000298023224,
+        5.831784725189209
+      ],
+      "start_quat_wxyz": [
+        0.6181379556655884,
+        -0.005750459153205156,
+        -0.7860145568847656,
+        0.007312193978577852
+      ],
+      "goal_xyz": [
+        3.260018825531006,
+        0.20000000298023224,
+        5.8460187911987305
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v04_gpu0__seg_00001",
+      "instruction": "Proceed to the laundry cabinets visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "258",
+      "target_label": "laundry cabinets"
+    },
+    {
+      "scene_id": "0676_841500",
+      "start_xyz": [
+        1.5296955108642578,
+        0.20000000298023224,
+        0.07114271819591522
+      ],
+      "start_quat_wxyz": [
+        0.9101442694664001,
+        -0.008466956205666065,
+        0.4141870439052582,
+        -0.0038531296886503696
+      ],
+      "goal_xyz": [
+        0.45370787382125854,
+        0.20000000298023224,
+        -2.4240665435791016
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v04_gpu0__seg_00001",
+      "instruction": "Go ahead and head over to the refrigerator visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "188",
+      "target_label": "refrigerator"
+    },
+    {
+      "scene_id": "0682_841506",
+      "start_xyz": [
+        1.742660641670227,
+        0.20000000298023224,
+        1.5244522094726562
+      ],
+      "start_quat_wxyz": [
+        0.8670440316200256,
+        -0.00806600134819746,
+        0.49814462661743164,
+        -0.004634176380932331
+      ],
+      "goal_xyz": [
+        -4.89647912979126,
+        0.20000000298023224,
+        0.9953245520591736
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v04_gpu0__seg_00000",
+      "instruction": "Approach the plant visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "180",
+      "target_label": "plant"
+    },
+    {
+      "scene_id": "0682_841506",
+      "start_xyz": [
+        1.2580642700195312,
+        0.20000000298023224,
+        1.7016019821166992
+      ],
+      "start_quat_wxyz": [
+        0.785292387008667,
+        -0.0073054758831858635,
+        0.6190551519393921,
+        -0.005758991930633783
+      ],
+      "goal_xyz": [
+        -4.959894180297852,
+        0.20000000298023224,
+        1.8312228918075562
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v04_gpu0__seg_00001",
+      "instruction": "Head to the chair ahead visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "175",
+      "target_label": "chair"
+    },
+    {
+      "scene_id": "0682_841506",
+      "start_xyz": [
+        0.06454291939735413,
+        0.20000000298023224,
+        2.3241772651672363
+      ],
+      "start_quat_wxyz": [
+        0.8929476141929626,
+        -0.008306978270411491,
+        -0.45006442070007324,
+        0.004186892416328192
+      ],
+      "goal_xyz": [
+        2.4761288166046143,
+        0.20000000298023224,
+        1.958935260772705
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v04_gpu0__seg_00002",
+      "instruction": "Head to the dining table visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "182",
+      "target_label": "dining table"
+    },
+    {
+      "scene_id": "0710_841546",
+      "start_xyz": [
+        5.506003379821777,
+        0.20000000298023224,
+        0.14202576875686646
+      ],
+      "start_quat_wxyz": [
+        0.5398221611976624,
+        -0.00502189714461565,
+        0.8417276740074158,
+        -0.007830485701560974
+      ],
+      "goal_xyz": [
+        3.8034937381744385,
+        0.20000000298023224,
+        2.318220376968384
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v04_gpu0__seg_00002",
+      "instruction": "Take me to the teatable visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "173",
+      "target_label": "teatable"
+    },
+    {
+      "scene_id": "0877_841804",
+      "start_xyz": [
+        -0.4816102981567383,
+        0.20000000298023224,
+        1.5984444618225098
+      ],
+      "start_quat_wxyz": [
+        0.7694554924964905,
+        -0.007158147171139717,
+        -0.6386326551437378,
+        0.0059411185793578625
+      ],
+      "goal_xyz": [
+        1.6244022846221924,
+        0.20000000298023224,
+        0.39983126521110535
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_scale_v3__v04_gpu0__seg_00001",
+      "instruction": "Go ahead and head over to the table lamp on your front-left visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "127",
+      "target_label": "table lamp"
+    },
+    {
+      "scene_id": "0221_840242",
+      "start_xyz": [
+        -1.9296921491622925,
+        0.20000000298023224,
+        -1.0181140899658203
+      ],
+      "start_quat_wxyz": [
+        0.6189581751823425,
+        -0.005758089479058981,
+        -0.7853688597679138,
+        0.007306186947971582
+      ],
+      "goal_xyz": [
+        0.9985696077346802,
+        0.20000000298023224,
+        -0.3142407536506653
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_straight__seg_00000",
+      "instruction": "Approach the dining table visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "176",
+      "target_label": "dining table"
+    },
+    {
+      "scene_id": "0420_840007",
+      "start_xyz": [
+        1.2746796607971191,
+        0.20000000298023224,
+        1.0658683776855469
+      ],
+      "start_quat_wxyz": [
+        0.5780345797538757,
+        -0.005377382505685091,
+        -0.8159592151641846,
+        0.007590765133500099
+      ],
+      "goal_xyz": [
+        3.9417152404785156,
+        0.20000000298023224,
+        2.0035951137542725
+      ],
+      "cam_height_m": 0.352846,
+      "cam_pitch_deg": 1.066,
+      "cam_forward_m": 0.35,
+      "hfov_deg": 69.62,
+      "target_mode": "object",
+      "episode_id": "object_straight__seg_00000",
+      "instruction": "Head to the toy ahead visible in your initial view.",
+      "action_convention": "scan2d_body_forward_right_clockwise",
+      "target_instance_id": "350",
+      "target_label": "toy"
+    }
+  ]
+}

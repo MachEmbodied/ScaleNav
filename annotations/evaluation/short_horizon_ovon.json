@@ -1,0 +1,6309 @@
+{
+  "version": 1,
+  "benchmark": "short_horizon_ovon",
+  "upstream": {
+    "start_poses": {
+      "repository": "acvlab/ABotN-Short-Horizon-OVON",
+      "revision": "83d99c7979b2159b8c5d8e68925e82978bb6a10d",
+      "filename": "ovon_visibility_start_poses.json",
+      "sha256": "00959a77ffe5eb815d225641a4dd608c35b51fc2805150e2fcd6a1d7d5c4dba0"
+    },
+    "episodes": {
+      "repository": "nyokoyama/hm3d_ovon",
+      "revision": "f04c75812660b9464bc62ce5d50912cdd8c5ffcd",
+      "filename": "hm3d.tar.gz",
+      "sha256": "ae68e49a26a0dec27e42d77f15407753095c956c0595a05ef4e08aea119c2f71"
+    },
+    "scene_dataset": "HM3D v0.2 validation: habitat, semantic annotations and semantic configs",
+    "episode_files": {
+      "TEEsavR23oF.json.gz": "5fe6cd86b3e022432fc60046096037d74161e6a72b0b0a4f1d4a64915da9fe6a",
+      "wcojb4TFT35.json.gz": "869449c49d030386ead8c04ed885dfa8936aeda37a29f6049aa92612aac34fdc",
+      "k1cupFYWXJ6.json.gz": "54bbc79a3ba7f7705a9279b1960718fd0dbe53b4dacdc55130a6a0933e8789c7",
+      "y9hTuugGdiq.json.gz": "84c71cb5f8bf73b6f00ae2bd1b60ff62e67cbaefa91e4b649d22397a48f15528",
+      "CrMo8WxCyVb.json.gz": "923fddeca906fc8f86c39c22b950194d8254f8822b2ca28a574ab54104cb50ed",
+      "svBbv1Pavdk.json.gz": "41ac449dd9596c1fe014620ffa946cf5c861d71e0030d26f15345442c09f0461",
+      "p53SfW6mjZe.json.gz": "71c8b50897ed82891c620af9909938ffaad47d646b9fedf96e57708f976e336e",
+      "h1zeeAwLh9Z.json.gz": "3c3e384066aa1fb23078c3b1ff529b3baa2f349cfe131ac6d5e746d83d36e733",
+      "mL8ThkuaVTM.json.gz": "8d3ac71ad365f204f7dc022f4fdd847f5c388ab663da7d95d9e62d8af6817f94",
+      "eF36g7L6Z9M.json.gz": "9fe1de972130402eb3abab8ae04185d022438f19cc8dbe645144764f521d2a11",
+      "7MXmsvcQjpJ.json.gz": "4649e0e8191d683e17223dc6126c90211a330ece1af8e4b63905da96a0b2957d",
+      "Dd4bFSTQ8gi.json.gz": "5b170c7947a61cfb6aeecf69d39e4c01e5e8f1d99b9e069faa282cd6c2c59250",
+      "BAbdmeyTvMZ.json.gz": "3bff52dee1a82060fe42e211b11163eee122c612e8ed4994ea5afea476a53c55",
+      "QaLdnwvtxbs.json.gz": "2d4219a790f7275cf6c8ef1b0cba0ec80af12c629083aa05132fa66aa0ddde02",
+      "yr17PDCnDDW.json.gz": "81efeb5e07d8eb96b298c06ea4579be5d5401084d1fac18c336a59b5f51f175b",
+      "qyAac8rV8Zk.json.gz": "c33c5417d0faf6a940a0cb4116427281802002f933685f572064f10ef0320de2",
+      "q3zU7Yy5E5s.json.gz": "b49d5257339fe479993c2b10e0f0361dab99ac6adec93f3ca428b9ce877cdef0",
+      "zt1RVoi7PcG.json.gz": "d200e03ab13da059321ddbcd01463281350e5f92f8eee6430cb748ab458d54fe",
+      "DYehNKdT76V.json.gz": "96953ff0cdf33ebdf84fda1f5287896e72279c7d0373965d23d296e6fc6e0596",
+      "q5QZSEeHe5g.json.gz": "51c3c5aaa6ec96c88ca55b27b6d6516959201da100459f6a5ba95d6d80aa2a9a",
+      "bCPU9suPUw9.json.gz": "e219fc69dfdc35a4317e6ca2b98f7d4391ea19e275ed201b77f2cd3477e59136",
+      "ziup5kvtCCR.json.gz": "cc5d116cc9ea0f210f2138f3f1533629688fb901d115686d81c47eb2a60cbbec",
+      "a8BtkwhxdRV.json.gz": "83e0e975242fac83fc42c57aaaf8066753514143d5c771c21b0cc6e9a0755c30",
+      "5cdEh9F2hJL.json.gz": "cdc711e34ebb687bf1403e1ffb802d967c26016bfc72d5a330f4d33ab49e2ae8",
+      "GLAQ4DNUx5U.json.gz": "8a126aaa8f7235ccfa13b3c5c4784068e98d7d125f03f369c129ad458226df47",
+      "LT9Jq6dN3Ea.json.gz": "d36b0fa032d8829f1575bd56f1d67e76bd5d814d3ca645b087c93cf87b430616",
+      "MHPLjHsuG27.json.gz": "bc320983f96187009c7942ff83d9692d6c0498fbf91c0eb49d3d23e6eb91df11",
+      "VBzV5z6i1WS.json.gz": "d842467e71558fdba601dc9f7721f5b2922dc2af2623ba58d29d1d849e2c869e",
+      "bxsVRursffK.json.gz": "38a4f5d0c182aef7d6b95abb71aff946b6199752201038b238a0e1e3e7b41afe",
+      "mv2HUxq3B53.json.gz": "1b8ebff1bde7d95c8de01f751eaa4cd3d9e257c827715d51aec1c5f649a39d53",
+      "4ok3usBNeis.json.gz": "50e57137e04441f4892153a342c0f4038636934ed467c8d7ef5dc79cf907cf02",
+      "XB4GS9ShBRE.json.gz": "e33c15b73335b6a859547fa45b6907c4d78cebb933eded0cccab0f08cf0391cb",
+      "Nfvxx8J5NCo.json.gz": "3987be179d7fd18c07bf8e0142a654bae57991d85eefcb529d267d4a6bfca7e6",
+      "6s7QHgap2fW.json.gz": "e3bf87adc6328226de2d3b89e104865f1b45fecd75156592145ed7d71e4ac059",
+      "cvZr5TUy5C5.json.gz": "acae58ba5f73ab8855d6df64b3031c89c3f378879da9d8008e4bdda5399de54d",
+      "HY1NcmCgn3n.json.gz": "e9ccff014a2c5e9b48c37335522dbe9e668b9be8d7e87d7ec2c655742a147e09"
+    },
+    "scene_files": {
+      "val/00800-TEEsavR23oF/TEEsavR23oF.basis.glb": {
+        "size": 30544140,
+        "sha256": "56efe1b85e17d010f6ecc942ab56fe82ed32a53c58599ffe3dc74327c20525e9"
+      },
+      "val/00800-TEEsavR23oF/TEEsavR23oF.basis.navmesh": {
+        "size": 32592,
+        "sha256": "9e3aadacfa80b2e2b8a0f700c1e289f764d7f5173001862655b51e8f8542b2bf"
+      },
+      "val/00800-TEEsavR23oF/TEEsavR23oF.semantic.glb": {
+        "size": 58842796,
+        "sha256": "e5a607b5ba3b8dd8e0a97a73a2fdfe6888e743eb7c196ddbd62ff151a520f09d"
+      },
+      "val/00800-TEEsavR23oF/TEEsavR23oF.semantic.txt": {
+        "size": 15818,
+        "sha256": "76ae5b1c4f070566199a7ead682f0bb5fd49f196f37aaf8beaf294943595fced"
+      },
+      "val/00802-wcojb4TFT35/wcojb4TFT35.basis.glb": {
+        "size": 46195688,
+        "sha256": "075e243b372458df4055a55e27c93885ba44ae8c36b4bc4446e0393c60c14540"
+      },
+      "val/00802-wcojb4TFT35/wcojb4TFT35.basis.navmesh": {
+        "size": 44728,
+        "sha256": "ae5ddd8ca77480eea3c401059844ae1ccc42d9cce75770a25b0d79b02d077232"
+      },
+      "val/00802-wcojb4TFT35/wcojb4TFT35.semantic.glb": {
+        "size": 66087588,
+        "sha256": "9034ff792cd2541106e0c9148dafe37f10b04063905866cdf8b16736faa6da65"
+      },
+      "val/00802-wcojb4TFT35/wcojb4TFT35.semantic.txt": {
+        "size": 23957,
+        "sha256": "ab4447ab24af7189ff915bf0022b29e828f55e8d29e6e4fa2359672de7e8dc02"
+      },
+      "val/00803-k1cupFYWXJ6/k1cupFYWXJ6.basis.glb": {
+        "size": 50545876,
+        "sha256": "57a09e19c89eef3a331d1f17ccc52a6f588ed5dcf872f89cf40dbd82470e6e3e"
+      },
+      "val/00803-k1cupFYWXJ6/k1cupFYWXJ6.basis.navmesh": {
+        "size": 59056,
+        "sha256": "234b1d7e311839d5d25cac9597a1ff44fbd99b52c0c680dcb010ca8ce0a54d47"
+      },
+      "val/00803-k1cupFYWXJ6/k1cupFYWXJ6.semantic.glb": {
+        "size": 62442884,
+        "sha256": "415d77e95a8eb970926c90d0e14c1db416a5d157b62ed8605462599f32cdb25a"
+      },
+      "val/00803-k1cupFYWXJ6/k1cupFYWXJ6.semantic.txt": {
+        "size": 19663,
+        "sha256": "c8abe3e863824acbdb4bd17c107a8b446c222c7cef4be0cba716142771ab7fad"
+      },
+      "val/00808-y9hTuugGdiq/y9hTuugGdiq.basis.glb": {
+        "size": 43907600,
+        "sha256": "67a188a10c8d664b454e20fbf631613500b982ec742a211e0c577cab6aeaf418"
+      },
+      "val/00808-y9hTuugGdiq/y9hTuugGdiq.basis.navmesh": {
+        "size": 53484,
+        "sha256": "c3993658f67b723e6e27a1442178f6cd9bbad050e078c8175770c459abc0067e"
+      },
+      "val/00808-y9hTuugGdiq/y9hTuugGdiq.semantic.glb": {
+        "size": 64820660,
+        "sha256": "cc56e2105391ecf18f12ff52200f45dd92996bf03bbaeb7d074fb9f04ebfc481"
+      },
+      "val/00808-y9hTuugGdiq/y9hTuugGdiq.semantic.txt": {
+        "size": 20055,
+        "sha256": "42b90fee3b97d2e5f91988d52bf60b9809a72babb04126ef0d3b347dc70d9d52"
+      },
+      "val/00810-CrMo8WxCyVb/CrMo8WxCyVb.basis.glb": {
+        "size": 32001468,
+        "sha256": "c7db85a13e6be94f93ac027b7fb74a518630175ab59f72ad337a06249b85e861"
+      },
+      "val/00810-CrMo8WxCyVb/CrMo8WxCyVb.basis.navmesh": {
+        "size": 42344,
+        "sha256": "02714e47509a964d3fe6f616663142579add3fea723bdbe3d71e155475810ba9"
+      },
+      "val/00810-CrMo8WxCyVb/CrMo8WxCyVb.semantic.glb": {
+        "size": 60069144,
+        "sha256": "88dd5b95cf510b3d6dbfeeb959f3b337519e43b7cc045610d8d49c1f6e79aa6b"
+      },
+      "val/00810-CrMo8WxCyVb/CrMo8WxCyVb.semantic.txt": {
+        "size": 12306,
+        "sha256": "36261dcb2d89712bb161678349b0e9221d6b946f74dfb6268df313c18d85bdba"
+      },
+      "val/00813-svBbv1Pavdk/svBbv1Pavdk.basis.glb": {
+        "size": 21608044,
+        "sha256": "f84c25a56544d0c85935e9449e45c378fc5435e327fabb4c9174e28dd385ce57"
+      },
+      "val/00813-svBbv1Pavdk/svBbv1Pavdk.basis.navmesh": {
+        "size": 27656,
+        "sha256": "e38240ef997011c2d6df16e14aaabdaae7e6cdd1c409d62be96afc59e2580665"
+      },
+      "val/00813-svBbv1Pavdk/svBbv1Pavdk.semantic.glb": {
+        "size": 51425400,
+        "sha256": "64cd62e558f9ba5a2d703bcee40fc2dc5e1108c79f9cb393ce26280d68963a01"
+      },
+      "val/00813-svBbv1Pavdk/svBbv1Pavdk.semantic.txt": {
+        "size": 8636,
+        "sha256": "9ab4dd8fdabc8f92b00f195d2f6ca00a57472d18e7458613e263ba0e212e58f5"
+      },
+      "val/00814-p53SfW6mjZe/p53SfW6mjZe.basis.glb": {
+        "size": 52721272,
+        "sha256": "271641c7be83abc7ffd93e396fd64ea559ddbe0dd6b7ec7eaf62f7d1932d6d27"
+      },
+      "val/00814-p53SfW6mjZe/p53SfW6mjZe.basis.navmesh": {
+        "size": 75748,
+        "sha256": "c4add2431282979fc5d3001849b7101d338c9e5d6ea27969cdaf3329cb847aa5"
+      },
+      "val/00814-p53SfW6mjZe/p53SfW6mjZe.semantic.glb": {
+        "size": 68669200,
+        "sha256": "023fca378d9ae3b98f08b5dbde5bfe6b7598f3f0e3946d63caf65d2584f77cd3"
+      },
+      "val/00814-p53SfW6mjZe/p53SfW6mjZe.semantic.txt": {
+        "size": 20064,
+        "sha256": "04d4f2f96bdfd6d5fc07d93c89a23b370da54d8db75519ebeb5b6e287ac6a62f"
+      },
+      "val/00815-h1zeeAwLh9Z/h1zeeAwLh9Z.basis.glb": {
+        "size": 53416768,
+        "sha256": "51528bb22c3edd8b506bed810a559d728dd48f1d09ee879abc49349a401b27e1"
+      },
+      "val/00815-h1zeeAwLh9Z/h1zeeAwLh9Z.basis.navmesh": {
+        "size": 33228,
+        "sha256": "87593fe255b4b85a3909ed15956a1b1f4fe57339d6a4b683c23ff1606586f069"
+      },
+      "val/00815-h1zeeAwLh9Z/h1zeeAwLh9Z.semantic.glb": {
+        "size": 61957308,
+        "sha256": "6d5474c4c5039826f92b14ebb99def2dad6f93be60468a4467e4a2ee03a52368"
+      },
+      "val/00815-h1zeeAwLh9Z/h1zeeAwLh9Z.semantic.txt": {
+        "size": 15839,
+        "sha256": "4f900b68e8006e89dbedcade65ba613b046c4d4d9adb6ecb1dc649cd684b67b7"
+      },
+      "val/00820-mL8ThkuaVTM/mL8ThkuaVTM.basis.glb": {
+        "size": 24964048,
+        "sha256": "d8900210a7823373d5b79699b2a667b19a9b481269e1ba1f717ac92f80f4b8a1"
+      },
+      "val/00820-mL8ThkuaVTM/mL8ThkuaVTM.basis.navmesh": {
+        "size": 21224,
+        "sha256": "db7cebe7a4f4cc6331c6b79b716275aea6f18f211e53c55e68481f9f6094daa1"
+      },
+      "val/00820-mL8ThkuaVTM/mL8ThkuaVTM.semantic.glb": {
+        "size": 52789600,
+        "sha256": "d19367cfeb6b5b3304dd2a0351294a1071c176e9baf617f3aa5445f38127723c"
+      },
+      "val/00820-mL8ThkuaVTM/mL8ThkuaVTM.semantic.txt": {
+        "size": 9416,
+        "sha256": "c460cc98fed0c56ef960f90b1e9fd683bfc4ca8316fd870f584efc2fc1012c1d"
+      },
+      "val/00821-eF36g7L6Z9M/eF36g7L6Z9M.basis.glb": {
+        "size": 79566156,
+        "sha256": "e299adaa8ea09fff72528a4fbb302448d2226a60b3f4ab4de267ab59e40ffef2"
+      },
+      "val/00821-eF36g7L6Z9M/eF36g7L6Z9M.basis.navmesh": {
+        "size": 85792,
+        "sha256": "11912dc9b99291f2e08a13f9181a02b8b32822f59696f9a052440111e543817c"
+      },
+      "val/00821-eF36g7L6Z9M/eF36g7L6Z9M.semantic.glb": {
+        "size": 72267960,
+        "sha256": "fb1514852f842bfcb2e96d30c68c5800d8931058d3695c7768a8e0f09913d561"
+      },
+      "val/00821-eF36g7L6Z9M/eF36g7L6Z9M.semantic.txt": {
+        "size": 22112,
+        "sha256": "e527ae222b5c3b135b6ef4b3691d4ec52cacedf5436bd02319641d9645e11865"
+      },
+      "val/00823-7MXmsvcQjpJ/7MXmsvcQjpJ.basis.glb": {
+        "size": 61220820,
+        "sha256": "5322fdc85fe7af36d1bed189970ee0102867d18a0fa1a8222bcd9eb24d586318"
+      },
+      "val/00823-7MXmsvcQjpJ/7MXmsvcQjpJ.basis.navmesh": {
+        "size": 58448,
+        "sha256": "092541e82d8938bffe2e56811360129fc525740b12e1cbca8bdf9bfd09fadbf3"
+      },
+      "val/00823-7MXmsvcQjpJ/7MXmsvcQjpJ.semantic.glb": {
+        "size": 77925188,
+        "sha256": "7fd703d19f3a1bdba31b80cd240ca7b4dcaaf4b04c812efbaac5dd7c002abfa3"
+      },
+      "val/00823-7MXmsvcQjpJ/7MXmsvcQjpJ.semantic.txt": {
+        "size": 39319,
+        "sha256": "32d11bf97c79d8db3f643b43bee0932ec6e6c326ca6354d30f97de671195e5c7"
+      },
+      "val/00824-Dd4bFSTQ8gi/Dd4bFSTQ8gi.basis.glb": {
+        "size": 24743724,
+        "sha256": "1cba0b073567b8d89ca4e9c4f9b54cd86443e8d57410b2765236cfb7fdc74b50"
+      },
+      "val/00824-Dd4bFSTQ8gi/Dd4bFSTQ8gi.basis.navmesh": {
+        "size": 29404,
+        "sha256": "fab3a90f2476e43df8e4580af70d3b29925c5a04aab3ee7acec74a696c1a120e"
+      },
+      "val/00824-Dd4bFSTQ8gi/Dd4bFSTQ8gi.semantic.glb": {
+        "size": 53607324,
+        "sha256": "43b3186d97d92601567a50a991986c6589e7e2728c0d0d59c8fe384e45c4b510"
+      },
+      "val/00824-Dd4bFSTQ8gi/Dd4bFSTQ8gi.semantic.txt": {
+        "size": 9114,
+        "sha256": "9cd76faf5d8621967a2eb59a7921e3b5e0f84ef97270ae4ba5910624ca613e3f"
+      },
+      "val/00827-BAbdmeyTvMZ/BAbdmeyTvMZ.basis.glb": {
+        "size": 26571324,
+        "sha256": "ca47ebc44e9bf0eaf2e450eb44f4de8ecf9e41eebda50b340b7b58d37790fa31"
+      },
+      "val/00827-BAbdmeyTvMZ/BAbdmeyTvMZ.basis.navmesh": {
+        "size": 26520,
+        "sha256": "96f751ce85550d2c42b3c6a382ac5f2ad36969ae2e004a21419c1d076f662344"
+      },
+      "val/00827-BAbdmeyTvMZ/BAbdmeyTvMZ.semantic.glb": {
+        "size": 55213792,
+        "sha256": "dc995b4246417cbcc8574fe5b3eaa7877fe23ae17ded9bfe937fba9e66f34a53"
+      },
+      "val/00827-BAbdmeyTvMZ/BAbdmeyTvMZ.semantic.txt": {
+        "size": 8784,
+        "sha256": "6c924737aed20cf9e792e6bc9bd884d7038644ae611a592cf855aea4bff3f279"
+      },
+      "val/00829-QaLdnwvtxbs/QaLdnwvtxbs.basis.glb": {
+        "size": 19656528,
+        "sha256": "acfabc0994b4e2769d0c53a6542166800892df084a3d9611d4ab4aa73d2a8b0e"
+      },
+      "val/00829-QaLdnwvtxbs/QaLdnwvtxbs.basis.navmesh": {
+        "size": 17908,
+        "sha256": "ae924e79c38bb155f323209ec6330d58b09e5e8e72da4f776735c785a2d81baa"
+      },
+      "val/00829-QaLdnwvtxbs/QaLdnwvtxbs.semantic.glb": {
+        "size": 48378220,
+        "sha256": "0cdbdb9f2fc49f5450f7dcffdf11051b74ac04b2f5aa1f19e4d4ec6da7a5ce0f"
+      },
+      "val/00829-QaLdnwvtxbs/QaLdnwvtxbs.semantic.txt": {
+        "size": 5699,
+        "sha256": "dfb30256661106c9632c0adf72869bbdef3877b8c172aeef4970572f37b633e5"
+      },
+      "val/00831-yr17PDCnDDW/yr17PDCnDDW.basis.glb": {
+        "size": 53383948,
+        "sha256": "8d6be03c3110a21adfcb3e545ec99f07c5aae7923fcdbbfbcac73addc63bdf54"
+      },
+      "val/00831-yr17PDCnDDW/yr17PDCnDDW.basis.navmesh": {
+        "size": 81496,
+        "sha256": "aa0abf929f15f5bbab56c7988bad07f93f762ca3e72312adb757b1ade9e1bd98"
+      },
+      "val/00831-yr17PDCnDDW/yr17PDCnDDW.semantic.glb": {
+        "size": 73728596,
+        "sha256": "b5c5175fcb10ebc2a5135f1b71c6b3a49f41c1b97edaf076fb747a441cba01db"
+      },
+      "val/00831-yr17PDCnDDW/yr17PDCnDDW.semantic.txt": {
+        "size": 15585,
+        "sha256": "0656158266caff5d92ebd5a1fd38f354c64f7b041fdfa8ffb3e6d2e1bf9d8b4b"
+      },
+      "val/00832-qyAac8rV8Zk/qyAac8rV8Zk.basis.glb": {
+        "size": 25401228,
+        "sha256": "2223688fdb71e9bd73ac6e2d384b216950b1e3b89c1206710e23a93aa1e0ba1e"
+      },
+      "val/00832-qyAac8rV8Zk/qyAac8rV8Zk.basis.navmesh": {
+        "size": 26608,
+        "sha256": "6625c32b67404a032b51709588a2f0ba670ab2a1e55523cf2b9ec3e7098776e9"
+      },
+      "val/00832-qyAac8rV8Zk/qyAac8rV8Zk.semantic.glb": {
+        "size": 54526824,
+        "sha256": "aa466bf321a44aded026fff5a8890c7a72e6a0d9ae2f762faea9967227d45a86"
+      },
+      "val/00832-qyAac8rV8Zk/qyAac8rV8Zk.semantic.txt": {
+        "size": 13038,
+        "sha256": "c31ba4ec50aef327950307707aa9df52e8d6d93e5d70b9db9d083bf790e5369b"
+      },
+      "val/00835-q3zU7Yy5E5s/q3zU7Yy5E5s.basis.glb": {
+        "size": 23910372,
+        "sha256": "f599aeedb3b0fb6f51403cecc84aeac22b827623577f54dc69f1be2b30f87416"
+      },
+      "val/00835-q3zU7Yy5E5s/q3zU7Yy5E5s.basis.navmesh": {
+        "size": 19452,
+        "sha256": "d10b2606f61591bd3c4b008e753577eebd92f96990afdd42ab26b7f76e159368"
+      },
+      "val/00835-q3zU7Yy5E5s/q3zU7Yy5E5s.semantic.glb": {
+        "size": 51232896,
+        "sha256": "2e2cd601689f3a75f818ade575edb870605283cb7f57afa65d5d5d93a517ac0e"
+      },
+      "val/00835-q3zU7Yy5E5s/q3zU7Yy5E5s.semantic.txt": {
+        "size": 13451,
+        "sha256": "c807fd9ab42ec0e0c0a5d90464aeb8bf045a9d8ff142465f56f1fe12088cc192"
+      },
+      "val/00839-zt1RVoi7PcG/zt1RVoi7PcG.basis.glb": {
+        "size": 37704068,
+        "sha256": "e731a0d3a5235e218938a1655ec763d63dea11d421c2e88d8139fc33b24026ca"
+      },
+      "val/00839-zt1RVoi7PcG/zt1RVoi7PcG.basis.navmesh": {
+        "size": 47084,
+        "sha256": "a948bd682f87a917379f3b13ef59d40f2f52c63f331b84ed0692bfeefddb9001"
+      },
+      "val/00839-zt1RVoi7PcG/zt1RVoi7PcG.semantic.glb": {
+        "size": 61147424,
+        "sha256": "68c3c6538079c10104c718e02f53ca64e1b00d0bb202dda970a5cc070897b1f2"
+      },
+      "val/00839-zt1RVoi7PcG/zt1RVoi7PcG.semantic.txt": {
+        "size": 20530,
+        "sha256": "db662c7fe01bd12d1c06a1ee69e832b34f48c73bda75a038fa8b86657aefeeaa"
+      },
+      "val/00843-DYehNKdT76V/DYehNKdT76V.basis.glb": {
+        "size": 24592180,
+        "sha256": "a0aec6e55825e1c8ee50436e1ca7c123b8f10f2dbfdc88372357c39706e3a319"
+      },
+      "val/00843-DYehNKdT76V/DYehNKdT76V.basis.navmesh": {
+        "size": 34040,
+        "sha256": "d2a62a51f47b0af6cbed504b6746df628c728a0124685d65f47a49d379401ae9"
+      },
+      "val/00843-DYehNKdT76V/DYehNKdT76V.semantic.glb": {
+        "size": 53370928,
+        "sha256": "d97f06caa721df4f7f6684105fe2b5019f6cba5b6ca387f902b6abfb48fb2f98"
+      },
+      "val/00843-DYehNKdT76V/DYehNKdT76V.semantic.txt": {
+        "size": 8298,
+        "sha256": "d6ef75ae1f63f55358442438ad91d692052ca1ee1434105e6fe288cfb5634e50"
+      },
+      "val/00844-q5QZSEeHe5g/q5QZSEeHe5g.basis.glb": {
+        "size": 53197568,
+        "sha256": "c1cf2b9268d637a90cd34d1f229fa49ce605d9a53674ae6286b7c8452e9ab01f"
+      },
+      "val/00844-q5QZSEeHe5g/q5QZSEeHe5g.basis.navmesh": {
+        "size": 67192,
+        "sha256": "6144d1c1ed69b8c712492e0e78e64d18488d03ce6a4fec906860feac04c9c5d8"
+      },
+      "val/00844-q5QZSEeHe5g/q5QZSEeHe5g.semantic.glb": {
+        "size": 72922436,
+        "sha256": "6dc0857cdf89c866e1bdaeaf1945910caa445791b21c6972f5711af66d484722"
+      },
+      "val/00844-q5QZSEeHe5g/q5QZSEeHe5g.semantic.txt": {
+        "size": 34139,
+        "sha256": "eb85820ebcce78a0c30698c36bd528fa3c315448935cfb8dd71d63d6801fba0b"
+      },
+      "val/00847-bCPU9suPUw9/bCPU9suPUw9.basis.glb": {
+        "size": 42365784,
+        "sha256": "481211674aa108f6474b0c08695d5a4a9360c2cc8bb86704d9c5f7c6fa8d83e6"
+      },
+      "val/00847-bCPU9suPUw9/bCPU9suPUw9.basis.navmesh": {
+        "size": 31268,
+        "sha256": "b41a5db263f04951bf59e487ef154196371cecbbbd96fc37b111692cd77faac0"
+      },
+      "val/00847-bCPU9suPUw9/bCPU9suPUw9.semantic.glb": {
+        "size": 55659352,
+        "sha256": "beb1ce9b800cbb25a0a59ef143ed9166443d0d75d3e59dd56299c8cf1720d60a"
+      },
+      "val/00847-bCPU9suPUw9/bCPU9suPUw9.semantic.txt": {
+        "size": 9664,
+        "sha256": "8d20ef2e46f9e2c57679eb0fc8b066467866bbe39d6644be1273248bc37a6605"
+      },
+      "val/00848-ziup5kvtCCR/ziup5kvtCCR.basis.glb": {
+        "size": 25338796,
+        "sha256": "918ecf7eafb55518a6b10deab9721474a08e6da3e13045580612b7e25202071d"
+      },
+      "val/00848-ziup5kvtCCR/ziup5kvtCCR.basis.navmesh": {
+        "size": 30180,
+        "sha256": "2963ec2cf37215b4947f96158856e5ca0de6d333408f980f9071a4e825d4c588"
+      },
+      "val/00848-ziup5kvtCCR/ziup5kvtCCR.semantic.glb": {
+        "size": 53084728,
+        "sha256": "664a1e0ab0570ed6491d513401e590a8ee4164f35c8700f4c2d9a8d1e8ffa4bd"
+      },
+      "val/00848-ziup5kvtCCR/ziup5kvtCCR.semantic.txt": {
+        "size": 7966,
+        "sha256": "da58b1977d920a57bf7ffbb294d36d2a37663db6d913f84a9c82eee6a7d5d795"
+      },
+      "val/00849-a8BtkwhxdRV/a8BtkwhxdRV.basis.glb": {
+        "size": 36382860,
+        "sha256": "d48f025841f1bac5b07173523f32781f57e4b08eb7f11c0f47031b9a278c18bc"
+      },
+      "val/00849-a8BtkwhxdRV/a8BtkwhxdRV.basis.navmesh": {
+        "size": 43304,
+        "sha256": "b4acb5f8f3cb88b5241fcf074faa547d3f453a9933a7c4f5b1ff295610ab2537"
+      },
+      "val/00849-a8BtkwhxdRV/a8BtkwhxdRV.semantic.glb": {
+        "size": 64726420,
+        "sha256": "3fcd647a94c52d4e1f746a11ca36cbcccfa58bbd5ef5840fb350cc8feb7f33a9"
+      },
+      "val/00849-a8BtkwhxdRV/a8BtkwhxdRV.semantic.txt": {
+        "size": 16373,
+        "sha256": "b26094151793d6fd32ec972c30aee2b52f43dcc33cf6d647f3249e04e2b5dccd"
+      },
+      "val/00853-5cdEh9F2hJL/5cdEh9F2hJL.basis.glb": {
+        "size": 29834632,
+        "sha256": "139dcb5542263b4e00a1daee7054f252253bcd02fb4ac51904886cda9f0cd8b6"
+      },
+      "val/00853-5cdEh9F2hJL/5cdEh9F2hJL.basis.navmesh": {
+        "size": 30372,
+        "sha256": "3d5fdcb1b00629e25a45b3033e69a214c7d2cdd3ec0ac8595c7ed296a3098a56"
+      },
+      "val/00853-5cdEh9F2hJL/5cdEh9F2hJL.semantic.glb": {
+        "size": 56882688,
+        "sha256": "927f36670622cac29d1e1b78d5624ae572a7cf51c8278bef0d266024ab609116"
+      },
+      "val/00853-5cdEh9F2hJL/5cdEh9F2hJL.semantic.txt": {
+        "size": 12806,
+        "sha256": "0e2e82f4726dc86df4291ab0911226e01e84bc5d9f511434abfb234f6b9566d8"
+      },
+      "val/00861-GLAQ4DNUx5U/GLAQ4DNUx5U.basis.glb": {
+        "size": 38530336,
+        "sha256": "d2271f8fbf57aad34a2d1e03565d5bb9e85503e05eb5f8b9fd47fa66d8983577"
+      },
+      "val/00861-GLAQ4DNUx5U/GLAQ4DNUx5U.basis.navmesh": {
+        "size": 43496,
+        "sha256": "924b0d1cb33ae5d91b3fab84aa17f43f9293baccd2571b8b840441cd88a4f87f"
+      },
+      "val/00861-GLAQ4DNUx5U/GLAQ4DNUx5U.semantic.glb": {
+        "size": 62925388,
+        "sha256": "9cf5e954d7ecc7b9c41cbb66b7f4200f0965885fe940130bce3c3e1bb221a79f"
+      },
+      "val/00861-GLAQ4DNUx5U/GLAQ4DNUx5U.semantic.txt": {
+        "size": 21622,
+        "sha256": "ef072ebe35073f3da4d319837046d76ce7aa7ccedc5aa2de2fd1e4d9c96766d3"
+      },
+      "val/00862-LT9Jq6dN3Ea/LT9Jq6dN3Ea.basis.glb": {
+        "size": 55413584,
+        "sha256": "8c01a71f49a9fb2e5956d20559815379025d4d7ba8a7eab274180d30966cf4ac"
+      },
+      "val/00862-LT9Jq6dN3Ea/LT9Jq6dN3Ea.basis.navmesh": {
+        "size": 77496,
+        "sha256": "46d8880badeef3d9592cd1bc8c0cfd13fabd925894069b4074606da98bb8c672"
+      },
+      "val/00862-LT9Jq6dN3Ea/LT9Jq6dN3Ea.semantic.glb": {
+        "size": 67828772,
+        "sha256": "6caf4b39c42fdb2ef00f92383cd8021dcd387cb6ecbdd634c52eb42a5835f430"
+      },
+      "val/00862-LT9Jq6dN3Ea/LT9Jq6dN3Ea.semantic.txt": {
+        "size": 23911,
+        "sha256": "45c5643fb1be65fe090d841e20a982806a8bc3133f85e4791b5de4a94119d293"
+      },
+      "val/00869-MHPLjHsuG27/MHPLjHsuG27.basis.glb": {
+        "size": 18736544,
+        "sha256": "fbe80b72c9a939fae628572c432b6f2c436bac9aaa9d6895c90c7d8d1d09d69f"
+      },
+      "val/00869-MHPLjHsuG27/MHPLjHsuG27.basis.navmesh": {
+        "size": 20200,
+        "sha256": "0c81a1e7a5192c1d0a8b2ab28e9ab005c19f89ddb89c0a297c55af0aac6f4638"
+      },
+      "val/00869-MHPLjHsuG27/MHPLjHsuG27.semantic.glb": {
+        "size": 38883948,
+        "sha256": "582bfd6f66b6f07d728403e98e76747389bca030a9ab4765770d10c6569f880a"
+      },
+      "val/00869-MHPLjHsuG27/MHPLjHsuG27.semantic.txt": {
+        "size": 13967,
+        "sha256": "bfe241c487c88a677a27951e64a31e8289a1394ac6f0f0bc25e3fc23f81cd3e4"
+      },
+      "val/00871-VBzV5z6i1WS/VBzV5z6i1WS.basis.glb": {
+        "size": 30014796,
+        "sha256": "e3a9ee6c4651ba5175e3c7256097a7ffcd49af5f28aa5dbe3e7c56672f9346cf"
+      },
+      "val/00871-VBzV5z6i1WS/VBzV5z6i1WS.basis.navmesh": {
+        "size": 29860,
+        "sha256": "4c988285d2063fa008eb7febccb008807dbd665d8f27ec8c40ea1f04acba700c"
+      },
+      "val/00871-VBzV5z6i1WS/VBzV5z6i1WS.semantic.glb": {
+        "size": 59334648,
+        "sha256": "91a3d86a6917aca7e64603b60f50fdfc4bb7c4f789d8f81cf9f49cf6301b0679"
+      },
+      "val/00871-VBzV5z6i1WS/VBzV5z6i1WS.semantic.txt": {
+        "size": 20227,
+        "sha256": "bc1627eb531ad616711293c7a8d3683ab004490d09ffa661327ab89caa046774"
+      },
+      "val/00873-bxsVRursffK/bxsVRursffK.basis.glb": {
+        "size": 23536100,
+        "sha256": "e38a09b7e7c9efbaa54babd52529436cc03a0deb0fb5213970279e2770da0fb8"
+      },
+      "val/00873-bxsVRursffK/bxsVRursffK.basis.navmesh": {
+        "size": 27332,
+        "sha256": "c1110921d7fec05ec635a4faae89a9826a760aa84fde6f4abf5b63a400c8ca73"
+      },
+      "val/00873-bxsVRursffK/bxsVRursffK.semantic.glb": {
+        "size": 51136488,
+        "sha256": "a51cc5d566442cd7e6bdf5fddff6373cd7ec48cf5532e6ce917c1889e23458b0"
+      },
+      "val/00873-bxsVRursffK/bxsVRursffK.semantic.txt": {
+        "size": 10832,
+        "sha256": "be1dfe5cfadd8bd7e851781262fb29d3148a1d3c204ce065509d7ca4d164b4b4"
+      },
+      "val/00876-mv2HUxq3B53/mv2HUxq3B53.basis.glb": {
+        "size": 43462304,
+        "sha256": "50e618c9a1416eb9b5b7ecc514811d18b5830025fb25f3dc2354f83c56581a2c"
+      },
+      "val/00876-mv2HUxq3B53/mv2HUxq3B53.basis.navmesh": {
+        "size": 50888,
+        "sha256": "5fae1e7b35b350df4f3ab412682ae5ec515c51cda0849ff0f306502f70f05e1e"
+      },
+      "val/00876-mv2HUxq3B53/mv2HUxq3B53.semantic.glb": {
+        "size": 64590900,
+        "sha256": "3c3909fcf1d65930b26a48a734cbebe7171babb9f63bb0bb1f6aad3721c0ad21"
+      },
+      "val/00876-mv2HUxq3B53/mv2HUxq3B53.semantic.txt": {
+        "size": 15598,
+        "sha256": "d23a2cfe6aaa64abd22d940b69fa736d60fa92646831f842d36ce14fd6869866"
+      },
+      "val/00877-4ok3usBNeis/4ok3usBNeis.basis.glb": {
+        "size": 23601632,
+        "sha256": "f66665cea56e7da7f0862bff989b5f4911764d4768a221dbebb642e8c7ad353b"
+      },
+      "val/00877-4ok3usBNeis/4ok3usBNeis.basis.navmesh": {
+        "size": 24672,
+        "sha256": "0374c6a55ad7da813e463af40698c405d92e0599d7be77284e013e0a222ad391"
+      },
+      "val/00877-4ok3usBNeis/4ok3usBNeis.semantic.glb": {
+        "size": 52317044,
+        "sha256": "2f873a24dc97a2ca2e90a210b76951f3eec1282a67d769a27fce8d365fe5d3fa"
+      },
+      "val/00877-4ok3usBNeis/4ok3usBNeis.semantic.txt": {
+        "size": 12808,
+        "sha256": "5930c207b4b019a85e7eafedf632ac07503b496880f071c0b72ccf1cdaa15dc8"
+      },
+      "val/00878-XB4GS9ShBRE/XB4GS9ShBRE.basis.glb": {
+        "size": 38713676,
+        "sha256": "5a830430952622486692b5acd9827e1e5b0f9c830f431426a6a9315b67dbe5e8"
+      },
+      "val/00878-XB4GS9ShBRE/XB4GS9ShBRE.basis.navmesh": {
+        "size": 24140,
+        "sha256": "4cfadae9483efecb4640da3e5101a621714156fb43175faad9717a971cd20a40"
+      },
+      "val/00878-XB4GS9ShBRE/XB4GS9ShBRE.semantic.glb": {
+        "size": 52754772,
+        "sha256": "bde82469ef774ab5a0bd366a75271757f1020e0f83b5867a1b90a3d62191f936"
+      },
+      "val/00878-XB4GS9ShBRE/XB4GS9ShBRE.semantic.txt": {
+        "size": 10132,
+        "sha256": "3ae548fab9fb6913fff7c31a0b5a6dcf77e59707a2e72377560dbaa9ae51dbcf"
+      },
+      "val/00880-Nfvxx8J5NCo/Nfvxx8J5NCo.basis.glb": {
+        "size": 23159840,
+        "sha256": "c794eb86a4385d7fe9854ad332e2925ab215db0edc7711256710c2c307384573"
+      },
+      "val/00880-Nfvxx8J5NCo/Nfvxx8J5NCo.basis.navmesh": {
+        "size": 28672,
+        "sha256": "a4d8d2708a62cc8af51f1ced302a23203e52dec2b0c0347d433db609bb567788"
+      },
+      "val/00880-Nfvxx8J5NCo/Nfvxx8J5NCo.semantic.glb": {
+        "size": 52141940,
+        "sha256": "7946a8079518b56bad24af81ef2f9dc86c614643fa013095b35e0352a4790758"
+      },
+      "val/00880-Nfvxx8J5NCo/Nfvxx8J5NCo.semantic.txt": {
+        "size": 7954,
+        "sha256": "a4e189c15a1f3e08121a2a2d7fa3ff7e260cbc03af449824ccff810eba31e6ee"
+      },
+      "val/00890-6s7QHgap2fW/6s7QHgap2fW.basis.glb": {
+        "size": 28026924,
+        "sha256": "cc8a22a3c62160e2ff035bd00e764494dd9a609c5bb7b1fb0c429a05aaaf8344"
+      },
+      "val/00890-6s7QHgap2fW/6s7QHgap2fW.basis.navmesh": {
+        "size": 28148,
+        "sha256": "b8739c2960d431095f59c8200a6b6b316c5b649f6f345f892f123b1220a7dbde"
+      },
+      "val/00890-6s7QHgap2fW/6s7QHgap2fW.semantic.glb": {
+        "size": 56325208,
+        "sha256": "13e90f4197d439256820ae4e797d086863bfe82e4cf13475b84a5d74236d253b"
+      },
+      "val/00890-6s7QHgap2fW/6s7QHgap2fW.semantic.txt": {
+        "size": 15514,
+        "sha256": "f3be09840047f61f704773e046ba414f1b43f47527c71262151dace899feb426"
+      },
+      "val/00891-cvZr5TUy5C5/cvZr5TUy5C5.basis.glb": {
+        "size": 52949148,
+        "sha256": "6546eb52bf729e5a2cc8f24c3aa9f3d0c7745a341399643de907add21ed42f81"
+      },
+      "val/00891-cvZr5TUy5C5/cvZr5TUy5C5.basis.navmesh": {
+        "size": 71948,
+        "sha256": "cbe678cdbe0e618e90c9d9f5dfd20ef40136a0b1f0294cf95f6c87464cd96ddc"
+      },
+      "val/00891-cvZr5TUy5C5/cvZr5TUy5C5.semantic.glb": {
+        "size": 68449676,
+        "sha256": "e91b56b6aad71fe0c5ad5959ec979c68747ce910bd5064d2eab96882f104bb53"
+      },
+      "val/00891-cvZr5TUy5C5/cvZr5TUy5C5.semantic.txt": {
+        "size": 20491,
+        "sha256": "3810d3e247887bd1d556a45e6ea49925f396d555ef309fe693aa81fffee30acc"
+      },
+      "val/00894-HY1NcmCgn3n/HY1NcmCgn3n.basis.glb": {
+        "size": 39717648,
+        "sha256": "19c508695fb6be58afa79e3214a44611af7a8d3523f7c0024d11bc6faa8416c2"
+      },
+      "val/00894-HY1NcmCgn3n/HY1NcmCgn3n.basis.navmesh": {
+        "size": 40200,
+        "sha256": "772501878e8ca6824ad44bab6f6caf0451414c466549155f7f4e4c539cbd831b"
+      },
+      "val/00894-HY1NcmCgn3n/HY1NcmCgn3n.semantic.glb": {
+        "size": 66823192,
+        "sha256": "e98e377f28e3da316e5aa115114121c1d9dc879e446cb2596fe910ef450639fa"
+      },
+      "val/00894-HY1NcmCgn3n/HY1NcmCgn3n.semantic.txt": {
+        "size": 9428,
+        "sha256": "fc1a94d8c6478780db58be0ed71b62379e6b65993276fee0bab441d01a4761f9"
+      }
+    }
+  },
+  "camera": {
+    "width": 512,
+    "height": 288,
+    "hfov_deg": 69.62,
+    "cam_height_m": 0.352846,
+    "cam_pitch_deg": 1.066,
+    "cam_forward_m": 0.35,
+    "upstream_height_m": 0.45
+  },
+  "reference_sampling": {
+    "bands_m": [
+      0.35,
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5
+    ],
+    "grid_step_m": 0.1,
+    "grid_margin_m": 1.3,
+    "snap_max_planar_m": 0.3,
+    "max_reference_points": 4000
+  },
+  "success": {
+    "max_distance_m": 1.25,
+    "scan_body_radius_m": 0.25,
+    "scan_body_offset_m": 0.18,
+    "floor_below_m": 0.5,
+    "floor_above_m": 2.2
+  },
+  "episodes": [
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_1809",
+      "instruction": "Go to the refrigerator visible in your initial view now.",
+      "support_obj_ids": [
+        323
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_1834",
+      "instruction": "Please walk to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        323
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_2129",
+      "instruction": "Head to the coffee machine visible in your initial view.",
+      "support_obj_ids": [
+        330
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_2203",
+      "instruction": "Approach the coffee machine visible in your initial view.",
+      "support_obj_ids": [
+        330
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_2292",
+      "instruction": "Take me to the coffee machine visible in your initial view.",
+      "support_obj_ids": [
+        330
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_2411",
+      "instruction": "Walk to the coffee machine visible in your initial view.",
+      "support_obj_ids": [
+        330
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_2840",
+      "instruction": "Head to the microwave visible in your initial view.",
+      "support_obj_ids": [
+        345
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_341",
+      "instruction": "Proceed to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        22,
+        522,
+        527
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_484",
+      "instruction": "Walk to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        22,
+        522,
+        527
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_5008",
+      "instruction": "Please move to the clothes hanger rod visible in your initial view.",
+      "support_obj_ids": [
+        621
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_5014",
+      "instruction": "Proceed to the clothes hanger rod visible in your initial view.",
+      "support_obj_ids": [
+        621
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_5022",
+      "instruction": "Take me to the clothes hanger rod visible in your initial view.",
+      "support_obj_ids": [
+        621
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_5034",
+      "instruction": "Go ahead and walk to the clothes hanger rod visible in your initial view.",
+      "support_obj_ids": [
+        621
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_5104",
+      "instruction": "Walk up to the clothes hanger rod visible in your initial view and stop there.",
+      "support_obj_ids": [
+        621
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_5220",
+      "instruction": "Please head to the clothes hanger rod visible in your initial view.",
+      "support_obj_ids": [
+        621
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_5266",
+      "instruction": "Walk to the clothes hanger rod visible in your initial view and stop there.",
+      "support_obj_ids": [
+        621
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_5343",
+      "instruction": "Head to the clothes hanger rod visible in your initial view.",
+      "support_obj_ids": [
+        621
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_740",
+      "instruction": "Walk up to the stair visible in your initial view and stop there.",
+      "support_obj_ids": [
+        224
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_824",
+      "instruction": "Please move to the stair visible in your initial view.",
+      "support_obj_ids": [
+        224
+      ]
+    },
+    {
+      "scene_id": "00800-TEEsavR23oF",
+      "episode_id": "traj_927",
+      "instruction": "Please move to the stair visible in your initial view.",
+      "support_obj_ids": [
+        224
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_100",
+      "instruction": "Take me to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        16,
+        311,
+        342,
+        343
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_114",
+      "instruction": "Head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        16,
+        311,
+        342,
+        343
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_1795",
+      "instruction": "Go to the footrest visible in your initial view now.",
+      "support_obj_ids": [
+        338
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_1945",
+      "instruction": "Walk up to the footrest visible in your initial view and stop there.",
+      "support_obj_ids": [
+        338
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_1988",
+      "instruction": "Walk to the footrest visible in your initial view.",
+      "support_obj_ids": [
+        338
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_2246",
+      "instruction": "Walk up to the book visible in your initial view and stop there.",
+      "support_obj_ids": [
+        384,
+        387,
+        684,
+        685,
+        686
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_2345",
+      "instruction": "Take me to the book visible in your initial view.",
+      "support_obj_ids": [
+        384,
+        387,
+        684,
+        685,
+        686
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_2729",
+      "instruction": "Head to the decorative plant visible in your initial view now.",
+      "support_obj_ids": [
+        421
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_2954",
+      "instruction": "Take me to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        421
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_3050",
+      "instruction": "Take me to the piano visible in your initial view.",
+      "support_obj_ids": [
+        424
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_3158",
+      "instruction": "Please move to the piano visible in your initial view.",
+      "support_obj_ids": [
+        424
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_3358",
+      "instruction": "Walk up to the piano visible in your initial view and stop there.",
+      "support_obj_ids": [
+        424
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_3408",
+      "instruction": "Please walk to the piano visible in your initial view.",
+      "support_obj_ids": [
+        424
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_3765",
+      "instruction": "Please head to the hanger visible in your initial view.",
+      "support_obj_ids": [
+        431
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_3789",
+      "instruction": "Go to the hanger visible in your initial view now.",
+      "support_obj_ids": [
+        431
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_427",
+      "instruction": "Go to the pillow visible in your initial view now.",
+      "support_obj_ids": [
+        16,
+        311,
+        342,
+        343
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_475",
+      "instruction": "Go to the pillow visible in your initial view now.",
+      "support_obj_ids": [
+        16,
+        311,
+        342,
+        343
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_4792",
+      "instruction": "Head to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        470
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_4848",
+      "instruction": "Head to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        470
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_7129",
+      "instruction": "Navigate to the rug visible in your initial view.",
+      "support_obj_ids": [
+        852
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_7137",
+      "instruction": "Navigate to the rug visible in your initial view now.",
+      "support_obj_ids": [
+        852
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_7286",
+      "instruction": "Walk to the rug visible in your initial view.",
+      "support_obj_ids": [
+        852
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_7378",
+      "instruction": "Navigate to the rug visible in your initial view now.",
+      "support_obj_ids": [
+        852
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_7444",
+      "instruction": "Walk to the rug visible in your initial view and stop there.",
+      "support_obj_ids": [
+        852
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_7601",
+      "instruction": "Walk to the hanging clothes visible in your initial view.",
+      "support_obj_ids": [
+        1007,
+        1012,
+        1013,
+        1014,
+        1037,
+        1047,
+        1048
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_7822",
+      "instruction": "Proceed to the hanging clothes visible in your initial view.",
+      "support_obj_ids": [
+        1007,
+        1012,
+        1013,
+        1014,
+        1037,
+        1047,
+        1048
+      ]
+    },
+    {
+      "scene_id": "00802-wcojb4TFT35",
+      "episode_id": "traj_7830",
+      "instruction": "please move to the hanging clothes visible in your initial view.",
+      "support_obj_ids": [
+        1007,
+        1012,
+        1013,
+        1014,
+        1037,
+        1047,
+        1048
+      ]
+    },
+    {
+      "scene_id": "00803-k1cupFYWXJ6",
+      "episode_id": "traj_1064",
+      "instruction": "Go ahead and head over to the picture visible in your initial view.",
+      "support_obj_ids": [
+        84,
+        85,
+        251,
+        253,
+        254,
+        407,
+        408,
+        494,
+        496,
+        571,
+        574,
+        611,
+        640,
+        647,
+        655,
+        829,
+        830,
+        832,
+        833
+      ]
+    },
+    {
+      "scene_id": "00803-k1cupFYWXJ6",
+      "episode_id": "traj_1229",
+      "instruction": "Proceed to the picture visible in your initial view.",
+      "support_obj_ids": [
+        84,
+        85,
+        251,
+        253,
+        254,
+        407,
+        408,
+        494,
+        496,
+        571,
+        574,
+        611,
+        640,
+        647,
+        655,
+        829,
+        830,
+        832,
+        833
+      ]
+    },
+    {
+      "scene_id": "00803-k1cupFYWXJ6",
+      "episode_id": "traj_1573",
+      "instruction": "Head to the radiator visible in your initial view.",
+      "support_obj_ids": [
+        165,
+        692
+      ]
+    },
+    {
+      "scene_id": "00803-k1cupFYWXJ6",
+      "episode_id": "traj_1607",
+      "instruction": "Take me to the radiator visible in your initial view.",
+      "support_obj_ids": [
+        165,
+        692
+      ]
+    },
+    {
+      "scene_id": "00803-k1cupFYWXJ6",
+      "episode_id": "traj_1866",
+      "instruction": "Take me to the radiator visible in your initial view.",
+      "support_obj_ids": [
+        165,
+        692
+      ]
+    },
+    {
+      "scene_id": "00803-k1cupFYWXJ6",
+      "episode_id": "traj_1968",
+      "instruction": "Approach the radiator visible in your initial view.",
+      "support_obj_ids": [
+        165,
+        692
+      ]
+    },
+    {
+      "scene_id": "00803-k1cupFYWXJ6",
+      "episode_id": "traj_1983",
+      "instruction": "Navigate to the radiator visible in your initial view.",
+      "support_obj_ids": [
+        165,
+        692
+      ]
+    },
+    {
+      "scene_id": "00803-k1cupFYWXJ6",
+      "episode_id": "traj_2193",
+      "instruction": "Walk up to the stair visible in your initial view and stop there.",
+      "support_obj_ids": [
+        213,
+        268,
+        297,
+        340,
+        381,
+        429,
+        452,
+        514,
+        533,
+        588,
+        756
+      ]
+    },
+    {
+      "scene_id": "00803-k1cupFYWXJ6",
+      "episode_id": "traj_2230",
+      "instruction": "Walk up to the stair visible in your initial view and stop there.",
+      "support_obj_ids": [
+        213,
+        268,
+        297,
+        340,
+        381,
+        429,
+        452,
+        514,
+        533,
+        588,
+        756
+      ]
+    },
+    {
+      "scene_id": "00803-k1cupFYWXJ6",
+      "episode_id": "traj_621",
+      "instruction": "Walk up to the decorative plant visible in your initial view and stop there.",
+      "support_obj_ids": [
+        45,
+        52,
+        59,
+        136
+      ]
+    },
+    {
+      "scene_id": "00803-k1cupFYWXJ6",
+      "episode_id": "traj_780",
+      "instruction": "Please head to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        45,
+        52,
+        59,
+        136
+      ]
+    },
+    {
+      "scene_id": "00808-y9hTuugGdiq",
+      "episode_id": "traj_2471",
+      "instruction": "Approach the mirror visible in your initial view.",
+      "support_obj_ids": [
+        85,
+        108,
+        356,
+        358,
+        393,
+        545,
+        546,
+        547,
+        693
+      ]
+    },
+    {
+      "scene_id": "00808-y9hTuugGdiq",
+      "episode_id": "traj_267",
+      "instruction": "Please move to the plant visible in your initial view.",
+      "support_obj_ids": [
+        14,
+        15,
+        481
+      ]
+    },
+    {
+      "scene_id": "00808-y9hTuugGdiq",
+      "episode_id": "traj_2750",
+      "instruction": "Walk to the hanger visible in your initial view.",
+      "support_obj_ids": [
+        136,
+        139
+      ]
+    },
+    {
+      "scene_id": "00808-y9hTuugGdiq",
+      "episode_id": "traj_380",
+      "instruction": "Please walk to the plant visible in your initial view.",
+      "support_obj_ids": [
+        14,
+        15,
+        481
+      ]
+    },
+    {
+      "scene_id": "00808-y9hTuugGdiq",
+      "episode_id": "traj_381",
+      "instruction": "Please head to the plant visible in your initial view.",
+      "support_obj_ids": [
+        14,
+        15,
+        481
+      ]
+    },
+    {
+      "scene_id": "00808-y9hTuugGdiq",
+      "episode_id": "traj_4076",
+      "instruction": "Walk to the statue visible in your initial view.",
+      "support_obj_ids": [
+        261
+      ]
+    },
+    {
+      "scene_id": "00808-y9hTuugGdiq",
+      "episode_id": "traj_5650",
+      "instruction": "Head to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        307
+      ]
+    },
+    {
+      "scene_id": "00808-y9hTuugGdiq",
+      "episode_id": "traj_5721",
+      "instruction": "Walk up to the dishwasher visible in your initial view and stop there.",
+      "support_obj_ids": [
+        307
+      ]
+    },
+    {
+      "scene_id": "00808-y9hTuugGdiq",
+      "episode_id": "traj_639",
+      "instruction": "Walk to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        16,
+        17,
+        453,
+        454,
+        499,
+        500
+      ]
+    },
+    {
+      "scene_id": "00808-y9hTuugGdiq",
+      "episode_id": "traj_699",
+      "instruction": "Take me to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        16,
+        17,
+        453,
+        454,
+        499,
+        500
+      ]
+    },
+    {
+      "scene_id": "00808-y9hTuugGdiq",
+      "episode_id": "traj_929",
+      "instruction": "Walk up to the nightstand visible in your initial view and stop there.",
+      "support_obj_ids": [
+        16,
+        17,
+        453,
+        454,
+        499,
+        500
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_1579",
+      "instruction": "Head to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        115,
+        193
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_1645",
+      "instruction": "Please walk to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        115,
+        193
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_1652",
+      "instruction": "Head to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        115,
+        193
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_1745",
+      "instruction": "Walk to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        115,
+        193
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_1890",
+      "instruction": "Please walk to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        115,
+        193
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_2688",
+      "instruction": "Navigate to the flower vase visible in your initial view.",
+      "support_obj_ids": [
+        318,
+        336
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_2695",
+      "instruction": "Head to the flower vase visible in your initial view.",
+      "support_obj_ids": [
+        318,
+        336
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_2873",
+      "instruction": "Approach the flower vase visible in your initial view.",
+      "support_obj_ids": [
+        318,
+        336
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_3629",
+      "instruction": "Walk to the blinds visible in your initial view.",
+      "support_obj_ids": [
+        372
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_3776",
+      "instruction": "Go ahead and head over to the blinds visible in your initial view.",
+      "support_obj_ids": [
+        372
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_4118",
+      "instruction": "Go to the refrigerator visible in your initial view now.",
+      "support_obj_ids": [
+        374
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_4159",
+      "instruction": "Approach the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        374
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_4405",
+      "instruction": "Walk up to the refrigerator visible in your initial view and stop there.",
+      "support_obj_ids": [
+        374
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_4427",
+      "instruction": "Head to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        374
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_446",
+      "instruction": "Go ahead and head over to the picture visible in your initial view.",
+      "support_obj_ids": [
+        18,
+        23,
+        39,
+        40,
+        58,
+        65,
+        107,
+        108,
+        112,
+        113,
+        146,
+        147,
+        161,
+        180,
+        181,
+        183,
+        184,
+        185,
+        219,
+        220,
+        240,
+        242,
+        243,
+        306,
+        310,
+        361,
+        381,
+        382,
+        406,
+        453,
+        519,
+        520,
+        543,
+        545,
+        546,
+        547
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_4478",
+      "instruction": "Take me to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        374
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_5437",
+      "instruction": "please move to the rug visible in your initial view.",
+      "support_obj_ids": [
+        445
+      ]
+    },
+    {
+      "scene_id": "00810-CrMo8WxCyVb",
+      "episode_id": "traj_5439",
+      "instruction": "Proceed to the rug visible in your initial view.",
+      "support_obj_ids": [
+        445
+      ]
+    },
+    {
+      "scene_id": "00813-svBbv1Pavdk",
+      "episode_id": "traj_132",
+      "instruction": "Take me to the picture visible in your initial view.",
+      "support_obj_ids": [
+        5,
+        84,
+        133,
+        263,
+        264,
+        267,
+        318,
+        324
+      ]
+    },
+    {
+      "scene_id": "00813-svBbv1Pavdk",
+      "episode_id": "traj_1518",
+      "instruction": "Approach the rug visible in your initial view.",
+      "support_obj_ids": [
+        282
+      ]
+    },
+    {
+      "scene_id": "00813-svBbv1Pavdk",
+      "episode_id": "traj_1857",
+      "instruction": "Take me to the rug visible in your initial view.",
+      "support_obj_ids": [
+        282
+      ]
+    },
+    {
+      "scene_id": "00813-svBbv1Pavdk",
+      "episode_id": "traj_1941",
+      "instruction": "Please head to the rug visible in your initial view.",
+      "support_obj_ids": [
+        282
+      ]
+    },
+    {
+      "scene_id": "00813-svBbv1Pavdk",
+      "episode_id": "traj_2096",
+      "instruction": "Walk to the flower vase visible in your initial view.",
+      "support_obj_ids": [
+        334
+      ]
+    },
+    {
+      "scene_id": "00813-svBbv1Pavdk",
+      "episode_id": "traj_256",
+      "instruction": "Walk up to the picture visible in your initial view and stop there.",
+      "support_obj_ids": [
+        5,
+        84,
+        133,
+        263,
+        264,
+        267,
+        318,
+        324
+      ]
+    },
+    {
+      "scene_id": "00813-svBbv1Pavdk",
+      "episode_id": "traj_30",
+      "instruction": "Go ahead and head over to the picture visible in your initial view.",
+      "support_obj_ids": [
+        5,
+        84,
+        133,
+        263,
+        264,
+        267,
+        318,
+        324
+      ]
+    },
+    {
+      "scene_id": "00813-svBbv1Pavdk",
+      "episode_id": "traj_579",
+      "instruction": "Head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        9,
+        10,
+        131,
+        295
+      ]
+    },
+    {
+      "scene_id": "00813-svBbv1Pavdk",
+      "episode_id": "traj_733",
+      "instruction": "Proceed to the pillow visible in your initial view now.",
+      "support_obj_ids": [
+        9,
+        10,
+        131,
+        295
+      ]
+    },
+    {
+      "scene_id": "00813-svBbv1Pavdk",
+      "episode_id": "traj_769",
+      "instruction": "Please head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        9,
+        10,
+        131,
+        295
+      ]
+    },
+    {
+      "scene_id": "00813-svBbv1Pavdk",
+      "episode_id": "traj_980",
+      "instruction": "Proceed to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        9,
+        10,
+        131,
+        295
+      ]
+    },
+    {
+      "scene_id": "00814-p53SfW6mjZe",
+      "episode_id": "traj_2262",
+      "instruction": "Head to the dresser visible in your initial view.",
+      "support_obj_ids": [
+        192,
+        684,
+        788
+      ]
+    },
+    {
+      "scene_id": "00814-p53SfW6mjZe",
+      "episode_id": "traj_2406",
+      "instruction": "Please go to the dresser visible in your initial view.",
+      "support_obj_ids": [
+        192,
+        684,
+        788
+      ]
+    },
+    {
+      "scene_id": "00814-p53SfW6mjZe",
+      "episode_id": "traj_2418",
+      "instruction": "Head to the dresser visible in your initial view.",
+      "support_obj_ids": [
+        192,
+        684,
+        788
+      ]
+    },
+    {
+      "scene_id": "00814-p53SfW6mjZe",
+      "episode_id": "traj_3621",
+      "instruction": "Take me to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        242,
+        346
+      ]
+    },
+    {
+      "scene_id": "00814-p53SfW6mjZe",
+      "episode_id": "traj_3745",
+      "instruction": "Please head to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        242,
+        346
+      ]
+    },
+    {
+      "scene_id": "00814-p53SfW6mjZe",
+      "episode_id": "traj_4009",
+      "instruction": "Walk to the microwave visible in your initial view.",
+      "support_obj_ids": [
+        358
+      ]
+    },
+    {
+      "scene_id": "00814-p53SfW6mjZe",
+      "episode_id": "traj_4191",
+      "instruction": "Walk up to the microwave visible in your initial view and stop there.",
+      "support_obj_ids": [
+        358
+      ]
+    },
+    {
+      "scene_id": "00814-p53SfW6mjZe",
+      "episode_id": "traj_4390",
+      "instruction": "Navigate to the microwave visible in your initial view.",
+      "support_obj_ids": [
+        358
+      ]
+    },
+    {
+      "scene_id": "00814-p53SfW6mjZe",
+      "episode_id": "traj_5739",
+      "instruction": "Proceed to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        447,
+        448,
+        560,
+        688,
+        689,
+        690,
+        700,
+        701
+      ]
+    },
+    {
+      "scene_id": "00814-p53SfW6mjZe",
+      "episode_id": "traj_6157",
+      "instruction": "Go ahead and head to the bedframe visible in your initial view.",
+      "support_obj_ids": [
+        691
+      ]
+    },
+    {
+      "scene_id": "00814-p53SfW6mjZe",
+      "episode_id": "traj_6307",
+      "instruction": "Please head to the bedframe visible in your initial view.",
+      "support_obj_ids": [
+        691
+      ]
+    },
+    {
+      "scene_id": "00814-p53SfW6mjZe",
+      "episode_id": "traj_6365",
+      "instruction": "Proceed to the bedframe visible in your initial view.",
+      "support_obj_ids": [
+        691
+      ]
+    },
+    {
+      "scene_id": "00814-p53SfW6mjZe",
+      "episode_id": "traj_6398",
+      "instruction": "Go ahead and head over to the bedframe visible in your initial view.",
+      "support_obj_ids": [
+        691
+      ]
+    },
+    {
+      "scene_id": "00814-p53SfW6mjZe",
+      "episode_id": "traj_6448",
+      "instruction": "Walk to the bedframe visible in your initial view.",
+      "support_obj_ids": [
+        691
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_1383",
+      "instruction": "Head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        151,
+        431,
+        433,
+        632,
+        633
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_1397",
+      "instruction": "Take me to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        151,
+        431,
+        433,
+        632,
+        633
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_1473",
+      "instruction": "Please head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        151,
+        431,
+        433,
+        632,
+        633
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_1536",
+      "instruction": "Walk up to the rug visible in your initial view and stop there.",
+      "support_obj_ids": [
+        183,
+        188,
+        287,
+        415
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_1585",
+      "instruction": "Head to the rug visible in your initial view now.",
+      "support_obj_ids": [
+        183,
+        188,
+        287,
+        415
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_1631",
+      "instruction": "Go to the rug visible in your initial view now.",
+      "support_obj_ids": [
+        183,
+        188,
+        287,
+        415
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_1716",
+      "instruction": "Take me to the rug visible in your initial view.",
+      "support_obj_ids": [
+        183,
+        188,
+        287,
+        415
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_1744",
+      "instruction": "Please move to the rug visible in your initial view.",
+      "support_obj_ids": [
+        183,
+        188,
+        287,
+        415
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_1752",
+      "instruction": "Go to the rug visible in your initial view now.",
+      "support_obj_ids": [
+        183,
+        188,
+        287,
+        415
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_1759",
+      "instruction": "Take me to the rug visible in your initial view.",
+      "support_obj_ids": [
+        183,
+        188,
+        287,
+        415
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_1906",
+      "instruction": "Go ahead and head over to the rug visible in your initial view.",
+      "support_obj_ids": [
+        183,
+        188,
+        287,
+        415
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_1931",
+      "instruction": "Head to the rug visible in your initial view now.",
+      "support_obj_ids": [
+        183,
+        188,
+        287,
+        415
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_2263",
+      "instruction": "Take me to the calendar visible in your initial view.",
+      "support_obj_ids": [
+        187
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_2506",
+      "instruction": "Please move to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        189
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_2567",
+      "instruction": "Approach the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        189
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_2720",
+      "instruction": "Go ahead and head over to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        189
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_2814",
+      "instruction": "Please walk to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        189
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_2868",
+      "instruction": "Walk up to the dishwasher visible in your initial view and stop there.",
+      "support_obj_ids": [
+        189
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_354",
+      "instruction": "Walk to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        32,
+        185,
+        270,
+        442,
+        443
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_3815",
+      "instruction": "Proceed to the microwave visible in your initial view.",
+      "support_obj_ids": [
+        204
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_3816",
+      "instruction": "Take me to the microwave visible in your initial view.",
+      "support_obj_ids": [
+        204
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_388",
+      "instruction": "Head to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        32,
+        185,
+        270,
+        442,
+        443
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_419",
+      "instruction": "Approach the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        32,
+        185,
+        270,
+        442,
+        443
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_4209",
+      "instruction": "Head to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        235
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_5046",
+      "instruction": "Take me to the flowerpot visible in your initial view.",
+      "support_obj_ids": [
+        417
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_5169",
+      "instruction": "Take me to the flowerpot visible in your initial view.",
+      "support_obj_ids": [
+        417
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_5261",
+      "instruction": "Please move to the flowerpot visible in your initial view.",
+      "support_obj_ids": [
+        417
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_5477",
+      "instruction": "Please head to the flowerpot visible in your initial view.",
+      "support_obj_ids": [
+        417
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_6062",
+      "instruction": "Walk up to the nightstand visible in your initial view and stop there.",
+      "support_obj_ids": [
+        611,
+        614
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_6103",
+      "instruction": "Head to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        611,
+        614
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_6146",
+      "instruction": "Approach the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        611,
+        614
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_6233",
+      "instruction": "Go to the nightstand visible in your initial view now.",
+      "support_obj_ids": [
+        611,
+        614
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_6251",
+      "instruction": "Please walk to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        611,
+        614
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_6329",
+      "instruction": "Go ahead and head over to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        611,
+        614
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_6393",
+      "instruction": "take me to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        611,
+        614
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_6405",
+      "instruction": "Walk to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        611,
+        614
+      ]
+    },
+    {
+      "scene_id": "00815-h1zeeAwLh9Z",
+      "episode_id": "traj_6426",
+      "instruction": "Please move to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        611,
+        614
+      ]
+    },
+    {
+      "scene_id": "00820-mL8ThkuaVTM",
+      "episode_id": "traj_2283",
+      "instruction": "Walk up to the stair visible in your initial view and stop there.",
+      "support_obj_ids": [
+        155,
+        157
+      ]
+    },
+    {
+      "scene_id": "00820-mL8ThkuaVTM",
+      "episode_id": "traj_2580",
+      "instruction": "take me to the microwave visible in your initial view.",
+      "support_obj_ids": [
+        264
+      ]
+    },
+    {
+      "scene_id": "00820-mL8ThkuaVTM",
+      "episode_id": "traj_506",
+      "instruction": "take me to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        27
+      ]
+    },
+    {
+      "scene_id": "00820-mL8ThkuaVTM",
+      "episode_id": "traj_824",
+      "instruction": "Head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        27
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_1369",
+      "instruction": "Please head to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        239,
+        433,
+        513,
+        588,
+        615,
+        750,
+        780,
+        829
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_1544",
+      "instruction": "Approach the pillow visible in your initial view.",
+      "support_obj_ids": [
+        270,
+        273,
+        277,
+        280,
+        292,
+        295,
+        300,
+        302,
+        517,
+        617,
+        618,
+        643,
+        644,
+        675,
+        676,
+        728,
+        730,
+        731,
+        763,
+        881,
+        909,
+        910
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_1571",
+      "instruction": "Take me to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        270,
+        273,
+        277,
+        280,
+        292,
+        295,
+        300,
+        302,
+        517,
+        617,
+        618,
+        643,
+        644,
+        675,
+        676,
+        728,
+        730,
+        731,
+        763,
+        881,
+        909,
+        910
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_1581",
+      "instruction": "Navigate to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        270,
+        273,
+        277,
+        280,
+        292,
+        295,
+        300,
+        302,
+        517,
+        617,
+        618,
+        643,
+        644,
+        675,
+        676,
+        728,
+        730,
+        731,
+        763,
+        881,
+        909,
+        910
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_1609",
+      "instruction": "Walk to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        270,
+        273,
+        277,
+        280,
+        292,
+        295,
+        300,
+        302,
+        517,
+        617,
+        618,
+        643,
+        644,
+        675,
+        676,
+        728,
+        730,
+        731,
+        763,
+        881,
+        909,
+        910
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_1723",
+      "instruction": "Please walk to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        270,
+        273,
+        277,
+        280,
+        292,
+        295,
+        300,
+        302,
+        517,
+        617,
+        618,
+        643,
+        644,
+        675,
+        676,
+        728,
+        730,
+        731,
+        763,
+        881,
+        909,
+        910
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_1742",
+      "instruction": "Walk to the pillow visible in your initial view and stop there.",
+      "support_obj_ids": [
+        270,
+        273,
+        277,
+        280,
+        292,
+        295,
+        300,
+        302,
+        517,
+        617,
+        618,
+        643,
+        644,
+        675,
+        676,
+        728,
+        730,
+        731,
+        763,
+        881,
+        909,
+        910
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_2066",
+      "instruction": "Go ahead and head over to the ottoman visible in your initial view.",
+      "support_obj_ids": [
+        289,
+        656
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_2070",
+      "instruction": "Please go to the ottoman visible in your initial view.",
+      "support_obj_ids": [
+        289,
+        656
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_2486",
+      "instruction": "Take me to the ottoman visible in your initial view.",
+      "support_obj_ids": [
+        289,
+        656
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_2740",
+      "instruction": "Walk up to the stair visible in your initial view and stop there.",
+      "support_obj_ids": [
+        566,
+        567
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_3014",
+      "instruction": "Take me to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        621
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_3403",
+      "instruction": "Please head to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        621
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_3465",
+      "instruction": "Head to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        621
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_3475",
+      "instruction": "Head to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        621
+      ]
+    },
+    {
+      "scene_id": "00821-eF36g7L6Z9M",
+      "episode_id": "traj_732",
+      "instruction": "Please head to the picture visible in your initial view.",
+      "support_obj_ids": [
+        141,
+        204,
+        205,
+        343,
+        344,
+        345,
+        346,
+        760,
+        912
+      ]
+    },
+    {
+      "scene_id": "00823-7MXmsvcQjpJ",
+      "episode_id": "traj_1081",
+      "instruction": "Walk up to the book visible in your initial view and stop there.",
+      "support_obj_ids": [
+        41,
+        44,
+        45,
+        52,
+        53,
+        112,
+        729,
+        736,
+        1057,
+        1058,
+        1360,
+        1361,
+        1366,
+        1367
+      ]
+    },
+    {
+      "scene_id": "00823-7MXmsvcQjpJ",
+      "episode_id": "traj_1237",
+      "instruction": "Please move to the book visible in your initial view.",
+      "support_obj_ids": [
+        41,
+        44,
+        45,
+        52,
+        53,
+        112,
+        729,
+        736,
+        1057,
+        1058,
+        1360,
+        1361,
+        1366,
+        1367
+      ]
+    },
+    {
+      "scene_id": "00823-7MXmsvcQjpJ",
+      "episode_id": "traj_1306",
+      "instruction": "Proceed to the book visible in your initial view.",
+      "support_obj_ids": [
+        41,
+        44,
+        45,
+        52,
+        53,
+        112,
+        729,
+        736,
+        1057,
+        1058,
+        1360,
+        1361,
+        1366,
+        1367
+      ]
+    },
+    {
+      "scene_id": "00823-7MXmsvcQjpJ",
+      "episode_id": "traj_1422",
+      "instruction": "Walk up to the book visible in your initial view and stop there.",
+      "support_obj_ids": [
+        41,
+        44,
+        45,
+        52,
+        53,
+        112,
+        729,
+        736,
+        1057,
+        1058,
+        1360,
+        1361,
+        1366,
+        1367
+      ]
+    },
+    {
+      "scene_id": "00823-7MXmsvcQjpJ",
+      "episode_id": "traj_1542",
+      "instruction": "Proceed to the vase visible in your initial view.",
+      "support_obj_ids": [
+        61
+      ]
+    },
+    {
+      "scene_id": "00823-7MXmsvcQjpJ",
+      "episode_id": "traj_1707",
+      "instruction": "Head to the vase visible in your initial view.",
+      "support_obj_ids": [
+        61
+      ]
+    },
+    {
+      "scene_id": "00823-7MXmsvcQjpJ",
+      "episode_id": "traj_1750",
+      "instruction": "Head to the vase visible in your initial view.",
+      "support_obj_ids": [
+        61
+      ]
+    },
+    {
+      "scene_id": "00823-7MXmsvcQjpJ",
+      "episode_id": "traj_1920",
+      "instruction": "Take me to the vase visible in your initial view.",
+      "support_obj_ids": [
+        61
+      ]
+    },
+    {
+      "scene_id": "00823-7MXmsvcQjpJ",
+      "episode_id": "traj_3095",
+      "instruction": "Proceed to the flowerpot visible in your initial view.",
+      "support_obj_ids": [
+        418,
+        763,
+        764
+      ]
+    },
+    {
+      "scene_id": "00823-7MXmsvcQjpJ",
+      "episode_id": "traj_3693",
+      "instruction": "Take me to the guitar visible in your initial view.",
+      "support_obj_ids": [
+        627
+      ]
+    },
+    {
+      "scene_id": "00823-7MXmsvcQjpJ",
+      "episode_id": "traj_558",
+      "instruction": "Head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        28,
+        151,
+        152,
+        555,
+        1166
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_1054",
+      "instruction": "Walk up to the pillow visible in your initial view and stop there.",
+      "support_obj_ids": [
+        53,
+        54,
+        57,
+        61,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        313
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_1118",
+      "instruction": "Proceed to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        53,
+        54,
+        57,
+        61,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        313
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_1265",
+      "instruction": "Head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        53,
+        54,
+        57,
+        61,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        313
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_1296",
+      "instruction": "Go ahead and head over to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        53,
+        54,
+        57,
+        61,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        313
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_1365",
+      "instruction": "Go ahead and walk to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        53,
+        54,
+        57,
+        61,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        313
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_1480",
+      "instruction": "Approach the pillow visible in your initial view.",
+      "support_obj_ids": [
+        53,
+        54,
+        57,
+        61,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        313
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_237",
+      "instruction": "Please move to the rug visible in your initial view.",
+      "support_obj_ids": [
+        7,
+        175
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_290",
+      "instruction": "Walk up to the rug visible in your initial view and stop there.",
+      "support_obj_ids": [
+        7,
+        175
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_33",
+      "instruction": "Please head to the rug visible in your initial view.",
+      "support_obj_ids": [
+        7,
+        175
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_367",
+      "instruction": "Proceed to the rug visible in your initial view now.",
+      "support_obj_ids": [
+        7,
+        175
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_3750",
+      "instruction": "Walk up to the refrigerator visible in your initial view and stop there.",
+      "support_obj_ids": [
+        179
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_3842",
+      "instruction": "Proceed to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        179
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_3961",
+      "instruction": "Walk up to the refrigerator visible in your initial view and stop there.",
+      "support_obj_ids": [
+        179
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_4012",
+      "instruction": "Navigate to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        242
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_4153",
+      "instruction": "Walk to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        242
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_4264",
+      "instruction": "Head to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        242
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_4344",
+      "instruction": "Take me to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        242
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_700",
+      "instruction": "Head to the flower vase visible in your initial view.",
+      "support_obj_ids": [
+        20,
+        21,
+        96,
+        203,
+        209
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_706",
+      "instruction": "Walk up to the flower vase visible in your initial view and stop there.",
+      "support_obj_ids": [
+        20,
+        21,
+        96,
+        203,
+        209
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_818",
+      "instruction": "Take me to the flower vase visible in your initial view.",
+      "support_obj_ids": [
+        20,
+        21,
+        96,
+        203,
+        209
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_906",
+      "instruction": "Go ahead and head over to the flower vase visible in your initial view.",
+      "support_obj_ids": [
+        20,
+        21,
+        96,
+        203,
+        209
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_951",
+      "instruction": "Head to the flower vase visible in your initial view.",
+      "support_obj_ids": [
+        20,
+        21,
+        96,
+        203,
+        209
+      ]
+    },
+    {
+      "scene_id": "00824-Dd4bFSTQ8gi",
+      "episode_id": "traj_991",
+      "instruction": "Take me to the flower vase visible in your initial view.",
+      "support_obj_ids": [
+        20,
+        21,
+        96,
+        203,
+        209
+      ]
+    },
+    {
+      "scene_id": "00827-BAbdmeyTvMZ",
+      "episode_id": "traj_2583",
+      "instruction": "Please head to the handrail visible in your initial view.",
+      "support_obj_ids": [
+        236
+      ]
+    },
+    {
+      "scene_id": "00827-BAbdmeyTvMZ",
+      "episode_id": "traj_303",
+      "instruction": "Take me to the picture visible in your initial view.",
+      "support_obj_ids": [
+        63,
+        96,
+        200,
+        202
+      ]
+    },
+    {
+      "scene_id": "00827-BAbdmeyTvMZ",
+      "episode_id": "traj_3148",
+      "instruction": "Navigate to the dishwasher visible in your initial view now.",
+      "support_obj_ids": [
+        290
+      ]
+    },
+    {
+      "scene_id": "00827-BAbdmeyTvMZ",
+      "episode_id": "traj_3187",
+      "instruction": "Proceed to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        290
+      ]
+    },
+    {
+      "scene_id": "00827-BAbdmeyTvMZ",
+      "episode_id": "traj_3200",
+      "instruction": "Go ahead and head over to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        290
+      ]
+    },
+    {
+      "scene_id": "00827-BAbdmeyTvMZ",
+      "episode_id": "traj_756",
+      "instruction": "Proceed to the rug visible in your initial view.",
+      "support_obj_ids": [
+        84,
+        108,
+        234
+      ]
+    },
+    {
+      "scene_id": "00827-BAbdmeyTvMZ",
+      "episode_id": "traj_849",
+      "instruction": "Walk to the rug visible in your initial view.",
+      "support_obj_ids": [
+        84,
+        108,
+        234
+      ]
+    },
+    {
+      "scene_id": "00829-QaLdnwvtxbs",
+      "episode_id": "traj_122",
+      "instruction": "Head to the ottoman visible in your initial view.",
+      "support_obj_ids": [
+        21,
+        86
+      ]
+    },
+    {
+      "scene_id": "00829-QaLdnwvtxbs",
+      "episode_id": "traj_14",
+      "instruction": "Take me to the ottoman visible in your initial view.",
+      "support_obj_ids": [
+        21,
+        86
+      ]
+    },
+    {
+      "scene_id": "00829-QaLdnwvtxbs",
+      "episode_id": "traj_1842",
+      "instruction": "Please move to the picture visible in your initial view.",
+      "support_obj_ids": [
+        63,
+        64,
+        65,
+        95,
+        150,
+        151,
+        152,
+        153,
+        159,
+        208,
+        234
+      ]
+    },
+    {
+      "scene_id": "00829-QaLdnwvtxbs",
+      "episode_id": "traj_202",
+      "instruction": "Walk to the ottoman visible in your initial view.",
+      "support_obj_ids": [
+        21,
+        86
+      ]
+    },
+    {
+      "scene_id": "00829-QaLdnwvtxbs",
+      "episode_id": "traj_246",
+      "instruction": "Walk up to the ottoman visible in your initial view and stop there.",
+      "support_obj_ids": [
+        21,
+        86
+      ]
+    },
+    {
+      "scene_id": "00829-QaLdnwvtxbs",
+      "episode_id": "traj_291",
+      "instruction": "Please walk to the ottoman visible in your initial view.",
+      "support_obj_ids": [
+        21,
+        86
+      ]
+    },
+    {
+      "scene_id": "00829-QaLdnwvtxbs",
+      "episode_id": "traj_359",
+      "instruction": "Take me to the ottoman visible in your initial view.",
+      "support_obj_ids": [
+        21,
+        86
+      ]
+    },
+    {
+      "scene_id": "00829-QaLdnwvtxbs",
+      "episode_id": "traj_364",
+      "instruction": "Navigate to the ottoman visible in your initial view.",
+      "support_obj_ids": [
+        21,
+        86
+      ]
+    },
+    {
+      "scene_id": "00829-QaLdnwvtxbs",
+      "episode_id": "traj_390",
+      "instruction": "Head to the ottoman visible in your initial view.",
+      "support_obj_ids": [
+        21,
+        86
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_1067",
+      "instruction": "Take me to the picture visible in your initial view.",
+      "support_obj_ids": [
+        103
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_1081",
+      "instruction": "Walk to the picture visible in your initial view.",
+      "support_obj_ids": [
+        103
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_1222",
+      "instruction": "Go ahead and head over to the picture visible in your initial view.",
+      "support_obj_ids": [
+        103
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_1268",
+      "instruction": "Please walk to the picture visible in your initial view.",
+      "support_obj_ids": [
+        103
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_1332",
+      "instruction": "Head to the picture visible in your initial view.",
+      "support_obj_ids": [
+        103
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_1608",
+      "instruction": "Please move to the vase visible in your initial view.",
+      "support_obj_ids": [
+        135,
+        277,
+        348,
+        459,
+        461,
+        466,
+        504,
+        510,
+        544
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_1753",
+      "instruction": "Head to the vase visible in your initial view.",
+      "support_obj_ids": [
+        135,
+        277,
+        348,
+        459,
+        461,
+        466,
+        504,
+        510,
+        544
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_178",
+      "instruction": "Proceed to the plant visible in your initial view.",
+      "support_obj_ids": [
+        32,
+        131,
+        169,
+        265,
+        266,
+        276,
+        398,
+        458,
+        460,
+        503,
+        509,
+        543
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_1909",
+      "instruction": "Navigate to the vase visible in your initial view.",
+      "support_obj_ids": [
+        135,
+        277,
+        348,
+        459,
+        461,
+        466,
+        504,
+        510,
+        544
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_1911",
+      "instruction": "Walk to the vase visible in your initial view.",
+      "support_obj_ids": [
+        135,
+        277,
+        348,
+        459,
+        461,
+        466,
+        504,
+        510,
+        544
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_1926",
+      "instruction": "Take me to the vase visible in your initial view.",
+      "support_obj_ids": [
+        135,
+        277,
+        348,
+        459,
+        461,
+        466,
+        504,
+        510,
+        544
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_2523",
+      "instruction": "Take me to the handrail visible in your initial view.",
+      "support_obj_ids": [
+        178,
+        533
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_2549",
+      "instruction": "Walk to the handrail visible in your initial view.",
+      "support_obj_ids": [
+        178,
+        533
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_2715",
+      "instruction": "Walk up to the handrail visible in your initial view and stop there.",
+      "support_obj_ids": [
+        178,
+        533
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_2850",
+      "instruction": "Walk to the handrail visible in your initial view.",
+      "support_obj_ids": [
+        178,
+        533
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_326",
+      "instruction": "Head to the plant visible in your initial view.",
+      "support_obj_ids": [
+        32,
+        131,
+        169,
+        265,
+        266,
+        276,
+        398,
+        458,
+        460,
+        503,
+        509,
+        543
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_663",
+      "instruction": "Go ahead and head over to the microwave visible in your initial view.",
+      "support_obj_ids": [
+        79
+      ]
+    },
+    {
+      "scene_id": "00831-yr17PDCnDDW",
+      "episode_id": "traj_895",
+      "instruction": "Walk to the microwave visible in your initial view.",
+      "support_obj_ids": [
+        79
+      ]
+    },
+    {
+      "scene_id": "00832-qyAac8rV8Zk",
+      "episode_id": "traj_1067",
+      "instruction": "Navigate to the dresser visible in your initial view.",
+      "support_obj_ids": [
+        197
+      ]
+    },
+    {
+      "scene_id": "00832-qyAac8rV8Zk",
+      "episode_id": "traj_1214",
+      "instruction": "Go to the dresser visible in your initial view now.",
+      "support_obj_ids": [
+        197
+      ]
+    },
+    {
+      "scene_id": "00832-qyAac8rV8Zk",
+      "episode_id": "traj_1228",
+      "instruction": "Go ahead and head to the dresser visible in your initial view.",
+      "support_obj_ids": [
+        197
+      ]
+    },
+    {
+      "scene_id": "00832-qyAac8rV8Zk",
+      "episode_id": "traj_2017",
+      "instruction": "Walk to the rug visible in your initial view.",
+      "support_obj_ids": [
+        304
+      ]
+    },
+    {
+      "scene_id": "00832-qyAac8rV8Zk",
+      "episode_id": "traj_2036",
+      "instruction": "Go ahead and head over to the rug visible in your initial view.",
+      "support_obj_ids": [
+        304
+      ]
+    },
+    {
+      "scene_id": "00832-qyAac8rV8Zk",
+      "episode_id": "traj_2098",
+      "instruction": "Go to the rug visible in your initial view now.",
+      "support_obj_ids": [
+        304
+      ]
+    },
+    {
+      "scene_id": "00832-qyAac8rV8Zk",
+      "episode_id": "traj_2116",
+      "instruction": "Please head to the rug visible in your initial view.",
+      "support_obj_ids": [
+        304
+      ]
+    },
+    {
+      "scene_id": "00832-qyAac8rV8Zk",
+      "episode_id": "traj_2362",
+      "instruction": "Take me to the rug visible in your initial view.",
+      "support_obj_ids": [
+        304
+      ]
+    },
+    {
+      "scene_id": "00832-qyAac8rV8Zk",
+      "episode_id": "traj_2447",
+      "instruction": "Proceed to the rug visible in your initial view.",
+      "support_obj_ids": [
+        304
+      ]
+    },
+    {
+      "scene_id": "00832-qyAac8rV8Zk",
+      "episode_id": "traj_2478",
+      "instruction": "Please move to the rug visible in your initial view.",
+      "support_obj_ids": [
+        304
+      ]
+    },
+    {
+      "scene_id": "00835-q3zU7Yy5E5s",
+      "episode_id": "traj_1031",
+      "instruction": "Go ahead and head over to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        90,
+        91,
+        92,
+        93,
+        316
+      ]
+    },
+    {
+      "scene_id": "00835-q3zU7Yy5E5s",
+      "episode_id": "traj_1134",
+      "instruction": "Please head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        90,
+        91,
+        92,
+        93,
+        316
+      ]
+    },
+    {
+      "scene_id": "00835-q3zU7Yy5E5s",
+      "episode_id": "traj_1139",
+      "instruction": "Take me to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        90,
+        91,
+        92,
+        93,
+        316
+      ]
+    },
+    {
+      "scene_id": "00835-q3zU7Yy5E5s",
+      "episode_id": "traj_1210",
+      "instruction": "Please move to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        90,
+        91,
+        92,
+        93,
+        316
+      ]
+    },
+    {
+      "scene_id": "00835-q3zU7Yy5E5s",
+      "episode_id": "traj_1222",
+      "instruction": "Go ahead and head over to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        90,
+        91,
+        92,
+        93,
+        316
+      ]
+    },
+    {
+      "scene_id": "00835-q3zU7Yy5E5s",
+      "episode_id": "traj_1348",
+      "instruction": "Proceed to the pillow visible in your initial view now.",
+      "support_obj_ids": [
+        90,
+        91,
+        92,
+        93,
+        316
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_1084",
+      "instruction": "Take me to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        28,
+        294,
+        717
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_1236",
+      "instruction": "Walk to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        28,
+        294,
+        717
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_128",
+      "instruction": "Head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        17,
+        144,
+        145,
+        202,
+        283,
+        284,
+        288,
+        290,
+        317,
+        320,
+        519,
+        524
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_1373",
+      "instruction": "Please go to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        28,
+        294,
+        717
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_1481",
+      "instruction": "Walk to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        28,
+        294,
+        717
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_1490",
+      "instruction": "Walk to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        28,
+        294,
+        717
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_1891",
+      "instruction": "Please go to the picture visible in your initial view.",
+      "support_obj_ids": [
+        48,
+        154,
+        155,
+        188,
+        193,
+        263,
+        663
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_197",
+      "instruction": "please move to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        17,
+        144,
+        145,
+        202,
+        283,
+        284,
+        288,
+        290,
+        317,
+        320,
+        519,
+        524
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_2160",
+      "instruction": "Head to the rug visible in your initial view.",
+      "support_obj_ids": [
+        57,
+        604,
+        736
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_2221",
+      "instruction": "Go ahead and head over to the rug visible in your initial view.",
+      "support_obj_ids": [
+        57,
+        604,
+        736
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_2510",
+      "instruction": "Go ahead and head over to the blinds visible in your initial view.",
+      "support_obj_ids": [
+        64,
+        65,
+        330,
+        333,
+        336,
+        339,
+        529,
+        530
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_2934",
+      "instruction": "Take me to the blinds visible in your initial view.",
+      "support_obj_ids": [
+        64,
+        65,
+        330,
+        333,
+        336,
+        339,
+        529,
+        530
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_417",
+      "instruction": "Walk up to the pillow visible in your initial view and stop there.",
+      "support_obj_ids": [
+        17,
+        144,
+        145,
+        202,
+        283,
+        284,
+        288,
+        290,
+        317,
+        320,
+        519,
+        524
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_4364",
+      "instruction": "Head to the stair visible in your initial view.",
+      "support_obj_ids": [
+        244
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_4558",
+      "instruction": "Proceed to the footstool visible in your initial view now.",
+      "support_obj_ids": [
+        314
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_4576",
+      "instruction": "Please go to the footstool visible in your initial view.",
+      "support_obj_ids": [
+        314
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_464",
+      "instruction": "Walk to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        17,
+        144,
+        145,
+        202,
+        283,
+        284,
+        288,
+        290,
+        317,
+        320,
+        519,
+        524
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_4697",
+      "instruction": "Proceed to the footstool visible in your initial view.",
+      "support_obj_ids": [
+        314
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_4815",
+      "instruction": "Proceed to the footstool visible in your initial view.",
+      "support_obj_ids": [
+        314
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_4882",
+      "instruction": "Proceed to the footstool visible in your initial view now.",
+      "support_obj_ids": [
+        314
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_541",
+      "instruction": "Head to the book visible in your initial view.",
+      "support_obj_ids": [
+        25
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_578",
+      "instruction": "Please move to the book visible in your initial view.",
+      "support_obj_ids": [
+        25
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_606",
+      "instruction": "Head to the book visible in your initial view.",
+      "support_obj_ids": [
+        25
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_6060",
+      "instruction": "Go ahead and head over to the photo visible in your initial view.",
+      "support_obj_ids": [
+        785,
+        790,
+        795
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_6137",
+      "instruction": "Walk up to the photo visible in your initial view and stop there.",
+      "support_obj_ids": [
+        785,
+        790,
+        795
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_6212",
+      "instruction": "Walk to the photo visible in your initial view.",
+      "support_obj_ids": [
+        785,
+        790,
+        795
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_628",
+      "instruction": "Go ahead and head over to the book visible in your initial view.",
+      "support_obj_ids": [
+        25
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_6323",
+      "instruction": "Please head to the photo visible in your initial view.",
+      "support_obj_ids": [
+        785,
+        790,
+        795
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_6411",
+      "instruction": "Walk up to the photo visible in your initial view and stop there.",
+      "support_obj_ids": [
+        785,
+        790,
+        795
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_6476",
+      "instruction": "take me to the photo visible in your initial view.",
+      "support_obj_ids": [
+        785,
+        790,
+        795
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_702",
+      "instruction": "Navigate to the book visible in your initial view.",
+      "support_obj_ids": [
+        25
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_71",
+      "instruction": "Proceed to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        17,
+        144,
+        145,
+        202,
+        283,
+        284,
+        288,
+        290,
+        317,
+        320,
+        519,
+        524
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_892",
+      "instruction": "Take me to the book visible in your initial view.",
+      "support_obj_ids": [
+        25
+      ]
+    },
+    {
+      "scene_id": "00839-zt1RVoi7PcG",
+      "episode_id": "traj_919",
+      "instruction": "Please move to the book visible in your initial view.",
+      "support_obj_ids": [
+        25
+      ]
+    },
+    {
+      "scene_id": "00843-DYehNKdT76V",
+      "episode_id": "traj_2136",
+      "instruction": "Head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        179,
+        182
+      ]
+    },
+    {
+      "scene_id": "00843-DYehNKdT76V",
+      "episode_id": "traj_2299",
+      "instruction": "Navigate to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        179,
+        182
+      ]
+    },
+    {
+      "scene_id": "00843-DYehNKdT76V",
+      "episode_id": "traj_2538",
+      "instruction": "Walk up to the island visible in your initial view and stop there.",
+      "support_obj_ids": [
+        223
+      ]
+    },
+    {
+      "scene_id": "00843-DYehNKdT76V",
+      "episode_id": "traj_2539",
+      "instruction": "Proceed to the island visible in your initial view.",
+      "support_obj_ids": [
+        223
+      ]
+    },
+    {
+      "scene_id": "00843-DYehNKdT76V",
+      "episode_id": "traj_2561",
+      "instruction": "Walk to the island visible in your initial view.",
+      "support_obj_ids": [
+        223
+      ]
+    },
+    {
+      "scene_id": "00843-DYehNKdT76V",
+      "episode_id": "traj_2927",
+      "instruction": "Walk to the island visible in your initial view.",
+      "support_obj_ids": [
+        223
+      ]
+    },
+    {
+      "scene_id": "00843-DYehNKdT76V",
+      "episode_id": "traj_3308",
+      "instruction": "Walk to the microwave visible in your initial view.",
+      "support_obj_ids": [
+        238
+      ]
+    },
+    {
+      "scene_id": "00843-DYehNKdT76V",
+      "episode_id": "traj_504",
+      "instruction": "Walk up to the mirror visible in your initial view and stop there.",
+      "support_obj_ids": [
+        38
+      ]
+    },
+    {
+      "scene_id": "00843-DYehNKdT76V",
+      "episode_id": "traj_568",
+      "instruction": "Navigate to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        38
+      ]
+    },
+    {
+      "scene_id": "00843-DYehNKdT76V",
+      "episode_id": "traj_748",
+      "instruction": "Head to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        38
+      ]
+    },
+    {
+      "scene_id": "00843-DYehNKdT76V",
+      "episode_id": "traj_751",
+      "instruction": "Please walk to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        38
+      ]
+    },
+    {
+      "scene_id": "00843-DYehNKdT76V",
+      "episode_id": "traj_763",
+      "instruction": "Walk up to the mirror visible in your initial view and stop there.",
+      "support_obj_ids": [
+        38
+      ]
+    },
+    {
+      "scene_id": "00844-q5QZSEeHe5g",
+      "episode_id": "traj_1496",
+      "instruction": "Please head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        88,
+        410,
+        909,
+        937,
+        950,
+        1306
+      ]
+    },
+    {
+      "scene_id": "00844-q5QZSEeHe5g",
+      "episode_id": "traj_1518",
+      "instruction": "Head to the photo visible in your initial view.",
+      "support_obj_ids": [
+        252,
+        871,
+        884,
+        885,
+        1210
+      ]
+    },
+    {
+      "scene_id": "00844-q5QZSEeHe5g",
+      "episode_id": "traj_1902",
+      "instruction": "Take me to the photo visible in your initial view.",
+      "support_obj_ids": [
+        252,
+        871,
+        884,
+        885,
+        1210
+      ]
+    },
+    {
+      "scene_id": "00844-q5QZSEeHe5g",
+      "episode_id": "traj_3186",
+      "instruction": "Please walk to the plant visible in your initial view.",
+      "support_obj_ids": [
+        423,
+        473,
+        568,
+        634,
+        648,
+        671,
+        939,
+        948,
+        1444
+      ]
+    },
+    {
+      "scene_id": "00844-q5QZSEeHe5g",
+      "episode_id": "traj_3337",
+      "instruction": "Head to the plant visible in your initial view.",
+      "support_obj_ids": [
+        423,
+        473,
+        568,
+        634,
+        648,
+        671,
+        939,
+        948,
+        1444
+      ]
+    },
+    {
+      "scene_id": "00844-q5QZSEeHe5g",
+      "episode_id": "traj_3406",
+      "instruction": "take me to the plant visible in your initial view.",
+      "support_obj_ids": [
+        423,
+        473,
+        568,
+        634,
+        648,
+        671,
+        939,
+        948,
+        1444
+      ]
+    },
+    {
+      "scene_id": "00844-q5QZSEeHe5g",
+      "episode_id": "traj_4484",
+      "instruction": "Please walk to the calendar visible in your initial view.",
+      "support_obj_ids": [
+        712
+      ]
+    },
+    {
+      "scene_id": "00844-q5QZSEeHe5g",
+      "episode_id": "traj_4565",
+      "instruction": "Walk up to the refrigerator visible in your initial view and stop there.",
+      "support_obj_ids": [
+        819,
+        1223
+      ]
+    },
+    {
+      "scene_id": "00844-q5QZSEeHe5g",
+      "episode_id": "traj_4717",
+      "instruction": "Please head to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        819,
+        1223
+      ]
+    },
+    {
+      "scene_id": "00844-q5QZSEeHe5g",
+      "episode_id": "traj_4885",
+      "instruction": "Approach the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        819,
+        1223
+      ]
+    },
+    {
+      "scene_id": "00844-q5QZSEeHe5g",
+      "episode_id": "traj_5421",
+      "instruction": "Please go to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        820
+      ]
+    },
+    {
+      "scene_id": "00844-q5QZSEeHe5g",
+      "episode_id": "traj_6904",
+      "instruction": "Walk up to the exercise bike visible in your initial view and stop there.",
+      "support_obj_ids": [
+        1203
+      ]
+    },
+    {
+      "scene_id": "00844-q5QZSEeHe5g",
+      "episode_id": "traj_796",
+      "instruction": "Please walk to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        86,
+        691,
+        1019
+      ]
+    },
+    {
+      "scene_id": "00844-q5QZSEeHe5g",
+      "episode_id": "traj_966",
+      "instruction": "Please head to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        86,
+        691,
+        1019
+      ]
+    },
+    {
+      "scene_id": "00847-bCPU9suPUw9",
+      "episode_id": "traj_2404",
+      "instruction": "Take me to the stair visible in your initial view.",
+      "support_obj_ids": [
+        181,
+        420
+      ]
+    },
+    {
+      "scene_id": "00847-bCPU9suPUw9",
+      "episode_id": "traj_2739",
+      "instruction": "Go to the refrigerator visible in your initial view now.",
+      "support_obj_ids": [
+        282,
+        370
+      ]
+    },
+    {
+      "scene_id": "00847-bCPU9suPUw9",
+      "episode_id": "traj_2823",
+      "instruction": "Go to the refrigerator visible in your initial view now.",
+      "support_obj_ids": [
+        282,
+        370
+      ]
+    },
+    {
+      "scene_id": "00847-bCPU9suPUw9",
+      "episode_id": "traj_2914",
+      "instruction": "Walk up to the refrigerator visible in your initial view and stop there.",
+      "support_obj_ids": [
+        282,
+        370
+      ]
+    },
+    {
+      "scene_id": "00847-bCPU9suPUw9",
+      "episode_id": "traj_2968",
+      "instruction": "Go to the refrigerator visible in your initial view now.",
+      "support_obj_ids": [
+        282,
+        370
+      ]
+    },
+    {
+      "scene_id": "00847-bCPU9suPUw9",
+      "episode_id": "traj_521",
+      "instruction": "Walk to the pillow visible in your initial view and stop there.",
+      "support_obj_ids": [
+        73,
+        79,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215
+      ]
+    },
+    {
+      "scene_id": "00847-bCPU9suPUw9",
+      "episode_id": "traj_589",
+      "instruction": "Walk to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        73,
+        79,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215
+      ]
+    },
+    {
+      "scene_id": "00847-bCPU9suPUw9",
+      "episode_id": "traj_846",
+      "instruction": "Walk up to the pillow visible in your initial view and stop there.",
+      "support_obj_ids": [
+        73,
+        79,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215
+      ]
+    },
+    {
+      "scene_id": "00847-bCPU9suPUw9",
+      "episode_id": "traj_923",
+      "instruction": "Walk to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        73,
+        79,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_1097",
+      "instruction": "Approach the plant visible in your initial view.",
+      "support_obj_ids": [
+        41,
+        46
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_1216",
+      "instruction": "please move to the plant visible in your initial view.",
+      "support_obj_ids": [
+        41,
+        46
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_1266",
+      "instruction": "Walk to the plant visible in your initial view.",
+      "support_obj_ids": [
+        41,
+        46
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_1333",
+      "instruction": "Please head to the plant visible in your initial view.",
+      "support_obj_ids": [
+        41,
+        46
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_1353",
+      "instruction": "Navigate to the plant visible in your initial view.",
+      "support_obj_ids": [
+        41,
+        46
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_2260",
+      "instruction": "Take me to the blinds visible in your initial view.",
+      "support_obj_ids": [
+        56,
+        147
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_3011",
+      "instruction": "Go ahead and head to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        86
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_3021",
+      "instruction": "Head to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        86
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_3125",
+      "instruction": "Walk to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        86
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_3160",
+      "instruction": "Head to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        86
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_3270",
+      "instruction": "Take me to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        86
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_4268",
+      "instruction": "Go to the nightstand visible in your initial view now.",
+      "support_obj_ids": [
+        158,
+        159,
+        295
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_4420",
+      "instruction": "Take me to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        158,
+        159,
+        295
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_554",
+      "instruction": "Approach the christmas tree visible in your initial view.",
+      "support_obj_ids": [
+        26
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_633",
+      "instruction": "Take me to the christmas tree visible in your initial view.",
+      "support_obj_ids": [
+        26
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_787",
+      "instruction": "Walk to the christmas tree visible in your initial view.",
+      "support_obj_ids": [
+        26
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_864",
+      "instruction": "Walk up to the christmas tree visible in your initial view and stop there.",
+      "support_obj_ids": [
+        26
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_877",
+      "instruction": "Walk up to the christmas tree visible in your initial view and stop there.",
+      "support_obj_ids": [
+        26
+      ]
+    },
+    {
+      "scene_id": "00848-ziup5kvtCCR",
+      "episode_id": "traj_878",
+      "instruction": "Take me to the christmas tree visible in your initial view.",
+      "support_obj_ids": [
+        26
+      ]
+    },
+    {
+      "scene_id": "00849-a8BtkwhxdRV",
+      "episode_id": "traj_1051",
+      "instruction": "Head to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        92
+      ]
+    },
+    {
+      "scene_id": "00849-a8BtkwhxdRV",
+      "episode_id": "traj_1067",
+      "instruction": "Please head to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        92
+      ]
+    },
+    {
+      "scene_id": "00849-a8BtkwhxdRV",
+      "episode_id": "traj_1281",
+      "instruction": "Walk up to the nightstand visible in your initial view and stop there.",
+      "support_obj_ids": [
+        92
+      ]
+    },
+    {
+      "scene_id": "00849-a8BtkwhxdRV",
+      "episode_id": "traj_1325",
+      "instruction": "Walk up to the nightstand visible in your initial view and stop there.",
+      "support_obj_ids": [
+        92
+      ]
+    },
+    {
+      "scene_id": "00849-a8BtkwhxdRV",
+      "episode_id": "traj_1756",
+      "instruction": "Navigate to the dresser visible in your initial view now.",
+      "support_obj_ids": [
+        96
+      ]
+    },
+    {
+      "scene_id": "00849-a8BtkwhxdRV",
+      "episode_id": "traj_1845",
+      "instruction": "Head to the dresser visible in your initial view.",
+      "support_obj_ids": [
+        96
+      ]
+    },
+    {
+      "scene_id": "00849-a8BtkwhxdRV",
+      "episode_id": "traj_2587",
+      "instruction": "Take me to the plant visible in your initial view.",
+      "support_obj_ids": [
+        412
+      ]
+    },
+    {
+      "scene_id": "00849-a8BtkwhxdRV",
+      "episode_id": "traj_2780",
+      "instruction": "Reach the plant visible in your initial view.",
+      "support_obj_ids": [
+        412
+      ]
+    },
+    {
+      "scene_id": "00849-a8BtkwhxdRV",
+      "episode_id": "traj_2847",
+      "instruction": "Please go to the plant visible in your initial view.",
+      "support_obj_ids": [
+        412
+      ]
+    },
+    {
+      "scene_id": "00849-a8BtkwhxdRV",
+      "episode_id": "traj_2969",
+      "instruction": "Go ahead and head over to the plant visible in your initial view.",
+      "support_obj_ids": [
+        412
+      ]
+    },
+    {
+      "scene_id": "00849-a8BtkwhxdRV",
+      "episode_id": "traj_542",
+      "instruction": "Approach the radiator visible in your initial view.",
+      "support_obj_ids": [
+        19,
+        100,
+        262,
+        375,
+        586,
+        587
+      ]
+    },
+    {
+      "scene_id": "00849-a8BtkwhxdRV",
+      "episode_id": "traj_609",
+      "instruction": "Head to the radiator visible in your initial view.",
+      "support_obj_ids": [
+        19,
+        100,
+        262,
+        375,
+        586,
+        587
+      ]
+    },
+    {
+      "scene_id": "00853-5cdEh9F2hJL",
+      "episode_id": "traj_2523",
+      "instruction": "Head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        183,
+        184,
+        188,
+        189,
+        247,
+        250,
+        398
+      ]
+    },
+    {
+      "scene_id": "00853-5cdEh9F2hJL",
+      "episode_id": "traj_2553",
+      "instruction": "Navigate to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        183,
+        184,
+        188,
+        189,
+        247,
+        250,
+        398
+      ]
+    },
+    {
+      "scene_id": "00853-5cdEh9F2hJL",
+      "episode_id": "traj_2707",
+      "instruction": "Please move to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        183,
+        184,
+        188,
+        189,
+        247,
+        250,
+        398
+      ]
+    },
+    {
+      "scene_id": "00853-5cdEh9F2hJL",
+      "episode_id": "traj_340",
+      "instruction": "Please move to the picture visible in your initial view.",
+      "support_obj_ids": [
+        7,
+        150,
+        155,
+        156,
+        157,
+        204,
+        224,
+        282,
+        287,
+        388,
+        499,
+        501,
+        503
+      ]
+    },
+    {
+      "scene_id": "00853-5cdEh9F2hJL",
+      "episode_id": "traj_3808",
+      "instruction": "Head to the vase visible in your initial view now.",
+      "support_obj_ids": [
+        227
+      ]
+    },
+    {
+      "scene_id": "00853-5cdEh9F2hJL",
+      "episode_id": "traj_3999",
+      "instruction": "Go ahead and head over to the vase visible in your initial view.",
+      "support_obj_ids": [
+        227
+      ]
+    },
+    {
+      "scene_id": "00853-5cdEh9F2hJL",
+      "episode_id": "traj_4550",
+      "instruction": "Please walk to the carpet visible in your initial view.",
+      "support_obj_ids": [
+        270,
+        272
+      ]
+    },
+    {
+      "scene_id": "00853-5cdEh9F2hJL",
+      "episode_id": "traj_4874",
+      "instruction": "Head to the carpet visible in your initial view.",
+      "support_obj_ids": [
+        270,
+        272
+      ]
+    },
+    {
+      "scene_id": "00853-5cdEh9F2hJL",
+      "episode_id": "traj_5509",
+      "instruction": "Go ahead and head over to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        318
+      ]
+    },
+    {
+      "scene_id": "00853-5cdEh9F2hJL",
+      "episode_id": "traj_5604",
+      "instruction": "Walk to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        318
+      ]
+    },
+    {
+      "scene_id": "00853-5cdEh9F2hJL",
+      "episode_id": "traj_5949",
+      "instruction": "Go ahead and head over to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        318
+      ]
+    },
+    {
+      "scene_id": "00853-5cdEh9F2hJL",
+      "episode_id": "traj_6522",
+      "instruction": "Take me to the island visible in your initial view.",
+      "support_obj_ids": [
+        486
+      ]
+    },
+    {
+      "scene_id": "00853-5cdEh9F2hJL",
+      "episode_id": "traj_6906",
+      "instruction": "Walk up to the island visible in your initial view and stop there.",
+      "support_obj_ids": [
+        486
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_1092",
+      "instruction": "Head to the book visible in your initial view.",
+      "support_obj_ids": [
+        72,
+        578,
+        579,
+        580,
+        582,
+        583,
+        585,
+        587
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_1209",
+      "instruction": "Head to the book visible in your initial view.",
+      "support_obj_ids": [
+        72,
+        578,
+        579,
+        580,
+        582,
+        583,
+        585,
+        587
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_124",
+      "instruction": "Take me to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        22
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_2185",
+      "instruction": "Head to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        488,
+        551,
+        714,
+        743,
+        870
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_2195",
+      "instruction": "Walk up to the mirror visible in your initial view and stop there.",
+      "support_obj_ids": [
+        488,
+        551,
+        714,
+        743,
+        870
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_275",
+      "instruction": "Please head to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        22
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_390",
+      "instruction": "Please walk to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        22
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_400",
+      "instruction": "Go to the decorative plant visible in your initial view now.",
+      "support_obj_ids": [
+        22
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_403",
+      "instruction": "Navigate to the decorative plant visible in your initial view now.",
+      "support_obj_ids": [
+        22
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_4075",
+      "instruction": "Navigate to the dresser visible in your initial view.",
+      "support_obj_ids": [
+        775
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_4081",
+      "instruction": "Go ahead and head over to the dresser visible in your initial view.",
+      "support_obj_ids": [
+        775
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_4117",
+      "instruction": "Proceed to the dresser visible in your initial view.",
+      "support_obj_ids": [
+        775
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_4273",
+      "instruction": "Head to the dresser visible in your initial view.",
+      "support_obj_ids": [
+        775
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_4369",
+      "instruction": "Walk up to the dresser visible in your initial view and stop there.",
+      "support_obj_ids": [
+        775
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_4438",
+      "instruction": "Please move to the dresser visible in your initial view.",
+      "support_obj_ids": [
+        775
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_4496",
+      "instruction": "Go ahead and head over to the dresser visible in your initial view.",
+      "support_obj_ids": [
+        775
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_66",
+      "instruction": "Go ahead and walk to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        22
+      ]
+    },
+    {
+      "scene_id": "00861-GLAQ4DNUx5U",
+      "episode_id": "traj_754",
+      "instruction": "Navigate to the flowerpot visible in your initial view.",
+      "support_obj_ids": [
+        23
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_1036",
+      "instruction": "Go ahead and walk to the flower vase visible in your initial view.",
+      "support_obj_ids": [
+        35,
+        54,
+        285,
+        592
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_1239",
+      "instruction": "Go to the flower vase visible in your initial view now.",
+      "support_obj_ids": [
+        35,
+        54,
+        285,
+        592
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_1289",
+      "instruction": "Please head to the flower vase visible in your initial view.",
+      "support_obj_ids": [
+        35,
+        54,
+        285,
+        592
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_1298",
+      "instruction": "Go ahead and head over to the flower vase visible in your initial view.",
+      "support_obj_ids": [
+        35,
+        54,
+        285,
+        592
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_204",
+      "instruction": "Go ahead and head over to the carpet visible in your initial view.",
+      "support_obj_ids": [
+        1
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_2210",
+      "instruction": "Head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        39,
+        40,
+        41,
+        298,
+        334,
+        335,
+        337,
+        338,
+        339,
+        340,
+        341,
+        343,
+        344,
+        555,
+        636,
+        650,
+        789,
+        793,
+        906,
+        907,
+        910
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_2273",
+      "instruction": "Take me to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        39,
+        40,
+        41,
+        298,
+        334,
+        335,
+        337,
+        338,
+        339,
+        340,
+        341,
+        343,
+        344,
+        555,
+        636,
+        650,
+        789,
+        793,
+        906,
+        907,
+        910
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_3012",
+      "instruction": "Head to the stair visible in your initial view.",
+      "support_obj_ids": [
+        176,
+        572
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_3273",
+      "instruction": "Walk to the stair visible in your initial view.",
+      "support_obj_ids": [
+        176,
+        572
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_3519",
+      "instruction": "Go ahead and head over to the speaker visible in your initial view.",
+      "support_obj_ids": [
+        356
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_4557",
+      "instruction": "Walk up to the refrigerator visible in your initial view and stop there.",
+      "support_obj_ids": [
+        416,
+        417
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_4560",
+      "instruction": "Please move to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        416,
+        417
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_4684",
+      "instruction": "Go to the refrigerator visible in your initial view now.",
+      "support_obj_ids": [
+        416,
+        417
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_4952",
+      "instruction": "Head to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        416,
+        417
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_501",
+      "instruction": "Go ahead and head over to the picture visible in your initial view.",
+      "support_obj_ids": [
+        22,
+        23,
+        24,
+        51,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        121,
+        122,
+        201,
+        202,
+        204,
+        225,
+        226,
+        231,
+        287,
+        290,
+        331,
+        410,
+        526,
+        534,
+        535,
+        590,
+        627,
+        628,
+        661,
+        670,
+        671,
+        703,
+        734,
+        735,
+        803,
+        804,
+        805,
+        806,
+        807,
+        808,
+        828,
+        829,
+        887,
+        888,
+        889,
+        919,
+        982
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_5163",
+      "instruction": "Proceed to the microwave visible in your initial view.",
+      "support_obj_ids": [
+        428
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_5256",
+      "instruction": "Take me to the microwave visible in your initial view.",
+      "support_obj_ids": [
+        428
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_5603",
+      "instruction": "Walk to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        432
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_5649",
+      "instruction": "Go ahead and head over to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        432
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_5738",
+      "instruction": "Walk up to the dishwasher visible in your initial view and stop there.",
+      "support_obj_ids": [
+        432
+      ]
+    },
+    {
+      "scene_id": "00862-LT9Jq6dN3Ea",
+      "episode_id": "traj_973",
+      "instruction": "Walk to the picture visible in your initial view.",
+      "support_obj_ids": [
+        22,
+        23,
+        24,
+        51,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        121,
+        122,
+        201,
+        202,
+        204,
+        225,
+        226,
+        231,
+        287,
+        290,
+        331,
+        410,
+        526,
+        534,
+        535,
+        590,
+        627,
+        628,
+        661,
+        670,
+        671,
+        703,
+        734,
+        735,
+        803,
+        804,
+        805,
+        806,
+        807,
+        808,
+        828,
+        829,
+        887,
+        888,
+        889,
+        919,
+        982
+      ]
+    },
+    {
+      "scene_id": "00869-MHPLjHsuG27",
+      "episode_id": "traj_2045",
+      "instruction": "Head to the parapet visible in your initial view.",
+      "support_obj_ids": [
+        337,
+        380
+      ]
+    },
+    {
+      "scene_id": "00869-MHPLjHsuG27",
+      "episode_id": "traj_2298",
+      "instruction": "Walk to the parapet visible in your initial view.",
+      "support_obj_ids": [
+        337,
+        380
+      ]
+    },
+    {
+      "scene_id": "00869-MHPLjHsuG27",
+      "episode_id": "traj_2498",
+      "instruction": "Please walk to the parapet visible in your initial view.",
+      "support_obj_ids": [
+        337,
+        380
+      ]
+    },
+    {
+      "scene_id": "00869-MHPLjHsuG27",
+      "episode_id": "traj_2525",
+      "instruction": "Take me to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        406,
+        407,
+        408,
+        550,
+        552
+      ]
+    },
+    {
+      "scene_id": "00869-MHPLjHsuG27",
+      "episode_id": "traj_2621",
+      "instruction": "Please move to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        406,
+        407,
+        408,
+        550,
+        552
+      ]
+    },
+    {
+      "scene_id": "00871-VBzV5z6i1WS",
+      "episode_id": "traj_1002",
+      "instruction": "Proceed to the picture visible in your initial view.",
+      "support_obj_ids": [
+        97,
+        258,
+        259,
+        260,
+        261,
+        298,
+        537,
+        564,
+        574,
+        575,
+        576,
+        577,
+        660
+      ]
+    },
+    {
+      "scene_id": "00871-VBzV5z6i1WS",
+      "episode_id": "traj_1934",
+      "instruction": "Please head to the piano visible in your initial view.",
+      "support_obj_ids": [
+        285
+      ]
+    },
+    {
+      "scene_id": "00871-VBzV5z6i1WS",
+      "episode_id": "traj_2214",
+      "instruction": "Head to the plant visible in your initial view.",
+      "support_obj_ids": [
+        314,
+        325,
+        356,
+        551
+      ]
+    },
+    {
+      "scene_id": "00871-VBzV5z6i1WS",
+      "episode_id": "traj_2261",
+      "instruction": "Walk to the plant visible in your initial view.",
+      "support_obj_ids": [
+        314,
+        325,
+        356,
+        551
+      ]
+    },
+    {
+      "scene_id": "00871-VBzV5z6i1WS",
+      "episode_id": "traj_2968",
+      "instruction": "Head to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        396,
+        488
+      ]
+    },
+    {
+      "scene_id": "00871-VBzV5z6i1WS",
+      "episode_id": "traj_957",
+      "instruction": "Please head to the dresser visible in your initial view.",
+      "support_obj_ids": [
+        35,
+        44,
+        54,
+        686,
+        703,
+        790,
+        798
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_1210",
+      "instruction": "Approach the picture visible in your initial view.",
+      "support_obj_ids": [
+        64,
+        65,
+        113,
+        304,
+        339
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_2716",
+      "instruction": "Proceed to the handrail visible in your initial view.",
+      "support_obj_ids": [
+        142,
+        143
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_3148",
+      "instruction": "Please move to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        174,
+        267
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_3371",
+      "instruction": "Take me to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        174,
+        267
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_3583",
+      "instruction": "Please move to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        179
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_3618",
+      "instruction": "Walk to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        179
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_3700",
+      "instruction": "Take me to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        179
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_3820",
+      "instruction": "Please head to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        179
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_3887",
+      "instruction": "Go ahead and head over to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        179
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_3931",
+      "instruction": "Head to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        179
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_4611",
+      "instruction": "Please head to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        306,
+        336,
+        379
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_4631",
+      "instruction": "Head to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        306,
+        336,
+        379
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_4645",
+      "instruction": "Take me to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        306,
+        336,
+        379
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_4776",
+      "instruction": "Please walk to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        306,
+        336,
+        379
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_5535",
+      "instruction": "Go ahead and head to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        358
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_5664",
+      "instruction": "Walk to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        358
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_5671",
+      "instruction": "Proceed to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        358
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_5908",
+      "instruction": "Navigate to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        358
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_5982",
+      "instruction": "Go ahead and head to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        358
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_6446",
+      "instruction": "Head to the microwave visible in your initial view.",
+      "support_obj_ids": [
+        372
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_6680",
+      "instruction": "Go ahead and head over to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        397
+      ]
+    },
+    {
+      "scene_id": "00873-bxsVRursffK",
+      "episode_id": "traj_6777",
+      "instruction": "Please go to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        397
+      ]
+    },
+    {
+      "scene_id": "00876-mv2HUxq3B53",
+      "episode_id": "traj_1934",
+      "instruction": "Navigate to the refrigerator visible in your initial view now.",
+      "support_obj_ids": [
+        114
+      ]
+    },
+    {
+      "scene_id": "00876-mv2HUxq3B53",
+      "episode_id": "traj_3196",
+      "instruction": "take me to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        186,
+        187,
+        192,
+        216,
+        284,
+        287,
+        357,
+        412,
+        490,
+        662
+      ]
+    },
+    {
+      "scene_id": "00876-mv2HUxq3B53",
+      "episode_id": "traj_3297",
+      "instruction": "Head to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        186,
+        187,
+        192,
+        216,
+        284,
+        287,
+        357,
+        412,
+        490,
+        662
+      ]
+    },
+    {
+      "scene_id": "00876-mv2HUxq3B53",
+      "episode_id": "traj_4528",
+      "instruction": "Head to the shower glass visible in your initial view.",
+      "support_obj_ids": [
+        629,
+        630
+      ]
+    },
+    {
+      "scene_id": "00876-mv2HUxq3B53",
+      "episode_id": "traj_4547",
+      "instruction": "Take me to the shower glass visible in your initial view.",
+      "support_obj_ids": [
+        629,
+        630
+      ]
+    },
+    {
+      "scene_id": "00876-mv2HUxq3B53",
+      "episode_id": "traj_4799",
+      "instruction": "Proceed to the shower glass visible in your initial view now.",
+      "support_obj_ids": [
+        629,
+        630
+      ]
+    },
+    {
+      "scene_id": "00876-mv2HUxq3B53",
+      "episode_id": "traj_4904",
+      "instruction": "Take me to the shower glass visible in your initial view.",
+      "support_obj_ids": [
+        629,
+        630
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_1100",
+      "instruction": "Walk to the dresser visible in your initial view.",
+      "support_obj_ids": [
+        5,
+        419,
+        486
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_1244",
+      "instruction": "Walk up to the dresser visible in your initial view and stop there.",
+      "support_obj_ids": [
+        5,
+        419,
+        486
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_142",
+      "instruction": "Please walk to the freezer visible in your initial view.",
+      "support_obj_ids": [
+        2,
+        3
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_1736",
+      "instruction": "Head to the blinds visible in your initial view.",
+      "support_obj_ids": [
+        28
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_1774",
+      "instruction": "Head to the blinds visible in your initial view.",
+      "support_obj_ids": [
+        28
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_1849",
+      "instruction": "Walk up to the blinds visible in your initial view and stop there.",
+      "support_obj_ids": [
+        28
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_1940",
+      "instruction": "Please go to the blinds visible in your initial view.",
+      "support_obj_ids": [
+        28
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_1959",
+      "instruction": "Walk to the blinds visible in your initial view and stop there.",
+      "support_obj_ids": [
+        28
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_2079",
+      "instruction": "Head to the picture visible in your initial view.",
+      "support_obj_ids": [
+        43,
+        45,
+        50
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_3516",
+      "instruction": "Take me to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        201
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_3539",
+      "instruction": "Please head to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        201
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_3574",
+      "instruction": "Go ahead and walk to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        201
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_3614",
+      "instruction": "Take me to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        201
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_3680",
+      "instruction": "Please head to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        201
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_3816",
+      "instruction": "Walk up to the nightstand visible in your initial view and stop there.",
+      "support_obj_ids": [
+        201
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_3825",
+      "instruction": "Navigate to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        201
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_474",
+      "instruction": "Head to the freezer visible in your initial view.",
+      "support_obj_ids": [
+        2,
+        3
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_546",
+      "instruction": "Head to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        4,
+        334
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_5613",
+      "instruction": "Please head to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        316
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_5667",
+      "instruction": "Walk to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        316
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_5847",
+      "instruction": "Walk to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        316
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_589",
+      "instruction": "Walk up to the refrigerator visible in your initial view and stop there.",
+      "support_obj_ids": [
+        4,
+        334
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_764",
+      "instruction": "Please move to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        4,
+        334
+      ]
+    },
+    {
+      "scene_id": "00877-4ok3usBNeis",
+      "episode_id": "traj_77",
+      "instruction": "Please head to the freezer visible in your initial view.",
+      "support_obj_ids": [
+        2,
+        3
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_1943",
+      "instruction": "Go ahead and head over to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        138
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_1947",
+      "instruction": "Take me to the nightstand visible in your initial view.",
+      "support_obj_ids": [
+        138
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_225",
+      "instruction": "Proceed to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        23,
+        232,
+        233,
+        234,
+        376
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_319",
+      "instruction": "Head to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        23,
+        232,
+        233,
+        234,
+        376
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_3370",
+      "instruction": "Head to the blinds visible in your initial view.",
+      "support_obj_ids": [
+        213
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_3456",
+      "instruction": "Please head to the blinds visible in your initial view.",
+      "support_obj_ids": [
+        213
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_369",
+      "instruction": "Go to the pillow visible in your initial view now.",
+      "support_obj_ids": [
+        23,
+        232,
+        233,
+        234,
+        376
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_456",
+      "instruction": "Please move to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        23,
+        232,
+        233,
+        234,
+        376
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_4583",
+      "instruction": "Take me to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        291
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_4658",
+      "instruction": "Walk up to the dishwasher visible in your initial view and stop there.",
+      "support_obj_ids": [
+        291
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_466",
+      "instruction": "Take me to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        23,
+        232,
+        233,
+        234,
+        376
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_469",
+      "instruction": "Proceed to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        23,
+        232,
+        233,
+        234,
+        376
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_4696",
+      "instruction": "Approach the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        291
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_4976",
+      "instruction": "Take me to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        291
+      ]
+    },
+    {
+      "scene_id": "00878-XB4GS9ShBRE",
+      "episode_id": "traj_8",
+      "instruction": "Please move to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        23,
+        232,
+        233,
+        234,
+        376
+      ]
+    },
+    {
+      "scene_id": "00880-Nfvxx8J5NCo",
+      "episode_id": "traj_1989",
+      "instruction": "Walk to the refrigerator visible in your initial view.",
+      "support_obj_ids": [
+        55
+      ]
+    },
+    {
+      "scene_id": "00880-Nfvxx8J5NCo",
+      "episode_id": "traj_209",
+      "instruction": "take me to the picture visible in your initial view.",
+      "support_obj_ids": [
+        30,
+        37,
+        139,
+        187,
+        255,
+        294,
+        301
+      ]
+    },
+    {
+      "scene_id": "00880-Nfvxx8J5NCo",
+      "episode_id": "traj_320",
+      "instruction": "Please go to the picture visible in your initial view.",
+      "support_obj_ids": [
+        30,
+        37,
+        139,
+        187,
+        255,
+        294,
+        301
+      ]
+    },
+    {
+      "scene_id": "00880-Nfvxx8J5NCo",
+      "episode_id": "traj_535",
+      "instruction": "Please move to the carpet visible in your initial view.",
+      "support_obj_ids": [
+        35
+      ]
+    },
+    {
+      "scene_id": "00880-Nfvxx8J5NCo",
+      "episode_id": "traj_586",
+      "instruction": "Walk to the carpet visible in your initial view and stop there.",
+      "support_obj_ids": [
+        35
+      ]
+    },
+    {
+      "scene_id": "00890-6s7QHgap2fW",
+      "episode_id": "traj_0",
+      "instruction": "Please head to the radiator visible in your initial view.",
+      "support_obj_ids": [
+        10,
+        36,
+        58,
+        134,
+        166,
+        192,
+        209,
+        239,
+        267,
+        304,
+        331
+      ]
+    },
+    {
+      "scene_id": "00890-6s7QHgap2fW",
+      "episode_id": "traj_1927",
+      "instruction": "Walk up to the photo mount visible in your initial view and stop there.",
+      "support_obj_ids": [
+        49,
+        143,
+        174,
+        315
+      ]
+    },
+    {
+      "scene_id": "00890-6s7QHgap2fW",
+      "episode_id": "traj_2868",
+      "instruction": "Walk to the window glass visible in your initial view.",
+      "support_obj_ids": [
+        120,
+        121,
+        137,
+        138,
+        139,
+        215,
+        317,
+        318,
+        319,
+        460,
+        461,
+        643,
+        644
+      ]
+    },
+    {
+      "scene_id": "00890-6s7QHgap2fW",
+      "episode_id": "traj_2911",
+      "instruction": "Go ahead and head over to the window glass visible in your initial view.",
+      "support_obj_ids": [
+        120,
+        121,
+        137,
+        138,
+        139,
+        215,
+        317,
+        318,
+        319,
+        460,
+        461,
+        643,
+        644
+      ]
+    },
+    {
+      "scene_id": "00890-6s7QHgap2fW",
+      "episode_id": "traj_298",
+      "instruction": "Go ahead and head over to the radiator visible in your initial view.",
+      "support_obj_ids": [
+        10,
+        36,
+        58,
+        134,
+        166,
+        192,
+        209,
+        239,
+        267,
+        304,
+        331
+      ]
+    },
+    {
+      "scene_id": "00890-6s7QHgap2fW",
+      "episode_id": "traj_4622",
+      "instruction": "Walk to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        255,
+        592
+      ]
+    },
+    {
+      "scene_id": "00890-6s7QHgap2fW",
+      "episode_id": "traj_4937",
+      "instruction": "Navigate to the mirror visible in your initial view.",
+      "support_obj_ids": [
+        255,
+        592
+      ]
+    },
+    {
+      "scene_id": "00890-6s7QHgap2fW",
+      "episode_id": "traj_914",
+      "instruction": "Walk to the plant visible in your initial view.",
+      "support_obj_ids": [
+        13,
+        141,
+        442
+      ]
+    },
+    {
+      "scene_id": "00890-6s7QHgap2fW",
+      "episode_id": "traj_995",
+      "instruction": "Head to the plant visible in your initial view.",
+      "support_obj_ids": [
+        13,
+        141,
+        442
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_1058",
+      "instruction": "Walk up to the pillow visible in your initial view and stop there.",
+      "support_obj_ids": [
+        32,
+        34,
+        56,
+        57,
+        319,
+        332,
+        333,
+        343,
+        344,
+        490,
+        491,
+        492,
+        493,
+        502,
+        521,
+        711
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_1213",
+      "instruction": "Go ahead and head over to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        32,
+        34,
+        56,
+        57,
+        319,
+        332,
+        333,
+        343,
+        344,
+        490,
+        491,
+        492,
+        493,
+        502,
+        521,
+        711
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_1306",
+      "instruction": "Walk up to the pillow visible in your initial view and stop there.",
+      "support_obj_ids": [
+        32,
+        34,
+        56,
+        57,
+        319,
+        332,
+        333,
+        343,
+        344,
+        490,
+        491,
+        492,
+        493,
+        502,
+        521,
+        711
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_1339",
+      "instruction": "Take me to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        32,
+        34,
+        56,
+        57,
+        319,
+        332,
+        333,
+        343,
+        344,
+        490,
+        491,
+        492,
+        493,
+        502,
+        521,
+        711
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_1367",
+      "instruction": "Walk to the pillow visible in your initial view.",
+      "support_obj_ids": [
+        32,
+        34,
+        56,
+        57,
+        319,
+        332,
+        333,
+        343,
+        344,
+        490,
+        491,
+        492,
+        493,
+        502,
+        521,
+        711
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_4148",
+      "instruction": "Please walk to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        169
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_4227",
+      "instruction": "Take me to the dishwasher visible in your initial view.",
+      "support_obj_ids": [
+        169
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_468",
+      "instruction": "Walk to the picture visible in your initial view and stop there.",
+      "support_obj_ids": [
+        8,
+        26,
+        42,
+        84,
+        100
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_5006",
+      "instruction": "Please move to the carpet visible in your initial view.",
+      "support_obj_ids": [
+        369,
+        449
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_5400",
+      "instruction": "Go ahead and head over to the carpet visible in your initial view.",
+      "support_obj_ids": [
+        369,
+        449
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_5652",
+      "instruction": "Please move to the plant visible in your initial view.",
+      "support_obj_ids": [
+        469,
+        474
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_5940",
+      "instruction": "Walk up to the plant visible in your initial view and stop there.",
+      "support_obj_ids": [
+        469,
+        474
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_5963",
+      "instruction": "Navigate to the plant visible in your initial view.",
+      "support_obj_ids": [
+        469,
+        474
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_5983",
+      "instruction": "Approach the plant visible in your initial view.",
+      "support_obj_ids": [
+        469,
+        474
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_5999",
+      "instruction": "Go ahead and head over to the plant visible in your initial view.",
+      "support_obj_ids": [
+        469,
+        474
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_6225",
+      "instruction": "Take me to the vase visible in your initial view.",
+      "support_obj_ids": [
+        480
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_6254",
+      "instruction": "Please go to the vase visible in your initial view.",
+      "support_obj_ids": [
+        480
+      ]
+    },
+    {
+      "scene_id": "00891-cvZr5TUy5C5",
+      "episode_id": "traj_6383",
+      "instruction": "Approach the vase visible in your initial view.",
+      "support_obj_ids": [
+        480
+      ]
+    },
+    {
+      "scene_id": "00894-HY1NcmCgn3n",
+      "episode_id": "traj_1155",
+      "instruction": "Please move to the statue visible in your initial view.",
+      "support_obj_ids": [
+        308
+      ]
+    },
+    {
+      "scene_id": "00894-HY1NcmCgn3n",
+      "episode_id": "traj_1212",
+      "instruction": "Walk up to the statue visible in your initial view and stop there.",
+      "support_obj_ids": [
+        308
+      ]
+    },
+    {
+      "scene_id": "00894-HY1NcmCgn3n",
+      "episode_id": "traj_1308",
+      "instruction": "Please head to the statue visible in your initial view.",
+      "support_obj_ids": [
+        308
+      ]
+    },
+    {
+      "scene_id": "00894-HY1NcmCgn3n",
+      "episode_id": "traj_199",
+      "instruction": "Go ahead and head over to the picture visible in your initial view.",
+      "support_obj_ids": [
+        2,
+        3,
+        8,
+        18,
+        20,
+        33,
+        36,
+        37,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        122,
+        197,
+        204,
+        238,
+        239,
+        240,
+        242,
+        261,
+        262,
+        431,
+        433,
+        434,
+        435,
+        436,
+        437,
+        438,
+        441
+      ]
+    },
+    {
+      "scene_id": "00894-HY1NcmCgn3n",
+      "episode_id": "traj_42",
+      "instruction": "Please go to the picture visible in your initial view.",
+      "support_obj_ids": [
+        2,
+        3,
+        8,
+        18,
+        20,
+        33,
+        36,
+        37,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        122,
+        197,
+        204,
+        238,
+        239,
+        240,
+        242,
+        261,
+        262,
+        431,
+        433,
+        434,
+        435,
+        436,
+        437,
+        438,
+        441
+      ]
+    },
+    {
+      "scene_id": "00894-HY1NcmCgn3n",
+      "episode_id": "traj_578",
+      "instruction": "Please head to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        4
+      ]
+    },
+    {
+      "scene_id": "00894-HY1NcmCgn3n",
+      "episode_id": "traj_680",
+      "instruction": "Take me to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        4
+      ]
+    },
+    {
+      "scene_id": "00894-HY1NcmCgn3n",
+      "episode_id": "traj_869",
+      "instruction": "Take me to the decorative plant visible in your initial view.",
+      "support_obj_ids": [
+        4
+      ]
+    }
+  ],
+  "subsets": {
+    "test_subset": [
+      "00832-qyAac8rV8Zk/traj_1067",
+      "00827-BAbdmeyTvMZ/traj_3148",
+      "00810-CrMo8WxCyVb/traj_4159",
+      "00800-TEEsavR23oF/traj_2411",
+      "00808-y9hTuugGdiq/traj_381",
+      "00878-XB4GS9ShBRE/traj_3370",
+      "00847-bCPU9suPUw9/traj_2404"
+    ]
+  }
+}

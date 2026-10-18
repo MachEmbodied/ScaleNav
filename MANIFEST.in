@@ -1,0 +1,13 @@
+include README.md LICENSE THIRD_PARTY_NOTICES.md
+recursive-include src/awm/configs *.yaml *.json
+recursive-include tests *.py
+recursive-include docs *.md *.json *.gif
+recursive-include examples *.py *.json
+recursive-include annotations *.json *.jsonl.gz *.npz *.txt LICENSE
+recursive-include scripts *.py
+recursive-include .github *.yml
+prune checkpoints
+prune data
+prune outputs
+prune .git
+global-exclude *.py[cod] __pycache__
