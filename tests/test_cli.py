@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+from types import SimpleNamespace
 
 import pytest
 from PIL import Image
@@ -49,6 +50,34 @@ def test_doctor_reports_cuda_initialization_failure(monkeypatch, capsys):
     report = json.loads(capsys.readouterr().out)
     assert report['cuda_available'] is False
     assert any('CUDA device unavailable' in error for error in report['errors'])
+
+
+@pytest.mark.parametrize('result', ['success', 'native_abort', 'timeout'])
+def test_doctor_checks_simulator_rendering(monkeypatch, capsys, result):
+    import awm.cli as cli
+    original = cli.importlib.import_module
+
+    def load(name, *args, **kwargs):
+        if name in ('habitat_sim', 'magnum'):
+            return SimpleNamespace(__file__=name, cuda_enabled=True)
+        return original(name, *args, **kwargs)
+
+    def render(command, **kwargs):
+        assert command[:2] == [sys.executable, '-c']
+        if result == 'timeout':
+            raise subprocess.TimeoutExpired(command, kwargs['timeout'])
+        return subprocess.CompletedProcess(command, -6 if result == 'native_abort' else 0,
+                                           stdout='', stderr='OpenGL context creation failed')
+
+    monkeypatch.setattr(cli.importlib, 'import_module', load)
+    monkeypatch.setattr(cli.subprocess, 'run', render)
+    assert main(['doctor', '--simulator']) == int(result != 'success')
+    report = json.loads(capsys.readouterr().out)
+    assert report['simulator_render'] is (result == 'success')
+    if result == 'native_abort':
+        assert any('OpenGL context creation failed' in error for error in report['errors'])
+    if result == 'timeout':
+        assert any('timed out' in error for error in report['errors'])
 
 
 @pytest.mark.parametrize('failure', ['allocation', 'synchronize', None])

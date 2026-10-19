@@ -88,6 +88,7 @@ def build_server_command(args):
 
 def doctor(args):
     errors = []
+    simulator_ready = True
     report = {'awm': __version__, 'python': sys.version.split()[0], 'ffmpeg': shutil.which('ffmpeg'),
               'config_available': DEFAULT_CONFIG.is_file()}
     try:
@@ -120,8 +121,10 @@ def doctor(args):
                 module = importlib.import_module(name)
                 report[name] = module.__file__
                 if name == 'habitat_sim' and not module.cuda_enabled:
+                    simulator_ready = False
                     errors.append('Habitat-GS lacks CUDA support; rebuild with HABITAT_WITH_CUDA=ON')
             except (ImportError, OSError) as exc:
+                simulator_ready = False
                 errors.append(f'{name}: {exc}; see docs/EVALUATION.md#simulator-installation')
     if args.require_cuda and report['cuda_available']:
         try:
@@ -132,6 +135,35 @@ def doctor(args):
         except RuntimeError as exc:
             report['cuda_compute'] = False
             errors.append(f'CUDA computation failed: {exc}')
+    if args.simulator and simulator_ready and (not args.require_cuda or report.get('cuda_compute')):
+        code = '''
+import resource
+resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
+import habitat_sim
+config = habitat_sim.SimulatorConfiguration()
+config.scene_id = 'NONE'
+config.gpu_device_id = 0
+sensor = habitat_sim.CameraSensorSpec()
+sensor.uuid = 'rgb'
+sensor.sensor_type = habitat_sim.SensorType.COLOR
+sensor.resolution = [32, 32]
+agent = habitat_sim.agent.AgentConfiguration()
+agent.sensor_specifications = [sensor]
+with habitat_sim.Simulator(habitat_sim.Configuration(config, [agent])) as simulator:
+    assert simulator.get_sensor_observations()['rgb'].shape[:2] == (32, 32)
+'''
+        report['simulator_render'] = False
+        try:
+            result = subprocess.run([sys.executable, '-c', code], capture_output=True, text=True, timeout=300)
+            if result.returncode:
+                detail = (result.stderr or result.stdout).strip()[-2000:]
+                errors.append(f'Habitat-GS rendering failed (exit {result.returncode}): {detail}')
+            else:
+                report['simulator_render'] = True
+        except subprocess.TimeoutExpired:
+            errors.append('Habitat-GS rendering timed out after 300 seconds')
+        except OSError as exc:
+            errors.append(f'Cannot start Habitat-GS rendering check: {exc}')
     if args.checkpoint:
         report['contract'] = checkpoint_contract(args.checkpoint)
     if args.base_model:
@@ -155,7 +187,7 @@ def main(argv=None):
     doc.add_argument('--base-model')
     doc.add_argument('--require-cuda', action='store_true')
     doc.add_argument('--data-tools', action='store_true', help='Require FFmpeg and ffprobe for data preparation')
-    doc.add_argument('--simulator', action='store_true', help='Require the CUDA Habitat-GS simulator and Magnum')
+    doc.add_argument('--simulator', action='store_true', help='Check CUDA Habitat-GS, Magnum and offscreen rendering')
     check = sub.add_parser('check', help='Validate the checkpoint contract and optionally hashes')
     check.add_argument('--checkpoint', required=True)
     check.add_argument('--sha256', action='store_true', help='Read approximately 10 GB and verify ScaleNav hashes')
