@@ -34,7 +34,6 @@
 
 <p align="center">
   <a href="#quick-start">Quick start</a> ·
-  <a href="#single-image-inference">Single-image inference</a> ·
   <a href="#training">Training</a> ·
   <a href="#real-robot">Real robot</a>
 </p>
@@ -44,9 +43,6 @@
 Run the **Habitat-GS-LN test subset** and view navigation videos and trajectories:
 [install](#installation) → [download weights](#checkpoints) →
 [prepare data](#data) → [evaluate](#evaluation).
-For a single-image prediction without a simulator, complete
-[Environment](#environment) and [Checkpoints](#checkpoints), then follow
-[Single-image inference](#single-image-inference).
 
 ### Installation
 
@@ -253,22 +249,10 @@ The test subsets contain selected successful cases; use the full sets for benchm
 | Habitat-GS-LN | [16 tasks](docs/EVALUATION.md#test-subset) | [157 tasks](docs/EVALUATION.md#full-habitat-gs-ln) |
 | Short-Horizon OVON | [7 tasks](docs/EVALUATION.md#ovon-test-subset) | [524 tasks](docs/EVALUATION.md#full-short-horizon-ovon) |
 
-## Single-image inference
+<a id="single-image-inference"></a>
 
-Predict nine navigation actions from your own RGB image and a matching instruction.
-This uses the [environment](#environment) and [checkpoints](#checkpoints) above.
-
-```bash
-awm infer --checkpoint "$CHECKPOINT" --base-model "$BASE_MODEL" \
-  --image /path/to/observation.png \
-  --prompt "Walk to the chair visible in the initial view." \
-  --output outputs/example
-```
-
-Replace the image and instruction with a matching pair. For `observation.png`,
-the trajectory plot is `outputs/example/observation_trajectory.png`.
-See the [inference guide](docs/INFERENCE.md#single-image-inference) for action
-outputs and a paired example from an evaluation rollout.
+For a standalone trajectory prediction from one image, see
+[single-image inference](docs/INFERENCE.md#single-image-inference).
 
 ## Training
 
