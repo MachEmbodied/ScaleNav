@@ -33,26 +33,24 @@
 </p>
 
 <p align="center">
-  <a href="#quick-start">Quick start</a> ·
+  <a href="#installation">Installation</a> ·
+  <a href="#checkpoints">Checkpoints</a> ·
+  <a href="#data">Data</a> ·
+  <a href="#quick-test">Quick test</a> ·
+  <a href="#evaluation">Evaluation</a> ·
   <a href="#training">Training</a> ·
   <a href="#real-robot">Real robot</a>
 </p>
 
-## Quick start
+## Installation
 
-Run the **Habitat-GS-LN test subset** and view navigation videos and trajectories:
-[install](#installation) → [download weights](#checkpoints) →
-[prepare data](#data) → [evaluate](#evaluation).
-
-### Installation
-
-#### Hardware
+### Hardware
 
 Use Linux and an NVIDIA GPU with BF16 support. We recommend **24 GB GPU memory**
 and **64 GB system RAM** for inference and evaluation. See
 [training requirements](docs/TRAINING.md#installation-and-memory) for training.
 
-#### Environment
+### Environment
 
 Create the Python 3.12 environment:
 
@@ -72,7 +70,7 @@ awm doctor --require-cuda --data-tools
 Install [Miniforge](https://github.com/conda-forge/miniforge#install) if Conda is
 unavailable.
 
-#### Simulator installation
+### Simulator installation
 
 Required for navigation evaluation and simulation-data rendering.
 After creating the environment, expand and complete both steps below.
@@ -80,7 +78,7 @@ After creating the environment, expand and complete both steps below.
 <details>
 <summary><strong>Install the compiler, CUDA toolkit and Habitat-GS</strong></summary>
 
-##### Build dependencies
+#### Build dependencies
 
 Install the compiler and CUDA toolkit for Habitat-GS and DeepSpeed in the same
 `scalenav` environment:
@@ -95,7 +93,7 @@ conda activate scalenav
 python -m pip install cmake==3.31.10 ninja scikit-build-core pybind11 setuptools wheel
 ```
 
-##### Build Habitat-GS
+#### Build Habitat-GS
 
 Run from the repository root. Habitat-GS provides the `habitat_sim` module.
 
@@ -133,7 +131,7 @@ Run from the repository root. Habitat-GS provides the `habitat_sim` module.
 
 </details>
 
-#### Scene converter
+### Scene converter
 
 Required for Habitat-GS-LN and simulation training data. Run from the repository root:
 
@@ -143,7 +141,7 @@ npm install --prefix external/splat-tools @playcanvas/splat-transform@3.10.1
 export PATH="$PWD/external/splat-tools/node_modules/.bin:$PATH"
 ```
 
-#### Optional dependencies
+### Optional dependencies
 
 <details>
 <summary>Training with DeepSpeed, Go2 deployment and development tools</summary>
@@ -171,7 +169,7 @@ python -m pip install -e '.[dev]'
 
 </details>
 
-### Checkpoints
+## Checkpoints
 
 | Model | Download | Size |
 | --- | --- | ---: |
@@ -204,10 +202,32 @@ awm doctor --checkpoint "$CHECKPOINT" --base-model "$BASE_MODEL" --require-cuda
 
 </details>
 
-### Data
+## Data
 
-The test subset contains **16 tasks in 13 scenes**: **991.32 MB** of network
+Choose the data needed for your task. Each preparation guide covers our annotations
+and the required upstream assets.
+
+| Data | Test / preview | Full |
+| --- | --- | --- |
+| Habitat-GS-LN | [16-task test subset](docs/EVALUATION.md#test-subset) | [157-task benchmark](docs/EVALUATION.md#full-habitat-gs-ln) |
+| Short-Horizon OVON | [7-task test subset](docs/EVALUATION.md#ovon-test-subset) | [524-task benchmark](docs/EVALUATION.md#full-short-horizon-ovon) |
+| Training | [Small subset (for preview)](docs/DATA.md#small-training-subset) | [Full training data](docs/DATA.md#full-training-data) |
+
+See the [data catalog](docs/DATA.md#choose-a-download) for download sizes and disk
+requirements. All datasets are also listed on
+[ScaleNav Data](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#choose-a-dataset).
+
+<a id="quick-start"></a>
+
+## Quick test
+
+After [installation](#installation) and [checkpoint downloads](#checkpoints),
+run the **Habitat-GS-LN test subset** to view navigation videos and trajectories.
+It contains **16 tasks in 13 scenes**, requiring **991.32 MB** of network
 downloads and **2.96 GB** on disk after preparation.
+
+### Prepare the test subset
+
 Request [InteriorGS access](https://huggingface.co/datasets/spatialverse/InteriorGS)
 and accept its [terms](https://kloudsim-usa-cos.kujiale.com/InteriorGS/InteriorGS_Terms_of_Use.pdf),
 then prepare the data:
@@ -219,11 +239,7 @@ python scripts/prepare_data.py evaluation --subset test_subset \
   --source data/upstream/evaluation --output data/evaluation/test_subset --download
 ```
 
-For other evaluation sets and training data, see the
-[data catalog](docs/DATA.md#choose-a-download) or
-[ScaleNav Data on Hugging Face](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#choose-a-dataset).
-
-### Evaluation
+### Run navigation
 
 Run the prepared test subset with visualization enabled:
 
@@ -242,17 +258,27 @@ Open `outputs/evaluation/test_subset/gallery/index.html` to view the videos and
 trajectories. Metrics are saved in `outputs/evaluation/test_subset/summary.json`.
 See [evaluation outputs](docs/EVALUATION.md#visualizations) for details.
 
-The test subsets contain selected successful cases; use the full sets for benchmark scores.
-
-| Benchmark | Test subset | Full evaluation |
-| --- | --- | --- |
-| Habitat-GS-LN | [16 tasks](docs/EVALUATION.md#test-subset) | [157 tasks](docs/EVALUATION.md#full-habitat-gs-ln) |
-| Short-Horizon OVON | [7 tasks](docs/EVALUATION.md#ovon-test-subset) | [524 tasks](docs/EVALUATION.md#full-short-horizon-ovon) |
+To try the other benchmark, follow the
+[Short-Horizon OVON test subset](docs/EVALUATION.md#ovon-test-subset).
+Test subsets contain selected successful cases; use [full evaluation](#evaluation)
+for benchmark scores.
 
 <a id="single-image-inference"></a>
 
 For a standalone trajectory prediction from one image, see
 [single-image inference](docs/INFERENCE.md#single-image-inference).
+
+## Evaluation
+
+Run the full benchmarks to report success rate (SR) and SPL:
+
+| Benchmark | Tasks | Data preparation | Run evaluation |
+| --- | ---: | --- | --- |
+| Habitat-GS-LN | 157 | [Prepare](docs/EVALUATION.md#full-habitat-gs-ln) | [Run](docs/EVALUATION.md#run-habitat-gs-ln-evaluation) |
+| Short-Horizon OVON | 524 | [Prepare](docs/EVALUATION.md#full-short-horizon-ovon) | [Run](docs/EVALUATION.md#run-short-horizon-ovon-evaluation) |
+
+The [evaluation guide](docs/EVALUATION.md) covers commands, metrics, visualizations
+and the evaluation protocol.
 
 ## Training
 

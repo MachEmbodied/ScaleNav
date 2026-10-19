@@ -60,7 +60,8 @@ python scripts/prepare_data.py evaluation --subset test_subset \
 This downloads and prepares the 13 scenes, navmeshes and instance labels
 (**2.96 GB** total, including retained compressed scenes).
 Prepared data: `data/evaluation/test_subset/`.
-Continue to [run Habitat-GS-LN evaluation](#run-habitat-gs-ln-evaluation).
+Continue to [run Habitat-GS-LN evaluation](#run-habitat-gs-ln-evaluation)
+with `EVAL_SET=test_subset`.
 
 ### Full Habitat-GS-LN
 
@@ -197,11 +198,12 @@ mirror, add `--hm3d-archives "$HM3D_ARCHIVES"` to its preparation command.
 
 ## Run Habitat-GS-LN evaluation
 
-Choose the prepared set: `test_subset` for 16 tasks or `habitatgs_ln` for all 157.
+The command below runs all 157 tasks. For the 16-task test subset, set
+`EVAL_SET=test_subset` instead.
 Set `CHECKPOINT` and `BASE_MODEL` using the [README](../README.md#checkpoints).
 
 ```bash
-export EVAL_SET=test_subset
+export EVAL_SET=habitatgs_ln
 python -m awm.scripts.eval_habitat_gs \
   --eval_config src/awm/configs/eval_habitatgs.yaml \
   --episode_manifest data/evaluation/"$EVAL_SET"/episodes.json \
@@ -213,11 +215,11 @@ python -m awm.scripts.eval_habitat_gs \
 
 ## Run Short-Horizon OVON evaluation
 
-Choose `ovon_test_subset` for the 7 selected test cases, or
-`short_horizon_ovon` for all 524 tasks. Use the same `CHECKPOINT` and `BASE_MODEL`:
+The command below runs all 524 tasks. For the 7-task test subset, set
+`EVAL_SET=ovon_test_subset` instead. Use the same `CHECKPOINT` and `BASE_MODEL`:
 
 ```bash
-export EVAL_SET=ovon_test_subset
+export EVAL_SET=short_horizon_ovon
 python -m awm.scripts.eval_habitat_gs \
   --eval_config src/awm/configs/eval_ovon.yaml \
   --episode_manifest data/evaluation/"$EVAL_SET"/episodes.json \
