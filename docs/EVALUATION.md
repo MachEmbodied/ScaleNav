@@ -18,16 +18,18 @@ Continue below if that check has already passed in your `scalenav` environment.
 
 ## Evaluation data
 
-Choose one set. Total data storage includes prepared assets from all sources
-and retained downloads, summing file bytes in decimal MB/GB. Model weights,
+Choose one set from the shared [ScaleNav Data page](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#choose-a-dataset)
+or the table below. Total download counts files fetched from all sources;
+total data storage includes prepared assets and retained downloads,
+summing file bytes in decimal MB/GB. Model weights,
 environments and evaluation outputs are separate.
 
-| Selection | Tasks | Scenes | Total data storage | Prepare |
-| --- | ---: | ---: | ---: | --- |
-| Habitat-GS-LN test subset | 16 | 13 | **2.96 GB** | [Prepare](#test-subset) |
-| Full Habitat-GS-LN | 157 | 45 | **10.36 GB** | [Prepare](#full-habitat-gs-ln) |
-| Short-Horizon OVON test subset | 7 | 7 | **642.90 MB** | [Prepare](#ovon-test-subset) |
-| Full Short-Horizon OVON | 524 | 36 | **3.67 GB** | [Prepare](#full-short-horizon-ovon) |
+| Dataset | Contents | Total download | Total data storage | Download |
+| --- | --- | ---: | ---: | --- |
+| Habitat-GS-LN test subset | 16 tasks / 13 scenes | 991.32 MB | 2.96 GB | [Download](#test-subset) |
+| Full Habitat-GS-LN evaluation | 157 tasks / 45 scenes | 3.17 GB | 10.36 GB | [Download](#full-habitat-gs-ln) |
+| Short-Horizon OVON test subset | 7 tasks / 7 scenes | 642.85 MB | 642.90 MB | [Download](#ovon-test-subset) |
+| Full Short-Horizon OVON evaluation | 524 tasks / 36 scenes | 5.84 GB | 3.67 GB | [Download](#full-short-horizon-ovon) |
 
 Start with a test subset to try navigation. These contain selected successful
 ScaleNav cases, with paper examples first; use the full sets for benchmark scores.
@@ -107,9 +109,10 @@ Task definitions and asset checksums are in
 
 #### OVON test subset
 
-Accept the Matterport academic-use agreement on
-[ScaleNav OVON Subset](https://huggingface.co/datasets/Yangyihui/ScaleNav-OVON-Subset).
-Access is granted automatically after submitting the agreement form. Then run:
+This subset is listed on [ScaleNav Data](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#ovon-test-subset).
+Accept the Matterport academic-use agreement once on the
+[OVON subset access page](https://huggingface.co/datasets/Yangyihui/ScaleNav-OVON-Subset).
+Access is granted automatically after submitting the form. Then run:
 
 ```bash
 hf auth login

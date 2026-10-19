@@ -34,7 +34,8 @@ and license adapted annotations under the same terms.
   the [InteriorGS terms](https://kloudsim-usa-cos.kujiale.com/InteriorGS/InteriorGS_Terms_of_Use.pdf).
 - **HM3D / HM3D-OVON**: separately obtained scene meshes, semantic annotations
   and category goals. A seven-scene subset and matching MIT-licensed HM3D-OVON
-  task files are mirrored in [ScaleNav OVON Subset](https://huggingface.co/datasets/Yangyihui/ScaleNav-OVON-Subset),
+  task files are listed as a [ScaleNav Data subset](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#ovon-test-subset)
+  and hosted in its [access-controlled file repository](https://huggingface.co/datasets/Yangyihui/ScaleNav-OVON-Subset),
   under the original Matterport agreement with recorded acceptance before access.
   The mirror retains upstream file hashes, attribution and license notices.
   Follow the [HM3D access instructions](https://github.com/matterport/habitat-matterport-3dresearch)

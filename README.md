@@ -211,30 +211,34 @@ and verifies SHA-256. Existing verified files are reused. For training from P0, 
 
 ## Data
 
-[ScaleNav Data](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data) provides
-public downloads of the annotations, Internet video packs and evaluation assets.
-Model and data repositories are grouped in the [ScaleNav collection](https://huggingface.co/collections/Yangyihui/scalenav-6ad591e8ff62bb75ec75f645).
-Third-party scenes follow their upstream access requirements.
+[ScaleNav Data](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#choose-a-dataset)
+is the shared entry point for training data and both evaluation benchmarks.
+Choose a selection below; its preparation command downloads the required assets
+and pairs them with the included annotations.
 
 Each **Download** link leads to the complete preparation steps for that dataset:
 ScaleNav annotations, required media or official scenes, and the resulting data
-directory. Total data storage counts the prepared data directories and retained
+directory. Total download counts files fetched from all sources.
+Total data storage counts the prepared data directories and retained
 source downloads from all sources. Model weights, environments,
 training latent caches and run outputs are separate. Sizes sum file bytes and use
 decimal MB/GB.
 
-| Dataset | Contents | Total data storage | Download |
-| --- | --- | ---: | --- |
-| Habitat-GS-LN test subset | 16 tasks across 13 scenes | 2.96 GB | [Download](docs/EVALUATION.md#test-subset) |
-| Full Habitat-GS-LN evaluation | 157 tasks across 45 scenes | 10.36 GB | [Download](docs/EVALUATION.md#full-habitat-gs-ln) |
-| Short-Horizon OVON test subset | 7 tasks across 7 scenes | 642.90 MB | [Download](docs/EVALUATION.md#ovon-test-subset) |
-| Full Short-Horizon OVON evaluation | 524 tasks across 36 scenes | 3.67 GB | [Download](docs/EVALUATION.md#full-short-horizon-ovon) |
-| Small training subset (for preview) | 17 Internet segments and 4 simulated episodes | 239.54 MB | [Download](docs/DATA.md#small-training-subset) |
-| Full training data | 18,249 Internet segments and 2,600 simulated episodes | 153.04 GB | [Download](docs/DATA.md#full-training-data) |
+| Dataset | Contents | Total download | Total data storage | Download |
+| --- | --- | ---: | ---: | --- |
+| Habitat-GS-LN test subset | 16 tasks / 13 scenes | 991.32 MB | 2.96 GB | [Download](docs/EVALUATION.md#test-subset) |
+| Full Habitat-GS-LN evaluation | 157 tasks / 45 scenes | 3.17 GB | 10.36 GB | [Download](docs/EVALUATION.md#full-habitat-gs-ln) |
+| Short-Horizon OVON test subset | 7 tasks / 7 scenes | 642.85 MB | 642.90 MB | [Download](docs/EVALUATION.md#ovon-test-subset) |
+| Full Short-Horizon OVON evaluation | 524 tasks / 36 scenes | 5.84 GB | 3.67 GB | [Download](docs/EVALUATION.md#full-short-horizon-ovon) |
+| Small training subset (for preview) | 17 Internet segments / 4 simulated episodes | 55.60 MB | 239.54 MB | [Download](docs/DATA.md#small-training-subset) |
+| Full training data | 18,249 Internet segments / 2,600 simulated episodes, including validation | 36.10 GB | 153.04 GB | [Download](docs/DATA.md#full-training-data) |
 
-The OVON test subset downloads only **642.85 MB**, after accepting the Matterport
-terms on its Hugging Face page. Full OVON downloads **5.84 GB** and temporarily
-uses **9.34 GB** before removing the two HM3D source archives.
+The [OVON test subset](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#ovon-test-subset)
+requires a one-time Matterport agreement confirmation; the script then fetches
+its files automatically. Internet packs and ScaleNav annotations remain publicly
+downloadable. InteriorGS scenes are downloaded individually from the official
+source after obtaining access. Full OVON temporarily uses **9.34 GB** before
+the documented HM3D archive cleanup.
 
 ## Evaluation
 

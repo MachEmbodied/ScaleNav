@@ -2,28 +2,32 @@
 
 ## Choose a download
 
+[ScaleNav Data](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#choose-a-dataset)
+is the shared entry point for all selections below.
+
 Evaluation and training use separate preparation commands and directories. To try
 navigation, start with the **[16-case Habitat-GS-LN test subset](EVALUATION.md#test-subset)**;
-it does not download any training data. Total data storage counts the prepared
+it does not download any training data. Total download counts files fetched
+from all sources. Total data storage counts the prepared
 data directories and retained downloads from ScaleNav and official sources.
 Sizes sum file bytes in decimal units and count each selection separately;
 shared files are reused across selections. Model weights, environments,
 training latent caches and run outputs are separate.
 
-| Dataset | Contents | Total data storage | Download |
-| --- | --- | ---: | --- |
-| Habitat-GS-LN test subset | 16 tasks in 13 scenes | **2.96 GB** | [Download](EVALUATION.md#test-subset) |
-| Full Habitat-GS-LN evaluation | 157 tasks in 45 scenes | **10.36 GB** | [Download](EVALUATION.md#full-habitat-gs-ln) |
-| Short-Horizon OVON test subset | 7 tasks in 7 scenes | **642.90 MB** | [Download](EVALUATION.md#ovon-test-subset) |
-| Full Short-Horizon OVON evaluation | 524 tasks in 36 scenes | **3.67 GB** | [Download](EVALUATION.md#full-short-horizon-ovon) |
-| Small training subset (for preview) | 17 Internet segments and 4 simulated episodes | **239.54 MB** | [Download](#small-training-subset) |
-| Full training data | 18,249 Internet segments and 2,600 simulated episodes, including validation | **153.04 GB** | [Download](#full-training-data) |
+| Dataset | Contents | Total download | Total data storage | Download |
+| --- | --- | ---: | ---: | --- |
+| Habitat-GS-LN test subset | 16 tasks / 13 scenes | 991.32 MB | 2.96 GB | [Download](EVALUATION.md#test-subset) |
+| Full Habitat-GS-LN evaluation | 157 tasks / 45 scenes | 3.17 GB | 10.36 GB | [Download](EVALUATION.md#full-habitat-gs-ln) |
+| Short-Horizon OVON test subset | 7 tasks / 7 scenes | 642.85 MB | 642.90 MB | [Download](EVALUATION.md#ovon-test-subset) |
+| Full Short-Horizon OVON evaluation | 524 tasks / 36 scenes | 5.84 GB | 3.67 GB | [Download](EVALUATION.md#full-short-horizon-ovon) |
+| Small training subset (for preview) | 17 Internet segments / 4 simulated episodes | 55.60 MB | 239.54 MB | [Download](#small-training-subset) |
+| Full training data | 18,249 Internet segments / 2,600 simulated episodes, including validation | 36.10 GB | 153.04 GB | [Download](#full-training-data) |
 
 Totals follow the documented preparation steps. Habitat-GS-LN retains compressed
 scenes alongside converted visuals, labels and navmeshes. OVON extracts only the
-selected scenes. The OVON test subset downloads individual files from its
-[dedicated Hugging Face repository](https://huggingface.co/datasets/Yangyihui/ScaleNav-OVON-Subset);
-full OVON removes the two HM3D source archives after preparation. Keeping those
+selected scenes. The [OVON test subset](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#ovon-test-subset)
+downloads individual files after a one-time Matterport agreement confirmation.
+Full OVON removes the two HM3D source archives after preparation. Keeping those
 archives adds **5.68 GB**; allow **9.34 GB** before full-OVON cleanup. Both training totals include
 converted scenes, locally rendered videos, generated labels and source downloads.
 
@@ -242,9 +246,11 @@ the navigation instruction directly, with no VLM review or chat template.
 
 ## Upstream access and terms
 
-1. Request [InteriorGS](https://huggingface.co/datasets/spatialverse/InteriorGS)
+1. Internet video packs and ScaleNav annotations are publicly downloadable.
+   For simulation data, request [InteriorGS](https://huggingface.co/datasets/spatialverse/InteriorGS)
    access on its official page, review its terms, then authenticate with
-   `hf auth login`. SpatialVID upstream access is needed only for the optional
+   `hf auth login`. Preparation downloads only the selected scene files;
+   the small training subset uses one scene. SpatialVID upstream access is needed only for the optional
    [original-archive reconstruction](#rebuild-from-original-spatialvid-archives).
 2. SpatialVID data and our compact video packs use **CC BY-NC-SA 4.0**: attribute its authors, use it
    noncommercially, identify changes and apply the same license to adaptations.
@@ -260,8 +266,15 @@ the navigation instruction directly, with no VLM review or chat template.
    in publications using it. The prepared Habitat-GS example also references
    InteriorGS and retains these underlying restrictions.
 
-InteriorGS and HM3D scene assets, scene-rendered RGB and latent caches are not
-part of the compact video release. Each download guide obtains these assets from their official sources.
+4. The [OVON test subset](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#ovon-test-subset)
+   uses a separate file repository with automatic access after accepting the
+   [Matterport agreement](https://matterport.com/legal/matterport-end-user-license-agreement-academic-use-model-data).
+   Its [preparation command](EVALUATION.md#ovon-test-subset) downloads the selected
+   HM3D scene and task files plus official ABotN starting poses. These assets
+   retain their original terms. Full OVON uses the official HM3D archives.
+
+InteriorGS scenes come from the upstream sources listed in each guide.
+Simulation videos and training latent caches are generated locally.
 
 ## Prepare Internet video
 
