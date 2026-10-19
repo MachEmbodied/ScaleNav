@@ -71,17 +71,22 @@ both models and set `CHECKPOINT` and `BASE_MODEL`.
 
 ## Data
 
-Choose the data needed for your task. Each preparation guide covers our annotations
-and the required upstream assets.
+Select a dataset below for its complete download and preparation instructions,
+including our annotations and the required upstream assets.
 
-| Data | Test / preview | Full |
-| --- | --- | --- |
-| Habitat-GS-LN | [16-task test subset](docs/EVALUATION.md#test-subset) | [157-task benchmark](docs/EVALUATION.md#full-habitat-gs-ln) |
-| Short-Horizon OVON | [7-task test subset](docs/EVALUATION.md#ovon-test-subset) | [524-task benchmark](docs/EVALUATION.md#full-short-horizon-ovon) |
-| Training | [Small subset (for preview)](docs/DATA.md#small-training-subset) | [Full training data](docs/DATA.md#full-training-data) |
+| Dataset | Purpose | Contents | Network download | Disk usage after preparation |
+| --- | --- | --- | ---: | ---: |
+| [Habitat-GS-LN test subset](docs/EVALUATION.md#test-subset) | Preview navigation and visualizations | 16 tasks / 13 scenes | 991.32 MB | 2.96 GB |
+| [Full Habitat-GS-LN evaluation](docs/EVALUATION.md#full-habitat-gs-ln) | Report Habitat-GS-LN SR/SPL | 157 tasks / 45 scenes | 3.17 GB | 10.36 GB |
+| [Short-Horizon OVON test subset](docs/EVALUATION.md#ovon-test-subset) | Preview navigation on HM3D | 7 tasks / 7 scenes | 642.85 MB | 642.90 MB |
+| [Full Short-Horizon OVON evaluation](docs/EVALUATION.md#full-short-horizon-ovon) | Report Short-Horizon OVON SR/SPL | 524 tasks / 36 scenes | 5.84 GB | 3.67 GB |
+| [Small training subset (for preview)](docs/DATA.md#small-training-subset) | Check the training pipeline | 17 Internet segments / 4 simulated episodes | 55.60 MB | 239.54 MB |
+| [Full training data](docs/DATA.md#full-training-data) | Pretrain and fine-tune ScaleNav | 18,249 Internet segments / 2,600 simulated episodes, including validation | 36.10 GB | 153.04 GB |
 
-See the [data catalog](docs/DATA.md#choose-a-download) for download sizes and disk
-requirements. All datasets are also listed on
+Network download includes all sources. Disk usage includes prepared assets and
+retained downloads after cleanup; full OVON needs **9.34 GB** before archive cleanup.
+Model weights, environments, training caches and run outputs are separate.
+See [data details](docs/DATA.md#choose-a-download) or
 [ScaleNav Data](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#choose-a-dataset).
 
 <a id="quick-start"></a>
@@ -123,7 +128,6 @@ python -m awm.scripts.eval_habitat_gs \
 
 Open `outputs/evaluation/test_subset/gallery/index.html` to view the videos and
 trajectories. Metrics are saved in `outputs/evaluation/test_subset/summary.json`.
-See [evaluation outputs](docs/EVALUATION.md#visualizations) for details.
 
 To try the other benchmark, follow the
 [Short-Horizon OVON test subset](docs/EVALUATION.md#ovon-test-subset).
@@ -137,23 +141,150 @@ For a standalone trajectory prediction from one image, see
 
 ## Evaluation
 
-Run the full benchmarks to report success rate (SR) and SPL:
+Evaluate the released policy on the **full Habitat-GS-LN (157 tasks)** and
+**full Short-Horizon OVON (524 tasks)** benchmarks. Complete
+[installation](docs/INSTALL.md) and set the model paths using
+[checkpoint setup](docs/INSTALL.md#checkpoints).
 
-| Benchmark | Tasks | Data preparation | Run evaluation |
-| --- | ---: | --- | --- |
-| Habitat-GS-LN | 157 | [Prepare](docs/EVALUATION.md#full-habitat-gs-ln) | [Run](docs/EVALUATION.md#run-habitat-gs-ln-evaluation) |
-| Short-Horizon OVON | 524 | [Prepare](docs/EVALUATION.md#full-short-horizon-ovon) | [Run](docs/EVALUATION.md#run-short-horizon-ovon-evaluation) |
+### Habitat-GS-LN
 
-The [evaluation guide](docs/EVALUATION.md) covers commands, metrics, visualizations
-and the evaluation protocol.
+Obtain [InteriorGS access](docs/EVALUATION.md#full-habitat-gs-ln), then prepare
+all 45 scenes and run the full benchmark:
+
+```bash
+hf auth login
+export PATH="$PWD/external/splat-tools/node_modules/.bin:$PATH"
+python scripts/prepare_data.py evaluation --subset full \
+  --source data/upstream/evaluation \
+  --output data/evaluation/habitatgs_ln --download
+
+export EVAL_SET=habitatgs_ln
+python -m awm.scripts.eval_habitat_gs \
+  --eval_config src/awm/configs/eval_habitatgs.yaml \
+  --episode_manifest data/evaluation/"$EVAL_SET"/episodes.json \
+  --gs_dataset_root data/upstream/evaluation \
+  --scene_dataset_config data/evaluation/"$EVAL_SET"/scenes.scene_dataset_config.json \
+  --model_path "$CHECKPOINT" --pretrained_model_path "$BASE_MODEL" \
+  --visualize --output_dir outputs/evaluation/"$EVAL_SET"
+```
+
+### Short-Horizon OVON
+
+Download the two HM3D validation archives using the
+[full OVON data guide](docs/EVALUATION.md#full-short-horizon-ovon).
+Set `HM3D_ARCHIVES` to their directory, then prepare all 36 scenes and run:
+
+```bash
+export HM3D_ARCHIVES=/path/to/hm3d-archives
+python scripts/prepare_data.py ovon --subset full \
+  --hm3d-archives "$HM3D_ARCHIVES" \
+  --source data/upstream/evaluation/ovon \
+  --scenes data/upstream/evaluation/hm3d \
+  --output data/evaluation/short_horizon_ovon --download
+
+export EVAL_SET=short_horizon_ovon
+python -m awm.scripts.eval_habitat_gs \
+  --eval_config src/awm/configs/eval_ovon.yaml \
+  --episode_manifest data/evaluation/"$EVAL_SET"/episodes.json \
+  --gs_dataset_root data/evaluation/"$EVAL_SET" \
+  --scene_dataset_config data/evaluation/"$EVAL_SET"/scenes.scene_dataset_config.json \
+  --model_path "$CHECKPOINT" --pretrained_model_path "$BASE_MODEL" \
+  --visualize --output_dir outputs/evaluation/"$EVAL_SET"
+```
+
+### Results
+
+For each benchmark, results are saved under `outputs/evaluation/$EVAL_SET/`:
+
+- `summary.json`: `aggregate.success_rate` (SR), `aggregate.spl` (SPL) and per-task results.
+- `gallery/index.html`: navigation videos, trajectories, targets and outcomes.
+
+Omit `--visualize` for metrics only. See the
+[evaluation protocol](docs/EVALUATION.md#evaluation-protocol) for success and STOP definitions.
 
 ## Training
 
-Prepare the [training data](docs/DATA.md#full-training-data) and
-[latent caches](docs/DATA.md#build-training-caches), then follow the
-[four-phase training recipe](docs/TRAINING.md#run-the-four-phases).
-Use the [small training subset](docs/DATA.md#small-training-subset) to preview the pipeline.
-The [training guide](docs/TRAINING.md) covers hardware, schedules and checkpoint resume.
+ScaleNav first learns from instruction-conditioned Internet videos, then learns
+navigation actions from simulated trajectories with Internet-video replay.
+Run the four phases in order:
+
+| Phase | Purpose | Training input |
+| --- | --- | --- |
+| P0: video adaptation | Adapt the native Wan video model | Internet videos |
+| P1: causal pretraining | Learn to predict with observation history | Internet videos |
+| Action alignment | Learn navigation actions | Simulated trajectories + Internet-video replay |
+| Joint fine-tuning | Jointly refine video and action prediction | Simulated trajectories + Internet-video replay |
+
+### Prepare training inputs
+
+1. Prepare the [full training data](docs/DATA.md#full-training-data). This writes
+   instruction-labeled videos to `$TRAIN_DATA/internet/` and action-labeled
+   trajectories to `$TRAIN_DATA/simulation/`. Use the
+   [small subset](docs/DATA.md#small-training-subset) to preview the pipeline.
+2. [Build the training caches](docs/DATA.md#build-training-caches) for the training
+   splits. The trainer reads `video-cache/train/`, `action-cache/`, simulation
+   metadata and `simulation/train.txt` under the same `TRAIN_DATA` directory.
+3. Download the [complete native Wan model](docs/TRAINING.md#native-wan-weights)
+   (**34.20 GB**, including transformer weights) for P0 initialization.
+
+Choose GPU and offload settings using the
+[training memory requirements](docs/TRAINING.md#installation-and-memory).
+The example below uses **8 GPUs** with a micro-batch of **1** per GPU.
+For optimizer offload, install [DeepSpeed](docs/INSTALL.md#deepspeed) and add
+`--deepspeed` to each training command.
+
+### Run the four phases
+
+Set the prepared data paths and output directory:
+
+```bash
+export BASE_MODEL=checkpoints/Wan2.2-TI2V-5B
+export TRAIN_DATA="${TRAIN_DATA:-data/training/goto}"
+export VIDEO_CACHE="$TRAIN_DATA/video-cache/train"
+export ACTION_CACHE="$TRAIN_DATA/action-cache"
+export ACTION_META="$TRAIN_DATA/simulation/awm_meta.jsonl"
+export ACTION_SPLIT="$TRAIN_DATA/simulation/train.txt"
+export RUN=outputs/scalenav
+```
+
+Check the video cache before starting optimization:
+
+```bash
+awm train --stage p0 --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
+  --output "$RUN/p0" --check-data
+```
+
+Run each command after the preceding phase finishes. `--initialize-from` passes
+the previous phase's checkpoint to the next:
+
+```bash
+torchrun --standalone --nproc_per_node=8 --module awm.training.runner \
+  --stage p0 --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
+  --output "$RUN/p0" --micro-batch 1 --save-every 2000
+
+torchrun --standalone --nproc_per_node=8 --module awm.training.runner \
+  --stage p1 --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
+  --initialize-from "$RUN/p0/checkpoint-2000" \
+  --output "$RUN/p1" --micro-batch 1 --save-every 8000
+
+torchrun --standalone --nproc_per_node=8 --module awm.training.runner \
+  --stage align --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
+  --action-cache "$ACTION_CACHE" --action-meta "$ACTION_META" --action-split "$ACTION_SPLIT" \
+  --initialize-from "$RUN/p1/checkpoint-10000" \
+  --output "$RUN/align" --micro-batch 1 --save-every 2500
+
+torchrun --standalone --nproc_per_node=8 --module awm.training.runner \
+  --stage joint --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
+  --action-cache "$ACTION_CACHE" --action-meta "$ACTION_META" --action-split "$ACTION_SPLIT" \
+  --initialize-from "$RUN/align/checkpoint-2500" \
+  --output "$RUN/joint" --micro-batch 1 --save-every 6500
+```
+
+Phase outputs are saved under `$RUN/p0/`, `$RUN/p1/`, `$RUN/align/` and
+`$RUN/joint/`. The final navigation policy is in `$RUN/joint/`; checkpoints
+include model weights and resumable training state.
+See the [training guide](docs/TRAINING.md) for schedules and losses, and
+[checkpoint resume](docs/TRAINING.md#resume-and-use-trained-weights) to continue an interrupted run.
 
 ## Real robot
 

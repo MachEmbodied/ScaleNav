@@ -29,7 +29,7 @@ the nine action deltas are in `outputs/example/observation_trajectory.npy`.
 
 ### Paired evaluation example
 
-After running the [Short-Horizon OVON test subset](EVALUATION.md#run-short-horizon-ovon-evaluation),
+After running the [Short-Horizon OVON test subset](EVALUATION.md#ovon-test-subset),
 extract the first frame and its matching instruction from the coffee-machine case:
 
 ```bash

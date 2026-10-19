@@ -3,7 +3,8 @@
 ## Choose a download
 
 [ScaleNav Data](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#choose-a-dataset)
-is the shared entry point for all selections below.
+is the shared entry point for all selections below. Each dataset name links to
+its complete download and preparation instructions.
 
 Evaluation and training use separate preparation commands and directories. To try
 navigation, start with the **[16-case Habitat-GS-LN test subset](EVALUATION.md#test-subset)**;
@@ -15,14 +16,14 @@ Sizes sum file bytes in decimal units and count each selection separately;
 shared files are reused across selections. Model weights, environments,
 training latent caches and run outputs are separate.
 
-| Dataset | Contents | Network download | Disk usage after preparation | Instructions |
-| --- | --- | ---: | ---: | --- |
-| Habitat-GS-LN test subset | 16 tasks / 13 scenes | 991.32 MB | 2.96 GB | [Prepare](EVALUATION.md#test-subset) |
-| Full Habitat-GS-LN evaluation | 157 tasks / 45 scenes | 3.17 GB | 10.36 GB | [Prepare](EVALUATION.md#full-habitat-gs-ln) |
-| Short-Horizon OVON test subset | 7 tasks / 7 scenes | 642.85 MB | 642.90 MB | [Prepare](EVALUATION.md#ovon-test-subset) |
-| Full Short-Horizon OVON evaluation | 524 tasks / 36 scenes | 5.84 GB | 3.67 GB | [Prepare](EVALUATION.md#full-short-horizon-ovon) |
-| Small training subset (for preview) | 17 Internet segments / 4 simulated episodes | 55.60 MB | 239.54 MB | [Prepare](#small-training-subset) |
-| Full training data | 18,249 Internet segments / 2,600 simulated episodes, including validation | 36.10 GB | 153.04 GB | [Prepare](#full-training-data) |
+| Dataset | Purpose | Contents | Network download | Disk usage after preparation |
+| --- | --- | --- | ---: | ---: |
+| [Habitat-GS-LN test subset](EVALUATION.md#test-subset) | Preview navigation and visualizations | 16 tasks / 13 scenes | 991.32 MB | 2.96 GB |
+| [Full Habitat-GS-LN evaluation](EVALUATION.md#full-habitat-gs-ln) | Report Habitat-GS-LN SR/SPL | 157 tasks / 45 scenes | 3.17 GB | 10.36 GB |
+| [Short-Horizon OVON test subset](EVALUATION.md#ovon-test-subset) | Preview navigation on HM3D | 7 tasks / 7 scenes | 642.85 MB | 642.90 MB |
+| [Full Short-Horizon OVON evaluation](EVALUATION.md#full-short-horizon-ovon) | Report Short-Horizon OVON SR/SPL | 524 tasks / 36 scenes | 5.84 GB | 3.67 GB |
+| [Small training subset (for preview)](#small-training-subset) | Check the training pipeline | 17 Internet segments / 4 simulated episodes | 55.60 MB | 239.54 MB |
+| [Full training data](#full-training-data) | Pretrain and fine-tune ScaleNav | 18,249 Internet segments / 2,600 simulated episodes, including validation | 36.10 GB | 153.04 GB |
 
 Totals follow the documented preparation steps. Habitat-GS-LN retains compressed
 scenes alongside converted visuals, labels and navmeshes. OVON extracts only the
@@ -46,8 +47,9 @@ once. Existing matching files reduce the download.
 
 The included training labels and recorded poses total only **4.39 MB**;
 [evaluation annotations](../annotations/evaluation/) add **316.57 KB** for both benchmarks.
-The test subset and full evaluation are documented together in the
-[evaluation guide](EVALUATION.md#evaluation-data), under `data/evaluation/`.
+Prepared evaluation files are stored under `data/evaluation/`. Follow the
+[full evaluation guide](EVALUATION.md#evaluation-data) for benchmark scores or
+[test-subset instructions](EVALUATION.md#test-subsets) for navigation previews.
 Internet validation checks held-out video examples; it is separate from the two
 closed-loop navigation benchmarks. Full Internet training and validation contain
 8.63 GB of MP4 files, counted alongside the retained TAR packs in the full

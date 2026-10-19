@@ -1,14 +1,13 @@
 # Simulation evaluation
 
-First complete the [installation guide](INSTALL.md) and
-[checkpoint downloads](INSTALL.md#checkpoints). Run the commands below from
-the ScaleNav repository root with the `scalenav` environment active.
+This guide evaluates the **full Habitat-GS-LN (157 tasks)** and
+**full Short-Horizon OVON (524 tasks)** benchmarks. Complete the
+[installation guide](INSTALL.md) and [checkpoint downloads](INSTALL.md#checkpoints).
+Run commands from the repository root with the `scalenav` environment active.
 
-1. [Install the simulator](#simulator-installation).
-2. [Choose and prepare an evaluation set](#evaluation-data).
-3. Run [Habitat-GS-LN](#run-habitat-gs-ln-evaluation) or
-   [Short-Horizon OVON](#run-short-horizon-ovon-evaluation).
-4. [View metrics and videos](#visualizations).
+1. Prepare and run [full Habitat-GS-LN](#full-habitat-gs-ln).
+2. Prepare and run [full Short-Horizon OVON](#full-short-horizon-ovon).
+3. Read [metrics and visualizations](#visualizations).
 
 ## Simulator installation
 
@@ -18,52 +17,23 @@ Continue below if that check has already passed in your `scalenav` environment.
 
 ## Evaluation data
 
-Choose one set from the shared [ScaleNav Data page](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#choose-a-dataset)
-or the table below. **Network download** is the amount transferred over the
-Internet from all sources. **Disk usage after preparation** is the local space
-occupied by the prepared data and retained downloads after completing the guide,
-including any cleanup. Sizes sum file bytes in decimal MB/GB. Model weights,
-environments and evaluation outputs are separate.
+Each benchmark has its own preparation and evaluation commands below.
+**Network download** includes files from all sources. **Disk usage after preparation**
+includes prepared assets and retained downloads after the documented cleanup.
+Sizes use decimal MB/GB; model weights, environments and evaluation outputs are separate.
 
 | Dataset | Contents | Network download | Disk usage after preparation | Instructions |
 | --- | --- | ---: | ---: | --- |
-| Habitat-GS-LN test subset | 16 tasks / 13 scenes | 991.32 MB | 2.96 GB | [Prepare](#test-subset) |
-| Full Habitat-GS-LN evaluation | 157 tasks / 45 scenes | 3.17 GB | 10.36 GB | [Prepare](#full-habitat-gs-ln) |
-| Short-Horizon OVON test subset | 7 tasks / 7 scenes | 642.85 MB | 642.90 MB | [Prepare](#ovon-test-subset) |
-| Full Short-Horizon OVON evaluation | 524 tasks / 36 scenes | 5.84 GB | 3.67 GB | [Prepare](#full-short-horizon-ovon) |
+| Full Habitat-GS-LN evaluation | 157 tasks / 45 scenes | 3.17 GB | 10.36 GB | [Prepare and run](#full-habitat-gs-ln) |
+| Full Short-Horizon OVON evaluation | 524 tasks / 36 scenes | 5.84 GB | 3.67 GB | [Prepare and run](#full-short-horizon-ovon) |
 
-Start with a test subset to try navigation. These contain selected successful
-ScaleNav cases, with paper examples first; use the full sets for benchmark scores.
-The OVON subset downloads **642.85 MB** of individual files. Full OVON downloads
-**5.84 GB**; its storage total assumes the HM3D archive cleanup below. Allow
-**9.34 GB** before full-OVON cleanup.
-
-Our task definitions and instructions are included in the repository. Preparation
-combines them with the scene assets and creates `episodes.json` and
+Full OVON needs **9.34 GB** before archive cleanup. Existing matching scene files
+are reused. Our task annotations are included in the repository; preparation
+combines them with scene assets and creates `episodes.json` and
 `scenes.scene_dataset_config.json` under `data/evaluation/<set>/`.
-Downloaded assets stay in `data/upstream/evaluation/`; keep this directory for evaluation.
+Keep the downloaded assets under `data/upstream/evaluation/` for evaluation.
 
-### Test subset
-
-Install the [scene converter](INSTALL.md#scene-converter), request
-[InteriorGS access](https://huggingface.co/datasets/spatialverse/InteriorGS)
-and accept its [terms](https://kloudsim-usa-cos.kujiale.com/InteriorGS/InteriorGS_Terms_of_Use.pdf),
-then run:
-
-```bash
-hf auth login
-export PATH="$PWD/external/splat-tools/node_modules/.bin:$PATH"
-python scripts/prepare_data.py evaluation --subset test_subset \
-  --source data/upstream/evaluation --output data/evaluation/test_subset --download
-```
-
-This downloads and prepares the 13 scenes, navmeshes and instance labels
-(**2.96 GB** total, including retained compressed scenes).
-Prepared data: `data/evaluation/test_subset/`.
-Continue to [run Habitat-GS-LN evaluation](#run-habitat-gs-ln-evaluation)
-with `EVAL_SET=test_subset`.
-
-### Full Habitat-GS-LN
+## Full Habitat-GS-LN
 
 Requires [InteriorGS access](https://huggingface.co/datasets/spatialverse/InteriorGS)
 under its [terms](https://kloudsim-usa-cos.kujiale.com/InteriorGS/InteriorGS_Terms_of_Use.pdf).
@@ -80,8 +50,22 @@ python scripts/prepare_data.py evaluation --subset full \
 This downloads and prepares all 45 scenes, navmeshes and instance labels,
 reusing any test-subset downloads. Total data storage is **10.36 GB**, including
 retained compressed scenes. Evaluation files: `data/evaluation/habitatgs_ln/`.
-Continue to [run Habitat-GS-LN evaluation](#run-habitat-gs-ln-evaluation)
-with `EVAL_SET=habitatgs_ln`.
+
+### Run Habitat-GS-LN evaluation
+
+Run all 157 tasks in the prepared `habitatgs_ln` set.
+Set `CHECKPOINT` and `BASE_MODEL` using the [checkpoint setup](INSTALL.md#checkpoints).
+
+```bash
+export EVAL_SET=habitatgs_ln
+python -m awm.scripts.eval_habitat_gs \
+  --eval_config src/awm/configs/eval_habitatgs.yaml \
+  --episode_manifest data/evaluation/"$EVAL_SET"/episodes.json \
+  --gs_dataset_root data/upstream/evaluation \
+  --scene_dataset_config data/evaluation/"$EVAL_SET"/scenes.scene_dataset_config.json \
+  --model_path "$CHECKPOINT" --pretrained_model_path "$BASE_MODEL" \
+  --visualize --output_dir outputs/evaluation/"$EVAL_SET"
+```
 
 <details>
 <summary>Habitat-GS-LN data sources and download paths</summary>
@@ -107,31 +91,9 @@ Task definitions and asset checksums are in
 
 </details>
 
-### Short-Horizon OVON
+<a id="short-horizon-ovon"></a>
 
-#### OVON test subset
-
-This subset is listed on [ScaleNav Data](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#ovon-test-subset).
-Accept the Matterport academic-use agreement once on the
-[OVON subset access page](https://huggingface.co/datasets/Yangyihui/ScaleNav-OVON-Subset).
-Access is granted automatically after submitting the form. Then run:
-
-```bash
-hf auth login
-python scripts/prepare_data.py ovon --subset test_subset \
-  --source data/upstream/evaluation/ovon \
-  --scenes data/upstream/evaluation/hm3d \
-  --output data/evaluation/ovon_test_subset --download
-```
-
-This downloads the 7 scenes, original navmeshes, semantic labels and matching task
-metadata, plus the original ABotN starting poses: **642.85 MB** downloaded and
-**642.90 MB** after preparation. Files are verified against pinned SHA-256 hashes.
-No HM3D TAR archives are needed. Existing matching files are reused.
-Continue to [run Short-Horizon OVON evaluation](#run-short-horizon-ovon-evaluation)
-with `EVAL_SET=ovon_test_subset`.
-
-#### Full Short-Horizon OVON
+## Full Short-Horizon OVON
 
 **1. Download the HM3D validation assets.** Follow the
 [official access instructions](https://github.com/matterport/habitat-matterport-3dresearch),
@@ -166,57 +128,11 @@ rm -- "$HM3D_ARCHIVES/hm3d-val-habitat-v0.2.tar" \
 
 Full-OVON storage is **3.67 GB** after cleanup or **9.34 GB** with the archives.
 Keep `data/upstream/evaluation/hm3d/` and `data/upstream/evaluation/ovon/`.
-Continue to [run Short-Horizon OVON evaluation](#run-short-horizon-ovon-evaluation)
-with `EVAL_SET=short_horizon_ovon`.
 
-<details>
-<summary>OVON sources and download sizes</summary>
+### Run Short-Horizon OVON evaluation
 
-The test subset mirrors only the required files from the sources below in
-[ScaleNav OVON Subset](https://huggingface.co/datasets/Yangyihui/ScaleNav-OVON-Subset).
-HM3D assets retain the Matterport agreement; access requires recorded acceptance.
-The HM3D-OVON task files retain their upstream MIT license and underlying
-Matterport terms. ABotN starting poses are fetched from their original repository.
-Source and license notices are saved alongside the scene assets.
-
-| Source | Test-subset download | Full-OVON download |
-| --- | ---: | ---: |
-| HM3D v0.2 scene assets | 641,719,313 bytes | 5,676,554,240 bytes (two archives) |
-| [HM3D-OVON tasks](https://huggingface.co/datasets/nyokoyama/hm3d_ovon) | 108,890 bytes (7 files) | 165,665,450 bytes (archive) |
-| [ABotN starting poses](https://huggingface.co/datasets/acvlab/ABotN-Short-Horizon-OVON) | 1,016,534 bytes | 1,016,534 bytes |
-| Source and license notices | 2,530 bytes | Included with the upstream archives |
-| **Total** | **642,847,267 bytes (642.85 MB)** | **5,843,236,224 bytes (5.84 GB)** |
-
-Totals count file payloads from an empty cache. Hugging Face cache bookkeeping,
-model weights and run outputs are separate. The selected tasks and checksums are
-in [the OVON annotations](../annotations/evaluation/short_horizon_ovon.json).
-
-To prepare the test subset from existing official TAR archives instead of the
-mirror, add `--hm3d-archives "$HM3D_ARCHIVES"` to its preparation command.
-
-</details>
-
-## Run Habitat-GS-LN evaluation
-
-The command below runs all 157 tasks. For the 16-task test subset, set
-`EVAL_SET=test_subset` instead.
-Set `CHECKPOINT` and `BASE_MODEL` using the [checkpoint setup](INSTALL.md#checkpoints).
-
-```bash
-export EVAL_SET=habitatgs_ln
-python -m awm.scripts.eval_habitat_gs \
-  --eval_config src/awm/configs/eval_habitatgs.yaml \
-  --episode_manifest data/evaluation/"$EVAL_SET"/episodes.json \
-  --gs_dataset_root data/upstream/evaluation \
-  --scene_dataset_config data/evaluation/"$EVAL_SET"/scenes.scene_dataset_config.json \
-  --model_path "$CHECKPOINT" --pretrained_model_path "$BASE_MODEL" \
-  --visualize --output_dir outputs/evaluation/"$EVAL_SET"
-```
-
-## Run Short-Horizon OVON evaluation
-
-The command below runs all 524 tasks. For the 7-task test subset, set
-`EVAL_SET=ovon_test_subset` instead. Use the same `CHECKPOINT` and `BASE_MODEL`:
+Run all 524 tasks in the prepared `short_horizon_ovon` set, using the same
+`CHECKPOINT` and `BASE_MODEL`:
 
 ```bash
 export EVAL_SET=short_horizon_ovon
@@ -232,7 +148,7 @@ python -m awm.scripts.eval_habitat_gs \
 ## Visualizations
 
 Both evaluation commands save results to `outputs/evaluation/<set>/`, where
-`<set>` is `test_subset`, `habitatgs_ln`, `ovon_test_subset` or `short_horizon_ovon`:
+`<set>` is `habitatgs_ln` or `short_horizon_ovon`:
 
 | File | What to do |
 | --- | --- |
@@ -245,13 +161,13 @@ Both evaluation commands save results to `outputs/evaluation/<set>/`, where
 <details>
 <summary>Build a gallery from saved rollouts</summary>
 
-For example, for the test subset:
+For example, for full Habitat-GS-LN:
 
 ```bash
 python -m awm.scripts.visualize_evaluation \
-  --summary outputs/evaluation/test_subset/summary.json \
-  --episodes data/evaluation/test_subset/episodes.json \
-  --output outputs/evaluation/test_subset/gallery
+  --summary outputs/evaluation/habitatgs_ln/summary.json \
+  --episodes data/evaluation/habitatgs_ln/episodes.json \
+  --output outputs/evaluation/habitatgs_ln/gallery
 ```
 
 </details>
@@ -312,5 +228,97 @@ falling back to all category instances when no same-floor instance exists.
 SPL reference points use the starting floor and navmesh island. For multiple
 instances, use `supporting_instances` without a direct single-target footprint
 or a restrictive `success_condition.support_obj_ids` list.
+
+</details>
+
+## Test subsets
+
+Use these selected successful cases to preview navigation and visualizations.
+For benchmark scores, use the full sets above. The [data catalog](DATA.md#choose-a-download)
+lists both subset sizes and download requirements.
+
+<a id="test-subset"></a>
+
+### Habitat-GS-LN test subset
+
+The Habitat-GS-LN subset contains **16 tasks in 13 scenes**; its network download
+is **991.32 MB**. The same steps are included in the [README Quick test](../README.md#quick-test).
+
+Install the [scene converter](INSTALL.md#scene-converter), request
+[InteriorGS access](https://huggingface.co/datasets/spatialverse/InteriorGS)
+and accept its [terms](https://kloudsim-usa-cos.kujiale.com/InteriorGS/InteriorGS_Terms_of_Use.pdf),
+then run:
+
+```bash
+hf auth login
+export PATH="$PWD/external/splat-tools/node_modules/.bin:$PATH"
+python scripts/prepare_data.py evaluation --subset test_subset \
+  --source data/upstream/evaluation --output data/evaluation/test_subset --download
+```
+
+This downloads and prepares the 13 scenes, navmeshes and instance labels
+(**2.96 GB** total, including retained compressed scenes).
+Prepared data: `data/evaluation/test_subset/`.
+Run the prepared subset with the [Quick test command](../README.md#run-navigation).
+Open `outputs/evaluation/test_subset/gallery/index.html` to view the results.
+
+### OVON test subset
+
+This subset is listed on [ScaleNav Data](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#ovon-test-subset).
+Accept the Matterport academic-use agreement once on the
+[OVON subset access page](https://huggingface.co/datasets/Yangyihui/ScaleNav-OVON-Subset).
+Access is granted automatically after submitting the form. Then run:
+
+```bash
+hf auth login
+python scripts/prepare_data.py ovon --subset test_subset \
+  --source data/upstream/evaluation/ovon \
+  --scenes data/upstream/evaluation/hm3d \
+  --output data/evaluation/ovon_test_subset --download
+```
+
+This downloads the 7 scenes, original navmeshes, semantic labels and matching task
+metadata, plus the original ABotN starting poses: **642.85 MB** downloaded and
+**642.90 MB** after preparation. Files are verified against pinned SHA-256 hashes.
+No HM3D TAR archives are needed. Existing matching files are reused.
+Run the prepared subset:
+
+```bash
+export EVAL_SET=ovon_test_subset
+python -m awm.scripts.eval_habitat_gs \
+  --eval_config src/awm/configs/eval_ovon.yaml \
+  --episode_manifest data/evaluation/"$EVAL_SET"/episodes.json \
+  --gs_dataset_root data/evaluation/"$EVAL_SET" \
+  --scene_dataset_config data/evaluation/"$EVAL_SET"/scenes.scene_dataset_config.json \
+  --model_path "$CHECKPOINT" --pretrained_model_path "$BASE_MODEL" \
+  --visualize --output_dir outputs/evaluation/"$EVAL_SET"
+```
+
+Open `outputs/evaluation/ovon_test_subset/gallery/index.html` to view the results.
+
+<details>
+<summary>OVON sources and download sizes</summary>
+
+The test subset mirrors only the required files from the sources below in
+[ScaleNav OVON Subset](https://huggingface.co/datasets/Yangyihui/ScaleNav-OVON-Subset).
+HM3D assets retain the Matterport agreement; access requires recorded acceptance.
+The HM3D-OVON task files retain their upstream MIT license and underlying
+Matterport terms. ABotN starting poses are fetched from their original repository.
+Source and license notices are saved alongside the scene assets.
+
+| Source | Test-subset download | Full-OVON download |
+| --- | ---: | ---: |
+| HM3D v0.2 scene assets | 641,719,313 bytes | 5,676,554,240 bytes (two archives) |
+| [HM3D-OVON tasks](https://huggingface.co/datasets/nyokoyama/hm3d_ovon) | 108,890 bytes (7 files) | 165,665,450 bytes (archive) |
+| [ABotN starting poses](https://huggingface.co/datasets/acvlab/ABotN-Short-Horizon-OVON) | 1,016,534 bytes | 1,016,534 bytes |
+| Source and license notices | 2,530 bytes | Included with the upstream archives |
+| **Total** | **642,847,267 bytes (642.85 MB)** | **5,843,236,224 bytes (5.84 GB)** |
+
+Totals count file payloads from an empty cache. Hugging Face cache bookkeeping,
+model weights and run outputs are separate. The selected tasks and checksums are
+in [the OVON annotations](../annotations/evaluation/short_horizon_ovon.json).
+
+To prepare the test subset from existing official TAR archives instead of the
+mirror, add `--hm3d-archives "$HM3D_ARCHIVES"` to its preparation command.
 
 </details>
