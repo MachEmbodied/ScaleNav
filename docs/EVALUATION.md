@@ -1,7 +1,7 @@
 # Simulation evaluation
 
-First complete the README's [installation](../README.md#installation) and
-[checkpoint downloads](../README.md#checkpoints). Run the commands below from
+First complete the [installation guide](INSTALL.md) and
+[checkpoint downloads](INSTALL.md#checkpoints). Run the commands below from
 the ScaleNav repository root with the `scalenav` environment active.
 
 1. [Install the simulator](#simulator-installation).
@@ -12,7 +12,7 @@ the ScaleNav repository root with the `scalenav` environment active.
 
 ## Simulator installation
 
-Complete the README's [simulator installation](../README.md#simulator-installation),
+Complete the [simulator installation steps](INSTALL.md#simulator-installation),
 including the final `awm doctor --require-cuda --data-tools --simulator` check.
 Continue below if that check has already passed in your `scalenav` environment.
 
@@ -45,7 +45,7 @@ Downloaded assets stay in `data/upstream/evaluation/`; keep this directory for e
 
 ### Test subset
 
-Install the [scene converter](../README.md#scene-converter), request
+Install the [scene converter](INSTALL.md#scene-converter), request
 [InteriorGS access](https://huggingface.co/datasets/spatialverse/InteriorGS)
 and accept its [terms](https://kloudsim-usa-cos.kujiale.com/InteriorGS/InteriorGS_Terms_of_Use.pdf),
 then run:
@@ -67,7 +67,7 @@ with `EVAL_SET=test_subset`.
 
 Requires [InteriorGS access](https://huggingface.co/datasets/spatialverse/InteriorGS)
 under its [terms](https://kloudsim-usa-cos.kujiale.com/InteriorGS/InteriorGS_Terms_of_Use.pdf).
-Install the [scene converter](../README.md#scene-converter), then prepare all 157 tasks:
+Install the [scene converter](INSTALL.md#scene-converter), then prepare all 157 tasks:
 
 ```bash
 hf auth login
@@ -200,7 +200,7 @@ mirror, add `--hm3d-archives "$HM3D_ARCHIVES"` to its preparation command.
 
 The command below runs all 157 tasks. For the 16-task test subset, set
 `EVAL_SET=test_subset` instead.
-Set `CHECKPOINT` and `BASE_MODEL` using the [README](../README.md#checkpoints).
+Set `CHECKPOINT` and `BASE_MODEL` using the [checkpoint setup](INSTALL.md#checkpoints).
 
 ```bash
 export EVAL_SET=habitatgs_ln

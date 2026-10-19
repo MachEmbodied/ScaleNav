@@ -27,13 +27,13 @@ training recipe; the paper does not specify all of them.
 
 ## Installation and memory
 
-Use the `scalenav` environment from the [README installation](../README.md#installation),
+Use the `scalenav` environment from the [installation guide](INSTALL.md),
 which includes the training dependencies.
 
 For action alignment with `--micro-batch 1 --deepspeed`, use **48 GB GPU memory
 per GPU** and CPU optimizer offload. For a single process, **128 GB of system RAM
-is recommended**, including checkpoint saves. Follow the README's
-[DeepSpeed setup](../README.md#optional-dependencies); `--deepspeed` enables
+is recommended**, including checkpoint saves. Follow the
+[DeepSpeed setup](INSTALL.md#deepspeed); `--deepspeed` enables
 ZeRO-2 with CPU optimizer offload. Add `--text-device cpu` to keep the frozen
 text encoder on CPU.
 
@@ -46,7 +46,8 @@ CPU RAM and checkpoint storage must accommodate the full optimizer state.
 ### Native Wan weights
 
 P0 requires the complete Wan model (**34.20 GB**), including its native
-transformer shards. Download it to the same base-model directory used by the README:
+transformer shards. Download it to the base-model directory from the
+[checkpoint setup](INSTALL.md#checkpoints):
 
 ```bash
 python - <<'PYTHON'

@@ -82,7 +82,7 @@ official compressed scene. Simulation videos are rendered locally from the
 included poses. This subset checks data preparation, latent caching and training;
 all its samples belong to the training split.
 
-Complete the [README installation](../README.md#installation), including the
+Complete the [installation guide](INSTALL.md), including the
 simulator and scene converter,
 then obtain [InteriorGS access](https://huggingface.co/datasets/spatialverse/InteriorGS)
 under its [terms](#upstream-access-and-terms). From the repository root:
@@ -127,7 +127,7 @@ Our annotations are included in this repository and applied automatically.
 
 </details>
 
-Complete the [README installation](../README.md#installation), including the
+Complete the [installation guide](INSTALL.md), including the
 simulator and scene converter,
 then obtain [InteriorGS access](https://huggingface.co/datasets/spatialverse/InteriorGS)
 under its [terms](#upstream-access-and-terms). From the repository root:
@@ -152,15 +152,15 @@ existing matching files are reused.
 
 ## Training preparation environment
 
-All dependencies are installed in the README's [installation steps](../README.md#installation),
-including [Habitat-GS](../README.md#simulator-installation) for rendering and the
-[scene converter](../README.md#scene-converter). Run data preparation from the
+All dependencies are installed in the [installation guide](INSTALL.md),
+including [Habitat-GS](INSTALL.md#simulator-installation) for rendering and the
+[scene converter](INSTALL.md#scene-converter). Run data preparation from the
 repository root with `scalenav` active.
 
 ## Build training caches
 
 After preparing either training selection, keep its `TRAIN_DATA` setting and
-use the checkpoint/base-model paths from the [README](../README.md#checkpoints):
+use the checkpoint/base-model paths from the [checkpoint setup](INSTALL.md#checkpoints):
 
 ```bash
 python -m awm.scripts.precompute_nav_t2v_latents \

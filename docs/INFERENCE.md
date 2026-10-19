@@ -1,7 +1,7 @@
 # Inference
 
-Complete the README's [environment setup](../README.md#environment) and
-[checkpoint downloads](../README.md#checkpoints).
+Complete the [environment setup](INSTALL.md#environment) and
+[checkpoint downloads](INSTALL.md#checkpoints).
 Model geometry, history and normalization are recovered
 from the checkpoint's configuration and deployment metadata.
 
@@ -111,7 +111,7 @@ controller expecting per-step deltas or velocities.
 
 ## HTTP API
 
-Start the policy server with the model paths from the README:
+Start the policy server with the paths from the [checkpoint setup](INSTALL.md#checkpoints):
 
 ```bash
 awm serve --checkpoint "$CHECKPOINT" --base-model "$BASE_MODEL" --decode-video
@@ -184,7 +184,7 @@ python -m awm.robot --backend dry-run --image data/example/observation.png \
   --instruction "$(cat data/example/instruction.txt)" --max-steps 18
 ```
 
-For a Go2, complete the README's [Unitree SDK2 setup](../README.md#optional-dependencies).
+For a Go2, complete the [Unitree SDK2 setup](INSTALL.md#go2-robot).
 The adapter uses its `SportClient.Move` and `StopMove` interfaces. Supply the
 robot's network interface and a rectified RGB camera stream matching the
 approximately 70° horizontal field of view. Set `ROBOT_INSTRUCTION` to a target
