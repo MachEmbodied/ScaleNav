@@ -1,6 +1,7 @@
 # Inference
 
-Use the model paths from the [README](../README.md#checkpoints).
+Complete the README's [environment setup](../README.md#environment) and
+[checkpoint downloads](../README.md#checkpoints).
 Model geometry, history and normalization are recovered
 from the checkpoint's configuration and deployment metadata.
 
@@ -9,6 +10,24 @@ from the checkpoint's configuration and deployment metadata.
 Predict nine navigation actions from an image and instruction and visualize
 their trajectory. For continuous navigation with observations after each action, use
 [simulation evaluation](EVALUATION.md) or the [robot adapter](#robot-adapter).
+
+### Use your own image
+
+Provide an RGB image and an instruction describing a target visible in it.
+This path requires no simulator or evaluation data:
+
+```bash
+awm infer --checkpoint "$CHECKPOINT" --base-model "$BASE_MODEL" \
+  --image /path/to/observation.png \
+  --prompt "Walk to the chair visible in the initial view." \
+  --output outputs/example
+```
+
+Replace the image and instruction with a matching pair. For `observation.png`,
+open `outputs/example/observation_trajectory.png` to see the predicted path;
+the nine action deltas are in `outputs/example/observation_trajectory.npy`.
+
+### Paired evaluation example
 
 After running the [Short-Horizon OVON test subset](EVALUATION.md#run-short-horizon-ovon-evaluation),
 extract the first frame and its matching instruction from the coffee-machine case:
@@ -20,9 +39,7 @@ python scripts/prepare_data.py example --source outputs/evaluation/ovon_test_sub
 
 This writes `observation.png`, `instruction.txt` and `source.json`, which records
 the episode, instruction and source checksums. The instruction is
-**“Walk to the coffee machine visible in your initial view.”** For your own image,
-place it at `data/example/observation.png` and save its matching instruction in
-`data/example/instruction.txt`.
+**“Walk to the coffee machine visible in your initial view.”**
 
 ```bash
 awm infer --checkpoint "$CHECKPOINT" --base-model "$BASE_MODEL" \
@@ -39,6 +56,18 @@ start, final position and heading. The raw action deltas are saved as
 The model uses 288×512 observations at 4 Hz, nine-frame chunks, four sampling
 steps, video/action guidance 5/1 and scheduler shifts 5/1.
 
+## Hardware and memory
+
+Use an NVIDIA GPU with BF16 support; 24 GB GPU memory and 64 GB system RAM are recommended.
+The 16-task Habitat-GS-LN test subset used **18.4 GiB peak GPU memory** in a
+48 GB reference run, sampled with `nvidia-smi` and visualization enabled.
+GPU memory includes model weights, simulator scenes, history caches and CUDA graphs.
+
+The default `model_cpu_offload` keeps the text encoder on CPU and the transformer
+and VAE on GPU. `model_full_load` also puts the text encoder on GPU and needs more
+GPU memory. Check available GPU memory and your process/container RAM limit;
+network filesystem reads can make startup slow. Sequential layer offload is not supported.
+
 ## History and memory
 
 Single-image inference starts without history. Policy serving retains the initial
@@ -46,11 +75,6 @@ RGB anchor and two recent chunks of observed images, together with predicted
 actions. The last action of a chunk advances to the first image of the next.
 Normalization is symlog with c=0.01. The current observation remains clean during
 denoising; video and action use separate schedules.
-
-The default `model_cpu_offload` keeps the text encoder on CPU and the transformer
-and VAE on GPU. `model_full_load` also puts the text encoder on GPU and needs more
-GPU memory. Check available GPU memory and your process/container RAM limit;
-network filesystem reads can make startup slow. Sequential layer offload is not supported.
 
 Policy serving enables history KV caching, batched CFG and CUDA graphs, with video
 decoding disabled. Use `--no-cuda-graph` for eager execution or `--decode-video`
@@ -153,7 +177,7 @@ for the next prediction. It returns intervening camera frames with the next
 request. It stops after at most 200 actions or the model's stop signal.
 
 In another terminal with `scalenav` active, run a hardware-free smoke test with
-the paired image and instruction from [single-image inference](#single-image-inference):
+the image and instruction from the [paired evaluation example](#paired-evaluation-example):
 
 ```bash
 python -m awm.robot --backend dry-run --image data/example/observation.png \

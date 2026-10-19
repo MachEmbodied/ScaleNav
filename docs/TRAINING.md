@@ -28,16 +28,39 @@ training recipe; the paper does not specify all of them.
 ## Installation and memory
 
 Use the `scalenav` environment from the [README installation](../README.md#installation),
-which includes the training dependencies. See [hardware requirements](../README.md#hardware)
-for GPU and system-memory budgets.
+which includes the training dependencies.
 
-Training is substantially more demanding than inference: the backbone has
-approximately five billion parameters, with gradients and optimizer states in
-addition to the frozen text encoder. Use GPUs with sufficient memory or follow
-the README's [DeepSpeed setup](../README.md#optional-dependencies) and pass
-`--deepspeed` for ZeRO-2 with CPU optimizer offload.
-Add `--text-device cpu` to keep the frozen text encoder off the GPU as well.
+For action alignment with `--micro-batch 1 --deepspeed`, use **48 GB GPU memory
+per GPU** and CPU optimizer offload. For a single process, **128 GB of system RAM
+is recommended**, including checkpoint saves. Follow the README's
+[DeepSpeed setup](../README.md#optional-dependencies); `--deepspeed` enables
+ZeRO-2 with CPU optimizer offload. Add `--text-device cpu` to keep the frozen
+text encoder on CPU.
+
+For full-parameter training without sharding or offload, FP32 parameters,
+gradients and Adam states alone occupy about **75 GiB**, before activations
+and the text encoder. Budget additional RAM for multiple processes using the
+[DeepSpeed memory estimator](https://deepspeed.readthedocs.io/en/latest/memory.html#discussion).
 CPU RAM and checkpoint storage must accommodate the full optimizer state.
+
+### Native Wan weights
+
+P0 requires the complete Wan model (**34.20 GB**), including its native
+transformer shards. Download it to the same base-model directory used by the README:
+
+```bash
+python - <<'PYTHON'
+from huggingface_hub import snapshot_download
+snapshot_download(
+    repo_id="Wan-AI/Wan2.2-TI2V-5B",
+    revision="921dbaf3f1674a56f47e83fb80a34bac8a8f203e",
+    local_dir="checkpoints/Wan2.2-TI2V-5B",
+)
+PYTHON
+```
+
+Existing inference components are reused. The four-phase commands below use
+this directory as `BASE_MODEL`.
 
 ## Data preparation
 
@@ -151,7 +174,7 @@ restore an optimizer. Each new checkpoint contains both a portable BF16
 transformer export and `state/` with the full training state.
 
 Use the paired image and instruction from
-[single-image inference](INFERENCE.md#single-image-inference):
+[paired evaluation example](INFERENCE.md#paired-evaluation-example):
 
 ```bash
 awm infer --checkpoint "$RUN/joint/checkpoint-6500" --base-model "$BASE_MODEL" \

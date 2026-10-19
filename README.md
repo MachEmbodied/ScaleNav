@@ -26,53 +26,37 @@
   <sup>1</sup>&nbsp;Zhejiang University &nbsp; <sup>2</sup>&nbsp;Li Auto Inc. &nbsp; <sup>3</sup>&nbsp;Shenzhen University
 </p>
 
+> **TL;DR:** ScaleNav learns navigation priors from Internet videos through **action-free pretraining**, then transfers them to **language-conditioned local navigation**.
+
 <p align="center">
   <a href="https://zju3dv.github.io/ScaleNav/#demos"><img src="docs/assets/navigation-demo.gif" width="100%" alt="ScaleNav navigation: real robot on the left, simulation on the right"></a>
 </p>
 
-> **TL;DR:** ScaleNav learns navigation priors from Internet videos through **action-free pretraining**, then transfers them to **language-conditioned local navigation**.
-
 <p align="center">
-  <a href="#installation">Installation</a> ·
-  <a href="#checkpoints">Checkpoints</a> ·
-  <a href="#single-image-inference">Inference</a> ·
-  <a href="#data">Data</a> ·
-  <a href="#evaluation">Evaluation</a> ·
+  <a href="#quick-start">Quick start</a> ·
+  <a href="#single-image-inference">Single-image inference</a> ·
   <a href="#training">Training</a> ·
   <a href="#real-robot">Real robot</a>
 </p>
 
-For a first run without a simulator, follow [Environment](#environment),
-[Checkpoints](#checkpoints), then [Single-image inference](#single-image-inference).
+## Quick start
 
-## Installation
+Run the **Habitat-GS-LN test subset** and view navigation videos and trajectories:
+[install](#installation) → [download weights](#checkpoints) →
+[prepare data](#data) → [evaluate](#evaluation).
+For a single-image prediction without a simulator, complete
+[Environment](#environment) and [Checkpoints](#checkpoints), then follow
+[Single-image inference](#single-image-inference).
 
-### Hardware
+### Installation
 
-Use Linux and an NVIDIA GPU with BF16 support.
+#### Hardware
 
-| Workload | Recommended GPU memory | Configuration |
-| --- | --- | --- |
-| Navigation evaluation and policy inference | One 24 GB GPU | BF16, 512×288 observations, default `model_cpu_offload` |
-| Action-alignment training | 48 GB per GPU | `--micro-batch 1 --deepspeed`; optimizer states are offloaded to CPU |
+Use Linux and an NVIDIA GPU with BF16 support. We recommend **24 GB GPU memory**
+and **64 GB system RAM** for inference and evaluation. See
+[training requirements](docs/TRAINING.md#installation-and-memory) for training.
 
-The 16-task Habitat-GS-LN test subset used **18.4 GiB peak GPU memory** in a
-48 GB reference run, sampled with `nvidia-smi` and visualization enabled.
-
-Allow **64 GB of system RAM** for evaluation. The default inference mode keeps
-the text encoder on CPU and the transformer and VAE on GPU. GPU memory also
-includes simulator scenes, history caches and CUDA graphs.
-
-For full-parameter training without sharding or offload, FP32 parameters,
-gradients and Adam states alone occupy about **75 GiB**, before activations
-and the text encoder. Use
-[`--deepspeed`](#optional-dependencies) for CPU optimizer offload and
-`--text-device cpu` to move the frozen text encoder off the GPU. CPU offload
-requires additional system RAM. For single-process action alignment, **128 GB
-of system RAM is recommended**, including checkpoint saves. Budget additional
-RAM for multiple training processes using the [DeepSpeed memory estimator](https://deepspeed.readthedocs.io/en/latest/memory.html#discussion).
-
-### Environment
+#### Environment
 
 Create the Python 3.12 environment:
 
@@ -92,7 +76,15 @@ awm doctor --require-cuda --data-tools
 Install [Miniforge](https://github.com/conda-forge/miniforge#install) if Conda is
 unavailable.
 
-### Build dependencies
+#### Simulator installation
+
+Required for navigation evaluation and simulation-data rendering.
+After creating the environment, expand and complete both steps below.
+
+<details>
+<summary><strong>Install the compiler, CUDA toolkit and Habitat-GS</strong></summary>
+
+##### Build dependencies
 
 Install the compiler and CUDA toolkit for Habitat-GS and DeepSpeed in the same
 `scalenav` environment:
@@ -107,12 +99,9 @@ conda activate scalenav
 python -m pip install cmake==3.31.10 ninja scikit-build-core pybind11 setuptools wheel
 ```
 
-### Simulator installation
+##### Build Habitat-GS
 
-Both evaluation benchmarks and simulation training-data preparation require
-[Habitat-GS](https://github.com/zju3dv/habitat-gs), which provides the `habitat_sim`
-Python module. After setting up the [build dependencies](#build-dependencies),
-run from the ScaleNav repository root:
+Run from the repository root. Habitat-GS provides the `habitat_sim` module.
 
 ```bash
 (
@@ -146,10 +135,11 @@ run from the ScaleNav repository root:
 )
 ```
 
-### Scene converter
+</details>
 
-Habitat-GS-LN evaluation and simulation training-data preparation also need the
-InteriorGS scene converter. From the repository root:
+#### Scene converter
+
+Required for Habitat-GS-LN and simulation training data. Run from the repository root:
 
 ```bash
 conda install --override-channels -c conda-forge nodejs=22
@@ -157,7 +147,10 @@ npm install --prefix external/splat-tools @playcanvas/splat-transform@3.10.1
 export PATH="$PWD/external/splat-tools/node_modules/.bin:$PATH"
 ```
 
-### Optional dependencies
+#### Optional dependencies
+
+<details>
+<summary>Training with DeepSpeed, Go2 deployment and development tools</summary>
 
 **DeepSpeed:** for training with `--deepspeed`, complete the
 [build dependencies](#build-dependencies), then install:
@@ -180,15 +173,19 @@ adapter use the base environment above.
 python -m pip install -e '.[dev]'
 ```
 
-## Checkpoints
+</details>
+
+### Checkpoints
 
 | Model | Download | Size |
-| --- | --- | --- |
+| --- | --- | ---: |
 | ScaleNav | [Hugging Face](https://huggingface.co/Yangyihui/ScaleNav) | 10.02 GB |
 | Wan VAE, text encoder and tokenizer | [Wan2.2-TI2V-5B](https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B) | 14.20 GB |
 
-Download ScaleNav and its Wan components. The ScaleNav model repository is public;
-authentication is optional:
+Download both models and set the paths used by the commands below:
+
+<details>
+<summary><strong>Download commands</strong></summary>
 
 ```bash
 python scripts/download_checkpoint.py --output checkpoints/scalenav
@@ -209,69 +206,30 @@ export BASE_MODEL=checkpoints/Wan2.2-TI2V-5B
 awm doctor --checkpoint "$CHECKPOINT" --base-model "$BASE_MODEL" --require-cuda
 ```
 
-The downloader uses a pinned Hugging Face revision, resumes interrupted downloads
-and verifies SHA-256. Existing verified files are reused. For training from P0, omit
-`allow_patterns` to download the full Wan model (34.20 GB).
+</details>
 
-## Single-image inference
+### Data
 
-Predict one nine-action navigation chunk from your own RGB image and an instruction
-describing a target visible in that image. This does not require Habitat-GS or
-evaluation data. After completing the environment and checkpoint steps above, run:
+The test subset contains **16 tasks in 13 scenes**: **991.32 MB** of network
+downloads and **2.96 GB** on disk after preparation.
+Request [InteriorGS access](https://huggingface.co/datasets/spatialverse/InteriorGS)
+and accept its [terms](https://kloudsim-usa-cos.kujiale.com/InteriorGS/InteriorGS_Terms_of_Use.pdf),
+then prepare the data:
 
 ```bash
-awm infer --checkpoint "$CHECKPOINT" --base-model "$BASE_MODEL" \
-  --image /path/to/observation.png \
-  --prompt "Walk to the chair visible in the initial view." \
-  --output outputs/example
+hf auth login
+export PATH="$PWD/external/splat-tools/node_modules/.bin:$PATH"
+python scripts/prepare_data.py evaluation --subset test_subset \
+  --source data/upstream/evaluation --output data/evaluation/test_subset --download
 ```
 
-Replace the image path and instruction with a matching pair. For an input named
-`observation.png`, open `outputs/example/observation_trajectory.png` to see the
-predicted path; the nine action deltas are in
-`outputs/example/observation_trajectory.npy`.
-The repository does not include a paired example image. To extract one from an
-OVON evaluation rollout, or to inspect the outputs and model settings, see the
-[inference guide](docs/INFERENCE.md#single-image-inference).
+For other evaluation sets and training data, see the
+[data catalog](docs/DATA.md#choose-a-download) or
+[ScaleNav Data on Hugging Face](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#choose-a-dataset).
 
-## Data
+### Evaluation
 
-[ScaleNav Data](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#choose-a-dataset)
-is the shared entry point for training data and both evaluation benchmarks.
-Choose a selection below; its preparation command downloads the required assets
-and pairs them with the included annotations.
-
-Each **Prepare** link covers the required data downloads and preparation steps.
-**Network download** is the amount transferred over the Internet from all sources.
-**Disk usage after preparation** is the local space occupied by the prepared
-data and retained downloads after completing the guide, including any cleanup.
-Model weights, environments, training latent caches and run outputs are separate.
-Sizes sum file bytes and use decimal MB/GB.
-
-| Dataset | Contents | Network download | Disk usage after preparation | Instructions |
-| --- | --- | ---: | ---: | --- |
-| Habitat-GS-LN test subset | 16 tasks / 13 scenes | 991.32 MB | 2.96 GB | [Prepare](docs/EVALUATION.md#test-subset) |
-| Full Habitat-GS-LN evaluation | 157 tasks / 45 scenes | 3.17 GB | 10.36 GB | [Prepare](docs/EVALUATION.md#full-habitat-gs-ln) |
-| Short-Horizon OVON test subset | 7 tasks / 7 scenes | 642.85 MB | 642.90 MB | [Prepare](docs/EVALUATION.md#ovon-test-subset) |
-| Full Short-Horizon OVON evaluation | 524 tasks / 36 scenes | 5.84 GB | 3.67 GB | [Prepare](docs/EVALUATION.md#full-short-horizon-ovon) |
-| Small training subset (for preview) | 17 Internet segments / 4 simulated episodes | 55.60 MB | 239.54 MB | [Prepare](docs/DATA.md#small-training-subset) |
-| Full training data | 18,249 Internet segments / 2,600 simulated episodes, including validation | 36.10 GB | 153.04 GB | [Prepare](docs/DATA.md#full-training-data) |
-
-The [OVON test subset](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#ovon-test-subset)
-requires a one-time Matterport agreement confirmation; the script then fetches
-its files automatically. Internet packs and ScaleNav annotations remain publicly
-downloadable. InteriorGS scenes are downloaded individually from the official
-source after obtaining access. Full OVON temporarily uses **9.34 GB** before
-the documented HM3D archive cleanup.
-
-## Evaluation
-
-Complete [simulator installation](#simulator-installation) and prepare the
-corresponding evaluation data from the table above.
-
-**Habitat-GS-LN** — use `EVAL_SET=test_subset` for the
-[16-task test subset](docs/EVALUATION.md#test-subset), or `EVAL_SET=habitatgs_ln`
-for the [full 157-task benchmark](docs/EVALUATION.md#full-habitat-gs-ln):
+Run the prepared test subset with visualization enabled:
 
 ```bash
 export EVAL_SET=test_subset
@@ -284,40 +242,41 @@ python -m awm.scripts.eval_habitat_gs \
   --visualize --output_dir outputs/evaluation/"$EVAL_SET"
 ```
 
-**Short-Horizon OVON** — use `EVAL_SET=ovon_test_subset` for the
-[7-task test subset](docs/EVALUATION.md#ovon-test-subset), or
-`EVAL_SET=short_horizon_ovon` for all 524 tasks:
+Open `outputs/evaluation/test_subset/gallery/index.html` to view the videos and
+trajectories. Metrics are saved in `outputs/evaluation/test_subset/summary.json`.
+See [evaluation outputs](docs/EVALUATION.md#visualizations) for details.
+
+The test subsets contain selected successful cases; use the full sets for benchmark scores.
+
+| Benchmark | Test subset | Full evaluation |
+| --- | --- | --- |
+| Habitat-GS-LN | [16 tasks](docs/EVALUATION.md#test-subset) | [157 tasks](docs/EVALUATION.md#full-habitat-gs-ln) |
+| Short-Horizon OVON | [7 tasks](docs/EVALUATION.md#ovon-test-subset) | [524 tasks](docs/EVALUATION.md#full-short-horizon-ovon) |
+
+## Single-image inference
+
+Predict nine navigation actions from your own RGB image and a matching instruction.
+This uses the [environment](#environment) and [checkpoints](#checkpoints) above.
 
 ```bash
-export EVAL_SET=ovon_test_subset
-python -m awm.scripts.eval_habitat_gs \
-  --eval_config src/awm/configs/eval_ovon.yaml \
-  --episode_manifest data/evaluation/"$EVAL_SET"/episodes.json \
-  --gs_dataset_root data/evaluation/"$EVAL_SET" \
-  --scene_dataset_config data/evaluation/"$EVAL_SET"/scenes.scene_dataset_config.json \
-  --model_path "$CHECKPOINT" --pretrained_model_path "$BASE_MODEL" \
-  --visualize --output_dir outputs/evaluation/"$EVAL_SET"
+awm infer --checkpoint "$CHECKPOINT" --base-model "$BASE_MODEL" \
+  --image /path/to/observation.png \
+  --prompt "Walk to the chair visible in the initial view." \
+  --output outputs/example
 ```
 
-Each output directory contains `summary.json`: `aggregate.success_rate` is SR,
-`aggregate.spl` is SPL, and `episodes` contains per-task results.
-`--visualize` saves every case's video and a `gallery/index.html` page with
-synchronized trajectories, targets and outcomes. Omit it for metrics only. See the
-[evaluation protocol](docs/EVALUATION.md#evaluation-protocol) for metric definitions.
+Replace the image and instruction with a matching pair. For `observation.png`,
+the trajectory plot is `outputs/example/observation_trajectory.png`.
+See the [inference guide](docs/INFERENCE.md#single-image-inference) for action
+outputs and a paired example from an evaluation rollout.
 
 ## Training
 
-The [environment setup](#environment) includes training dependencies.
-Prepare the data using the [data guide](docs/DATA.md), then set its location:
-
-```bash
-export TRAIN_DATA="${TRAIN_DATA:-data/training/goto}"
-```
-
-Follow [training](docs/TRAINING.md#run-the-four-phases) for
-P0 → P1 → action alignment → joint fine-tuning. Use
-`TRAIN_DATA=data/smoke/goto` with the small subset to test the pipeline.
-The recipe and model settings are in [src/awm/configs](src/awm/configs).
+Prepare the [training data](docs/DATA.md#full-training-data) and
+[latent caches](docs/DATA.md#build-training-caches), then follow the
+[four-phase training recipe](docs/TRAINING.md#run-the-four-phases).
+Use the [small training subset](docs/DATA.md#small-training-subset) to preview the pipeline.
+The [training guide](docs/TRAINING.md) covers hardware, schedules and checkpoint resume.
 
 ## Real robot
 
@@ -327,25 +286,12 @@ Start the policy server on the GPU machine:
 awm serve --checkpoint "$CHECKPOINT" --base-model "$BASE_MODEL" --decode-video
 ```
 
-Open `http://127.0.0.1:8620/` for the camera, prediction and measured-trajectory
-viewer. The Go2 adapter sends camera observations to the policy, executes action
-chunks and stops on the model's stop signal or after 200 actions.
+Open `http://127.0.0.1:8620/` for live camera, prediction and trajectory views.
+Follow the [Go2 setup](docs/INFERENCE.md#robot-adapter) to connect the camera and
+controller, or use the [HTTP API](docs/INFERENCE.md#http-api) with another platform.
 
-Install [Unitree SDK2](#optional-dependencies) and follow the
-[robot setup](docs/INFERENCE.md#robot-adapter) to connect a rectified RGB camera.
-In a second terminal with the `scalenav`
-environment active, set `ROBOT_INSTRUCTION` to a description matching the robot's
-initial view, replace `eth0` and `0` with the robot interface and camera, then run:
-
-```bash
-python -m awm.robot --backend go2 --interface eth0 --camera 0 \
-  --instruction "${ROBOT_INSTRUCTION:?Set an instruction matching the robot initial view}"
-```
-
-This uses the local policy server. For a separate client machine, connect through
-an SSH tunnel and set `--server` to the forwarded local address. See the
-[robot adapter](docs/INFERENCE.md#robot-adapter) for the hardware-free check and
-[HTTP API](docs/INFERENCE.md#http-api) for integrating another platform.
+<details>
+<summary>Development</summary>
 
 ## Development
 
@@ -356,6 +302,8 @@ python -m pytest
 python -m build
 python scripts/check_release.py
 ```
+
+</details>
 
 ## License
 
