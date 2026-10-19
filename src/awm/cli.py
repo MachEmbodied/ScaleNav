@@ -137,7 +137,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(prog='awm', description='ScaleNav: language-conditioned local navigation')
     parser.add_argument('--version', action='version', version=__version__)
     sub = parser.add_subparsers(dest='command', required=True)
-    sub.add_parser('train', help='Train the three-stage paper recipe (awm train --help)')
+    sub.add_parser('train', help='Run video pretraining or action post-training (awm train --help)')
     doc = sub.add_parser('doctor', help='Inspect installation, GPU, and optional model paths')
     doc.add_argument('--checkpoint')
     doc.add_argument('--base-model')

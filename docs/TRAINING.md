@@ -1,7 +1,8 @@
 # Training
 
-The supported sequence is P0 → P1 → action alignment → joint fine-tuning.
-P0 and P1 together form Stage 1. The recipe is installed with the package in
+Use `--stage pretrain` for P0 → P1, then `--stage posttrain` for action alignment
+→ joint fine-tuning. Each command launches its GPU workers and handles checkpoint
+transitions automatically. P0 and P1 together form Stage 1. The recipe is installed with the package in
 [`awm/configs/training.yaml`](../src/awm/configs/training.yaml).
 
 | Phase | Optimizer updates | Global batch | Peak LR | Video sampling probability | Trainable parameters |
@@ -60,7 +61,7 @@ snapshot_download(
 PYTHON
 ```
 
-Existing inference components are reused. The four-phase commands below use
+Existing inference components are reused. The commands below use
 this directory as `BASE_MODEL`.
 
 ## Data preparation
@@ -77,59 +78,66 @@ the source collection; it is not an extra loss multiplier.
 The bundled annotations, compact video downloads and scene preparation are described in
 [Data](DATA.md).
 
-## Run the four phases
+<a id="run-the-four-phases"></a>
 
-Set paths to prepared data and native Wan weights:
+## Run pretraining and post-training
+
+Set the prepared data directory and native Wan model:
 
 ```bash
 export BASE_MODEL=checkpoints/Wan2.2-TI2V-5B
 export TRAIN_DATA="${TRAIN_DATA:-data/training/goto}"
-export VIDEO_CACHE="$TRAIN_DATA/video-cache/train"
-export ACTION_CACHE="$TRAIN_DATA/action-cache"
-export ACTION_META="$TRAIN_DATA/simulation/awm_meta.jsonl"
-export ACTION_SPLIT="$TRAIN_DATA/simulation/train.txt"
 export RUN=outputs/scalenav
 ```
 
-First validate the video cache without loading the model:
+### Video pretraining
 
 ```bash
-awm train --stage p0 --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
-  --output "$RUN/p0" --check-data
+awm train --stage pretrain --gpus 8 \
+  --base-model "$BASE_MODEL" --video-cache "$TRAIN_DATA/video-cache/train" \
+  --output "$RUN/pretrain"
 ```
 
-Run with eight processes and a micro-batch of one. Accumulation is eight for
-P0/P1/alignment and four for joint fine-tuning. Use `--deepspeed` on each command
-if optimizer offload is needed. The native Wan transformer shards are required
-for P0; inference needs only the released transformer plus Wan's VAE/text assets.
+This runs P0 and then P1 in separate worker processes. P1 restores P0's optimizer
+and RNG state and continues the sampling sequence. Phase checkpoints are saved
+under `$RUN/pretrain/p0/` and `$RUN/pretrain/p1/`. The `final` link points to the
+completed P1 checkpoint.
+
+### Action post-training
 
 ```bash
-torchrun --standalone --nproc_per_node=8 --module awm.training.runner \
-  --stage p0 --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
-  --output "$RUN/p0" --micro-batch 1 --save-every 2000
-
-torchrun --standalone --nproc_per_node=8 --module awm.training.runner \
-  --stage p1 --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
-  --initialize-from "$RUN/p0/checkpoint-2000" \
-  --output "$RUN/p1" --micro-batch 1 --save-every 8000
-
-torchrun --standalone --nproc_per_node=8 --module awm.training.runner \
-  --stage align --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
-  --action-cache "$ACTION_CACHE" --action-meta "$ACTION_META" --action-split "$ACTION_SPLIT" \
-  --initialize-from "$RUN/p1/checkpoint-10000" \
-  --output "$RUN/align" --micro-batch 1 --save-every 2500
-
-torchrun --standalone --nproc_per_node=8 --module awm.training.runner \
-  --stage joint --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
-  --action-cache "$ACTION_CACHE" --action-meta "$ACTION_META" --action-split "$ACTION_SPLIT" \
-  --initialize-from "$RUN/align/checkpoint-2500" \
-  --output "$RUN/joint" --micro-batch 1 --save-every 6500
+awm train --stage posttrain --gpus 8 \
+  --base-model "$BASE_MODEL" --video-cache "$TRAIN_DATA/video-cache/train" \
+  --action-cache "$TRAIN_DATA/action-cache" \
+  --action-meta "$TRAIN_DATA/simulation/awm_meta.jsonl" \
+  --action-split "$TRAIN_DATA/simulation/train.txt" \
+  --initialize-from "$RUN/pretrain/final" --output "$RUN/posttrain"
 ```
 
-These examples retain the final checkpoint of each phase. Choose a smaller
-`--save-every` for recovery during long runs, with correspondingly higher storage
-use. Checkpoints are never automatically deleted. `--max-updates` stops a smoke
-run early without modifying the underlying LR schedule; the configured training schedule remains unchanged. `--dry-run` prints the resolved recipe.
+This runs action alignment and then joint fine-tuning, initializing each phase
+from the preceding model. Each phase starts its own optimizer. Phase checkpoints
+are saved under `$RUN/posttrain/align/` and `$RUN/posttrain/joint/`; `final` points
+to the completed joint policy. `--initialize-from` can also name an existing
+completed P1 checkpoint directly.
+
+### Runtime options
+
+| Option | Effect |
+| --- | --- |
+| `--gpus 8` | Launch eight GPU workers; do not wrap these commands in `torchrun`. |
+| `--micro-batch 1` | Samples per GPU; accumulation preserves each phase's configured global batch. |
+| `--deepspeed` | Use ZeRO-2 with CPU optimizer offload after installing [DeepSpeed](INSTALL.md#deepspeed). |
+| `--text-device cpu` | Keep the frozen text encoder on CPU. |
+| `--save-every 1000` | Save intermediate checkpoints for recovery; by default, each phase saves its final checkpoint. |
+| `--dry-run` | Print the resolved phase configurations and worker commands without training. |
+| `--check-data` | Validate inputs for both phases without loading model weights or optimizing. |
+| `--max-updates 1` | Stop the current phase early for a smoke run; later phases wait until it completes. |
+
+Learning rates, phase lengths, global batches and replay ratios come from
+[`training.yaml`](../src/awm/configs/training.yaml). The default eight-process
+setup uses accumulation 8 for P0/P1/alignment and 4 for joint fine-tuning.
+A phase failure stops the pipeline. The `final` link is created only after both
+phases complete; checkpoints are never automatically deleted.
 
 ## Loss and history
 
@@ -156,29 +164,35 @@ the temporally max-pooled frame-validity mask.
 
 ## Resume and use trained weights
 
-`--initialize-from` starts the next stage. P0→P1 carries optimizer state as well;
-alignment and joint fine-tuning start new optimizers. `--resume` continues the
-same stage and restores model, optimizer, LR scheduler and RNG state. Its recipe,
-data fingerprints, seed, world size and micro-batch must match the saved run.
-The stateless batch sampler also resumes at the exact remaining sample position.
+Resume with the same pipeline, output directory, data, GPU count and micro-batch.
+The checkpoint identifies the phase: earlier phases are skipped, the current
+phase resumes, and the remaining phase runs automatically. Model, optimizer,
+LR scheduler, RNG and sampling position are restored.
+
+For example, after saving intermediate checkpoints with `--save-every 1000`:
 
 ```bash
-awm train --stage joint --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
-  --action-cache "$ACTION_CACHE" --action-meta "$ACTION_META" --action-split "$ACTION_SPLIT" \
-  --resume "$RUN/joint/checkpoint-1000" --output "$RUN/joint"
+awm train --stage posttrain --gpus 8 \
+  --base-model "$BASE_MODEL" --video-cache "$TRAIN_DATA/video-cache/train" \
+  --action-cache "$TRAIN_DATA/action-cache" \
+  --action-meta "$TRAIN_DATA/simulation/awm_meta.jsonl" \
+  --action-split "$TRAIN_DATA/simulation/train.txt" \
+  --resume "$RUN/posttrain/joint/checkpoint-1000" \
+  --output "$RUN/posttrain" --save-every 1000
 ```
 
-Use the same distributed launcher and micro-batch as the original run. The
-single-process example above applies only to a single-process original run.
-Weights and `train_meta.pt` alone are sufficient for inference, but cannot
-restore an optimizer. Each new checkpoint contains both a portable BF16
-transformer export and `state/` with the full training state.
+Keep the original offload and text-device options when resuming. A checkpoint
+at a phase boundary also works: its completed phase is checked before continuing
+to the next. Resuming a completed `final` checkpoint performs no extra updates.
 
-Use the paired image and instruction from
-[paired evaluation example](INFERENCE.md#paired-evaluation-example):
+Each checkpoint contains a portable BF16 transformer export and `state/` with the
+training state. Model weights and `train_meta.pt` suffice for inference; training
+resume also requires `state/`.
+
+Use the final policy with the [paired evaluation example](INFERENCE.md#paired-evaluation-example):
 
 ```bash
-awm infer --checkpoint "$RUN/joint/checkpoint-6500" --base-model "$BASE_MODEL" \
+awm infer --checkpoint "$RUN/posttrain/final" --base-model "$BASE_MODEL" \
   --image data/example/observation.png --prompt "$(cat data/example/instruction.txt)" --output outputs/prediction
 ```
 

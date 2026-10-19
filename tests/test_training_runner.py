@@ -1,6 +1,7 @@
 import copy
 from types import SimpleNamespace
 
+import pytest
 import torch
 
 from awm.training import runner
@@ -63,3 +64,6 @@ def test_training_loop_resume_matches_uninterrupted_updates(tmp_path, monkeypatc
     assert continuous.keys() == resumed.keys()
     for key in continuous:
         torch.testing.assert_close(continuous[key], resumed[key], rtol=0, atol=0)
+    split.resume = str(tmp_path / 'resumed/checkpoint-2')
+    monkeypatch.setattr(runner, 'load_model', lambda *values: pytest.fail('Completed phase reloaded its model'))
+    assert runner.train(split, recipe) == 0

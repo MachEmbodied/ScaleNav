@@ -204,16 +204,13 @@ Omit `--visualize` for metrics only. See the
 
 ## Training
 
-ScaleNav first learns from instruction-conditioned Internet videos, then learns
-navigation actions from simulated trajectories with Internet-video replay.
-Run the four phases in order:
+Training uses two commands. Each automatically runs its internal phases and
+passes the completed checkpoint to the next phase.
 
-| Phase | Purpose | Training input |
+| Command | Internal phases | Training input |
 | --- | --- | --- |
-| P0: video adaptation | Adapt the native Wan video model | Internet videos |
-| P1: causal pretraining | Learn to predict with observation history | Internet videos |
-| Action alignment | Learn navigation actions | Simulated trajectories + Internet-video replay |
-| Joint fine-tuning | Jointly refine video and action prediction | Simulated trajectories + Internet-video replay |
+| `--stage pretrain` | Video adaptation (P0) → causal pretraining (P1) | Instruction-conditioned Internet videos |
+| `--stage posttrain` | Action alignment → joint fine-tuning | Simulated trajectories + Internet-video replay |
 
 ### Prepare training inputs
 
@@ -229,62 +226,51 @@ Run the four phases in order:
 
 Choose GPU and offload settings using the
 [training memory requirements](docs/TRAINING.md#installation-and-memory).
-The example below uses **8 GPUs** with a micro-batch of **1** per GPU.
-For optimizer offload, install [DeepSpeed](docs/INSTALL.md#deepspeed) and add
-`--deepspeed` to each training command.
+The commands below launch **8 GPU processes** with a micro-batch of **1** per GPU.
+Set `--gpus` and `--micro-batch` for your hardware; gradient accumulation preserves
+the configured global batch. For optimizer offload, install
+[DeepSpeed](docs/INSTALL.md#deepspeed) and add `--deepspeed`.
 
-### Run the four phases
+<a id="run-the-four-phases"></a>
+
+### Run pretraining and post-training
 
 Set the prepared data paths and output directory:
 
 ```bash
 export BASE_MODEL=checkpoints/Wan2.2-TI2V-5B
 export TRAIN_DATA="${TRAIN_DATA:-data/training/goto}"
-export VIDEO_CACHE="$TRAIN_DATA/video-cache/train"
-export ACTION_CACHE="$TRAIN_DATA/action-cache"
-export ACTION_META="$TRAIN_DATA/simulation/awm_meta.jsonl"
-export ACTION_SPLIT="$TRAIN_DATA/simulation/train.txt"
 export RUN=outputs/scalenav
 ```
 
-Check the video cache before starting optimization:
+**1. Video pretraining.** Run P0 and P1 automatically, including optimizer-state
+continuation between them:
 
 ```bash
-awm train --stage p0 --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
-  --output "$RUN/p0" --check-data
+awm train --stage pretrain --gpus 8 \
+  --base-model "$BASE_MODEL" --video-cache "$TRAIN_DATA/video-cache/train" \
+  --output "$RUN/pretrain"
 ```
 
-Run each command after the preceding phase finishes. `--initialize-from` passes
-the previous phase's checkpoint to the next:
+**2. Action post-training.** Initialize from the pretrained model, then run
+action alignment and joint fine-tuning automatically:
 
 ```bash
-torchrun --standalone --nproc_per_node=8 --module awm.training.runner \
-  --stage p0 --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
-  --output "$RUN/p0" --micro-batch 1 --save-every 2000
-
-torchrun --standalone --nproc_per_node=8 --module awm.training.runner \
-  --stage p1 --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
-  --initialize-from "$RUN/p0/checkpoint-2000" \
-  --output "$RUN/p1" --micro-batch 1 --save-every 8000
-
-torchrun --standalone --nproc_per_node=8 --module awm.training.runner \
-  --stage align --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
-  --action-cache "$ACTION_CACHE" --action-meta "$ACTION_META" --action-split "$ACTION_SPLIT" \
-  --initialize-from "$RUN/p1/checkpoint-10000" \
-  --output "$RUN/align" --micro-batch 1 --save-every 2500
-
-torchrun --standalone --nproc_per_node=8 --module awm.training.runner \
-  --stage joint --base-model "$BASE_MODEL" --video-cache "$VIDEO_CACHE" \
-  --action-cache "$ACTION_CACHE" --action-meta "$ACTION_META" --action-split "$ACTION_SPLIT" \
-  --initialize-from "$RUN/align/checkpoint-2500" \
-  --output "$RUN/joint" --micro-batch 1 --save-every 6500
+awm train --stage posttrain --gpus 8 \
+  --base-model "$BASE_MODEL" --video-cache "$TRAIN_DATA/video-cache/train" \
+  --action-cache "$TRAIN_DATA/action-cache" \
+  --action-meta "$TRAIN_DATA/simulation/awm_meta.jsonl" \
+  --action-split "$TRAIN_DATA/simulation/train.txt" \
+  --initialize-from "$RUN/pretrain/final" --output "$RUN/posttrain"
 ```
 
-Phase outputs are saved under `$RUN/p0/`, `$RUN/p1/`, `$RUN/align/` and
-`$RUN/joint/`. The final navigation policy is in `$RUN/joint/`; checkpoints
-include model weights and resumable training state.
-See the [training guide](docs/TRAINING.md) for schedules and losses, and
-[checkpoint resume](docs/TRAINING.md#resume-and-use-trained-weights) to continue an interrupted run.
+The resulting models are available at `$RUN/pretrain/final` and
+`$RUN/posttrain/final`. Use the latter for navigation inference and evaluation.
+Learning rates, phase lengths and batch sizes are in the
+[training configuration](src/awm/configs/training.yaml).
+Add `--dry-run` to inspect the phase plan or `--check-data` to validate inputs.
+See [training details](docs/TRAINING.md) for schedules and losses, and
+[checkpoint resume](docs/TRAINING.md#resume-and-use-trained-weights) for interrupted runs.
 
 ## Real robot
 

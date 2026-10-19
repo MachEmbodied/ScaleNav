@@ -7,12 +7,14 @@ import os
 from pathlib import Path
 import sys
 
-from .recipe import accumulation_steps, load_recipe, lr_multiplier, write_json
+from .recipe import accumulation_steps, checkpoint_step, load_recipe, lr_multiplier, write_json
 
 
 def parser():
     result = argparse.ArgumentParser(description='Train the ScaleNav paper recipe')
-    result.add_argument('--stage', choices=['p0', 'p1', 'align', 'joint'], required=True)
+    result.add_argument('--stage', choices=['pretrain', 'posttrain', 'p0', 'p1', 'align', 'joint'],
+                        required=True, help='pretrain/posttrain run their internal phases automatically')
+    result.add_argument('--gpus', type=int, default=1, help='GPU processes for pretrain/posttrain')
     result.add_argument('--base-model', required=True)
     result.add_argument('--video-cache', required=True)
     result.add_argument('--action-cache')
@@ -25,7 +27,8 @@ def parser():
     result.add_argument('--micro-batch', type=int, default=1)
     result.add_argument('--workers', type=int, default=4)
     result.add_argument('--seed', type=int, default=42)
-    result.add_argument('--save-every', type=int, default=500)
+    result.add_argument('--save-every', type=int,
+                        help='Checkpoint interval; pipelines default to each phase end')
     result.add_argument('--max-updates', type=int, help='Stop early for a smoke run; does not change the LR schedule')
     result.add_argument('--deepspeed', action='store_true', help='ZeRO-2 with CPU optimizer offload')
     result.add_argument('--text-device', choices=['cuda', 'cpu'], default='cuda',
@@ -95,7 +98,7 @@ def encode_text(text, tokenizer, encoder, device):
 
 
 def deployment_metadata(recipe, step):
-    return {'global_step': step + (2000 if recipe['stage'] == 'p1' else 0), 'stage': recipe['stage'],
+    return {'global_step': checkpoint_step(recipe, step), 'stage': recipe['stage'],
             'stage_step': step, 'args': {
                 'video_sample_size': [recipe['height'], recipe['width']],
                 'video_sample_n_frames': recipe['frames'], 'video_sample_stride': 1,
@@ -108,8 +111,8 @@ def deployment_metadata(recipe, step):
 
 def validate_initialization(path, stage):
     import torch
-    previous, expected_step = {'p1': ('p0', 2000), 'align': ('p1', 10000),
-                               'joint': ('align', 2500)}[stage]
+    previous = load_recipe(stage)['initialize_from']
+    expected_step = checkpoint_step(load_recipe(previous))
     metadata = torch.load(Path(path) / 'train_meta.pt', map_location='cpu', weights_only=True)
     if metadata.get('global_step') != expected_step:
         raise ValueError(f'{stage} requires the {previous} checkpoint at update {expected_step}')
@@ -125,7 +128,7 @@ def validate_initialization(path, stage):
 def save_checkpoint(accelerator, objective, output, recipe, step, contract):
     import torch
     from awm.utils.checkpoint import save_causal_weights
-    name = f"checkpoint-{step + (2000 if recipe['stage'] == 'p1' else 0)}"
+    name = f"checkpoint-{checkpoint_step(recipe, step)}"
     final = Path(output) / name
     staging = final.with_name(name + '.partial')
     if accelerator.is_main_process:
@@ -213,9 +216,12 @@ def train(args, recipe):
             raise ValueError('Resume configuration/data differ from the saved training contract')
         start_step = info['step']
     maximum = args.max_updates or recipe['updates']
+    if start_step == maximum == recipe['updates']:
+        accelerator.end_training()
+        return 0
     if start_step >= maximum:
         raise ValueError('Checkpoint has already reached the requested update count')
-    sampling_offset = (2000 if recipe['stage'] == 'p1' else 0) * accumulation
+    sampling_offset = checkpoint_step(recipe, 0) * accumulation
     sampler = UpdateBatchSampler([len(source) if source is not None else 0 for source in sources.sources],
                                  recipe['replay_probability'], args.micro_batch,
                                  sampling_offset + maximum * accumulation,
@@ -256,7 +262,7 @@ def train(args, recipe):
     elif recipe['stage'] == 'p1':
         source = Path(args.initialize_from)
         info = json.loads((source / 'training.json').read_text()) if (source / 'training.json').is_file() else {}
-        if info.get('complete') and info.get('step') == 2000 and (source / 'state').is_dir():
+        if info.get('complete') and info.get('step') == load_recipe('p0')['updates'] and (source / 'state').is_dir():
             prior = info['contract']
             for key in ('world_size', 'micro_batch', 'seed', 'deepspeed', 'data', 'text_device'):
                 if prior[key] != contract[key]:
@@ -305,6 +311,15 @@ def main(argv=None):
     arguments = parser()
     args = arguments.parse_args(argv)
     try:
+        if args.gpus < 1:
+            raise ValueError('--gpus must be positive')
+        if args.stage in ('pretrain', 'posttrain'):
+            from .pipeline import run
+            return run(args)
+        if args.gpus != 1:
+            raise ValueError('Use torchrun for individual phases; --gpus applies to pretrain/posttrain')
+        if args.save_every is None:
+            args.save_every = 500
         recipe = load_recipe(args.stage)
         if args.micro_batch < 1 or args.workers < 0 or args.save_every < 1:
             raise ValueError('Invalid micro-batch, worker or checkpoint interval')
@@ -312,7 +327,7 @@ def main(argv=None):
             raise ValueError('--max-updates must be between 1 and the paper stage length')
         if args.stage == 'p0' and args.initialize_from:
             raise ValueError('P0 initializes from --base-model; use --resume to continue P0')
-        if args.stage != 'p0' and not (args.initialize_from or args.resume):
+        if args.stage != 'p0' and not (args.initialize_from or args.resume or args.check_data):
             raise ValueError(f"{args.stage} requires --initialize-from {recipe['initialize_from']} checkpoint or --resume")
         if args.dry_run:
             world = int(os.environ.get('WORLD_SIZE', '1'))

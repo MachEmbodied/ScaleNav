@@ -162,7 +162,7 @@ repository root with `scalenav` active.
 ## Build training caches
 
 After preparing either training selection, keep its `TRAIN_DATA` setting and
-use the checkpoint/base-model paths from the [checkpoint setup](INSTALL.md#checkpoints):
+use the base-model path from the [checkpoint setup](INSTALL.md#checkpoints):
 
 ```bash
 python -m awm.scripts.precompute_nav_t2v_latents \
@@ -175,7 +175,7 @@ python -m awm.scripts.precompute_nav_wam_latents \
   --pretrained_model_path "$BASE_MODEL" \
   --output_dir "$TRAIN_DATA"/action-cache --encode_batch_size 4
 
-awm train --stage joint --base-model "$BASE_MODEL" --initialize-from "$CHECKPOINT" \
+awm train --stage posttrain --base-model "$BASE_MODEL" \
   --video-cache "$TRAIN_DATA"/video-cache/train \
   --action-cache "$TRAIN_DATA"/action-cache \
   --action-meta "$TRAIN_DATA"/simulation/awm_meta.jsonl \

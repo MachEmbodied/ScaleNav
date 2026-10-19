@@ -9,6 +9,15 @@ from pathlib import Path
 CONFIG = Path(__file__).resolve().parents[1] / 'configs' / 'training.yaml'
 
 
+def load_pipeline(name):
+    import yaml
+    config = yaml.safe_load(CONFIG.read_text())
+    stages = config['pipelines'][name]
+    if not stages or len(stages) != len(set(stages)) or any(s not in config['stages'] for s in stages):
+        raise ValueError(f'Invalid training pipeline: {name}')
+    return stages
+
+
 def load_recipe(stage):
     import yaml
     config = yaml.safe_load(CONFIG.read_text())
@@ -18,6 +27,11 @@ def load_recipe(stage):
     recipe.update(config['stages'][stage])
     recipe['stage'] = stage
     return recipe
+
+
+def checkpoint_step(recipe, step=None):
+    offset = load_recipe('p0')['updates'] if recipe['stage'] == 'p1' else 0
+    return offset + (recipe['updates'] if step is None else step)
 
 
 def accumulation_steps(recipe, world_size, micro_batch):

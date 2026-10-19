@@ -1,3 +1,6 @@
+pipelines:
+  pretrain: [p0, p1]
+  posttrain: [align, joint]
 common:
   height: 288
   width: 512
