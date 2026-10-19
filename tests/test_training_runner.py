@@ -1,4 +1,5 @@
 import copy
+import json
 from types import SimpleNamespace
 
 import pytest
@@ -38,6 +39,26 @@ def test_parameter_groups_preserve_adam_updates():
             optimizer.step()
     for first, second in zip(flat, grouped):
         torch.testing.assert_close(first, second, rtol=0, atol=0)
+
+
+@pytest.mark.parametrize('metadata', [
+    {'stage': 'p1', 'global_step': 9999},
+    {'stage': 'joint', 'global_step': 10000},
+])
+def test_posttraining_rejects_wrong_pretraining_checkpoint(tmp_path, metadata):
+    torch.save(metadata, tmp_path / 'train_meta.pt')
+    with pytest.raises(ValueError):
+        runner.validate_initialization(tmp_path, 'align')
+
+
+@pytest.mark.parametrize('complete,state', [(False, True), (True, False)])
+def test_causal_pretraining_requires_completed_optimizer_state(tmp_path, complete, state):
+    torch.save({'stage': 'p0', 'global_step': 2000}, tmp_path / 'train_meta.pt')
+    (tmp_path / 'training.json').write_text(json.dumps({'complete': complete}))
+    if state:
+        (tmp_path / 'state').mkdir()
+    with pytest.raises(ValueError, match='optimizer state'):
+        runner.validate_initialization(tmp_path, 'p1')
 
 
 def test_training_loop_resume_matches_uninterrupted_updates(tmp_path, monkeypatch, fresh_accelerator):

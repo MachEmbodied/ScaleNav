@@ -183,7 +183,10 @@ awm train --stage posttrain --gpus 8 \
 
 Keep the original offload and text-device options when resuming. A checkpoint
 at a phase boundary also works: its completed phase is checked before continuing
-to the next. Resuming a completed `final` checkpoint performs no extra updates.
+to the next. If the next phase was interrupted, its latest checkpoint is resumed.
+If it has no checkpoint yet, its output is kept in a sibling `.interrupted-N`
+directory and that phase restarts from the preceding model.
+Resuming a completed `final` checkpoint performs no extra updates.
 
 Each checkpoint contains a portable BF16 transformer export and `state/` with the
 training state. Model weights and `train_meta.pt` suffice for inference; training

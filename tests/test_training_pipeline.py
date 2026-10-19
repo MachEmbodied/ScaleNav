@@ -135,6 +135,72 @@ def test_resume_completed_first_phase_continues_next_phase(tmp_path, monkeypatch
     assert len(calls) == 2
 
 
+def test_boundary_resume_preserves_interrupted_next_phase(tmp_path, monkeypatch):
+    args = arguments(tmp_path)
+    entries = pipeline.plan(args)
+    args.resume = str(checkpoint(entries[0]))
+    interrupted = Path(entries[1]['checkpoint']).parent
+    interrupted.mkdir()
+    (interrupted / 'run.json').write_text(json.dumps({'recipe': entries[1]['recipe']}))
+    (interrupted / 'metrics.jsonl').write_text('previous attempt\n')
+    (interrupted / 'checkpoint-2001.partial').mkdir()
+    calls = []
+
+    def launch(command):
+        calls.append(command)
+        if len(calls) == 2:
+            assert not interrupted.exists(), 'Failed phase still blocks a fresh worker'
+            checkpoint(entries[1])
+        return SimpleNamespace(returncode=0)
+
+    monkeypatch.setattr(pipeline.subprocess, 'run', launch)
+    assert pipeline.run(args) == 0
+    saved = interrupted.with_name('p1.interrupted-1')
+    assert (saved / 'metrics.jsonl').read_text() == 'previous attempt\n'
+    assert (saved / 'checkpoint-2001.partial').is_dir()
+
+
+@pytest.mark.parametrize('step', [1, 8000])
+def test_boundary_resume_uses_next_phase_checkpoint(tmp_path, step):
+    args = arguments(tmp_path)
+    first, last = pipeline.plan(args)
+    args.resume = str(checkpoint(first))
+    last['checkpoint'] = str(Path(last['checkpoint']).with_name(f'checkpoint-{2000 + step}'))
+    saved = checkpoint(last, step)
+    (saved.parent / 'run.json').write_text(json.dumps({'recipe': last['recipe']}))
+    entry = pipeline.plan(args)[-1]
+    command = entry['command']
+    assert command[command.index('--resume') + 1] == str(saved)
+    assert '--initialize-from' not in command
+    assert 'archive_interrupted_output' not in entry
+
+
+def test_boundary_recovery_rejects_a_different_existing_run(tmp_path):
+    args = arguments(tmp_path)
+    first, last = pipeline.plan(args)
+    args.resume = str(checkpoint(first))
+    output = Path(last['checkpoint']).parent
+    output.mkdir()
+    (output / 'run.json').write_text(json.dumps({'recipe': last['recipe'], 'seed': 999}))
+    with pytest.raises(ValueError, match='configuration/data differ'):
+        pipeline.plan(args)
+    assert (output / 'run.json').is_file()
+
+
+@pytest.mark.parametrize('option', ['--dry-run', '--check-data'])
+def test_recovery_preview_never_moves_outputs(tmp_path, monkeypatch, option):
+    args = arguments(tmp_path, extra=[option])
+    first, last = pipeline.plan(args)
+    args.resume = str(checkpoint(first))
+    output = Path(last['checkpoint']).parent
+    output.mkdir()
+    (output / 'run.json').write_text(json.dumps({'recipe': last['recipe']}))
+    monkeypatch.setattr(pipeline.subprocess, 'run', lambda command: SimpleNamespace(returncode=0))
+    assert pipeline.run(args) == 0
+    assert (output / 'run.json').is_file()
+    assert not list(output.parent.glob('*.interrupted-*'))
+
+
 def test_smoke_limit_does_not_advance_or_publish_final(tmp_path, monkeypatch):
     args = arguments(tmp_path, extra=['--max-updates', '1'])
     entries = pipeline.plan(args)

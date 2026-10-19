@@ -10,6 +10,39 @@ import sys
 from .recipe import accumulation_steps, checkpoint_step, load_pipeline, load_recipe
 
 
+def recover_next_phase(entry, prior_contract):
+    output = Path(entry['checkpoint']).parent
+    run = output / 'run.json'
+    if not run.is_file():
+        return
+    contract = {**prior_contract, 'recipe': entry['recipe']}
+    if json.loads(run.read_text()) != contract:
+        raise ValueError(f'Existing phase configuration/data differ from the resumed run: {output}')
+    checkpoints = []
+    for path in output.glob('checkpoint-*'):
+        if not path.is_dir() or path.name.endswith('.partial'):
+            continue
+        info = json.loads((path / 'training.json').read_text())
+        step = info.get('step', 0)
+        if (not info.get('complete') or info.get('contract') != contract
+                or not 1 <= step <= entry['recipe']['updates']
+                or path.name != f"checkpoint-{checkpoint_step(entry['recipe'], step)}"):
+            raise ValueError(f'Invalid recovery checkpoint: {path}')
+        checkpoints.append((step, path))
+    if checkpoints:
+        command = entry['command']
+        position = command.index('--initialize-from')
+        command[position:position + 2] = ['--resume', str(max(checkpoints)[1])]
+    else:
+        number = 1
+        while True:
+            archive = output.with_name(f'{output.name}.interrupted-{number}')
+            if not archive.exists() and not archive.is_symlink():
+                entry['archive_interrupted_output'] = str(archive)
+                break
+            number += 1
+
+
 def plan(args):
     if 'LOCAL_RANK' in os.environ or int(os.environ.get('WORLD_SIZE', '1')) != 1:
         raise ValueError('Run pretrain/posttrain directly with --gpus, without torchrun')
@@ -69,6 +102,8 @@ def plan(args):
                         'checkpoint': str(checkpoint),
                         'gradient_accumulation_steps': accumulation_steps(recipe, args.gpus, args.micro_batch),
                         'completes_phase': maximum is None or maximum == recipe['updates']})
+        if args.resume and index > start and not args.check_data:
+            recover_next_phase(entries[-1], info['contract'])
         initialization = str(checkpoint)
         if not entries[-1]['completes_phase']:
             break
@@ -103,6 +138,12 @@ def run(args):
         if not final.is_symlink() or final.resolve() != target.resolve():
             raise FileExistsError(f'Final checkpoint path already exists: {final}')
     for entry in entries:
+        if 'archive_interrupted_output' in entry:
+            archive = Path(entry['archive_interrupted_output'])
+            if archive.exists() or archive.is_symlink():
+                raise FileExistsError(f'Interrupted-run archive already exists: {archive}')
+            Path(entry['checkpoint']).parent.rename(archive)
+            print(f'Preserved interrupted phase: {archive}', flush=True)
         print(f"Starting {args.stage}: {entry['stage']}", flush=True)
         result = subprocess.run(entry['command'])
         if result.returncode:
