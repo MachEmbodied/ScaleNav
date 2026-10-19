@@ -26,12 +26,14 @@ environments and evaluation outputs are separate.
 | --- | ---: | ---: | ---: | --- |
 | Habitat-GS-LN test subset | 16 | 13 | **2.96 GB** | [Prepare](#test-subset) |
 | Full Habitat-GS-LN | 157 | 45 | **10.36 GB** | [Prepare](#full-habitat-gs-ln) |
-| Short-Horizon OVON test subset | 7 | 7 | **11.52 GB** | [Prepare](#short-horizon-ovon) |
-| Full Short-Horizon OVON | 524 | 36 | **11.54 GB** | [Prepare](#short-horizon-ovon) |
+| Short-Horizon OVON test subset | 7 | 7 | **0.81 GB** | [Prepare](#short-horizon-ovon) |
+| Full Short-Horizon OVON | 524 | 36 | **3.67 GB** | [Prepare](#short-horizon-ovon) |
 
 Start with a test subset to try navigation. These contain selected successful
 ScaleNav cases, with paper examples first; use the full sets for benchmark scores.
-Both OVON selections require the same official archives.
+Both OVON selections download **5.84 GB** from the official sources. Their storage
+totals assume the HM3D archive cleanup below; allow **6.49 GB** for the subset or
+**9.34 GB** for the full benchmark before cleanup.
 
 Our task definitions and instructions are included in the repository. Preparation
 combines them with the scene assets and creates `episodes.json` and
@@ -105,43 +107,61 @@ Task definitions and asset checksums are in
 
 **1. Download the HM3D validation assets.** Follow the
 [official access instructions](https://github.com/matterport/habitat-matterport-3dresearch),
-then download these three v0.2 archives:
+then download these two v0.2 archives:
 
 - [hm3d-val-habitat-v0.2.tar](https://api.matterport.com/resources/habitat/hm3d-val-habitat-v0.2.tar)
 - [hm3d-val-semantic-annots-v0.2.tar](https://api.matterport.com/resources/habitat/hm3d-val-semantic-annots-v0.2.tar)
-- [hm3d-val-semantic-configs-v0.2.tar](https://api.matterport.com/resources/habitat/hm3d-val-semantic-configs-v0.2.tar)
 
-**2. Extract the archives.** Set `HM3D_ARCHIVES` to their download directory:
+**2. Prepare a selection.** Set `HM3D_ARCHIVES` to their download directory.
+The command extracts only the required scene visuals, navmeshes and semantic
+labels, verifies their SHA-256 hashes, downloads the official task metadata and
+applies our instructions. The scene configuration is generated locally.
+
+For the 7 selected test cases:
 
 ```bash
 export HM3D_ARCHIVES=/path/to/hm3d-archives
-mkdir -p data/upstream/evaluation/hm3d/val
-tar -xf "$HM3D_ARCHIVES/hm3d-val-habitat-v0.2.tar" -C data/upstream/evaluation/hm3d/val
-tar -xf "$HM3D_ARCHIVES/hm3d-val-semantic-annots-v0.2.tar" -C data/upstream/evaluation/hm3d/val
-tar -xf "$HM3D_ARCHIVES/hm3d-val-semantic-configs-v0.2.tar" -C data/upstream/evaluation/hm3d
-```
-
-**3. Prepare a selection.** For the 7 selected test cases, run:
-
-```bash
 python scripts/prepare_data.py ovon --subset test_subset \
+  --hm3d-archives "$HM3D_ARCHIVES" \
   --source data/upstream/evaluation/ovon \
   --scenes data/upstream/evaluation/hm3d \
   --output data/evaluation/ovon_test_subset --download
 ```
 
-For the full 524-task benchmark, run:
+For the full 524-task benchmark, use the same archives:
 
 ```bash
+export HM3D_ARCHIVES=/path/to/hm3d-archives
 python scripts/prepare_data.py ovon --subset full \
+  --hm3d-archives "$HM3D_ARCHIVES" \
   --source data/upstream/evaluation/ovon \
   --scenes data/upstream/evaluation/hm3d \
   --output data/evaluation/short_horizon_ovon --download
 ```
 
-The commands download the official task metadata and apply our instructions.
-Total data storage, including the retained HM3D archives and all extracted scenes,
-is **11.52 GB** for the test subset or **11.54 GB** for the full benchmark.
+Existing matching files are reused. If the scenes are already extracted,
+omit `--hm3d-archives`. Existing unselected scenes are left untouched.
+
+**3. Remove source archives after successful preparation.** Evaluation uses the
+extracted files, so these two archives are no longer needed:
+
+```bash
+rm -- "$HM3D_ARCHIVES/hm3d-val-habitat-v0.2.tar" \
+  "$HM3D_ARCHIVES/hm3d-val-semantic-annots-v0.2.tar"
+```
+
+Keep the archives if you plan to prepare the full benchmark later; this adds
+**5.68 GB**. Keep `data/upstream/evaluation/hm3d/` and
+`data/upstream/evaluation/ovon/` for evaluation and re-preparation.
+
+| Selection | Required scenes | Storage after archive cleanup | Storage with archives |
+| --- | ---: | ---: | ---: |
+| Test subset | 7 (641.72 MB) | **0.81 GB** | **6.49 GB** |
+| Full benchmark | 36 (3.48 GB) | **3.67 GB** | **9.34 GB** |
+
+These totals are for a fresh preparation and include the retained OVON task
+archive and prepared metadata. If you previously extracted all HM3D validation
+scenes, those extra files still occupy space.
 Prepared data: `data/evaluation/ovon_test_subset/` or
 `data/evaluation/short_horizon_ovon/`.
 Continue to [run Short-Horizon OVON evaluation](#run-short-horizon-ovon-evaluation).
@@ -153,13 +173,12 @@ Continue to [run Short-Horizon OVON evaluation](#run-short-horizon-ovon-evaluati
 | --- | ---: |
 | `hm3d-val-habitat-v0.2.tar` | 3,530,618,880 |
 | `hm3d-val-semantic-annots-v0.2.tar` | 2,145,935,360 |
-| `hm3d-val-semantic-configs-v0.2.tar` | 40,960 |
 | [ABot starting poses](https://huggingface.co/datasets/acvlab/ABotN-Short-Horizon-OVON) | 1,016,534 |
 | [HM3D-OVON annotations](https://huggingface.co/datasets/nyokoyama/hm3d_ovon) | 165,665,450 |
-| **Download payload** | **5,843,277,184 (5.84 GB)** |
+| **Download payload** | **5,843,236,224 (5.84 GB)** |
 
-The storage totals above include these downloads, all extracted HM3D scenes,
-extracted task metadata and the prepared evaluation files. Task definitions are in
+Both selections download the same official archives. Selective extraction reduces
+local storage, not the initial download. Task definitions are in
 [the OVON annotations](../annotations/evaluation/short_horizon_ovon.json).
 
 </details>

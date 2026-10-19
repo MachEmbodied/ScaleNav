@@ -227,10 +227,14 @@ decimal MB/GB.
 | --- | --- | ---: | --- |
 | Habitat-GS-LN test subset | 16 tasks across 13 scenes | 2.96 GB | [Download](docs/EVALUATION.md#test-subset) |
 | Full Habitat-GS-LN evaluation | 157 tasks across 45 scenes | 10.36 GB | [Download](docs/EVALUATION.md#full-habitat-gs-ln) |
-| Short-Horizon OVON test subset | 7 tasks across 7 scenes | 11.52 GB | [Download](docs/EVALUATION.md#short-horizon-ovon) |
-| Full Short-Horizon OVON evaluation | 524 tasks across 36 scenes | 11.54 GB | [Download](docs/EVALUATION.md#short-horizon-ovon) |
+| Short-Horizon OVON test subset | 7 tasks across 7 scenes | 0.81 GB | [Download](docs/EVALUATION.md#short-horizon-ovon) |
+| Full Short-Horizon OVON evaluation | 524 tasks across 36 scenes | 3.67 GB | [Download](docs/EVALUATION.md#short-horizon-ovon) |
 | Small training subset (for preview) | 17 Internet segments and 4 simulated episodes | 239.54 MB | [Download](docs/DATA.md#small-training-subset) |
 | Full training data | 18,249 Internet segments and 2,600 simulated episodes | 153.04 GB | [Download](docs/DATA.md#full-training-data) |
+
+OVON storage is **after removing the two downloaded HM3D archives**. Either
+selection first downloads **5.84 GB**; allow **6.49 GB** for the subset or
+**9.34 GB** for the full benchmark before archive cleanup.
 
 ## Evaluation
 

@@ -81,6 +81,49 @@ def scene_config(scenes):
     }, "scene_instances": {"default_attributes": {"default_lighting": "no_lights"}}}
 
 
+def extract_scene_archives(archives, destination, scenes, checksums):
+    selected = {name: info for name, info in checksums.items() if name.split("/")[1] in scenes}
+    for archive_name, suffixes in (
+        ("hm3d-val-habitat-v0.2.tar", (".basis.glb", ".basis.navmesh")),
+        ("hm3d-val-semantic-annots-v0.2.tar", (".semantic.glb", ".semantic.txt")),
+    ):
+        missing = {}
+        for name, info in selected.items():
+            if not name.endswith(suffixes):
+                continue
+            target = destination / name
+            if target.is_file():
+                if target.stat().st_size != info["size"] or sha256(target) != info["sha256"]:
+                    raise ValueError(f"HM3D scene checksum mismatch: {target}")
+            else:
+                missing[name.removeprefix("val/")] = (target, info)
+        if not missing:
+            continue
+        with tarfile.open(Path(archives) / archive_name, "r:") as stream:
+            for member in stream:
+                name = member.name.removeprefix("./")
+                if name not in missing:
+                    continue
+                target, info = missing[name]
+                if not member.isfile() or member.size != info["size"]:
+                    raise ValueError(f"Invalid HM3D archive member: {member.name}")
+                target.parent.mkdir(parents=True, exist_ok=True)
+                temporary = target.with_name(target.name + ".partial")
+                try:
+                    with stream.extractfile(member) as incoming, temporary.open("wb") as outgoing:
+                        shutil.copyfileobj(incoming, outgoing)
+                    if sha256(temporary) != info["sha256"]:
+                        raise ValueError(f"HM3D scene checksum mismatch: {member.name}")
+                    temporary.replace(target)
+                finally:
+                    temporary.unlink(missing_ok=True)
+                del missing[name]
+                if not missing:
+                    break
+        if missing:
+            raise FileNotFoundError(f"Missing HM3D assets in {archive_name}: {', '.join(missing)}")
+
+
 def validate_scenes(source, output, scenes, checksums):
     links = []
     for scene in sorted(scenes):
@@ -222,8 +265,14 @@ def prepare(args):
     grouped = defaultdict(list)
     for row in rows:
         grouped[row["scene_id"]].append(row)
+    if getattr(args, "hm3d_archives", None) is not None:
+        extract_scene_archives(args.hm3d_archives, scenes, grouped, annotation["upstream"]["scene_files"])
     links = validate_scenes(scenes, output, grouped, annotation["upstream"]["scene_files"])
-    poses, content = prepare_upstream(source, annotation["upstream"], args.download)
+    metadata = dict(annotation["upstream"])
+    metadata["episode_files"] = {f"{scene.split('-', 1)[1]}.json.gz":
+                                 metadata["episode_files"][f"{scene.split('-', 1)[1]}.json.gz"]
+                                 for scene in grouped}
+    poses, content = prepare_upstream(source, metadata, args.download)
     poses = {(row["scene_id"], row["traj_id"]): row for row in poses}
     write_json(binding, settings)
     link_scenes(links)
@@ -296,6 +345,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--scenes", type=Path, required=True)
+    parser.add_argument("--hm3d-archives", type=Path,
+                        help="Extract only selected scene assets from official HM3D v0.2 TAR files")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--annotations", type=Path, default=ANNOTATIONS)
     parser.add_argument("--subset", choices=["test_subset", "full"], default="full")

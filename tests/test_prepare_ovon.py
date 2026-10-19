@@ -88,6 +88,73 @@ def test_interrupted_episode_extraction_is_retryable(tmp_path, monkeypatch):
     assert target.read_bytes() == payload
 
 
+def scene_archives(root):
+    checksums = {}
+    for archive_name, suffixes in (
+        ("hm3d-val-habitat-v0.2.tar", ("basis.glb", "basis.navmesh")),
+        ("hm3d-val-semantic-annots-v0.2.tar", ("semantic.glb", "semantic.txt")),
+    ):
+        with tarfile.open(root / archive_name, "w") as archive:
+            for scene in ("00800-first", "00801-second"):
+                for suffix in suffixes:
+                    name = f"{scene}/{scene.split('-', 1)[1]}.{suffix}"
+                    payload = name.encode()
+                    member = tarfile.TarInfo("./" + name)
+                    member.size = len(payload)
+                    archive.addfile(member, io.BytesIO(payload))
+                    checksums["val/" + name] = {"size": len(payload), "sha256": hashlib.sha256(payload).hexdigest()}
+            member = tarfile.TarInfo("../../outside")
+            member.size = 3
+            archive.addfile(member, io.BytesIO(b"bad"))
+    return checksums
+
+
+def test_scene_archives_extract_only_selection_and_reuse_verified_files(tmp_path):
+    checksums = scene_archives(tmp_path)
+    destination = tmp_path / "scenes"
+    prepare.extract_scene_archives(tmp_path, destination, {"00801-second"}, checksums)
+    assert sorted(str(p.relative_to(destination)) for p in destination.rglob("*") if p.is_file()) == sorted(
+        name for name in checksums if "00801-second" in name)
+    assert not (tmp_path / "outside").exists()
+    prepare.validate_scenes(destination, tmp_path / "prepared", ["00801-second"], checksums)
+    prepare.extract_scene_archives(tmp_path / "no-archives-needed", destination, {"00801-second"}, checksums)
+    prepare.extract_scene_archives(tmp_path, destination, {"00800-first", "00801-second"}, checksums)
+    assert len(list(destination.rglob("*.*"))) == 8
+
+
+def test_scene_archive_extraction_interruption_is_retryable(tmp_path, monkeypatch):
+    checksums = scene_archives(tmp_path)
+    original = prepare.shutil.copyfileobj
+    def interrupted(incoming, outgoing):
+        outgoing.write(incoming.read(2))
+        raise OSError("Interrupted")
+    monkeypatch.setattr(prepare.shutil, "copyfileobj", interrupted)
+    destination = tmp_path / "scenes"
+    with pytest.raises(OSError, match="Interrupted"):
+        prepare.extract_scene_archives(tmp_path, destination, {"00800-first"}, checksums)
+    assert not any(p.is_file() for p in destination.rglob("*"))
+    monkeypatch.setattr(prepare.shutil, "copyfileobj", original)
+    prepare.extract_scene_archives(tmp_path, destination, {"00800-first"}, checksums)
+    prepare.validate_scenes(destination, tmp_path / "prepared", ["00800-first"], checksums)
+
+
+def test_scene_archive_checksum_failure_does_not_publish_asset(tmp_path):
+    checksums = scene_archives(tmp_path)
+    checksums["val/00800-first/first.basis.glb"]["sha256"] = "0" * 64
+    destination = tmp_path / "scenes"
+    with pytest.raises(ValueError, match="checksum mismatch"):
+        prepare.extract_scene_archives(tmp_path, destination, {"00800-first"}, checksums)
+    assert not any(p.is_file() for p in destination.rglob("*"))
+
+
+def test_scene_archive_missing_member_fails(tmp_path):
+    checksums = scene_archives(tmp_path)
+    with tarfile.open(tmp_path / "hm3d-val-habitat-v0.2.tar", "w"):
+        pass
+    with pytest.raises(FileNotFoundError, match="Missing HM3D assets"):
+        prepare.extract_scene_archives(tmp_path, tmp_path / "scenes", {"00800-first"}, checksums)
+
+
 def test_scene_assets_require_exact_checksums(tmp_path):
     scene = "00800-scene"
     source, output = tmp_path / "source", tmp_path / "output"
@@ -152,7 +219,7 @@ def test_missing_scenes_can_be_corrected_without_poisoning_output(tmp_path, monk
     annotation = json.loads(prepare.ANNOTATIONS.read_text())
     annotation["episodes"] = [{"scene_id": scene, "episode_id": "traj_1", "instruction": "Approach the chair.", "support_obj_ids": [1]}]
     annotation["upstream"] = {"start_poses": {"filename": "poses.json", "sha256": prepare.sha256(pose_path)},
-                              "episode_files": {"scene.json.gz": prepare.sha256(episode_path)}, "scene_files": checksums}
+                              "episode_files": {"scene.json.gz": prepare.sha256(episode_path), "unused.json.gz": "unused"}, "scene_files": checksums}
     annotation_path = tmp_path / "annotations.json"
     annotation_path.write_text(json.dumps(annotation))
     transform = np.eye(4)

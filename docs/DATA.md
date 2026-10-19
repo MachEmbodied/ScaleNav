@@ -14,23 +14,24 @@ training latent caches and run outputs are separate.
 | --- | --- | ---: | --- |
 | Habitat-GS-LN test subset | 16 tasks in 13 scenes | **2.96 GB** | [Download](EVALUATION.md#test-subset) |
 | Full Habitat-GS-LN evaluation | 157 tasks in 45 scenes | **10.36 GB** | [Download](EVALUATION.md#full-habitat-gs-ln) |
-| Short-Horizon OVON test subset | 7 tasks in 7 scenes | **11.52 GB** | [Download](EVALUATION.md#short-horizon-ovon) |
-| Full Short-Horizon OVON evaluation | 524 tasks in 36 scenes | **11.54 GB** | [Download](EVALUATION.md#short-horizon-ovon) |
+| Short-Horizon OVON test subset | 7 tasks in 7 scenes | **0.81 GB** | [Download](EVALUATION.md#short-horizon-ovon) |
+| Full Short-Horizon OVON evaluation | 524 tasks in 36 scenes | **3.67 GB** | [Download](EVALUATION.md#short-horizon-ovon) |
 | Small training subset (for preview) | 17 Internet segments and 4 simulated episodes | **239.54 MB** | [Download](#small-training-subset) |
 | Full training data | 18,249 Internet segments and 2,600 simulated episodes, including validation | **153.04 GB** | [Download](#full-training-data) |
 
-Totals follow the documented preparation steps, retaining downloaded archives
-and compressed scenes. Habitat-GS-LN includes converted scene visuals, labels
-and navmeshes; OVON includes all scenes extracted by the archive commands, not
-only the selected tasks. Both training totals include converted scenes, locally
-rendered videos and generated labels.
+Totals follow the documented preparation steps. Habitat-GS-LN retains compressed
+scenes alongside converted visuals, labels and navmeshes. OVON extracts only the
+selected scenes and removes the two HM3D source archives after preparation;
+keeping those archives adds **5.68 GB**. Before cleanup, allow **6.49 GB** for
+the OVON subset or **9.34 GB** for full OVON. Both training totals include
+converted scenes, locally rendered videos, generated labels and source downloads.
 
 <details>
 <summary>Download payload sizes</summary>
 
 These are transferred bytes, not the total storage shown above. An empty cache
 requires **991,324,013 bytes** for the Habitat-GS-LN test subset,
-**3,173,478,248 bytes** for full Habitat-GS-LN, **5,843,277,184 bytes** for either
+**3,173,478,248 bytes** for full Habitat-GS-LN, **5,843,236,224 bytes** for either
 OVON selection, **55,603,886 bytes** for the small training subset and
 **36,103,149,859 bytes** for full training. The shared video index is counted
 once. Existing matching files reduce the download.

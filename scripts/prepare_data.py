@@ -587,6 +587,8 @@ def main():
                              help='Rebuild from original SpatialVID shards instead of the compact release (up to 1.07 TB)')
         if name == 'ovon':
             sub.add_argument('--scenes', type=Path, required=True, help='Official HM3D assets extracted locally')
+            sub.add_argument('--hm3d-archives', type=Path,
+                             help='Extract only selected scene assets from official HM3D v0.2 TAR files')
             sub.add_argument('--subset', choices=['test_subset', 'full'], default='full')
         elif name == 'evaluation':
             sub.add_argument('--subset', choices=['test_subset', 'full'], default='test_subset')
