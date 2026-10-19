@@ -3,7 +3,7 @@
 <h3 align="center">Scalable Internet Video Pretraining<br>for Language-Conditioned Local Navigation</h3>
 
 <p align="center">
-  <a href="https://yangyihui0502.github.io/scalenav-review/"><img src="https://img.shields.io/badge/Project-Page-2563eb?logo=googlechrome&amp;logoColor=white" alt="Project page"></a>
+  <a href="https://zju3dv.github.io/ScaleNav/"><img src="https://img.shields.io/badge/Project-Page-2563eb?logo=googlechrome&amp;logoColor=white" alt="Project page"></a>
   <img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&amp;logoColor=white" alt="arXiv paper — coming soon" title="Paper link coming soon">
   <a href="https://huggingface.co/Yangyihui/ScaleNav"><img src="https://img.shields.io/badge/Hugging_Face-Model-ffcc4d?logo=huggingface&amp;logoColor=white" alt="Hugging Face model"></a>
 </p>
@@ -26,7 +26,7 @@
 </p>
 
 <p align="center">
-  <a href="https://yangyihui0502.github.io/scalenav-review/#demos"><img src="docs/assets/navigation-demo.gif" width="100%" alt="ScaleNav navigation: real robot on the left, simulation on the right"></a>
+  <a href="https://zju3dv.github.io/ScaleNav/#demos"><img src="docs/assets/navigation-demo.gif" width="100%" alt="ScaleNav navigation: real robot on the left, simulation on the right"></a>
 </p>
 
 > **TL;DR:** ScaleNav learns navigation priors from Internet videos through **action-free pretraining**, then transfers them to **language-conditioned local navigation**.
@@ -182,11 +182,10 @@ python -m pip install -e '.[dev]'
 | ScaleNav | [Hugging Face](https://huggingface.co/Yangyihui/ScaleNav) | 10.02 GB |
 | Wan VAE, text encoder and tokenizer | [Wan2.2-TI2V-5B](https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B) | 14.20 GB |
 
-Download ScaleNav and its Wan components. The private model repository requires
-an authorized Hugging Face account:
+Download ScaleNav and its Wan components. The ScaleNav model repository is public;
+authentication is optional:
 
 ```bash
-hf auth login
 python scripts/download_checkpoint.py --output checkpoints/scalenav
 awm check --checkpoint checkpoints/scalenav --sha256
 
