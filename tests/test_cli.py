@@ -37,6 +37,52 @@ def test_doctor_reports_simulator_loader_failure(monkeypatch, capsys):
     assert any('magnum' in error for error in report['errors'])
 
 
+def test_doctor_reports_cuda_initialization_failure(monkeypatch, capsys):
+    monkeypatch.setattr(torch.cuda, 'is_available', lambda: True)
+    monkeypatch.setattr(torch.cuda, 'device_count', lambda: 1)
+
+    def fail(_):
+        raise RuntimeError('CUDA device unavailable')
+
+    monkeypatch.setattr(torch.cuda, 'get_device_name', fail)
+    assert main(['doctor', '--require-cuda']) == 1
+    report = json.loads(capsys.readouterr().out)
+    assert report['cuda_available'] is False
+    assert any('CUDA device unavailable' in error for error in report['errors'])
+
+
+@pytest.mark.parametrize('failure', ['allocation', 'synchronize', None])
+def test_doctor_checks_cuda_computation(monkeypatch, capsys, failure):
+    monkeypatch.setattr(torch.cuda, 'is_available', lambda: True)
+    monkeypatch.setattr(torch.cuda, 'device_count', lambda: 1)
+    monkeypatch.setattr(torch.cuda, 'get_device_name', lambda _: 'test GPU')
+    calls = []
+    cpu_ones = torch.ones
+
+    def allocate(size, *, device):
+        calls.append(('allocate', device))
+        if failure == 'allocation':
+            raise RuntimeError('CUDA allocation failed')
+        return cpu_ones(size)
+
+    def synchronize(device):
+        calls.append(('synchronize', device))
+        if failure == 'synchronize':
+            raise RuntimeError('CUDA kernel failed')
+
+    monkeypatch.setattr(torch, 'ones', allocate)
+    monkeypatch.setattr(torch.cuda, 'synchronize', synchronize)
+    assert main(['doctor', '--require-cuda']) == int(failure is not None)
+    report = json.loads(capsys.readouterr().out)
+    assert report['cuda_available'] is True
+    assert report['cuda_compute'] is (failure is None)
+    assert calls[0] == ('allocate', 'cuda:0')
+    if failure != 'allocation':
+        assert calls[-1] == ('synchronize', 0)
+    if failure:
+        assert any('CUDA computation failed' in error for error in report['errors'])
+
+
 @pytest.fixture
 def assets(tmp_path):
     checkpoint = tmp_path / 'checkpoint with spaces'

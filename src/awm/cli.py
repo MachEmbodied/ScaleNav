@@ -97,6 +97,9 @@ def doctor(args):
         report['gpus'] = [torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())]
     except ImportError:
         report.update(cuda_available=False, inference_dependencies='Install .[inference]')
+    except RuntimeError as exc:
+        report.update(cuda_available=False)
+        errors.append(f'CUDA initialization failed: {exc}')
     for package in ('diffusers', 'transformers', 'safetensors'):
         try:
             report[package] = importlib.metadata.version(package)
@@ -120,6 +123,15 @@ def doctor(args):
                     errors.append('Habitat-GS lacks CUDA support; rebuild with HABITAT_WITH_CUDA=ON')
             except (ImportError, OSError) as exc:
                 errors.append(f'{name}: {exc}; see docs/EVALUATION.md#simulator-installation')
+    if args.require_cuda and report['cuda_available']:
+        try:
+            probe = torch.ones(1, device='cuda:0')
+            probe.add_(1)
+            torch.cuda.synchronize(0)
+            report['cuda_compute'] = True
+        except RuntimeError as exc:
+            report['cuda_compute'] = False
+            errors.append(f'CUDA computation failed: {exc}')
     if args.checkpoint:
         report['contract'] = checkpoint_contract(args.checkpoint)
     if args.base_model:
