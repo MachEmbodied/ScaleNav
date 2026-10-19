@@ -35,11 +35,15 @@
 <p align="center">
   <a href="#installation">Installation</a> ·
   <a href="#checkpoints">Checkpoints</a> ·
+  <a href="#single-image-inference">Inference</a> ·
   <a href="#data">Data</a> ·
   <a href="#evaluation">Evaluation</a> ·
   <a href="#training">Training</a> ·
   <a href="#real-robot">Real robot</a>
 </p>
+
+For a first run without a simulator, follow [Environment](#environment),
+[Checkpoints](#checkpoints), then [Single-image inference](#single-image-inference).
 
 ## Installation
 
@@ -209,6 +213,27 @@ The downloader uses a pinned Hugging Face revision, resumes interrupted download
 and verifies SHA-256. Existing verified files are reused. For training from P0, omit
 `allow_patterns` to download the full Wan model (34.20 GB).
 
+## Single-image inference
+
+Predict one nine-action navigation chunk from your own RGB image and an instruction
+describing a target visible in that image. This does not require Habitat-GS or
+evaluation data. After completing the environment and checkpoint steps above, run:
+
+```bash
+awm infer --checkpoint "$CHECKPOINT" --base-model "$BASE_MODEL" \
+  --image /path/to/observation.png \
+  --prompt "Walk to the chair visible in the initial view." \
+  --output outputs/example
+```
+
+Replace the image path and instruction with a matching pair. For an input named
+`observation.png`, open `outputs/example/observation_trajectory.png` to see the
+predicted path; the nine action deltas are in
+`outputs/example/observation_trajectory.npy`.
+The repository does not include a paired example image. To extract one from an
+OVON evaluation rollout, or to inspect the outputs and model settings, see the
+[inference guide](docs/INFERENCE.md#single-image-inference).
+
 ## Data
 
 [ScaleNav Data](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#choose-a-dataset)
@@ -279,9 +304,6 @@ Each output directory contains `summary.json`: `aggregate.success_rate` is SR,
 `--visualize` saves every case's video and a `gallery/index.html` page with
 synchronized trajectories, targets and outcomes. Omit it for metrics only. See the
 [evaluation protocol](docs/EVALUATION.md#evaluation-protocol) for metric definitions.
-
-To visualize a predicted trajectory from one image and instruction, see
-[single-image inference](docs/INFERENCE.md#single-image-inference).
 
 ## Training
 
