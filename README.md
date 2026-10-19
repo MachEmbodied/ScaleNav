@@ -6,6 +6,7 @@
   <a href="https://zju3dv.github.io/ScaleNav/"><img src="https://img.shields.io/badge/Project-Page-2563eb?logo=googlechrome&amp;logoColor=white" alt="Project page"></a>
   <img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&amp;logoColor=white" alt="arXiv paper — coming soon" title="Paper link coming soon">
   <a href="https://huggingface.co/Yangyihui/ScaleNav"><img src="https://img.shields.io/badge/Hugging_Face-Model-ffcc4d?logo=huggingface&amp;logoColor=white" alt="Hugging Face model"></a>
+  <a href="https://huggingface.co/datasets/Yangyihui/ScaleNav-Data"><img src="https://img.shields.io/badge/Hugging_Face-Data-57b894?logo=huggingface&amp;logoColor=white" alt="Hugging Face data"></a>
 </p>
 
 <p align="center">
@@ -210,8 +211,10 @@ and verifies SHA-256. Existing verified files are reused. For training from P0, 
 
 ## Data
 
-Access to [ScaleNav Data](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data)
-is currently required for the Internet video packs and Habitat-GS navmeshes.
+[ScaleNav Data](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data) provides
+public downloads of the annotations, Internet video packs and evaluation assets.
+Model and data repositories are grouped in the [ScaleNav collection](https://huggingface.co/collections/Yangyihui/scalenav-6ad591e8ff62bb75ec75f645).
+Third-party scenes follow their upstream access requirements.
 
 Each **Download** link leads to the complete preparation steps for that dataset:
 ScaleNav annotations, required media or official scenes, and the resulting data
@@ -327,6 +330,8 @@ python scripts/check_release.py
 
 ## License
 
-Code: [Apache-2.0](LICENSE). Annotations and released Internet videos:
+Code: [Apache-2.0](LICENSE). Model weights:
+[CC BY-NC 4.0](https://huggingface.co/Yangyihui/ScaleNav/blob/main/LICENSE).
+Annotations and released Internet videos:
 [CC BY-NC-SA 4.0](annotations/LICENSE).
 See [third-party notices](THIRD_PARTY_NOTICES.md) for attribution and license scope.
