@@ -216,22 +216,21 @@ is the shared entry point for training data and both evaluation benchmarks.
 Choose a selection below; its preparation command downloads the required assets
 and pairs them with the included annotations.
 
-Each **Download** link leads to the complete preparation steps for that dataset:
-ScaleNav annotations, required media or official scenes, and the resulting data
-directory. Total download counts files fetched from all sources.
-Total data storage counts the prepared data directories and retained
-source downloads from all sources. Model weights, environments,
-training latent caches and run outputs are separate. Sizes sum file bytes and use
-decimal MB/GB.
+Each **Prepare** link covers the required data downloads and preparation steps.
+**Network download** is the amount transferred over the Internet from all sources.
+**Disk usage after preparation** is the local space occupied by the prepared
+data and retained downloads after completing the guide, including any cleanup.
+Model weights, environments, training latent caches and run outputs are separate.
+Sizes sum file bytes and use decimal MB/GB.
 
-| Dataset | Contents | Total download | Total data storage | Download |
+| Dataset | Contents | Network download | Disk usage after preparation | Instructions |
 | --- | --- | ---: | ---: | --- |
-| Habitat-GS-LN test subset | 16 tasks / 13 scenes | 991.32 MB | 2.96 GB | [Download](docs/EVALUATION.md#test-subset) |
-| Full Habitat-GS-LN evaluation | 157 tasks / 45 scenes | 3.17 GB | 10.36 GB | [Download](docs/EVALUATION.md#full-habitat-gs-ln) |
-| Short-Horizon OVON test subset | 7 tasks / 7 scenes | 642.85 MB | 642.90 MB | [Download](docs/EVALUATION.md#ovon-test-subset) |
-| Full Short-Horizon OVON evaluation | 524 tasks / 36 scenes | 5.84 GB | 3.67 GB | [Download](docs/EVALUATION.md#full-short-horizon-ovon) |
-| Small training subset (for preview) | 17 Internet segments / 4 simulated episodes | 55.60 MB | 239.54 MB | [Download](docs/DATA.md#small-training-subset) |
-| Full training data | 18,249 Internet segments / 2,600 simulated episodes, including validation | 36.10 GB | 153.04 GB | [Download](docs/DATA.md#full-training-data) |
+| Habitat-GS-LN test subset | 16 tasks / 13 scenes | 991.32 MB | 2.96 GB | [Prepare](docs/EVALUATION.md#test-subset) |
+| Full Habitat-GS-LN evaluation | 157 tasks / 45 scenes | 3.17 GB | 10.36 GB | [Prepare](docs/EVALUATION.md#full-habitat-gs-ln) |
+| Short-Horizon OVON test subset | 7 tasks / 7 scenes | 642.85 MB | 642.90 MB | [Prepare](docs/EVALUATION.md#ovon-test-subset) |
+| Full Short-Horizon OVON evaluation | 524 tasks / 36 scenes | 5.84 GB | 3.67 GB | [Prepare](docs/EVALUATION.md#full-short-horizon-ovon) |
+| Small training subset (for preview) | 17 Internet segments / 4 simulated episodes | 55.60 MB | 239.54 MB | [Prepare](docs/DATA.md#small-training-subset) |
+| Full training data | 18,249 Internet segments / 2,600 simulated episodes, including validation | 36.10 GB | 153.04 GB | [Prepare](docs/DATA.md#full-training-data) |
 
 The [OVON test subset](https://huggingface.co/datasets/Yangyihui/ScaleNav-Data#ovon-test-subset)
 requires a one-time Matterport agreement confirmation; the script then fetches
