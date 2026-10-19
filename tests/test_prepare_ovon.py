@@ -155,6 +155,31 @@ def test_scene_archive_missing_member_fails(tmp_path):
         prepare.extract_scene_archives(tmp_path, tmp_path / "scenes", {"00800-first"}, checksums)
 
 
+def test_subset_download_uses_only_pinned_selected_files_and_includes_terms(tmp_path, monkeypatch):
+    release_path = tmp_path / "release.json"
+    release = {"repository": "owner/subset", "revision": "pinned-revision",
+               "scene_ids": ["00800-first"],
+               "notices": [{"filename": "SOURCE.txt", "sha256": "terms-hash"}]}
+    release_path.write_text(json.dumps(release))
+    monkeypatch.setattr(prepare, "TEST_SUBSET_RELEASE", release_path)
+    calls = []
+    monkeypatch.setattr(prepare, "upstream_file", lambda spec, destination, download:
+                        calls.append((spec, destination, download)))
+    metadata = {"scene_files": {"val/00800-first/first.basis.glb": {"sha256": "scene-hash"},
+                                "val/00801-second/second.basis.glb": {"sha256": "unused"}},
+                "episode_files": {"first.json.gz": "task-hash", "second.json.gz": "unused"}}
+    source, scenes = tmp_path / "source", tmp_path / "scenes"
+    prepare.download_test_subset(source, scenes, {"00800-first"}, metadata)
+    assert [call[0]["filename"] for call in calls] == [
+        "SOURCE.txt", "val/00800-first/first.basis.glb", "episodes/hm3d/val_unseen/content/first.json.gz"]
+    assert all(spec["repository"] == "owner/subset" and spec["revision"] == "pinned-revision" and download
+               for spec, _, download in calls)
+    assert [call[1] for call in calls] == [scenes, scenes, source]
+    with pytest.raises(ValueError, match="not covered"):
+        prepare.download_test_subset(source, scenes, {"00801-second"}, metadata)
+    assert len(calls) == 3
+
+
 def test_scene_assets_require_exact_checksums(tmp_path):
     scene = "00800-scene"
     source, output = tmp_path / "source", tmp_path / "output"

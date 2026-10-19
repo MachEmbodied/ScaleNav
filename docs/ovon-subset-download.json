@@ -1,0 +1,23 @@
+{
+  "repository": "Yangyihui/ScaleNav-OVON-Subset",
+  "revision": "389cfce3feddc4b17abfcc65af1b83b461bdd7de",
+  "scene_ids": [
+    "00800-TEEsavR23oF",
+    "00808-y9hTuugGdiq",
+    "00810-CrMo8WxCyVb",
+    "00827-BAbdmeyTvMZ",
+    "00832-qyAac8rV8Zk",
+    "00847-bCPU9suPUw9",
+    "00878-XB4GS9ShBRE"
+  ],
+  "notices": [
+    {
+      "filename": "SOURCE.txt",
+      "sha256": "1bc1d8221f6e848b291aa5c2f80cfd0afe09b0611fc63c8de86f104cff55cc35"
+    },
+    {
+      "filename": "OVON-LICENSE.txt",
+      "sha256": "008fdaf1c006c66bcd6a2fa5613f570e681d9fed1dbe07b4c33de06d7d8a6b1a"
+    }
+  ]
+}

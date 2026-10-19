@@ -12,6 +12,7 @@ import tarfile
 import numpy as np
 
 ANNOTATIONS = Path(__file__).resolve().parents[1] / "annotations/evaluation/short_horizon_ovon.json"
+TEST_SUBSET_RELEASE = Path(__file__).resolve().parents[1] / "docs/ovon-subset-download.json"
 
 
 def sha256(path):
@@ -122,6 +123,22 @@ def extract_scene_archives(archives, destination, scenes, checksums):
                     break
         if missing:
             raise FileNotFoundError(f"Missing HM3D assets in {archive_name}: {', '.join(missing)}")
+
+
+def download_test_subset(source, scenes, selected, metadata):
+    release = json.loads(TEST_SUBSET_RELEASE.read_text())
+    if not set(selected) <= set(release["scene_ids"]):
+        raise ValueError("Scene selection is not covered by the released OVON test subset")
+    remote = {key: release[key] for key in ("repository", "revision")}
+    for notice in release["notices"]:
+        upstream_file({**remote, **notice}, scenes, True)
+    for name, info in metadata["scene_files"].items():
+        if name.split("/")[1] in selected:
+            upstream_file({**remote, "filename": name, "sha256": info["sha256"]}, scenes, True)
+    for scene in selected:
+        name = f"{scene.split('-', 1)[1]}.json.gz"
+        upstream_file({**remote, "filename": f"episodes/hm3d/val_unseen/content/{name}",
+                       "sha256": metadata["episode_files"][name]}, source, True)
 
 
 def validate_scenes(source, output, scenes, checksums):
@@ -267,6 +284,8 @@ def prepare(args):
         grouped[row["scene_id"]].append(row)
     if getattr(args, "hm3d_archives", None) is not None:
         extract_scene_archives(args.hm3d_archives, scenes, grouped, annotation["upstream"]["scene_files"])
+    elif args.download and subset == "test_subset":
+        download_test_subset(source, scenes, grouped, annotation["upstream"])
     links = validate_scenes(scenes, output, grouped, annotation["upstream"]["scene_files"])
     metadata = dict(annotation["upstream"])
     metadata["episode_files"] = {f"{scene.split('-', 1)[1]}.json.gz":

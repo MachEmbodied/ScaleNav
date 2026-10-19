@@ -33,7 +33,11 @@ and license adapted annotations under the same terms.
   scene identifiers. Separately obtained scenes and geometry annotations retain
   the [InteriorGS terms](https://kloudsim-usa-cos.kujiale.com/InteriorGS/InteriorGS_Terms_of_Use.pdf).
 - **HM3D / HM3D-OVON**: separately obtained scene meshes, semantic annotations
-  and category goals. Follow the [HM3D access instructions](https://github.com/matterport/habitat-matterport-3dresearch)
+  and category goals. A seven-scene subset and matching MIT-licensed HM3D-OVON
+  task files are mirrored in [ScaleNav OVON Subset](https://huggingface.co/datasets/Yangyihui/ScaleNav-OVON-Subset),
+  under the original Matterport agreement with recorded acceptance before access.
+  The mirror retains upstream file hashes, attribution and license notices.
+  Follow the [HM3D access instructions](https://github.com/matterport/habitat-matterport-3dresearch)
   and [Matterport academic-use terms](https://matterport.com/legal/matterport-end-user-license-agreement-academic-use-model-data).
   Official task annotations: [HM3D-OVON](https://huggingface.co/datasets/nyokoyama/hm3d_ovon).
 - **Habitat-GS navigation meshes**: 45 original evaluation navmeshes are hosted
@@ -50,8 +54,9 @@ and license adapted annotations under the same terms.
 
 [Data access instructions](docs/DATA.md#upstream-access-and-terms) cover the
 compact Internet video release and separately obtained scenes and Habitat-GS
-assets. Gaussian scenes, upstream bounding boxes, HM3D navmeshes, scene-rendered RGB
-and latent caches are outside this release.
+assets. Gaussian scenes, InteriorGS bounding boxes, scene-rendered RGB and latent
+caches are outside this release. HM3D assets in the dedicated OVON subset retain
+the Matterport terms; the ScaleNav annotation license does not relicense them.
 
 The code and annotation licenses do not cover model weights or upstream assets.
 Third-party dependencies retain their original licenses.
