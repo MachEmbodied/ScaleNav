@@ -44,7 +44,7 @@ motion_stop_n_frames: 9
 motion_stop_ignore_prefix_frames: 0
 motion_stop_xy_threshold_m: 0.015
 motion_stop_yaw_threshold_rad: 0.015
-min_steps_before_stop: 18
+min_steps_before_stop: 0
 continuous_actions: true
 guidance_scale: 5.0
 traj_guidance_scale: 1.0

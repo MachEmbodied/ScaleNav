@@ -37,8 +37,8 @@ def test_camera_offset_stays_horizontal_after_pitch_and_yaw(monkeypatch, tmp_pat
 
 
 @pytest.mark.parametrize('leading,budget,success,steps', [
-    (0, 200, True, 18), (191, 200, True, 200),
-    (192, 200, False, 200), (0, 17, False, 17),
+    (0, 200, True, 9), (191, 200, True, 200),
+    (192, 200, False, 200), (0, 8, False, 8),
 ])
 def test_evaluator_counts_zero_actions_and_requires_stop_within_budget(leading, budget, success, steps):
     state = SimpleNamespace(position=np.array([0, 0.35, 0]),

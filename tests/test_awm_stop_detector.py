@@ -145,8 +145,8 @@ def test_rotation_interrupts_near_zero_stop_window():
 
 
 @pytest.mark.parametrize("config_name", [None, "eval_habitatgs.yaml", "eval_ovon.yaml"])
-@pytest.mark.parametrize("leading,stop_step", [(0, 18), (13, 22)])
-def test_simulation_stop_waits_for_minimum_steps_and_nine_issued_actions(config_name, leading, stop_step):
+@pytest.mark.parametrize("leading,stop_step", [(0, 9), (13, 22), (17, 26)])
+def test_simulation_stops_after_nine_issued_actions(config_name, leading, stop_step):
     from importlib.resources import files
     from awm.habitat_extensions.config import EvalConfig
     from awm.scripts.eval_habitat_gs import _load_eval_yaml

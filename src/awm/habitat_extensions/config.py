@@ -88,7 +88,7 @@ class EvalConfig:
     motion_stop_ignore_prefix_frames: int = 0
     motion_stop_xy_threshold_m: float = 0.015
     motion_stop_yaw_threshold_rad: float = 0.015
-    min_steps_before_stop: int = 18
+    min_steps_before_stop: int = 0
 
     auto_stop_on_near_zero: bool = True
 
